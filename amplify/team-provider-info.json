@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-sirnight-dev-162611-authRole",
+      "UnauthRoleArn": "arn:aws:iam::065646706907:role/amplify-sirnight-dev-162611-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::065646706907:role/amplify-sirnight-dev-162611-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-sirnight-dev-162611-deployment",
+      "UnauthRoleName": "amplify-sirnight-dev-162611-unauthRole",
+      "StackName": "amplify-sirnight-dev-162611",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:065646706907:stack/amplify-sirnight-dev-162611/67deab20-040f-11ed-b370-0e440ddfc7b3",
+      "AmplifyAppId": "dq6gwgfr2y1w5"
+    }
+  }
+}
