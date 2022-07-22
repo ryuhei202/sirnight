@@ -19,6 +19,7 @@ module.exports = {
         slideInOpSubText: "slideIn 0.7s ease-in-out 1.2s forwards",
         slideOutOp: "slideOut 0.5s ease-in-out 0s forwards",
         slideOutKeyVisualFirst: "slideOut 0.5s ease-in-out 5s forwards",
+        fadeOutImg: "fadeOut 0.3s ease-in-out 3.5s forwards",
       },
       keyframes: {
         slideIn: {
@@ -39,6 +40,16 @@ module.exports = {
           "100%": {
             opacity: 0,
             transform: "translateY(-15px)",
+          },
+        },
+        fadeOut: {
+          "0%": {
+            height: "100%",
+            opacity: 1,
+          },
+          "100%": {
+            height: "0%",
+            opacity: 0,
           },
         },
       },
