@@ -38,15 +38,7 @@ module.exports = {
           },
           "100%": {
             opacity: 0,
-            transform: "translateY(15px)",
-          },
-        },
-        smallHeight: {
-          "0%": {
-            height: "100%",
-          },
-          "100%": {
-            height: "0%",
+            transform: "translateY(-15px)",
           },
         },
       },
