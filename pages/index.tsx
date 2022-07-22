@@ -6,7 +6,7 @@ import { WhatToResolve } from "../src/components/top/WhatToResolve";
 
 const Home: NextPage = () => {
   return (
-    <div className="h-full bg-clay">
+    <div className="h-full bg-clay sm:w-[500px]">
       <Head>
         <title>UWear公式サイト</title>
         <meta

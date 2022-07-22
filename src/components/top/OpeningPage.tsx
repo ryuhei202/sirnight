@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Typography } from "../../baseParts/Typography";
+import { Typography } from "../baseParts/Typography";
 
 type TProps = {
   readonly className?: string;
