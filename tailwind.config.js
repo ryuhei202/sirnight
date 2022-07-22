@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      textColor: {
+        primary: "#475156",
+      },
       colors: {
         themeGray: "#475156",
         clay: "#e8e7df",
@@ -13,8 +16,9 @@ module.exports = {
       animation: {
         slideInOpLogo: "slideIn 0.7s ease-in-out forwards",
         slideInOpText: "slideIn 0.7s ease-in-out 1.0s forwards",
-        slideInOpSubText: "slideIn 0.7s ease-in 1.2s forwards",
+        slideInOpSubText: "slideIn 0.7s ease-in-out 1.2s forwards",
         slideOutOp: "slideOut 0.5s ease-in-out 0s forwards",
+        slideOutKeyVisualFirst: "slideOut 0.5s ease-in-out 5s forwards",
       },
       keyframes: {
         slideIn: {
@@ -35,6 +39,14 @@ module.exports = {
           "100%": {
             opacity: 0,
             transform: "translateY(15px)",
+          },
+        },
+        smallHeight: {
+          "0%": {
+            height: "100%",
+          },
+          "100%": {
+            height: "0%",
           },
         },
       },

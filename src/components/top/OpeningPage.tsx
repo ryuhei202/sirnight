@@ -1,6 +1,10 @@
 import { useEffect } from "react";
+import { Typography } from "../../baseParts/Typography";
 
-export const OpeningPage = () => {
+type TProps = {
+  readonly className?: string;
+};
+export const OpeningPage = ({ className }: TProps) => {
   useEffect(() => {
     const logo = document.getElementById("logo") as HTMLElement;
     const text = document.getElementById("text") as HTMLElement;
@@ -20,19 +24,31 @@ export const OpeningPage = () => {
   }, []);
 
   return (
-    <div id="op-page" className="overflow-auto bg-clay h-screen sm:w-[700px]">
+    <div
+      id="op-page"
+      className={`overflow-auto bg-clay h-screen sm:w-[700px] ${
+        className ?? ""
+      }`}
+    >
       <div className="absolute top-[41%] left-1/2 translate-x-[-50%] w-[65%] text-center">
         <img
           id="logo"
           src="/images/logo/gray.svg"
+          alt="logo"
           className="animate-slideInOpLogo"
         />
-        <p id="text" className="mt-6 text-sm opacity-0 animate-slideInOpText">
+        <Typography
+          id="text"
+          className="mt-6 text-sm opacity-0 animate-slideInOpText"
+        >
           服の悩みを解決する
-        </p>
-        <p id="sub-text" className="text-sm opacity-0 animate-slideInOpSubText">
+        </Typography>
+        <Typography
+          id="sub-text"
+          className="text-sm opacity-0 animate-slideInOpSubText"
+        >
           メンズファッションレンタルサービス
-        </p>
+        </Typography>
       </div>
     </div>
   );
