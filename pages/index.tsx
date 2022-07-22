@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { KeyVisual } from "../src/components/top/KeyVisual";
+import { OpeningPage } from "../src/components/top/OpeningPage";
 import { PointDescription } from "../src/components/top/PointDescription";
 import { WhatToResolve } from "../src/components/top/WhatToResolve";
 
@@ -15,8 +16,8 @@ const Home: NextPage = () => {
         />
         <link rel="icon" href="/favicon/favicon_head.png" />
       </Head>
-      <div className="relative">
-        {/* <OpeningPage className="z-30" /> */}
+      <div className="">
+        <OpeningPage className="z-30" />
         <div className="w-[100%] h-full">
           <KeyVisual />
           <div className="relative w-screen h-[820px]">
