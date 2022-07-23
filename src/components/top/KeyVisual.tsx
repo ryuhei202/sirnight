@@ -6,7 +6,7 @@ type TProps = {
 export const KeyVisual = ({ className }: TProps) => {
   return (
     <div
-      className={`w-full h-[828px] -z-10 first:animate-infiniteScrollFirst last:animate-infiniteScrollLast ${
+      className={`w-full h-[828px] first:animate-infiniteScrollFirst last:animate-infiniteScrollLast ${
         className ?? ""
       }`}
     >
