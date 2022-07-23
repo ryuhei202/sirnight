@@ -26,7 +26,7 @@ export const OpeningPage = ({ className }: TProps) => {
   return (
     <div
       id="op-page"
-      className={`fixed inset-0 overflow-auto bg-clay h-screen sm:w-[700px] ${
+      className={`fixed inset-0 bg-clay h-screen sm:w-[700px] ${
         className ?? ""
       }`}
     >

@@ -1,11 +1,20 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import { useEffect } from "react";
 import { KeyVisual } from "../src/components/top/KeyVisual";
 import { OpeningPage } from "../src/components/top/OpeningPage";
 import { PointDescription } from "../src/components/top/PointDescription";
 import { WhatToResolve } from "../src/components/top/WhatToResolve";
 
 const Home: NextPage = () => {
+  useEffect(() => {
+    setTimeout(() => {
+      const body = document.getElementById("body") as HTMLElement;
+      setTimeout(() => {
+        body.classList.remove("fixed", "inset-0");
+      }, 3000);
+    });
+  }, []);
   return (
     <div className="h-full bg-clay sm:w-[500px]">
       <Head>
@@ -16,13 +25,13 @@ const Home: NextPage = () => {
         />
         <link rel="icon" href="/favicon/favicon_head.png" />
       </Head>
-      <div className="">
+      <div id="body" className="fixed inset-0">
         <OpeningPage className="z-30" />
-        <div className="w-[100%] h-full">
+        <div className="w-full h-full">
           <KeyVisual />
           <div className="relative w-screen h-[820px]">
             <div className="absolute z-10 bg-clay h-[400px] w-screen"></div>
-            <h2 className="absolute z-30 h-screen text-themeGray text-3xl tracking-[0.3em] leading-10 mx-auto top-[100px] left-1/2 translate-x-[-50%] [writing-mode:vertical-rl]">
+            <h2 className="absolute z-20 h-screen text-themeGray text-3xl tracking-[0.3em] leading-10 mx-auto top-[100px] left-1/2 translate-x-[-50%] [writing-mode:vertical-rl]">
               洋服を選ぶのが
               <br />
               苦手なあなたに。
@@ -30,7 +39,7 @@ const Home: NextPage = () => {
             <img
               src="/images/keyVisuals/sub/4-1.svg"
               alt="keyvisuals-4-1"
-              className="absolute z-20 top-[320px]"
+              className="absolute z-25 top-[320px]"
             />
           </div>
         </div>
