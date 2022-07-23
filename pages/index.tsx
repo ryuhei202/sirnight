@@ -28,9 +28,9 @@ const Home: NextPage = () => {
         <OpeningPage className="z-30" />
         <div className="w-full h-full">
           <KeyVisual />
-          <div className="relative w-screen h-[820px]">
-            <div className="absolute z-10 bg-clay h-[400px] w-screen"></div>
-            <h2 className="absolute z-20 h-screen text-themeGray text-3xl tracking-[0.3em] leading-10 mx-auto top-[100px] left-1/2 translate-x-[-50%] [writing-mode:vertical-rl]">
+          <div className="relative w-screen h-[820px] bg-clay">
+            <div className="h-[400px] w-screen"></div>
+            <h2 className="absolute z-10 h-screen text-themeGray text-3xl tracking-[0.3em] leading-10 mx-auto top-[100px] left-1/2 translate-x-[-50%] [writing-mode:vertical-rl]">
               洋服を選ぶのが
               <br />
               苦手なあなたに。
@@ -42,7 +42,7 @@ const Home: NextPage = () => {
             />
           </div>
         </div>
-        <div className="relative p-10 text-center">
+        <div className="relative p-10 text-center bg-clay">
           <h3 className="text-xl text-themeGray tracking-wider leading-9">
             UWearは、あなたと一緒に
             <br />
