@@ -9,12 +9,11 @@ import { WhatToResolve } from "../src/components/top/WhatToResolve";
 const Home: NextPage = () => {
   useEffect(() => {
     setTimeout(() => {
-      const body = document.getElementById("body") as HTMLElement;
-      setTimeout(() => {
-        body.classList.remove("fixed", "inset-0");
-      }, 3000);
-    });
+      const container = document.getElementById("container") as HTMLElement;
+      container.classList.remove("fixed", "inset-0");
+    }, 3000);
   }, []);
+
   return (
     <div className="h-full bg-clay sm:w-[500px]">
       <Head>
@@ -25,7 +24,7 @@ const Home: NextPage = () => {
         />
         <link rel="icon" href="/favicon/favicon_head.png" />
       </Head>
-      <div id="body" className="fixed inset-0">
+      <div id="container" className="fixed inset-0">
         <OpeningPage className="z-30" />
         <div className="w-full h-full">
           <KeyVisual />
@@ -39,7 +38,7 @@ const Home: NextPage = () => {
             <img
               src="/images/keyVisuals/sub/4-1.svg"
               alt="keyvisuals-4-1"
-              className="absolute z-25 top-[320px]"
+              className="absolute top-[320px]"
             />
           </div>
         </div>
