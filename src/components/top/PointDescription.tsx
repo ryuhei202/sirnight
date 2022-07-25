@@ -3,7 +3,7 @@ type TProps = {
 };
 export const PointDescription = ({ className }: TProps) => {
   return (
-    <div className={`w-[100%] ${className ?? ""}`}>
+    <div className={`w-[100%] mt-14 ${className ?? ""}`}>
       <div className="flex flex-row p-7">
         <div className="w-1/3">
           <p className="text-primary text-xs w-fit mx-auto border-b-2 border-dotted border-themeGray">
