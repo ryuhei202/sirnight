@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useEffect } from "react";
+import { CatchCopy } from "../src/components/top/CatchCopy";
 import { KeyVisual } from "../src/components/top/KeyVisual";
 import { OpeningPage } from "../src/components/top/OpeningPage";
 import { PointDescription } from "../src/components/top/PointDescription";
@@ -28,19 +29,7 @@ const Home: NextPage = () => {
         <OpeningPage className="z-30" />
         <div className="w-full h-full">
           <KeyVisual />
-          <div className="relative w-screen h-[820px] bg-clay">
-            <div className="h-[400px] w-screen"></div>
-            <h2 className="absolute z-10 h-screen text-themeGray text-3xl tracking-[0.3em] leading-10 mx-auto top-[100px] left-1/2 translate-x-[-50%] [writing-mode:vertical-rl]">
-              洋服を選ぶのが
-              <br />
-              苦手なあなたに。
-            </h2>
-            <img
-              src="/images/keyVisuals/sub/4-1.svg"
-              alt="keyvisuals-4-1"
-              className="absolute top-[320px]"
-            />
-          </div>
+          <CatchCopy />
         </div>
         <div className="relative p-10 text-center bg-clay">
           <h3 className="text-xl text-themeGray tracking-wider leading-9">
