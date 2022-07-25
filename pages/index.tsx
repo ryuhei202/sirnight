@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { useEffect } from "react";
 import { CatchCopy } from "../src/components/top/CatchCopy";
+import { ItemList } from "../src/components/top/ItemList";
 import { KeyVisual } from "../src/components/top/KeyVisual";
 import { OpeningPage } from "../src/components/top/OpeningPage";
 import { PointDescription } from "../src/components/top/PointDescription";
@@ -47,7 +48,10 @@ const Home: NextPage = () => {
             月額制のファッションレンタルサービスです。
           </p>
         </div>
-        <div className="h-[50vh]">アイテムがぐるぐる</div>
+        <div className="overflow-hidden">
+          <ItemList type="tops" />
+          <ItemList type="bottoms" />
+        </div>
         <PointDescription />
         <WhatToResolve />
       </div>

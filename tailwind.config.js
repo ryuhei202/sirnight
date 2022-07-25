@@ -30,6 +30,8 @@ module.exports = {
         eighthFadeOutPanel: "fadeOut 0.3s ease-in-out 3.45s forwards",
         infiniteScrollFirst: "infiniteScrollFirst 30s linear infinite",
         infiniteScrollLast: "infiniteScrollLast 30s linear infinite",
+        infiniteSlideLeft: "infiniteSlideLeft 20s linear infinite",
+        infiniteSlideRight: "infiniteSlideRight 20s linear infinite",
       },
       keyframes: {
         slideIn: {
@@ -79,6 +81,14 @@ module.exports = {
         infiniteScrollLast: {
           "0%": { transform: "translateY(1104px)" },
           "100%": { transform: "translateY(0)" },
+        },
+        infiniteSlideLeft: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+        infiniteSlideRight: {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(0)" },
         },
       },
     },
