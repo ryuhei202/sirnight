@@ -32,7 +32,7 @@ const Home: NextPage = () => {
           <CatchCopy />
         </div>
         <div className="relative p-10 text-center bg-clay">
-          <h3 className="text-xl text-themeGray tracking-wider leading-9">
+          <h3 className="text-xl text-themeGray tracking-wider leading-9 font-semibold">
             UWearは、あなたと一緒に
             <br />
             最適なコーデを考えます。
