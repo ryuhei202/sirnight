@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { useEffect } from "react";
 import { CatchCopy } from "../src/components/top/CatchCopy";
+import { Conversion } from "../src/components/top/Conversion";
 import { ItemList } from "../src/components/top/ItemList";
 import { KeyVisual } from "../src/components/top/KeyVisual";
 import { OpeningPage } from "../src/components/top/OpeningPage";
@@ -40,6 +41,7 @@ const Home: NextPage = () => {
         </div>
         <PointDescription />
         <WhatToResolve />
+        <Conversion />
       </div>
     </div>
   );
