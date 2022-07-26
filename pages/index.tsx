@@ -8,6 +8,7 @@ import { KeyVisual } from "../src/components/top/KeyVisual";
 import { OpeningPage } from "../src/components/top/OpeningPage";
 import { PointDescription } from "../src/components/top/PointDescription";
 import { ServiceDescription } from "../src/components/top/ServiceDescription";
+import { Sympathy } from "../src/components/top/Sympathy";
 import { WhatToResolve } from "../src/components/top/WhatToResolve";
 
 const Home: NextPage = () => {
@@ -42,6 +43,7 @@ const Home: NextPage = () => {
         <PointDescription />
         <WhatToResolve />
         <Conversion />
+        <Sympathy />
       </div>
     </div>
   );
