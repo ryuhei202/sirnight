@@ -6,6 +6,7 @@ import { ItemList } from "../src/components/top/ItemList";
 import { KeyVisual } from "../src/components/top/KeyVisual";
 import { OpeningPage } from "../src/components/top/OpeningPage";
 import { PointDescription } from "../src/components/top/PointDescription";
+import { ServiceDescription } from "../src/components/top/ServiceDescription";
 import { WhatToResolve } from "../src/components/top/WhatToResolve";
 
 const Home: NextPage = () => {
@@ -32,22 +33,7 @@ const Home: NextPage = () => {
           <KeyVisual />
           <CatchCopy />
         </div>
-        <div className="relative p-10 text-center bg-clay">
-          <h3 className="text-xl text-themeGray tracking-wider leading-9 font-semibold">
-            UWearは、あなたと一緒に
-            <br />
-            最適なコーデを考えます。
-          </h3>
-          <p className="text-sm mt-8 text-themeGray leading-6">
-            UWear(ユーウェア)は、
-            <br />
-            洋服の悩みをスタイリストが解決し、
-            <br />
-            あなたのためのコーデが届く
-            <br />
-            月額制のファッションレンタルサービスです。
-          </p>
-        </div>
+        <ServiceDescription />
         <div className="overflow-hidden">
           <ItemList type="tops" />
           <ItemList type="bottoms" />
