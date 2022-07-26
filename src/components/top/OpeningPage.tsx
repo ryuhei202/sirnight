@@ -34,7 +34,7 @@ export const OpeningPage = ({ className }: TProps) => {
         <img
           id="logo"
           src="/images/logo/gray.svg"
-          alt="logo"
+          alt="logo-gray"
           className="animate-slideInOpLogo"
         />
         <Typography
