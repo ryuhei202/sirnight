@@ -29,7 +29,7 @@ const Home: NextPage = () => {
         />
         <link rel="icon" href="/favicon/favicon_head.png" />
       </Head>
-      <div id="container" className="fixed inset-0">
+      <div id="container" className="fixed inset-0 text-primary">
         <OpeningPage className="z-30" />
         <div className="w-full h-full">
           <KeyVisual />
