@@ -18,17 +18,28 @@ export const HowToUse = () => {
         </div>
       </div>
       <div className="py-[100px]">
-        <div className="px-[40px]">
-          <p>0104</p>
+        <div className="px-[40px] text-center mb-4">
+          <p>01•••04</p>
           <p>
             コーデの利用シーンと悩みを
             <br />
             お聞きします
           </p>
         </div>
-        <div className="pl-[40px]">
-          <img src="/images/howToUse/1-1.png" alt="howToUse1-1" className="" />
-        </div>
+        <ul className="px-[40px] flex overflow-x-scroll space-x-8 whitespace-no-wrap snap-x snap-mandatory">
+          <li className="flex-none w-[85%] snap-always snap-center">
+            <img src="/images/howToUse/1-1.png" alt="howToUse1-1" />
+          </li>
+          <li className="flex-none w-[85%] snap-always snap-center">
+            <img src="/images/howToUse/1-2.png" alt="howToUse1-2" />
+          </li>
+          <li className="flex-none w-[85%] snap-always snap-center">
+            <img src="/images/howToUse/1-3.png" alt="howToUse1-3" />
+          </li>
+          <li className="flex-none w-[85%] snap-always snap-center">
+            <img src="/images/howToUse/1-4.png" alt="howToUse1-4" />
+          </li>
+        </ul>
       </div>
     </div>
   );
