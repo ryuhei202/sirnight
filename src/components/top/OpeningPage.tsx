@@ -20,6 +20,7 @@ export const OpeningPage = ({ className }: TProps) => {
     }, 2500);
     setTimeout(() => {
       opPage.classList.add("animate-slideOutOp");
+      opPage.classList.add("hidden");
     }, 3000);
   }, []);
 
