@@ -12,15 +12,15 @@ export const CoordinateCard = ({
 }: TProps) => {
   return (
     <div className="relative grid grid-rows-[var(--firstViewHeight)_1fr] w-full">
-      <figure className="h-[calc(100vh-8rem)] sticky top-0 left-0">
+      <figure className="h-[calc(100vh-8rem)] sticky top-0 left-0 z-10">
         <img
           src={imageFilePath}
           alt="coordinate"
           className="object-cover h-[calc(100vh-8rem)] w-full"
         />
       </figure>
-      <div className="relative h-fit bg-clay">
-        <div className="flex flex-row w-full text-[0.3rem]  border-[1px] border-themeGray">
+      <div className="relative h-fit bg-clay z-30">
+        <div className="flex flex-row w-full text-[0.3rem] border-[1px] border-themeGray">
           <h2 className="bg-themeGray text-clay w-3/4 px-4 py-2.5">{title}</h2>
           <button className="px-2 py-1">
             <span>

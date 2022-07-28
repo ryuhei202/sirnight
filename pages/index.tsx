@@ -3,6 +3,7 @@ import Head from "next/head";
 import { useEffect } from "react";
 import { CatchCopy } from "../src/components/top/CatchCopy";
 import { Conversion } from "../src/components/top/Conversion";
+import { HowToStart } from "../src/components/top/HowToStart";
 import { HowToUse } from "../src/components/top/HowToUse";
 import { ItemList } from "../src/components/top/ItemList";
 import { KeyVisual } from "../src/components/top/KeyVisual";
@@ -48,6 +49,7 @@ const Home: NextPage = () => {
         <Sympathy />
         <HowToUse />
         <SceneCoordinates />
+        <HowToStart />
       </div>
     </div>
   );
