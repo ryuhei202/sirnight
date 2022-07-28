@@ -8,6 +8,7 @@ import { ItemList } from "../src/components/top/ItemList";
 import { KeyVisual } from "../src/components/top/KeyVisual";
 import { OpeningPage } from "../src/components/top/OpeningPage";
 import { PointDescription } from "../src/components/top/PointDescription";
+import { SceneCoordinates } from "../src/components/top/SceneCoordinates";
 import { ServiceDescription } from "../src/components/top/ServiceDescription";
 import { Sympathy } from "../src/components/top/Sympathy";
 import { WhatToResolve } from "../src/components/top/WhatToResolve";
@@ -46,6 +47,7 @@ const Home: NextPage = () => {
         <Conversion />
         <Sympathy />
         <HowToUse />
+        <SceneCoordinates />
       </div>
     </div>
   );
