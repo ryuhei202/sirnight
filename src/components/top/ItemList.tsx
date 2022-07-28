@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type TProps = {
   type: "tops" | "bottoms";
 };
@@ -13,8 +15,8 @@ export const ItemList = ({ type }: TProps) => {
         }`}
       >
         {[...Array(type === "tops" ? 3 : 4)].map((_, index) => (
-          <li className="mx-2">
-            <img
+          <li key={index} className="mx-2">
+            <Image
               src={`/images/items/${type}/${index + 1}.svg`}
               alt={`items-${type}-${index + 1}`}
               key={index}
@@ -30,8 +32,8 @@ export const ItemList = ({ type }: TProps) => {
         }`}
       >
         {[...Array(type === "tops" ? 3 : 4)].map((_, index) => (
-          <li className="mx-2">
-            <img
+          <li key={index} className="mx-2">
+            <Image
               src={`/images/items/${type}/${index + 1}.svg`}
               alt={`items-${type}-${index + 1}`}
               key={index}

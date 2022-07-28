@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type TProps = {
   readonly imageFilePath: string;
   readonly title: string;
@@ -13,7 +15,7 @@ export const CoordinateCard = ({
   return (
     <div className="relative grid grid-rows-[var(--firstViewHeight)_1fr] w-full">
       <figure className="h-[calc(100vh-8rem)] sticky top-0 left-0 z-10">
-        <img
+        <Image
           src={imageFilePath}
           alt="coordinate"
           className="object-cover h-[calc(100vh-8rem)] w-full"
@@ -33,9 +35,9 @@ export const CoordinateCard = ({
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M12 6v6m0 0v6m0-6h6m-6 0H6"
                 ></path>
               </svg>

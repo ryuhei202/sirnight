@@ -1,3 +1,4 @@
+import Image from "next/image";
 type TProps = {
   readonly className?: string;
 };
@@ -15,14 +16,14 @@ export const PointDescription = ({ className }: TProps) => {
             最適な洋服が届きます
           </h4>
         </div>
-        <img
+        <Image
           src="/images/points/illust1.svg"
           alt="key-visual-1-2"
           className="w-2/3"
         />
       </div>
       <div className="flex flex-row p-7">
-        <img
+        <Image
           src="/images/points/illust2.svg"
           alt="key-visual-1-1"
           className="w-2/3"
@@ -53,7 +54,7 @@ export const PointDescription = ({ className }: TProps) => {
             オリジナルブランド
           </h4>
         </div>
-        <img
+        <Image
           src="/images/points/illust3.svg"
           alt="key-visual-1-1"
           className="w-2/3"

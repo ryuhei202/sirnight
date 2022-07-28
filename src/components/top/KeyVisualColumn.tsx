@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type TProps = {
   imageNames: {
     left: string;
@@ -7,7 +9,11 @@ type TProps = {
   leftAnimateClass?: string;
 };
 
-export const KeyVisualColumn = ({ imageNames, rightAnimateClass, leftAnimateClass }: TProps) => {
+export const KeyVisualColumn = ({
+  imageNames,
+  rightAnimateClass,
+  leftAnimateClass,
+}: TProps) => {
   return (
     <div className="flex">
       <div className="relative">
@@ -18,7 +24,7 @@ export const KeyVisualColumn = ({ imageNames, rightAnimateClass, leftAnimateClas
         ) : (
           <></>
         )}
-        <img
+        <Image
           src={`/images/keyVisuals/main/${imageNames.left}.svg`}
           alt={`key-visual-${imageNames.left}`}
         />
@@ -31,7 +37,7 @@ export const KeyVisualColumn = ({ imageNames, rightAnimateClass, leftAnimateClas
         ) : (
           <></>
         )}
-        <img
+        <Image
           src={`/images/keyVisuals/main/${imageNames.right}.svg`}
           alt={`key-visual-${imageNames.right}`}
         />

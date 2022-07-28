@@ -1,3 +1,4 @@
+import Image from "next/image";
 type TProps = {
   readonly imageFileName: string;
   readonly title: React.ReactNode;
@@ -23,10 +24,14 @@ export const ItemCard = ({
         className ?? ""
       }`}
     >
-      <img src={imageFileName} alt={imageFileName} className="mb-12 rounded" />
+      <Image
+        src={imageFileName}
+        alt={imageFileName}
+        className="mb-12 rounded"
+      />
       <div className="absolute top-[160px] left-0 mb-10">
         {titleSplit.map((title) => (
-          <p className="bg-themeGray w-fit text-lg p-2">
+          <p key={title} className="bg-themeGray w-fit text-lg p-2">
             <span className="text-gray-100">{title}</span>
           </p>
         ))}

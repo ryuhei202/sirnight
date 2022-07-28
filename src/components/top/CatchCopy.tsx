@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 export const CatchCopy = () => {
   const [isDisplay, setIsDisplay] = useState(false);
@@ -14,7 +15,7 @@ export const CatchCopy = () => {
   useEffect(() => {
     window.addEventListener("scroll", toggleIsDisplay);
     return () => window.removeEventListener("scroll", toggleIsDisplay);
-  }, []);
+  }, [toggleIsDisplay]);
 
   return (
     <div className="relative w-full h-[1000px] bg-clay text-center">
@@ -27,7 +28,7 @@ export const CatchCopy = () => {
         <br />
         苦手なあなたに。
       </h2>
-      <img
+      <Image
         src="/images/keyVisuals/sub/4-1.svg"
         alt="keyvisuals-4-1"
         className="absolute top-[335px]"
