@@ -15,7 +15,7 @@ export const CoordinateCard = ({
   return (
     <div className="relative grid grid-rows-[var(--firstViewHeight)_1fr] w-full">
       <figure className="h-[calc(100vh-8rem)] sticky top-0 left-0 z-10">
-        <Image
+        <img
           src={imageFilePath}
           alt="coordinate"
           className="object-cover h-[calc(100vh-8rem)] w-full"

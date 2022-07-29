@@ -9,7 +9,7 @@ export const HowToStart = () => {
       </div>
       <ul className="flex mt-12 overflow-x-scroll whitespace-no-wrap snap-x snap-mandatory">
         <li className="flex-none px-2 w-[85%] snap-always snap-center">
-          <Image src="/images/howToStart/1-1.png" alt="howToStart1-1" />
+          <img src="/images/howToStart/1-1.png" alt="howToStart1-1" />
           <p className="mt-4 text-lg">サイトから会員登録</p>
           <p className="mt-3 text-xs">
             <span>
@@ -20,7 +20,7 @@ export const HowToStart = () => {
           </p>
         </li>
         <li className="flex-none px-2 w-[85%] snap-always snap-center">
-          <Image src="/images/howToStart/1-2.png" alt="howToStart1-1" />
+          <img src="/images/howToStart/1-2.png" alt="howToStart1-1" />
           <p className="mt-4 text-lg">スタイリストをLINE登録</p>
           <p className="mt-3 text-xs">
             <span>
@@ -30,7 +30,7 @@ export const HowToStart = () => {
           </p>
         </li>
         <li className="flex-none px-2 w-[85%] snap-always snap-center">
-          <Image src="/images/howToStart/1-3.png" alt="howToStart1-1" />
+          <img src="/images/howToStart/1-3.png" alt="howToStart1-1" />
           <p className="mt-4 text-lg">スタイリストとやりとり</p>
           <p className="mt-3 text-xs">
             <span>
@@ -41,7 +41,7 @@ export const HowToStart = () => {
           </p>
         </li>
         <li className="flex-none px-2 w-[85%] snap-always snap-center">
-          <Image src="/images/howToStart/1-4.png" alt="howToStart1-1" />
+          <img src="/images/howToStart/1-4.png" alt="howToStart1-1" />
           <p className="mt-4 text-lg">コーデ受け取り</p>
           <p className="mt-3 text-xs">
             <span>

@@ -24,11 +24,7 @@ export const ItemCard = ({
         className ?? ""
       }`}
     >
-      <Image
-        src={imageFileName}
-        alt={imageFileName}
-        className="mb-12 rounded"
-      />
+      <img src={imageFileName} alt={imageFileName} className="mb-12 rounded" />
       <div className="absolute top-[160px] left-0 mb-10">
         {titleSplit.map((title) => (
           <p key={title} className="bg-themeGray w-fit text-lg p-2">

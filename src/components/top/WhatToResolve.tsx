@@ -4,7 +4,7 @@ import Image from "next/image";
 export const WhatToResolve = () => {
   return (
     <div className="relative w-[100%] pb-0.5">
-      <Image src="/images/resolves/resolve-1.png" alt="resolve-1" />
+      <img src="/images/resolves/resolve-1.png" alt="resolve-1" />
       <div className="absolute top-0 left-1/2 translate-x-[-50%] text-slate-50 text-center w-[70%] mt-[340px]">
         <p className="text-2xl">UWearでできること</p>
         <p>Service Value</p>

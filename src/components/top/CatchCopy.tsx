@@ -28,7 +28,7 @@ export const CatchCopy = () => {
         <br />
         苦手なあなたに。
       </h2>
-      <Image
+      <img
         src="/images/keyVisuals/sub/4-1.svg"
         alt="keyvisuals-4-1"
         className="absolute top-[335px]"
