@@ -1,4 +1,3 @@
-import Image from "next/image";
 type TProps = {
   readonly imageFileName: string;
   readonly title: React.ReactNode;

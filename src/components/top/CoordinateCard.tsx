@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 type TProps = {
   readonly imageFilePath: string;
   readonly title: string;

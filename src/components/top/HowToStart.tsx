@@ -1,4 +1,3 @@
-import Image from "next/image";
 export const HowToStart = () => {
   return (
     <div className="p-10 text-center">

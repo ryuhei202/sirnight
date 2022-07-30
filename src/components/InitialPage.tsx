@@ -1,4 +1,3 @@
-import Image from "next/image";
 export const InitialPage = () => {
   return (
     <div className="overflow-auto bg-clay h-screen">

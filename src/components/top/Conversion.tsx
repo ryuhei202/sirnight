@@ -1,5 +1,4 @@
 import { Button } from "../baseParts/Button";
-import Image from "next/image";
 
 export const Conversion = () => {
   return (

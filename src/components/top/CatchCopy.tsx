@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import Image from "next/image";
 
 export const CatchCopy = () => {
   const [isDisplay, setIsDisplay] = useState(false);
