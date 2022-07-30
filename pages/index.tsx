@@ -3,6 +3,7 @@ import Head from "next/head";
 import { useEffect } from "react";
 import { CatchCopy } from "../src/components/top/CatchCopy";
 import { Conversion } from "../src/components/top/Conversion";
+import { ServiceValue } from "../src/components/top/ServiceValue";
 import { HowToStart } from "../src/components/top/HowToStart";
 import { HowToUse } from "../src/components/top/HowToUse";
 import { ItemList } from "../src/components/top/ItemList";
@@ -50,6 +51,8 @@ const Home: NextPage = () => {
         <HowToUse />
         <SceneCoordinates />
         <HowToStart />
+        <Conversion />
+        <ServiceValue />
       </div>
     </div>
   );
