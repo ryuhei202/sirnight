@@ -19,7 +19,7 @@ export const CatchCopy = () => {
   return (
     <div className="relative w-full h-[1000px] bg-clay text-center">
       <h2
-        className={`absolute z-10 text-themeGray text-4xl font-semibold tracking-[0.15em] leading-[1.5em] top-[100px] [writing-mode:vertical-rl] text-left inline-block ${
+        className={`absolute z-10 text-4xl font-semibold tracking-[0.15em] leading-[1.5em] top-[100px] [writing-mode:vertical-rl] text-left inline-block ${
           isDisplay ? "animate-slideInCatchCopyText" : "hidden"
         }`}
       >

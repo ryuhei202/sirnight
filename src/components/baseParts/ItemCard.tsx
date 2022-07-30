@@ -31,7 +31,7 @@ export const ItemCard = ({
           </p>
         ))}
       </div>
-      <div className="p-4 tracking-wide text-sm text-themeGray">
+      <div className="p-4 tracking-wide text-sm">
         <p>{description}</p>
       </div>
     </div>

@@ -1,12 +1,12 @@
 export const ServiceDescription = () => {
   return (
     <div className="relative p-10 text-center bg-clay">
-      <h3 className="text-xl text-themeGray tracking-wider leading-9 font-semibold">
+      <h3 className="text-xl tracking-wider leading-9 font-semibold">
         UWearは、あなたと一緒に
         <br />
         最適なコーデを考えます。
       </h3>
-      <p className="text-sm mt-8 text-themeGray leading-6">
+      <p className="text-sm mt-8 leading-6">
         UWear(ユーウェア)は、
         <br />
         洋服の悩みをスタイリストが解決し、

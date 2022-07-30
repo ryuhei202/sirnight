@@ -33,10 +33,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon/favicon_head.png" />
       </Head>
       <OpeningPage className="z-50" />
-      <div
-        id="container"
-        className="sm:w-[500px] bg-clay text-primary"
-      >
+      <div id="container" className="sm:w-[500px] bg-clay text-themeGray">
         <div className="w-full h-full">
           <KeyVisual />
           <CatchCopy />
