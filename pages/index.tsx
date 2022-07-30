@@ -23,7 +23,7 @@ const Home: NextPage = () => {
   }, []);
 
   return (
-    <div className="h-full bg-clay sm:w-[500px]">
+    <div className="h-full">
       <Head>
         <title>UWear公式サイト</title>
         <meta
@@ -32,8 +32,11 @@ const Home: NextPage = () => {
         />
         <link rel="icon" href="/favicon/favicon_head.png" />
       </Head>
-      <div id="container" className="fixed inset-0 text-primary">
-        <OpeningPage className="z-30" />
+      <OpeningPage className="z-50" />
+      <div
+        id="container"
+        className="sm:w-[500px] bg-clay text-primary"
+      >
         <div className="w-full h-full">
           <KeyVisual />
           <CatchCopy />
