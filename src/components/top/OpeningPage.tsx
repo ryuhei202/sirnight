@@ -34,7 +34,7 @@ export const OpeningPage = ({ className }: TProps) => {
       <div className="absolute top-[41%] left-1/2 translate-x-[-50%] w-[65%] text-center">
         <img
           id="logo"
-          src="/images/logo/gray.svg"
+          src="/images/logos/gray.svg"
           alt="logo-gray"
           className="animate-slideInOpLogo"
         />

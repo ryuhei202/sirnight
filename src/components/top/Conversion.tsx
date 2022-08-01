@@ -4,7 +4,7 @@ export const Conversion = () => {
   return (
     <div className="bg-themeGray h-[700px]">
       <div className="w-[62%] mx-auto pt-[98px] mb-10">
-        <img src="/images/logo/white.svg" alt="logo-white" />
+        <img src="/images/logos/white.svg" alt="logo-white" />
       </div>
       <div className="w-full h-[48%] flex">
         {/* TODO: アニメーションを実装 */}
