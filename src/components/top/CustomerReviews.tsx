@@ -23,7 +23,7 @@ export const CustomerReviews = () => {
       />
       <ReviewCard
         customer={{
-          imagePath: "/images/customerReviews/1.svg",
+          imagePath: "/images/customerReviews/2.svg",
           age: 40,
           work: "自営業",
         }}
@@ -38,7 +38,7 @@ export const CustomerReviews = () => {
       />
       <ReviewCard
         customer={{
-          imagePath: "/images/customerReviews/1.svg",
+          imagePath: "/images/customerReviews/3.svg",
           age: 40,
           work: "自営業",
         }}
