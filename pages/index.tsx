@@ -14,6 +14,7 @@ import { SceneCoordinates } from "../src/components/top/SceneCoordinates";
 import { ServiceDescription } from "../src/components/top/ServiceDescription";
 import { Sympathy } from "../src/components/top/Sympathy";
 import { WhatToResolve } from "../src/components/top/WhatToResolve";
+import { CustomerReviews } from "../src/components/top/CustomerReviews";
 
 const Home: NextPage = () => {
   useEffect(() => {
@@ -53,6 +54,7 @@ const Home: NextPage = () => {
         <HowToStart />
         <Conversion />
         <ServiceValue />
+        <CustomerReviews />
       </div>
     </div>
   );
