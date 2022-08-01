@@ -18,6 +18,7 @@ import { CustomerReviews } from "../src/components/top/CustomerReviews";
 import { Faq } from "../src/components/top/Faq";
 import { Footer } from "../src/components/top/Footer";
 import { News } from "../src/components/top/News";
+import { FooterMenu } from "../src/components/top/FooterMenu";
 
 const Home: NextPage = () => {
   useEffect(() => {
@@ -62,6 +63,7 @@ const Home: NextPage = () => {
         <Conversion />
         <News />
         <Footer />
+        <FooterMenu />
       </div>
     </div>
   );

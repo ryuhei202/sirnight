@@ -16,21 +16,21 @@ export const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="/images/icons/instagram.svg" className="h-[30px]" />
+            <img src="/images/icons/instagram/primary.svg" className="h-[30px]" />
           </a>
           <a
             href="https://twitter.com/leeapjp"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="/images/icons/twitter.svg" className="h-[30px]" />
+            <img src="/images/icons/twitter/primary.svg" className="h-[30px]" />
           </a>
           <a
             href="https://www.facebook.com/leeapjp/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="/images/icons/facebook.svg" className="h-[30px]" />
+            <img src="/images/icons/facebook/primary.svg" className="h-[30px]" />
           </a>
         </div>
         <div className="flex flex-wrap font-semibold py-10 border-b-2 border-[#676F72]">
