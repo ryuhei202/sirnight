@@ -9,6 +9,7 @@ module.exports = {
       colors: {
         themeGray: "#475156",
         clay: "#e8e7df",
+        beige: "#E8E7DF",
       },
       animation: {
         slideInOpLogo: "slideIn 0.7s ease-in-out forwards",

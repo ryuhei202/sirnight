@@ -1,6 +1,6 @@
 export const ServiceDescription = () => {
   return (
-    <div className="relative p-10 text-center bg-clay">
+    <div className="relative p-10 text-center bg-clay" id="service-description">
       <h3 className="text-xl tracking-wider leading-9 font-semibold">
         UWearは、あなたと一緒に
         <br />

@@ -1,6 +1,6 @@
 export const HowToUse = () => {
   return (
-    <div>
+    <div id="how-to-use">
       <div className="relative h-[133.33vw] sm:h-[666.66px]">
         <img
           src="/images/keyVisuals/sub/5-1.png"

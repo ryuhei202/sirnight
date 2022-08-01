@@ -16,6 +16,7 @@ import { Sympathy } from "../src/components/top/Sympathy";
 import { WhatToResolve } from "../src/components/top/WhatToResolve";
 import { CustomerReviews } from "../src/components/top/CustomerReviews";
 import { Faq } from "../src/components/top/Faq";
+import { Footer } from "../src/components/top/Footer";
 import { News } from "../src/components/top/News";
 
 const Home: NextPage = () => {
@@ -60,6 +61,7 @@ const Home: NextPage = () => {
         <Faq />
         <Conversion />
         <News />
+        <Footer />
       </div>
     </div>
   );

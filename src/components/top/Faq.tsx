@@ -2,7 +2,7 @@ import { QuestionAnswer } from "./QuestionAnswer";
 
 export const Faq = () => {
   return (
-    <div className="bg-clay py-28">
+    <div className="bg-clay py-28" id="faq">
       <p className="text-2xl text-center font-extrabold tracking-wider mb-14">
         よくあるご質問
       </p>
