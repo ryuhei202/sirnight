@@ -1,5 +1,4 @@
 import { ItemCard } from "../baseParts/ItemCard";
-import Image from "next/image";
 
 export const WhatToResolve = () => {
   return (

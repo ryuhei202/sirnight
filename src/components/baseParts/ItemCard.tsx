@@ -1,4 +1,3 @@
-import Image from "next/image";
 type TProps = {
   readonly imageFileName: string;
   readonly title: React.ReactNode;
@@ -32,7 +31,7 @@ export const ItemCard = ({
           </p>
         ))}
       </div>
-      <div className="p-4 tracking-wide text-sm text-themeGray">
+      <div className="p-4 tracking-wide text-sm">
         <p>{description}</p>
       </div>
     </div>

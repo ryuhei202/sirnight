@@ -2,7 +2,7 @@ import { CoordinateCard } from "./CoordinateCard";
 
 export const SceneCoordinates = () => {
   return (
-    <div className="h-fit">
+    <div className="h-fit" id="coordinates">
       <CoordinateCard
         imageFilePath="/images/coordinates/1-1.png"
         title="シーンコーデ#01 ： 家族と週末のショッピング"
