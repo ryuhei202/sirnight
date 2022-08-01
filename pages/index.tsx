@@ -57,6 +57,7 @@ const Home: NextPage = () => {
         <ServiceValue />
         <CustomerReviews />
         <Faq />
+        <Conversion />
       </div>
     </div>
   );
