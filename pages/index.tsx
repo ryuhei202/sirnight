@@ -16,6 +16,7 @@ import { Sympathy } from "../src/components/top/Sympathy";
 import { WhatToResolve } from "../src/components/top/WhatToResolve";
 import { CustomerReviews } from "../src/components/top/CustomerReviews";
 import { Faq } from "../src/components/top/Faq";
+import { News } from "../src/components/top/News";
 
 const Home: NextPage = () => {
   useEffect(() => {
@@ -58,6 +59,7 @@ const Home: NextPage = () => {
         <CustomerReviews />
         <Faq />
         <Conversion />
+        <News />
       </div>
     </div>
   );
