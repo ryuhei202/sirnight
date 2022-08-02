@@ -36,7 +36,7 @@ const PlanPage: NextPage = () => {
               {[LIGHT_PLAN, STANDARD_PLAN, PREMIUM_PLAN].map((plan, index) => (
                 <Tab
                   className={({ selected }) =>
-                    `w-full  py-2.5 font-medium leading-5 border-solid ${
+                    `w-full  py-2.5 font-medium leading-5 border-solid outline-none ${
                       selected
                         ? "border-themeGray border-b-2"
                         : "border-[#C7C9C4] border-b text-[#C7C9C4]"
