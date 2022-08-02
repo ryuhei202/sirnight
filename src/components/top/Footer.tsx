@@ -35,29 +35,29 @@ export const Footer = () => {
         </div>
         <div className="flex flex-wrap font-semibold py-10 border-b-2 border-[#676F72]">
           <Link href="#service-description">
-            <a className="w-[50%] my-5">UWearとは</a>
+            <a className="w-1/2 my-5">UWearとは</a>
           </Link>
           <Link href="#">
-            <a className="w-[50%] my-5">スタイリスト紹介</a>
+            <a className="w-1/2 my-5">スタイリスト紹介</a>
           </Link>
           <Link href="#coordinates">
-            <a className="w-[50%] my-5">コーデ例</a>
+            <a className="w-1/2 my-5">コーデ例</a>
           </Link>
           <Link href="#how-to-use">
-            <a className="w-[50%] my-5">ご利用の流れ</a>
+            <a className="w-1/2 my-5">ご利用の流れ</a>
           </Link>
           <Link href="faq">
-            <a className="w-[50%] my-5">よくあるご質問</a>
+            <a className="w-1/2 my-5">よくあるご質問</a>
           </Link>
           <Link href="news">
-            <a className="w-[50%] my-5">お知らせ</a>
+            <a className="w-1/2 my-5">お知らせ</a>
           </Link>
         </div>
         <div className="flex flex-wrap text-xs pt-10">
-          <a className="w-[50%] my-5">運営会社</a>
-          <a className="w-[50%] my-5">特定商取引法に基づく表示</a>
-          <a className="w-[50%] my-5">利用規約</a>
-          <a className="w-[50%] my-5">プライバシーポリシー</a>
+          <a className="w-1/2 my-5">運営会社</a>
+          <a className="w-1/2 my-5">特定商取引法に基づく表示</a>
+          <a className="w-1/2 my-5">利用規約</a>
+          <a className="w-1/2 my-5">プライバシーポリシー</a>
         </div>
       </div>
     </div>
