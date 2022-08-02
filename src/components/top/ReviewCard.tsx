@@ -53,4 +53,3 @@ export const ReviewCard = ({ customer, content, type }: TProps) => {
     </div>
   );
 };
-// typeがrightのものに対してはjustify-endにしてからpositionRelativeを変更
