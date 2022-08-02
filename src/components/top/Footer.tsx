@@ -4,7 +4,7 @@ export const Footer = () => {
   return (
     <div className="py-28 bg-themeGray">
       <div className="mx-[13%] text-beige">
-        <img src="/images/logos/beige.svg" />
+        <img src="/images/logos/beige.svg" alt="logo" />
         <p className="text-sm text-center mt-8 mb-16">
           服の悩みを解決する
           <br />
@@ -16,21 +16,21 @@ export const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="/images/icons/instagram/primary.svg" className="h-[30px]" />
+            <img src="/images/icons/instagram/primary.svg" alt="icon-instagram" className="h-[30px]" />
           </a>
           <a
             href="https://twitter.com/leeapjp"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="/images/icons/twitter/primary.svg" className="h-[30px]" />
+            <img src="/images/icons/twitter/primary.svg" alt="icon-twitter" className="h-[30px]" />
           </a>
           <a
             href="https://www.facebook.com/leeapjp/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="/images/icons/facebook/primary.svg" className="h-[30px]" />
+            <img src="/images/icons/facebook/primary.svg" alt="icon-facebook" className="h-[30px]" />
           </a>
         </div>
         <div className="flex flex-wrap font-semibold py-10 border-b-2 border-[#676F72]">

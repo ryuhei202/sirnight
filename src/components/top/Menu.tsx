@@ -51,21 +51,21 @@ export const Menu = ({ onClick }: TProps) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="/images/icons/instagram/secondary.svg" className="h-[20px] fill-[#ffffff]" />
+          <img src="/images/icons/instagram/secondary.svg" alt="icon-instagram" className="h-[20px] fill-[#ffffff]" />
         </a>
         <a
           href="https://twitter.com/leeapjp"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="/images/icons/twitter/secondary.svg" className="h-[20px]" />
+          <img src="/images/icons/twitter/secondary.svg" alt="icon-twitter" className="h-[20px]" />
         </a>
         <a
           href="https://www.facebook.com/leeapjp/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="/images/icons/facebook/secondary.svg" className="h-[20px]" />
+          <img src="/images/icons/facebook/secondary.svg" alt="icon-facebook" className="h-[20px]" />
         </a>
       </div>
     </div>

@@ -17,14 +17,14 @@ export const PointDescription = ({ className }: TProps) => {
         </div>
         <img
           src="/images/points/illust1.png"
-          alt="key-visual-1-2"
+          alt="points-illust-1"
           className="h-[280px] absolute top-1 right-0 sm:right-5 mix-blend-darken"
         />
       </div>
       <div className="relative flex flex-row justify-end p-7">
         <img
           src="/images/points/illust2.png"
-          alt="key-visual-1-1"
+          alt="points-illust-2"
           className="h-[280px] absolute top-1 left-0 sm:left-5 mix-blend-darken"
         />
         <div className="w-2/5">
@@ -55,7 +55,7 @@ export const PointDescription = ({ className }: TProps) => {
         </div>
         <img
           src="/images/points/illust3.png"
-          alt="key-visual-1-1"
+          alt="points-illust-3"
           className="h-[280px] absolute top-1 right-0 sm:right-5 mix-blend-darken"
         />
       </div>
