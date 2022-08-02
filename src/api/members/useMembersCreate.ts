@@ -2,7 +2,7 @@ import { AxiosResponse } from "axios";
 import { UseMutateFunction } from "react-query";
 import { usePostRequest } from "../usePostRequest";
 
-type TReviewCreate = {
+type TMemberCreate = {
   readonly mutate: UseMutateFunction<
     AxiosResponse,
     unknown,
@@ -24,10 +24,10 @@ export type TMembersCreateParams = {
   readonly email: string;
   readonly password: string;
   readonly customerCardId: number;
-  readonly serial_code?: string;
+  readonly serialCode?: string;
 };
 
-export const useMembersCreate = (): TReviewCreate => {
+export const useMembersCreate = (): TMemberCreate => {
   const { mutate, isLoading } = usePostRequest<TMembersCreateParams>("member");
 
   return { mutate, isLoading };
