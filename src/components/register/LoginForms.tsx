@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { TValidationLoginResponse } from "../../api/validations/TValidationLoginResponse";
 import { useValidationsLogin } from "../../api/validations/useValidationsLogin";
+import { FrontValidText } from "../baseParts/inputs/FrontValidText";
 import { TextAreaAlt } from "../baseParts/inputs/TextAreaAlt";
 import { Stepper } from "./Stepper";
 
@@ -18,7 +19,15 @@ export const LoginForms = ({ onSubmit }: TProps) => {
 
   const { mutate, isLoading } = useValidationsLogin();
 
-  const canRegistered = !!email && !!password;
+  const PASSWORD_REGAX = /^[a-zA-Z0-9!-/:-@¥\[`\{-~]{8,16}$/;
+  const EMAIL_REGAX =
+    /^[a-zA-Z0-9_.+-]+@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$/;
+
+  const canRegistered =
+    !!email &&
+    EMAIL_REGAX.test(email) &&
+    !!password &&
+    PASSWORD_REGAX.test(password);
 
   const handleSubmit = () => {
     if (canRegistered) {
@@ -68,10 +77,13 @@ export const LoginForms = ({ onSubmit }: TProps) => {
               id="email"
               type="email"
               placeholder="info@leeap.jp"
-              className="p-3 mt-3 w-full rounded-md border border-themeGray bg-clay resize-none"
+              className="p-3 my-3 w-full rounded-md border border-themeGray bg-clay resize-none"
               onChange={(e) => setEmail(e.target.value)}
               value={email}
             ></input>
+            {!EMAIL_REGAX.test(email ?? "") && (
+              <FrontValidText text="正しいフォーマットで入力してください" />
+            )}
           </div>
           <div className="relative pt-8">
             <label>
@@ -87,7 +99,7 @@ export const LoginForms = ({ onSubmit }: TProps) => {
                 />
                 <div
                   onClick={() => setIsVisible(false)}
-                  className="absolute right-[10px] bottom-[18px]"
+                  className="absolute right-[10px] top-[82px]"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -121,7 +133,7 @@ export const LoginForms = ({ onSubmit }: TProps) => {
                 ></input>
                 <div
                   onClick={() => setIsVisible(true)}
-                  className="absolute right-[10px] bottom-[18px]"
+                  className="absolute right-[10px] top-[82px]"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -139,6 +151,9 @@ export const LoginForms = ({ onSubmit }: TProps) => {
                   </svg>
                 </div>
               </>
+            )}
+            {!PASSWORD_REGAX.test(password ?? "") && (
+              <FrontValidText text="半角英数字・記号、8~16文字で入力してください" />
             )}
           </div>
           <button
