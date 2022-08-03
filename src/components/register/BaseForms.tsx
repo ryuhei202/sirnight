@@ -47,16 +47,22 @@ export const BaseForms = ({ onSubmit }: TProps) => {
       </option>
     );
   }
+  const validKana = (name: string) => {
+    return name.match(/^[ァ-ヶー　]+$/);
+  };
   const validHeight = !!height && height >= 160 && height <= 180;
   const validWeight = !!weight && weight >= 51 && weight <= 80;
+  const validFirstNameKana = !!firstNameKana && validKana(firstNameKana);
+  const validLastNameKana = !!lastNameKana && validKana(lastNameKana);
+
   const canRegistered =
     validHeight &&
     validWeight &&
     !!prefecture &&
     !!firstName &&
     !!lastName &&
-    !!firstNameKana &&
-    !!lastNameKana &&
+    validFirstNameKana &&
+    validLastNameKana &&
     !!birthYear &&
     !!birthMonth &&
     !!birthDay;
@@ -152,6 +158,7 @@ export const BaseForms = ({ onSubmit }: TProps) => {
                 onChange={(e) => setLastNameKana(e.target.value as string)}
                 placeholder="ヤマダ"
               />
+              {!validLastNameKana && <FrontValidText text="カタカナ入力です" />}
             </div>
             <div className="pl-2">
               <label htmlFor="firstNameKana">
@@ -164,6 +171,9 @@ export const BaseForms = ({ onSubmit }: TProps) => {
                 onChange={(e) => setFirstNameKana(e.target.value as string)}
                 placeholder="タロウ"
               />
+              {!validFirstNameKana && (
+                <FrontValidText text="カタカナ入力です" />
+              )}
             </div>
           </div>
           <div className="pt-8">
