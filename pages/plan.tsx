@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import React, { useState } from "react";
 import { Header } from "../src/components/plan/Header";
-import { Plan } from "../src/components/plan/Plan";
+import { PlanDetail } from "../src/components/plan/PlanDetail";
 import { FooterMenu } from "../src/components/top/FooterMenu";
 import {
   LIGHT_PLAN,
@@ -10,7 +10,7 @@ import {
   STANDARD_PLAN,
 } from "../src/models/plan/Plan";
 
-const PlanPage: NextPage = () => {
+const Plan: NextPage = () => {
   const [selectedPlanId, setSelectedPlanId] = useState<number>(LIGHT_PLAN.id);
   const plans = [LIGHT_PLAN, STANDARD_PLAN, PREMIUM_PLAN];
   const carousel =
@@ -93,7 +93,7 @@ const PlanPage: NextPage = () => {
                 } ${index === plans.length - 1 && "mr-[5%]"}`}
                 key={index}
               >
-                <Plan plan={plan} disabled={selectedPlanId !== plan.id} />
+                <PlanDetail plan={plan} disabled={selectedPlanId !== plan.id} />
               </div>
             ))}
           </div>
@@ -117,4 +117,5 @@ const PlanPage: NextPage = () => {
     </div>
   );
 };
-export default PlanPage;
+
+export default Plan;

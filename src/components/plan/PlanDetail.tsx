@@ -18,7 +18,7 @@ const rowClassName = (index: number, length: number) => {
   return classes.join(" ");
 };
 
-export const Plan = ({ plan, disabled }: TProps) => {
+export const PlanDetail = ({ plan, disabled }: TProps) => {
   return (
     <div className={`linear duration-1000 ${disabled ? "opacity-20" : ""}`}>
       <div className="border-solid border border-themeGray font-semibold rounded-md mx-3 tracking-wider">
