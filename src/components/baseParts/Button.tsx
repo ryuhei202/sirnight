@@ -9,9 +9,10 @@ type Props = {
 export const Button = ({ children, className, border }: Props) => {
   let classes: string[] = [
     "inline-block",
-    "p-3",
+    "py-3",
+    "mx-3",
     "text-center",
-    "w-full",
+    "w-[calc(100%_-_24px)]",
     "font-medium",
     "text-base",
     "relative",

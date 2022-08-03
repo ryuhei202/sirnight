@@ -23,7 +23,7 @@ export const ReviewCard = ({ customer, content, type }: TProps) => {
             {content}
           </p>
           <div className="absolute right-0 w-[15%]">
-            <img src={customer.imagePath} />
+            <img src={customer.imagePath} alt="customer-icon" />
             <div className="mt-3">
               <p className="text-xs text-center">
                 {customer.age + "代"}
@@ -36,7 +36,7 @@ export const ReviewCard = ({ customer, content, type }: TProps) => {
       ) : (
         <>
           <div className="absolute left-0 text-center w-[15%]">
-            <img src={customer.imagePath} />
+            <img src={customer.imagePath} alt="customer-icon" />
             <div className="mt-3">
               <p className="text-xs">
                 {customer.age + "代"}
@@ -53,4 +53,3 @@ export const ReviewCard = ({ customer, content, type }: TProps) => {
     </div>
   );
 };
-// typeがrightのものに対してはjustify-endにしてからpositionRelativeを変更
