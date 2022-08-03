@@ -1,9 +1,10 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Link from "next/link";
 import React, { useState } from "react";
 import { Button } from "../../src/components/baseParts/Button";
+import { Header } from "../../src/components/plan/Header";
 import { Plan } from "../../src/components/plan/Plan";
+import { FooterMenu } from "../../src/components/top/FooterMenu";
 import {
   LIGHT_PLAN,
   PREMIUM_PLAN,
@@ -12,16 +13,17 @@ import {
 
 const PlanPage: NextPage = () => {
   const [selectedPlanId, setSelectedPlanId] = useState<number>(LIGHT_PLAN.id);
+  const plans = [LIGHT_PLAN, STANDARD_PLAN, PREMIUM_PLAN];
   const carousel =
     typeof document !== "undefined"
       ? document.getElementById("carousel")
       : null;
 
-  const onClickLabel = (index: number) => {
+  const onClickLabel = (index: number, planId: number) => {
     if (typeof carousel?.scrollLeft === "undefined") return;
 
     carousel.scrollLeft = (carousel.offsetWidth as number) * index;
-    setSelectedPlanId(index);
+    setSelectedPlanId(planId);
   };
 
   const onScroll = (e: React.UIEvent<HTMLElement>) => {
@@ -45,30 +47,32 @@ const PlanPage: NextPage = () => {
           content="メンズファッションレンタルサービスUWear"
         />
         <link rel="icon" href="/favicon/favicon_head.png" />
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="//fonts.googleapis.com/css?family=Lora"
+        />
       </Head>
       <div
         id="container"
         className="h-full bg-clay sm:w-[500px] inset-0 text-themeGray"
       >
-        <div className="relative w-full p-2 text-[#979B9A]">
-          <Link href="/">トップ</Link>
-          <span>料金プラン</span>
-        </div>
-        <h2 className="text-3xl my-10 text-center font-bold">料金プラン</h2>
+        <Header />
+        <h2 className="text-4xl my-20 text-center font-bold">料金プラン</h2>
         <div>
-          <div id="tab" className="flex h-[48px] relative mb-8">
-            {[LIGHT_PLAN, STANDARD_PLAN, PREMIUM_PLAN].map((plan, index) => (
+          <div id="tab" className="flex h-12 relative mb-8">
+            {plans.map((plan, index) => (
               <div
                 className={`w-1/3 flex justify-center items-center cursor-pointer mx-3 ${
                   selectedPlanId === plan.id
                     ? "border-b-2 border-themeGray"
                     : "border-b border-[#C7C9C4]"
                 }`}
-                onClick={() => onClickLabel(plan.id)}
+                onClick={() => onClickLabel(index, plan.id)}
                 key={index}
               >
                 <p
-                  className={`cursor-pointer ${
+                  className={`font-semibold text-lg sm:text-xl cursor-pointer ${
                     selectedPlanId === plan.id ? "opacity-100" : "opacity-20"
                   }`}
                 >
@@ -80,20 +84,36 @@ const PlanPage: NextPage = () => {
 
           <div
             id="carousel"
-            className="flex overflow-x-auto w-full snap-mandatory snap-x hidden-scrollbar"
+            className="flex overflow-x-auto snap-mandatory snap-x hidden-scrollbar"
             onScroll={onScroll}
           >
-            {[LIGHT_PLAN, STANDARD_PLAN, PREMIUM_PLAN].map((plan, index) => (
+            {plans.map((plan, index) => (
               <div
-                className="snap-always snap-center w-full h-full shrink-0"
+                className={`snap-always snap-center w-[90%] h-full shrink-0 ${
+                  index === 0 && "ml-[5%]"
+                } ${index === plans.length - 1 && "mr-[5%]"}`}
                 key={index}
               >
-                <Plan plan={plan} />
+                <Plan plan={plan} disabled={selectedPlanId !== plan.id} />
               </div>
             ))}
           </div>
-          <Button className="font-semibold">このプランではじめる</Button>
+          <div className="mx-[7%] pb-36 text-xs text-[#979B9A]">
+            <div className="flex">
+              <span className="w-[8%]">※</span>
+              <p>
+                コーデのご利用シーンにジャケットorライトアウターが不要な場合、トップスを1点追加。（スタンダード：4アイテム、プレミアム7アイテム）
+              </p>
+            </div>
+            <div className="flex">
+              <span className="w-[8%]">※</span>
+              <p>
+                お申込み後に、配送タイミングを「毎月配送」から変更することが可能です。その場合は、現在のコーデを持ち続けることとなり、毎月の金額がディスカウントされていきます。
+              </p>
+            </div>
+          </div>
         </div>
+        <FooterMenu />
       </div>
     </div>
   );

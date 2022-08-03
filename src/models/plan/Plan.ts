@@ -47,7 +47,7 @@ export const PREMIUM_PLAN = {
   scenes: [
     "パーティー",
     "商談",
-    "高級料理店",
+    "高級レストラン",
     { main: "婚活", sub: "お見合い/デート" },
   ],
   coordinateNum: 2,
