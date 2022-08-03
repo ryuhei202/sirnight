@@ -11,11 +11,16 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@types/react-query": "^1.2.9",
+    "axios": "^0.27.2",
+    "axios-case-converter": "^0.9.0",
+    "env-cmd": "^10.1.0",
     "next": "12.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.34.0",
-    "react-intersection-observer": "^9.3.5"
+    "react-intersection-observer": "^9.3.5",
+    "react-query": "^3.39.1"
   },
   "devDependencies": {
     "@babel/core": "^7.18.6",
