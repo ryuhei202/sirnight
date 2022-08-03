@@ -85,6 +85,9 @@ export const BaseForms = ({ onSubmit }: TProps) => {
             setErrors(data.data.errors);
           }
         },
+        onError: () => {
+          setErrors(["予期せぬエラーが発生しました"]);
+        },
       });
     }
   };
@@ -99,9 +102,9 @@ export const BaseForms = ({ onSubmit }: TProps) => {
           <p>*の項目は入力必須です</p>
           <p>同じLINEアカウントでは複数登録できません</p>
         </div>
-        <div>
+        <div className="mt-12">
           {errors.map((error) => (
-            <p className="bg-[#CB5F58] text-clay">{error}</p>
+            <p className="bg-[#CB5F58] text-clay p-3">{error}</p>
           ))}
         </div>
         <div className="pt-12">
