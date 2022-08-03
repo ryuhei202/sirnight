@@ -61,6 +61,12 @@ export const BaseForms = ({ onSubmit }: TProps) => {
     !!birthMonth &&
     !!birthDay;
 
+  // 年と月から何日あるか取得する
+  const getDate = () => {
+    if (birthYear === undefined || birthMonth === undefined) return 0;
+    return new Date(birthYear, birthMonth, 0).getDate();
+  };
+
   const handleSubmit = () => {
     if (canRegistered) {
       const params = {
@@ -191,7 +197,11 @@ export const BaseForms = ({ onSubmit }: TProps) => {
                 placeholder="日"
                 className="ml-2"
               >
-                {yearOptions}
+                {[...Array(getDate())].map((_, i) => (
+                  <option key={i + 1} value={i + 1}>
+                    {i + 1}
+                  </option>
+                ))}
               </DropdownMenuAlt>
             </div>
           </div>
