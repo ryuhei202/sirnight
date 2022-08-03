@@ -32,11 +32,11 @@ export const FooterMenu = () => {
             )}
           </button>
         </div>
-        <Link href="/plan">
-          <div className="h-full w-1/4 bg-themeGray text-clay text-sm flex justify-center items-center cursor-pointer">
+        <div className="h-full w-1/4 bg-themeGray text-clay text-sm flex justify-center items-center cursor-pointer">
+          <Link href="/plan">
             <a className="w-[77%] text-center">料金プラン</a>
-          </div>
-        </Link>
+          </Link>
+        </div>
       </div>
     </>
   );
