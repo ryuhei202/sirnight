@@ -1,4 +1,5 @@
 type TProps = {
+  id?: string;
   value: string;
   onChange: React.ChangeEventHandler<HTMLSelectElement>;
   placeholder?: string;
@@ -6,6 +7,7 @@ type TProps = {
   className?: string;
 };
 export const DropdownMenuAlt = ({
+  id,
   value,
   onChange,
   placeholder,
@@ -14,6 +16,7 @@ export const DropdownMenuAlt = ({
 }: TProps) => {
   return (
     <select
+      id={id ?? ""}
       className={`p-3 w-full rounded bg-clay border-solid border-[1px] border-themeGray ${
         className ?? ""
       }`}
