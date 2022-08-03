@@ -1,10 +1,48 @@
+import { AxiosResponse } from "axios";
 import Link from "next/link";
 import { useState } from "react";
+import { TValidationLoginResponse } from "../../api/validations/TValidationLoginResponse";
+import { useValidationsLogin } from "../../api/validations/useValidationsLogin";
 import { TextAreaAlt } from "../baseParts/inputs/TextAreaAlt";
 import { Stepper } from "./Stepper";
 
-export const LoginForms = () => {
+type TProps = {
+  readonly onSubmit: () => void;
+};
+
+export const LoginForms = ({ onSubmit }: TProps) => {
+  const [email, setEmail] = useState<string>();
+  const [password, setPassword] = useState<string>();
   const [isVisible, setIsVisible] = useState<Boolean>(false);
+  const [errors, setErrors] = useState<string[]>([]);
+
+  const { mutate, isLoading } = useValidationsLogin();
+
+  const canRegistered = !!email && !!password;
+
+  const handleSubmit = () => {
+    if (canRegistered) {
+      mutate(
+        { email, password },
+        {
+          onSuccess: (data: AxiosResponse<TValidationLoginResponse>) => {
+            if (data.data.errors.length > 0) {
+              setErrors(data.data.errors);
+              return;
+            }
+            if (data.data.isRegistered) {
+              window.location.href = `${process.env.NEXT_PUBLIC_BASE_URL}/mypage`;
+              return;
+            }
+            onSubmit();
+          },
+          onError: () => {
+            setErrors(["予期せぬエラーが発生しました"]);
+          },
+        }
+      );
+    }
+  };
 
   return (
     <div className="h-full">
@@ -14,34 +52,39 @@ export const LoginForms = () => {
       <div className="px-12 mt-12">
         <div className="text-sm text-[#CB5F58]">
           <p>*の項目は入力必須です</p>
+          <p>同じLINEアカウントでは複数登録できません</p>
         </div>
-        <div></div>
+        <div>
+          {errors.map((error) => (
+            <p className="bg-[#CB5F58] text-clay p-3">{error}</p>
+          ))}
+        </div>
         <div className="pt-12 flex flex-col">
           <div className="pt-8">
-            <p className="pb-3">
+            <label htmlFor="email">
               メールアドレス <span className="text-[#CB5F58]">*</span>
-            </p>
+            </label>
             <input
+              id="email"
               type="email"
               placeholder="info@leeap.jp"
-              className="p-3 w-full rounded-md border border-themeGray bg-clay resize-none"
-              onChange={() => {}}
-              value=""
+              className="p-3 mt-3 w-full rounded-md border border-themeGray bg-clay resize-none"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
             ></input>
           </div>
           <div className="relative pt-8">
-            <p className="pb-3">
+            <label>
               パスワード <span className="text-[#CB5F58]">*</span>
-            </p>
+            </label>
             {isVisible ? (
               <>
-                <input
-                  type="password"
+                <TextAreaAlt
+                  onChange={(e) => setPassword(e.target.value)}
+                  value={password ?? ""}
                   placeholder="半角英数字・記号、8~16文字以内"
-                  onChange={() => {}}
-                  value={""}
-                  className="mb-[6px] p-3 w-full rounded-md border border-themeGray bg-clay resize-none"
-                ></input>
+                  className="mt-3"
+                />
                 <div
                   onClick={() => setIsVisible(false)}
                   className="absolute right-[10px] bottom-[18px]"
@@ -69,11 +112,13 @@ export const LoginForms = () => {
               </>
             ) : (
               <>
-                <TextAreaAlt
-                  value={""}
-                  onChange={() => {}}
+                <input
+                  type="password"
                   placeholder="半角英数字・記号、8~16文字以内"
-                />
+                  onChange={(e) => setPassword(e.target.value)}
+                  value={password}
+                  className="mb-[6px] mt-3 p-3 w-full rounded-md border border-themeGray bg-clay resize-none"
+                ></input>
                 <div
                   onClick={() => setIsVisible(true)}
                   className="absolute right-[10px] bottom-[18px]"
@@ -96,7 +141,13 @@ export const LoginForms = () => {
               </>
             )}
           </div>
-          <button className="relative inline-block p-3 text-center w-full font-medium text-base mt-12 rounded-full bg-themeGray text-slate-200">
+          <button
+            onClick={handleSubmit}
+            disabled={!canRegistered || isLoading}
+            className={`relative inline-block p-3 text-center w-full font-medium text-base mt-12 rounded-full bg-themeGray text-slate-200  ${
+              (!canRegistered || isLoading) && "bg-[#C8C9C3]"
+            }`}
+          >
             お支払い情報の入力へ
           </button>
           <div className="text-center text-xs pt-6 pb-24">

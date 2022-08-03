@@ -10,7 +10,7 @@ export const usePostRequest = <T>(
     path,
     (params: T) =>
       customAxios(preservedKeys).post(
-        `${process.env.REACT_APP_HOST_URL}/${path}`,
+        `${process.env.NEXT_PUBLIC_HOST_URL}/sirnight/${path}`,
         { ...params }
       )
   );

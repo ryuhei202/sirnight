@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { useState } from "react";
 import { BaseForms } from "../../src/components/register/BaseForms";
+import { LoginForms } from "../../src/components/register/LoginForms";
 
 const Register: NextPage = () => {
   return (
@@ -16,10 +16,11 @@ const Register: NextPage = () => {
       </Head>
       <div
         id="container"
-        className="h-full bg-clay sm:w-[500px] inset-0 text-themeGray"
+        className="h-full min-h-screen bg-clay sm:w-[500px] inset-0 text-themeGray"
       >
         <h2 className="text-3xl font-bold text-center py-12">会員情報登録</h2>
-        <BaseForms />
+        {/* <BaseForms /> */}
+        <LoginForms />
       </div>
     </div>
   );
