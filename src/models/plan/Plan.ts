@@ -1,4 +1,5 @@
 export const LIGHT_PLAN = {
+  id: 11,
   name: "ライト",
   price: {
     withTax: 7480,
@@ -11,6 +12,7 @@ export const LIGHT_PLAN = {
 } as const;
 
 export const STANDARD_PLAN = {
+  id: 12,
   name: "スタンダード",
   price: {
     withTax: 10780,
@@ -31,6 +33,7 @@ export const STANDARD_PLAN = {
 };
 
 export const PREMIUM_PLAN = {
+  id: 13,
   name: "プレミアム",
   price: {
     withTax: 16280,
