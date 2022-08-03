@@ -63,7 +63,7 @@ export const LoginForms = ({ onSubmit }: TProps) => {
           <p>*の項目は入力必須です</p>
           <p>同じLINEアカウントでは複数登録できません</p>
         </div>
-        <div>
+        <div className="mt-12">
           {errors.map((error) => (
             <p className="bg-[#CB5F58] text-clay p-3">{error}</p>
           ))}
