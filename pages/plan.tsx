@@ -1,15 +1,14 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import React, { useState } from "react";
-import { Button } from "../../src/components/baseParts/Button";
-import { Header } from "../../src/components/plan/Header";
-import { Plan } from "../../src/components/plan/Plan";
-import { FooterMenu } from "../../src/components/top/FooterMenu";
+import { Header } from "../src/components/plan/Header";
+import { Plan } from "../src/components/plan/Plan";
+import { FooterMenu } from "../src/components/top/FooterMenu";
 import {
   LIGHT_PLAN,
   PREMIUM_PLAN,
   STANDARD_PLAN,
-} from "../../src/models/plan/Plan";
+} from "../src/models/plan/Plan";
 
 const PlanPage: NextPage = () => {
   const [selectedPlanId, setSelectedPlanId] = useState<number>(LIGHT_PLAN.id);
