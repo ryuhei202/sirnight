@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        lora: ["Lora"],
+      },
       colors: {
         themeGray: "#475156",
         clay: "#e8e7df",

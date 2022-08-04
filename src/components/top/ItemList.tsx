@@ -15,7 +15,7 @@ export const ItemList = ({ type }: TProps) => {
         {[...Array(type === "tops" ? 3 : 4)].map((_, index) => (
           <li key={index} className="mx-2">
             <img
-              src={`/images/items/${type}/${index + 1}.svg`}
+              src={`/images/items/${type}/${index + 1}.png`}
               alt={`items-${type}-${index + 1}`}
               key={index}
             />
@@ -32,7 +32,7 @@ export const ItemList = ({ type }: TProps) => {
         {[...Array(type === "tops" ? 3 : 4)].map((_, index) => (
           <li key={index} className="mx-2">
             <img
-              src={`/images/items/${type}/${index + 1}.svg`}
+              src={`/images/items/${type}/${index + 1}.png`}
               alt={`items-${type}-${index + 1}`}
               key={index}
             />
