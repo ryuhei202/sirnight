@@ -14,7 +14,7 @@ type TValidationsPayment = {
 
 export type TValidationsPaymentParams = {
   readonly cardToken: string;
-  readonly isAgree: boolean;
+  readonly memberId: number;
   readonly serialCode?: string;
 };
 
