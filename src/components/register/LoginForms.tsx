@@ -3,15 +3,17 @@ import Link from "next/link";
 import { useState } from "react";
 import { TValidationLoginResponse } from "../../api/validations/TValidationLoginResponse";
 import { useValidationsLogin } from "../../api/validations/useValidationsLogin";
+import { TLoginRegisterData } from "../../models/register/TLoginRegisterData";
 import { FrontValidText } from "../baseParts/inputs/FrontValidText";
 import { TextAreaAlt } from "../baseParts/inputs/TextAreaAlt";
 import { Stepper } from "./Stepper";
 
 type TProps = {
-  readonly onSubmit: () => void;
+  readonly onSubmit: ({ email, password }: TLoginRegisterData) => void;
+  readonly onBack: () => void;
 };
 
-export const LoginForms = ({ onSubmit }: TProps) => {
+export const LoginForms = ({ onSubmit, onBack }: TProps) => {
   const [email, setEmail] = useState<string>();
   const [password, setPassword] = useState<string>();
   const [isVisible, setIsVisible] = useState<Boolean>(false);
@@ -43,7 +45,10 @@ export const LoginForms = ({ onSubmit }: TProps) => {
               window.location.href = `${process.env.NEXT_PUBLIC_BASE_URL}/mypage`;
               return;
             }
-            onSubmit();
+            onSubmit({
+              email,
+              password,
+            });
           },
           onError: () => {
             setErrors(["予期せぬエラーが発生しました"]);
@@ -65,7 +70,7 @@ export const LoginForms = ({ onSubmit }: TProps) => {
         </div>
         <div className="mt-12">
           {errors.map((error) => (
-            <p className="bg-[#CB5F58] text-clay p-3">{error}</p>
+            <p className="bg-[#CB5F58] text-sm text-clay p-3 my-1">{error}</p>
           ))}
         </div>
         <div className="pt-12 flex flex-col">
@@ -165,12 +170,10 @@ export const LoginForms = ({ onSubmit }: TProps) => {
           >
             お支払い情報の入力へ
           </button>
-          <div className="text-center text-xs pt-6 pb-24">
-            <Link href="/">
-              <span className="border-b-[1px] border-themeGray">
-                基本情報入力に戻る
-              </span>
-            </Link>
+          <div onClick={onBack} className="text-center text-xs pt-6 pb-24">
+            <span className="border-b-[1px] border-themeGray">
+              基本情報入力に戻る
+            </span>
           </div>
         </div>
       </div>

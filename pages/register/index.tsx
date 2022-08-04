@@ -6,15 +6,20 @@ import { LoginForms } from "../../src/components/register/LoginForms";
 import { PaymentForms } from "../../src/components/register/PaymentForms";
 import { useRegisterIndexHandler } from "../../src/hooks/register/useRegisterIndexHandler";
 import { TBaseRegisterData } from "../../src/models/register/TBaseRegisterData";
+import { TLoginRegisterData } from "../../src/models/register/TLoginRegisterData";
 
 const Register: NextPage = () => {
   const [step, setStep] = useState<"base" | "login" | "payment">("base");
   const [baseData, setBaseData] = useState<TBaseRegisterData>();
+  const [loginData, setLoginData] = useState<TLoginRegisterData>();
 
-  const { handleSubmitBase } = useRegisterIndexHandler({
-    setStep,
-    setBaseData,
-  });
+  const { handleSubmitBase, handleSubmitLogin, handleBack } =
+    useRegisterIndexHandler({
+      step,
+      setStep,
+      setBaseData,
+      setLoginData,
+    });
   let forms;
   switch (step) {
     case "base": {
@@ -22,7 +27,7 @@ const Register: NextPage = () => {
       break;
     }
     case "login": {
-      forms = <LoginForms />;
+      forms = <LoginForms onSubmit={handleSubmitLogin} onBack={handleBack} />;
       break;
     }
     case "payment": {
