@@ -1,16 +1,20 @@
 import { TBaseRegisterData } from "../../models/register/TBaseRegisterData";
 import { TLoginRegisterData } from "../../models/register/TLoginRegisterData";
+import { TPaymentRegisterData } from "../../models/register/TPaymentRegisterData";
 
 type TArgs = {
-  readonly step: "base" | "login" | "payment";
+  readonly step: "base" | "login" | "payment" | "confirm";
   readonly setStep: React.Dispatch<
-    React.SetStateAction<"base" | "login" | "payment">
+    React.SetStateAction<"base" | "login" | "payment" | "confirm">
   >;
   readonly setBaseData: React.Dispatch<
     React.SetStateAction<TBaseRegisterData | undefined>
   >;
   readonly setLoginData: React.Dispatch<
     React.SetStateAction<TLoginRegisterData | undefined>
+  >;
+  readonly setPaymentData: React.Dispatch<
+    React.SetStateAction<TPaymentRegisterData | undefined>
   >;
 };
 
@@ -25,7 +29,16 @@ type TRegisterIndexHandler = {
     weight,
     prefecture,
   }: TBaseRegisterData) => void;
-  readonly handleSubmitLogin: ({ email, password }: TLoginRegisterData) => void;
+  readonly handleSubmitLogin: ({
+    email,
+    password,
+    memberId,
+  }: TLoginRegisterData) => void;
+  readonly handleSubmitPayment: ({
+    customerCardId,
+    serialCode,
+    maskedCardNumber,
+  }: TPaymentRegisterData) => void;
   readonly handleBack: () => void;
 };
 
@@ -34,6 +47,7 @@ export const useRegisterIndexHandler = ({
   setStep,
   setBaseData,
   setLoginData,
+  setPaymentData,
 }: TArgs): TRegisterIndexHandler => {
   const handleSubmitBase = ({
     firstName,
@@ -58,9 +72,26 @@ export const useRegisterIndexHandler = ({
     setStep("login");
   };
 
-  const handleSubmitLogin = ({ email, password }: TLoginRegisterData) => {
-    setLoginData({ email, password });
+  const handleSubmitLogin = ({
+    email,
+    password,
+    memberId,
+  }: TLoginRegisterData) => {
+    setLoginData({ email, password, memberId });
     setStep("payment");
+  };
+
+  const handleSubmitPayment = ({
+    customerCardId,
+    serialCode,
+    maskedCardNumber,
+  }: TPaymentRegisterData) => {
+    setPaymentData({
+      customerCardId,
+      serialCode,
+      maskedCardNumber,
+    });
+    setStep("confirm");
   };
 
   const handleBack = () => {
@@ -69,8 +100,17 @@ export const useRegisterIndexHandler = ({
         setBaseData(undefined);
         setStep("base");
       }
+      case "payment": {
+        setLoginData(undefined);
+        setStep("login");
+      }
     }
   };
 
-  return { handleSubmitBase, handleSubmitLogin, handleBack };
+  return {
+    handleSubmitBase,
+    handleSubmitLogin,
+    handleSubmitPayment,
+    handleBack,
+  };
 };

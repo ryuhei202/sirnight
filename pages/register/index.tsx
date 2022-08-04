@@ -7,19 +7,28 @@ import { PaymentForms } from "../../src/components/register/PaymentForms";
 import { useRegisterIndexHandler } from "../../src/hooks/register/useRegisterIndexHandler";
 import { TBaseRegisterData } from "../../src/models/register/TBaseRegisterData";
 import { TLoginRegisterData } from "../../src/models/register/TLoginRegisterData";
+import { TPaymentRegisterData } from "../../src/models/register/TPaymentRegisterData";
 
 const Register: NextPage = () => {
-  const [step, setStep] = useState<"base" | "login" | "payment">("base");
+  const [step, setStep] =
+    useState<"base" | "login" | "payment" | "confirm">("base");
   const [baseData, setBaseData] = useState<TBaseRegisterData>();
   const [loginData, setLoginData] = useState<TLoginRegisterData>();
+  const [paymentData, setPaymentData] = useState<TPaymentRegisterData>();
 
-  const { handleSubmitBase, handleSubmitLogin, handleBack } =
-    useRegisterIndexHandler({
-      step,
-      setStep,
-      setBaseData,
-      setLoginData,
-    });
+  const {
+    handleSubmitBase,
+    handleSubmitLogin,
+    handleSubmitPayment,
+    handleBack,
+  } = useRegisterIndexHandler({
+    step,
+    setStep,
+    setBaseData,
+    setLoginData,
+    setPaymentData,
+  });
+
   let forms;
   switch (step) {
     case "base": {
@@ -31,7 +40,15 @@ const Register: NextPage = () => {
       break;
     }
     case "payment": {
-      forms = <PaymentForms />;
+      if (loginData === undefined) {
+        throw Error("ログイン情報を入力していません");
+      }
+      forms = (
+        <PaymentForms
+          memberId={loginData.memberId}
+          onSubmit={handleSubmitPayment}
+        />
+      );
       break;
     }
   }

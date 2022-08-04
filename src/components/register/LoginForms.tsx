@@ -1,5 +1,4 @@
 import { AxiosResponse } from "axios";
-import Link from "next/link";
 import { useState } from "react";
 import { TValidationLoginResponse } from "../../api/validations/TValidationLoginResponse";
 import { useValidationsLogin } from "../../api/validations/useValidationsLogin";
@@ -9,7 +8,11 @@ import { TextAreaAlt } from "../baseParts/inputs/TextAreaAlt";
 import { Stepper } from "./Stepper";
 
 type TProps = {
-  readonly onSubmit: ({ email, password }: TLoginRegisterData) => void;
+  readonly onSubmit: ({
+    email,
+    password,
+    memberId,
+  }: TLoginRegisterData) => void;
   readonly onBack: () => void;
 };
 
@@ -37,21 +40,30 @@ export const LoginForms = ({ onSubmit, onBack }: TProps) => {
         { email, password },
         {
           onSuccess: (data: AxiosResponse<TValidationLoginResponse>) => {
+            if (data.data.isRegistered) {
+              window.location.href = `${process.env.NEXT_PUBLIC_BASE_URL}/mypage`;
+              return;
+            }
             if (data.data.errors.length > 0) {
               setErrors(data.data.errors);
               return;
             }
-            if (data.data.isRegistered) {
-              window.location.href = `${process.env.NEXT_PUBLIC_BASE_URL}/mypage`;
+            if (data.data.memberId === null) {
+              setErrors([
+                "予期せぬエラーが発生しました。お手数ですが再度入力お願い致します",
+              ]);
               return;
             }
             onSubmit({
               email,
               password,
+              memberId: data.data.memberId,
             });
           },
           onError: () => {
-            setErrors(["予期せぬエラーが発生しました"]);
+            setErrors([
+              "予期せぬエラーが発生しました。お手数ですが再度入力お願い致します",
+            ]);
           },
         }
       );

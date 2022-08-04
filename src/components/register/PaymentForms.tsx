@@ -3,14 +3,19 @@ import Link from "next/link";
 import { useState } from "react";
 import { TValidationPaymentResponse } from "../../api/validations/TValidationPaymentResponse";
 import { useValidationsPayment } from "../../api/validations/useValidationsPayment";
+import { TPaymentRegisterData } from "../../models/register/TPaymentRegisterData";
 import { Stepper } from "./Stepper";
-import Script from "next/script";
 
 type TProps = {
   memberId: number;
+  onSubmit: ({
+    customerCardId,
+    serialCode,
+    maskedCardNumber,
+  }: TPaymentRegisterData) => void;
 };
 
-export const PaymentForms = ({ memberId }: TProps) => {
+export const PaymentForms = ({ memberId, onSubmit }: TProps) => {
   const [cardNumber, setCardNumber] = useState<number>();
   const [expMonth, setExpMonth] = useState<number>();
   const [expYear, setExpYear] = useState<number>();
@@ -18,7 +23,6 @@ export const PaymentForms = ({ memberId }: TProps) => {
   const [cardName, setCardName] = useState<string>();
   const [serialCode, setSerialCode] = useState<string>();
   const [isAgree, setIsAgree] = useState<boolean>(false);
-
   const [errors, setErrors] = useState<string[]>([]);
   const { mutate, isLoading } = useValidationsPayment();
 
@@ -39,24 +43,35 @@ export const PaymentForms = ({ memberId }: TProps) => {
     }
     if (canRegistered && paygentRes.tokenizedCardObject) {
       clearCardInfo();
-      mutate(
-        {
-          cardToken: paygentRes.tokenizedCardObject.token,
-          memberId,
-          serialCode,
+      const params = {
+        cardToken: paygentRes.tokenizedCardObject.token,
+        memberId,
+        serialCode,
+      };
+      mutate(params, {
+        onSuccess: (data: AxiosResponse<TValidationPaymentResponse>) => {
+          if (data.data.errors.length > 0) {
+            setErrors(data.data.errors);
+            return;
+          }
+          if (data.data.customerCardId === null) {
+            setErrors([
+              "予期せぬエラーが発生しました。お手数ですが再度入力お願い致します",
+            ]);
+            return;
+          }
+          if (paygentRes.tokenizedCardObject) {
+            onSubmit({
+              customerCardId: data.data.customerCardId,
+              serialCode,
+              maskedCardNumber: paygentRes.tokenizedCardObject.maskedCardNumber,
+            });
+          }
         },
-        {
-          onSuccess: (data: AxiosResponse<TValidationPaymentResponse>) => {
-            if (data.data.errors.length <= 0) {
-            } else {
-              setErrors(data.data.errors);
-            }
-          },
-          onError: () => {
-            setErrors(["予期せぬエラーが発生しました"]);
-          },
-        }
-      );
+        onError: () => {
+          setErrors(["予期せぬエラーが発生しました"]);
+        },
+      });
     }
   };
 
