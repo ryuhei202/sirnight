@@ -1,15 +1,37 @@
-import type { NextPage } from "next";
+import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { BaseForms } from "../../src/components/register/BaseForms";
 import { LoginForms } from "../../src/components/register/LoginForms";
 import { PaymentForms } from "../../src/components/register/PaymentForms";
+import { RegisterConfirm } from "../../src/components/register/RegisterConfirm";
 import { useRegisterIndexHandler } from "../../src/hooks/register/useRegisterIndexHandler";
 import { TBaseRegisterData } from "../../src/models/register/TBaseRegisterData";
 import { TLoginRegisterData } from "../../src/models/register/TLoginRegisterData";
 import { TPaymentRegisterData } from "../../src/models/register/TPaymentRegisterData";
 
-const Register: NextPage = () => {
+export const getStaticPaths = async () => {
+  return {
+    paths: [
+      { params: { planId: "11" } },
+      { params: { planId: "12" } },
+      { params: { planId: "13" } },
+    ],
+    fallback: false,
+  };
+};
+
+export const getStaticProps = async ({
+  params,
+}: {
+  params: { planId: "11" | "12" | "13" };
+}) => {
+  const { planId } = params;
+  return { props: { planId } };
+};
+
+const Register = ({ planId }: { planId: "11" | "12" | "13" }) => {
   const [step, setStep] =
     useState<"base" | "login" | "payment" | "confirm">("base");
   const [baseData, setBaseData] = useState<TBaseRegisterData>();
@@ -47,6 +69,39 @@ const Register: NextPage = () => {
         <PaymentForms
           memberId={loginData.memberId}
           onSubmit={handleSubmitPayment}
+          onBack={handleBack}
+        />
+      );
+      break;
+    }
+    case "confirm": {
+      if (baseData === undefined) {
+        throw Error("基本情報を入力していません");
+      }
+      if (loginData === undefined) {
+        throw Error("ログイン情報を入力していません");
+      }
+      if (paymentData === undefined) {
+        throw Error("お支払い情報を入力していません");
+      }
+      forms = (
+        <RegisterConfirm
+          memberId={loginData.memberId}
+          planId={Number(planId)}
+          firstName={baseData.firstName}
+          lastName={baseData.lastName}
+          firstNameKana={baseData.firstNameKana}
+          lastNameKana={baseData.lastNameKana}
+          birthDay={baseData.birthDay}
+          height={baseData.height}
+          weight={baseData.weight}
+          prefecture={baseData.prefecture}
+          email={loginData.email}
+          password={loginData.password}
+          maskedCardNumber={paymentData.maskedCardNumber}
+          serialCode={paymentData.serialCode}
+          customerCardId={paymentData.customerCardId}
+          onBack={handleBack}
         />
       );
       break;

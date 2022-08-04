@@ -1,10 +1,11 @@
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { useMembersCreate } from "../../api/members/useMembersCreate";
 import { findPlan } from "../../models/shared/TPlans";
 
 type TProps = {
   readonly memberId: number;
-  readonly planId: 11 | 12 | 13;
+  readonly planId: number;
   readonly firstName: string;
   readonly lastName: string;
   readonly firstNameKana: string;
@@ -18,8 +19,7 @@ type TProps = {
   readonly maskedCardNumber: string;
   readonly serialCode?: string;
   readonly customerCardId: number;
-  readonly onSubmit: () => void;
-  readonly onCancel: () => void;
+  readonly onBack: () => void;
 };
 
 export const RegisterConfirm = ({
@@ -38,9 +38,9 @@ export const RegisterConfirm = ({
   maskedCardNumber,
   serialCode,
   customerCardId,
-  onSubmit,
-  onCancel,
+  onBack,
 }: TProps) => {
+  const router = useRouter();
   const [error, setError] = useState<string>();
   const { mutate, isLoading } = useMembersCreate();
 
@@ -64,7 +64,7 @@ export const RegisterConfirm = ({
     };
     mutate(params, {
       onSuccess: () => {
-        onSubmit();
+        router.push("/register/thanks");
       },
       onError: () => {
         setError("予期せぬエラーが発生しました");
@@ -156,7 +156,7 @@ export const RegisterConfirm = ({
         >
           会員登録をする
         </button>
-        <div onClick={onCancel} className="text-center text-xs pt-6 pb-24">
+        <div onClick={onBack} className="text-center text-xs pt-6 pb-24">
           <span className="border-b-[1px] border-themeGray">
             お支払い登録に戻る
           </span>

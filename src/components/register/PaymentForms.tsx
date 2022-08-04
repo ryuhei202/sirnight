@@ -13,9 +13,10 @@ type TProps = {
     serialCode,
     maskedCardNumber,
   }: TPaymentRegisterData) => void;
+  onBack: () => void;
 };
 
-export const PaymentForms = ({ memberId, onSubmit }: TProps) => {
+export const PaymentForms = ({ memberId, onSubmit, onBack }: TProps) => {
   const [cardNumber, setCardNumber] = useState<number>();
   const [expMonth, setExpMonth] = useState<number>();
   const [expYear, setExpYear] = useState<number>();
@@ -252,8 +253,13 @@ export const PaymentForms = ({ memberId, onSubmit }: TProps) => {
               (!canRegistered || isLoading) && "bg-[#C8C9C3]"
             }`}
           >
-            ログイン情報の入力へ
+            確認画面へ
           </button>
+          <div onClick={onBack} className="text-center text-xs pt-6 pb-24">
+            <span className="border-b-[1px] border-themeGray">
+              基本情報入力に戻る
+            </span>
+          </div>
         </div>
       </div>
     </div>

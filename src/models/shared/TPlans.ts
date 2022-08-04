@@ -22,7 +22,7 @@ export const PLAN = {
 } as const;
 
 export const findPlan = (
-  planId: 11 | 12 | 13
+  planId: number
 ): { id: number; name: string; price: number; priceTaxIn: number } => {
   const plan = Object.values(PLAN).find((plan) => plan.id === planId);
   if (plan === undefined) {

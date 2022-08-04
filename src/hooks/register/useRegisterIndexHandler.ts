@@ -104,6 +104,10 @@ export const useRegisterIndexHandler = ({
         setLoginData(undefined);
         setStep("login");
       }
+      case "confirm": {
+        setPaymentData(undefined);
+        setStep("payment");
+      }
     }
   };
 
