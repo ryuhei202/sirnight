@@ -18,7 +18,7 @@ type TArgs = {
   >;
 };
 
-type TRegisterIndexHandler = {
+type TRegisterHandler = {
   readonly handleSubmitBase: ({
     firstName,
     lastName,
@@ -42,13 +42,13 @@ type TRegisterIndexHandler = {
   readonly handleBack: () => void;
 };
 
-export const useRegisterIndexHandler = ({
+export const getRegisterHandler = ({
   step,
   setStep,
   setBaseData,
   setLoginData,
   setPaymentData,
-}: TArgs): TRegisterIndexHandler => {
+}: TArgs): TRegisterHandler => {
   const handleSubmitBase = ({
     firstName,
     lastName,
@@ -99,14 +99,17 @@ export const useRegisterIndexHandler = ({
       case "login": {
         setBaseData(undefined);
         setStep("base");
+        break;
       }
       case "payment": {
         setLoginData(undefined);
         setStep("login");
+        break;
       }
       case "confirm": {
         setPaymentData(undefined);
         setStep("payment");
+        break;
       }
     }
   };
