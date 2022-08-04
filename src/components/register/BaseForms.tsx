@@ -88,7 +88,7 @@ export const BaseForms = ({ onSubmit }: TProps) => {
               lastName,
               firstNameKana,
               lastNameKana,
-              birthDay: new Date(birthYear, birthMonth - birthDay),
+              birthDay: new Date(birthYear, birthMonth, birthDay),
               height,
               weight,
               prefecture,

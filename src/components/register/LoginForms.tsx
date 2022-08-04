@@ -168,7 +168,7 @@ export const LoginForms = ({ onSubmit }: TProps) => {
           <div className="text-center text-xs pt-6 pb-24">
             <Link href="/">
               <span className="border-b-[1px] border-themeGray">
-                サイトに戻る
+                基本情報入力に戻る
               </span>
             </Link>
           </div>
