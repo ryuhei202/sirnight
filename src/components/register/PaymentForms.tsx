@@ -33,8 +33,7 @@ export const PaymentForms = ({ memberId, onSubmit, onBack }: TProps) => {
     result: string;
     tokenizedCardObject?: {
       token: string;
-      maskedCardNumber: string;
-      validUntil: number;
+      masked_card_number: string;
     };
   }) => {
     const SUCCESS = "0000";
@@ -65,7 +64,8 @@ export const PaymentForms = ({ memberId, onSubmit, onBack }: TProps) => {
             onSubmit({
               customerCardId: data.data.customerCardId,
               serialCode,
-              maskedCardNumber: paygentRes.tokenizedCardObject.maskedCardNumber,
+              maskedCardNumber:
+                paygentRes.tokenizedCardObject.masked_card_number,
             });
           }
         },
@@ -249,7 +249,7 @@ export const PaymentForms = ({ memberId, onSubmit, onBack }: TProps) => {
           <button
             onClick={getToken}
             disabled={!canRegistered || isLoading}
-            className={`relative inline-block p-3 mb-24 text-center w-full font-medium text-base mt-12 rounded-full bg-themeGray text-slate-200 ${
+            className={`relative inline-block p-3 text-center w-full font-medium text-base mt-12 rounded-full bg-themeGray text-slate-200 ${
               (!canRegistered || isLoading) && "bg-[#C8C9C3]"
             }`}
           >
