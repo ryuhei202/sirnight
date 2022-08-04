@@ -32,7 +32,6 @@ export const PaymentForms = ({ memberId }: TProps) => {
       validUntil: number;
     };
   }) => {
-    console.log({ paygentRes });
     const SUCCESS = "0000";
     if (paygentRes.result !== SUCCESS) {
       setErrors(["クレジットカードに誤りがあります"]);
