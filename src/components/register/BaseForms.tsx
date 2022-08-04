@@ -4,7 +4,7 @@ import { useState } from "react";
 import { TValidationBaseResponse } from "../../api/validations/TValidationBaseResponse";
 import { useValidationsBase } from "../../api/validations/useValidationsBase";
 import { TBaseRegisterData } from "../../models/register/TBaseRegisterData";
-import { PREFECTURES, TPrefectures } from "../../models/TPrefectures";
+import { PREFECTURES, TPrefectures } from "../../models/shared/TPrefectures";
 import { DropdownMenuAlt } from "../baseParts/inputs/DropdownMenuAlt";
 import { FrontValidText } from "../baseParts/inputs/FrontValidText";
 import { TextAreaAlt } from "../baseParts/inputs/TextAreaAlt";

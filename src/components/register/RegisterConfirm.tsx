@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { useMembersCreate } from "../../api/members/useMembersCreate";
+import { findPlan } from "../../models/shared/TPlans";
 
 type TProps = {
   readonly memberId: number;
-  readonly planId: number;
+  readonly planId: 11 | 12 | 13;
   readonly firstName: string;
   readonly lastName: string;
   readonly firstNameKana: string;
@@ -43,6 +44,9 @@ export const RegisterConfirm = ({
   const [error, setError] = useState<string>();
   const { mutate, isLoading } = useMembersCreate();
 
+  const plan = findPlan(planId);
+  const maskedPassword = password.replace(/\d(?=\d{4})/g, "*");
+
   const handleSubmit = () => {
     const params = {
       memberId,
@@ -80,11 +84,14 @@ export const RegisterConfirm = ({
         <div className="pt-3">
           <div>
             <p className="text-xs">料金プラン</p>
-            <p className="pl-3 font-bold">ライトプラン</p>
+            <p className="pl-3 font-bold">{plan.name}</p>
           </div>
           <div className="pt-2">
             <p className="text-xs">月額料金</p>
-            <p className="pl-3 font-bold">税込¥7,480(¥6,800)</p>
+            <p className="pl-3 font-bold">
+              税込¥{plan.priceTaxIn.toLocaleString()}(¥
+              {plan.price.toLocaleString()})
+            </p>
           </div>
         </div>
       </div>
@@ -93,23 +100,23 @@ export const RegisterConfirm = ({
         <div className="pt-3">
           <div>
             <p className="text-xs">氏名</p>
-            <p className="pl-3 font-bold">江崎 広太(エサキ コウタ)</p>
+            <p className="pl-3 font-bold">{`${lastName} ${firstName}(${lastNameKana} ${firstNameKana})  `}</p>
           </div>
           <div className="pt-2">
             <p className="text-xs">生年月日</p>
-            <p className="pl-3 font-bold">1996/04/10</p>
+            <p className="pl-3 font-bold">{birthDay.toString()}</p>
           </div>
           <div className="pt-2">
             <p className="text-xs">身長</p>
-            <p className="pl-3 font-bold">176cm</p>
+            <p className="pl-3 font-bold">{height}cm</p>
           </div>
           <div className="pt-2">
             <p className="text-xs">体重</p>
-            <p className="pl-3 font-bold">70kg</p>
+            <p className="pl-3 font-bold">{weight}kg</p>
           </div>
           <div className="pt-2">
             <p className="text-xs">住まい</p>
-            <p className="pl-3 font-bold">岐阜県</p>
+            <p className="pl-3 font-bold">{prefecture}</p>
           </div>
         </div>
       </div>
@@ -118,11 +125,11 @@ export const RegisterConfirm = ({
         <div className="pt-3">
           <div>
             <p className="text-xs">ログインID(メールアドレス)</p>
-            <p className="pl-3 font-bold">k-esaki@kiizan-kiizan.co.jp</p>
+            <p className="pl-3 font-bold">{email}</p>
           </div>
           <div className="pt-2">
             <p className="text-xs">パスワード</p>
-            <p className="pl-3 font-bold">****1111</p>
+            <p className="pl-3 font-bold">{maskedPassword}</p>
           </div>
         </div>
       </div>
@@ -131,11 +138,11 @@ export const RegisterConfirm = ({
         <div className="pt-3">
           <div>
             <p className="text-xs">カード番号</p>
-            <p className="pl-3 font-bold">**** **** **** 0000</p>
+            <p className="pl-3 font-bold">{maskedCardNumber}</p>
           </div>
           <div className="pt-2">
             <p className="text-xs">クーポンコード</p>
-            <p className="pl-3 font-bold">なし</p>
+            <p className="pl-3 font-bold">{serialCode ?? "なし"}</p>
           </div>
         </div>
       </div>
