@@ -116,7 +116,9 @@ export const BaseForms = ({ onSubmit }: TProps) => {
         </div>
         <div className="mt-12">
           {errors.map((error) => (
-            <p className="bg-[#CB5F58] text-clay p-3">{error}</p>
+            <p key={error} className="bg-[#CB5F58] text-clay p-3">
+              {error}
+            </p>
           ))}
         </div>
         <div className="pt-12">

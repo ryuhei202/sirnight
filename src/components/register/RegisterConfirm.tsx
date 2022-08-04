@@ -47,6 +47,13 @@ export const RegisterConfirm = ({
   const plan = findPlan(planId);
   const maskedPassword = password.replace(/\d(?=\d{4})/g, "*");
 
+  const convertDateToStr = (): string => {
+    const year = birthDay.getFullYear();
+    const month = ("00" + birthDay.getMonth()).slice(-2);
+    const date = ("00" + birthDay.getDate()).slice(-2);
+    return `${year}/${month}/${date}`;
+  };
+
   const handleSubmit = () => {
     const params = {
       memberId,
@@ -104,7 +111,7 @@ export const RegisterConfirm = ({
           </div>
           <div className="pt-2">
             <p className="text-xs">生年月日</p>
-            <p className="pl-3 font-bold">{birthDay.toString()}</p>
+            <p className="pl-3 font-bold">{convertDateToStr()}</p>
           </div>
           <div className="pt-2">
             <p className="text-xs">身長</p>

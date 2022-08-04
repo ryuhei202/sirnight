@@ -78,11 +78,11 @@ export const PaymentForms = ({ memberId, onSubmit, onBack }: TProps) => {
 
   // カード情報をフロントから削除
   const clearCardInfo = () => {
-    setCardNumber(undefined);
-    setExpMonth(undefined);
-    setExpYear(undefined);
-    setCvc(undefined);
-    setCardName(undefined);
+    setCardNumber(0);
+    setExpMonth(0);
+    setExpYear(0);
+    setCvc(0);
+    setCardName("");
   };
 
   // トークンを取得した後にhandleSubmitを実行

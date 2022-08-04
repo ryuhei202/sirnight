@@ -82,7 +82,9 @@ export const LoginForms = ({ onSubmit, onBack }: TProps) => {
         </div>
         <div className="mt-12">
           {errors.map((error) => (
-            <p className="bg-[#CB5F58] text-sm text-clay p-3 my-1">{error}</p>
+            <p key={error} className="bg-[#CB5F58] text-sm text-clay p-3 my-1">
+              {error}
+            </p>
           ))}
         </div>
         <div className="pt-12 flex flex-col">
