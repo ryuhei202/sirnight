@@ -72,7 +72,6 @@ export const PaymentForms = ({ memberId }: TProps) => {
 
   // トークンを取得した後にhandleSubmitを実行
   const getToken = () => {
-    // eslint-disable-next-line no-unused-vars
     const paygentToken = new PaygentToken();
 
     paygentToken.createToken(
