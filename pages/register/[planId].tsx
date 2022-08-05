@@ -5,6 +5,11 @@ import { LoginForms } from "../../src/components/register/LoginForms";
 import { PaymentForms } from "../../src/components/register/PaymentForms";
 import { RegisterConfirm } from "../../src/components/register/RegisterConfirm";
 import { getRegisterHandler } from "../../src/hooks/register/getRegisterHandler";
+import {
+  LIGHT_PLAN,
+  PREMIUM_PLAN,
+  STANDARD_PLAN,
+} from "../../src/models/plan/Plan";
 import { TBaseRegisterData } from "../../src/models/register/TBaseRegisterData";
 import { TLoginRegisterData } from "../../src/models/register/TLoginRegisterData";
 import { TPaymentRegisterData } from "../../src/models/register/TPaymentRegisterData";
@@ -12,9 +17,9 @@ import { TPaymentRegisterData } from "../../src/models/register/TPaymentRegister
 export const getStaticPaths = async () => {
   return {
     paths: [
-      { params: { planId: "11" } },
-      { params: { planId: "12" } },
-      { params: { planId: "13" } },
+      { params: { planId: LIGHT_PLAN.id.toString() } },
+      { params: { planId: STANDARD_PLAN.id.toString() } },
+      { params: { planId: PREMIUM_PLAN.id.toString() } },
     ],
     fallback: false,
   };

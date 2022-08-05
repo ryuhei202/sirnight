@@ -1,4 +1,5 @@
 import { AxiosResponse } from "axios";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { TValidationLoginResponse } from "../../api/validations/TValidationLoginResponse";
 import { useValidationsLogin } from "../../api/validations/useValidationsLogin";
@@ -13,6 +14,7 @@ type TProps = {
 };
 
 export const LoginForms = ({ onSubmit, onBack }: TProps) => {
+  const router = useRouter();
   const [email, setEmail] = useState<string>();
   const [password, setPassword] = useState<string>();
   const [isVisible, setIsVisible] = useState<Boolean>(false);
@@ -39,7 +41,7 @@ export const LoginForms = ({ onSubmit, onBack }: TProps) => {
         {
           onSuccess: (data: AxiosResponse<TValidationLoginResponse>) => {
             if (data.data.isRegistered) {
-              window.location.href = `${process.env.NEXT_PUBLIC_BASE_URL}/mypage`;
+              router.push(`${process.env.NEXT_PUBLIC_HOST_URL}/mypage`);
               return;
             }
             if (data.data.errors.length > 0) {

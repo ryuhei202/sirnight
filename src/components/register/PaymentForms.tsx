@@ -48,7 +48,7 @@ export const PaymentForms = ({ memberId, onSubmit, onBack }: TProps) => {
       const params = {
         cardToken: paygentRes.tokenizedCardObject.token,
         memberId,
-        serialCode,
+        serialCode: !!serialCode ? serialCode : undefined,
       };
       mutate(params, {
         onSuccess: (data: AxiosResponse<TValidationPaymentResponse>) => {
@@ -65,7 +65,7 @@ export const PaymentForms = ({ memberId, onSubmit, onBack }: TProps) => {
           if (paygentRes.tokenizedCardObject) {
             onSubmit({
               customerCardId: data.data.customerCardId,
-              serialCode,
+              serialCode: !!serialCode ? serialCode : undefined,
               maskedCardNumber:
                 paygentRes.tokenizedCardObject.masked_card_number,
             });
