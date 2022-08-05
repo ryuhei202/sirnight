@@ -36,7 +36,7 @@ const Thanks: NextPage = () => {
               <Link
                 href={`${process.env.NEXT_PUBLIC_HOST_URL}/line_login/authorize?tp=Xu7KVD8d`}
               >
-                LINEでスタイリストを友達追加する
+                <a>LINEでスタイリストを友達追加する</a>
               </Link>
             </button>
           </div>

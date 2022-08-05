@@ -1,10 +1,10 @@
 import Head from "next/head";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BaseForms } from "../../src/components/register/BaseForms";
 import { LoginForms } from "../../src/components/register/LoginForms";
 import { PaymentForms } from "../../src/components/register/PaymentForms";
 import { RegisterConfirm } from "../../src/components/register/RegisterConfirm";
-import { useRegisterIndexHandler } from "../../src/hooks/register/useRegisterIndexHandler";
+import { getRegisterHandler } from "../../src/hooks/register/getRegisterHandler";
 import { TBaseRegisterData } from "../../src/models/register/TBaseRegisterData";
 import { TLoginRegisterData } from "../../src/models/register/TLoginRegisterData";
 import { TPaymentRegisterData } from "../../src/models/register/TPaymentRegisterData";
@@ -36,12 +36,16 @@ const Register = ({ planId }: { planId: "11" | "12" | "13" }) => {
   const [loginData, setLoginData] = useState<TLoginRegisterData>();
   const [paymentData, setPaymentData] = useState<TPaymentRegisterData>();
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [step]);
+
   const {
     handleSubmitBase,
     handleSubmitLogin,
     handleSubmitPayment,
     handleBack,
-  } = useRegisterIndexHandler({
+  } = getRegisterHandler({
     step,
     setStep,
     setBaseData,
@@ -60,8 +64,9 @@ const Register = ({ planId }: { planId: "11" | "12" | "13" }) => {
       break;
     }
     case "payment": {
-      if (loginData === undefined) {
-        throw Error("ログイン情報を入力していません");
+      if (!loginData) {
+        forms = <p>Loading...</p>;
+        return;
       }
       forms = (
         <PaymentForms
@@ -73,14 +78,9 @@ const Register = ({ planId }: { planId: "11" | "12" | "13" }) => {
       break;
     }
     case "confirm": {
-      if (baseData === undefined) {
-        throw Error("基本情報を入力していません");
-      }
-      if (loginData === undefined) {
-        throw Error("ログイン情報を入力していません");
-      }
-      if (paymentData === undefined) {
-        throw Error("お支払い情報を入力していません");
+      if (!(baseData && loginData && paymentData)) {
+        forms = <p>Loading...</p>;
+        return;
       }
       forms = (
         <RegisterConfirm
@@ -95,7 +95,6 @@ const Register = ({ planId }: { planId: "11" | "12" | "13" }) => {
           weight={baseData.weight}
           prefecture={baseData.prefecture}
           email={loginData.email}
-          password={loginData.password}
           maskedCardNumber={paymentData.maskedCardNumber}
           serialCode={paymentData.serialCode}
           customerCardId={paymentData.customerCardId}

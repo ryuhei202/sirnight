@@ -29,11 +29,7 @@ type TRegisterHandler = {
     weight,
     prefecture,
   }: TBaseRegisterData) => void;
-  readonly handleSubmitLogin: ({
-    email,
-    password,
-    memberId,
-  }: TLoginRegisterData) => void;
+  readonly handleSubmitLogin: ({ email, memberId }: TLoginRegisterData) => void;
   readonly handleSubmitPayment: ({
     customerCardId,
     serialCode,
@@ -72,12 +68,8 @@ export const getRegisterHandler = ({
     setStep("login");
   };
 
-  const handleSubmitLogin = ({
-    email,
-    password,
-    memberId,
-  }: TLoginRegisterData) => {
-    setLoginData({ email, password, memberId });
+  const handleSubmitLogin = ({ email, memberId }: TLoginRegisterData) => {
+    setLoginData({ email, memberId });
     setStep("payment");
   };
 

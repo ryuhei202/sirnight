@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { useMembersCreate } from "../../api/members/useMembersCreate";
-import { findPlan } from "../../models/shared/TPlans";
+import { findPlan } from "../../models/plan/Plan";
 
 type TProps = {
   readonly memberId: number;
@@ -15,7 +15,6 @@ type TProps = {
   readonly weight: number;
   readonly prefecture: string;
   readonly email: string;
-  readonly password: string;
   readonly maskedCardNumber: string;
   readonly serialCode?: string;
   readonly customerCardId: number;
@@ -34,7 +33,6 @@ export const RegisterConfirm = ({
   weight,
   prefecture,
   email,
-  password,
   maskedCardNumber,
   serialCode,
   customerCardId,
@@ -45,7 +43,6 @@ export const RegisterConfirm = ({
   const { mutate, isLoading } = useMembersCreate();
 
   const plan = findPlan(planId);
-  const maskedPassword = password.replace(/\d(?=\d{4})/g, "*");
 
   const convertDateToStr = (): string => {
     const year = birthDay.getFullYear();
@@ -91,13 +88,13 @@ export const RegisterConfirm = ({
         <div className="pt-3">
           <div>
             <p className="text-xs">料金プラン</p>
-            <p className="pl-3 font-bold">{plan.name}</p>
+            <p className="pl-3 font-bold">{`${plan.name}プラン`}</p>
           </div>
           <div className="pt-2">
             <p className="text-xs">月額料金</p>
             <p className="pl-3 font-bold">
-              税込¥{plan.priceTaxIn.toLocaleString()}(¥
-              {plan.price.toLocaleString()})
+              税込¥{plan.price.withoutTax.toLocaleString()}(¥
+              {plan.price.withTax.toLocaleString()})
             </p>
           </div>
         </div>
@@ -134,10 +131,6 @@ export const RegisterConfirm = ({
             <p className="text-xs">ログインID(メールアドレス)</p>
             <p className="pl-3 font-bold">{email}</p>
           </div>
-          <div className="pt-2">
-            <p className="text-xs">パスワード</p>
-            <p className="pl-3 font-bold">{maskedPassword}</p>
-          </div>
         </div>
       </div>
       <div className="mt-9">
@@ -165,7 +158,7 @@ export const RegisterConfirm = ({
         </button>
         <div onClick={onBack} className="text-center text-xs pt-6 pb-24">
           <span className="border-b-[1px] border-themeGray">
-            お支払い登録に戻る
+            お支払い情報登録に戻る
           </span>
         </div>
       </div>

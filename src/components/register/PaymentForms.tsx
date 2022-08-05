@@ -42,7 +42,6 @@ export const PaymentForms = ({ memberId, onSubmit, onBack }: TProps) => {
       return;
     }
     if (canRegistered && paygentRes.tokenizedCardObject) {
-      clearCardInfo();
       const params = {
         cardToken: paygentRes.tokenizedCardObject.token,
         memberId,
@@ -76,15 +75,6 @@ export const PaymentForms = ({ memberId, onSubmit, onBack }: TProps) => {
     }
   };
 
-  // カード情報をフロントから削除
-  const clearCardInfo = () => {
-    setCardNumber(0);
-    setExpMonth(0);
-    setExpYear(0);
-    setCvc(0);
-    setCardName("");
-  };
-
   // トークンを取得した後にPOSTリクエストを実行
   const getToken = () => {
     const paygentToken = new PaygentToken();
@@ -115,7 +105,7 @@ export const PaymentForms = ({ memberId, onSubmit, onBack }: TProps) => {
         </div>
         <div className="mt-12">
           {errors.map((error) => (
-            <p key="error" className="bg-[#CB5F58] text-clay p-3">
+            <p key="error" className="bg-[#CB5F58] text-sm text-clay p-3 my-1">
               {error}
             </p>
           ))}
@@ -257,7 +247,7 @@ export const PaymentForms = ({ memberId, onSubmit, onBack }: TProps) => {
           </button>
           <div onClick={onBack} className="text-center text-xs pt-6 pb-24">
             <span className="border-b-[1px] border-themeGray">
-              基本情報入力に戻る
+              ログイン情報入力に戻る
             </span>
           </div>
         </div>

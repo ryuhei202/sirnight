@@ -8,11 +8,7 @@ import { TextAreaAlt } from "../baseParts/inputs/TextAreaAlt";
 import { Stepper } from "./Stepper";
 
 type TProps = {
-  readonly onSubmit: ({
-    email,
-    password,
-    memberId,
-  }: TLoginRegisterData) => void;
+  readonly onSubmit: ({ email, memberId }: TLoginRegisterData) => void;
   readonly onBack: () => void;
 };
 
@@ -56,7 +52,6 @@ export const LoginForms = ({ onSubmit, onBack }: TProps) => {
             }
             onSubmit({
               email,
-              password,
               memberId: data.data.memberId,
             });
           },
