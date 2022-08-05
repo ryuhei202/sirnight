@@ -57,7 +57,7 @@ const Plan: NextPage = () => {
         id="container"
         className="h-full bg-clay sm:w-[500px] inset-0 text-themeGray"
       >
-        <Header />
+        <Header lists={[{ name: "料金プラン" }]} />
         <h2 className="text-4xl my-20 text-center font-bold">料金プラン</h2>
         <div>
           <div id="tab" className="flex h-12 relative mb-8">
