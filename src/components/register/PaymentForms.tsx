@@ -164,7 +164,7 @@ export const PaymentForms = ({ memberId }: TProps) => {
           </div>
           <div className="pt-8">
             <label htmlFor="csc">
-              セキュリティカード <span className="text-[#CB5F58]">*</span>
+              セキュリティコード <span className="text-[#CB5F58]">*</span>
             </label>
             <input
               id="csc"
