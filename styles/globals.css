@@ -1,6 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer base {
+  .newsContent h1 {
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  .newsContent div {
+    font-size: 0.8rem;
+  }
+  .newsContent img {
+    width: 100%;
+  }
+}
 
 html,
 body {
