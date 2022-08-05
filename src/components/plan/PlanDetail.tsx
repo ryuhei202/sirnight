@@ -20,8 +20,6 @@ const rowClassName = (index: number, length: number) => {
 };
 
 export const PlanDetail = ({ plan, disabled }: TProps) => {
-  console.log(plan.name, disabled);
-
   return (
     <div className={`linear duration-1000 ${disabled ? "opacity-20" : ""}`}>
       <div className="border-solid border border-themeGray font-semibold rounded-md mx-3 tracking-wider">
@@ -46,7 +44,6 @@ export const PlanDetail = ({ plan, disabled }: TProps) => {
           {plan.targets.map((target, index) => (
             <React.Fragment key={index}>
               <p
-                key={index}
                 className={`text-md flex justify-center items-center`}
               >
                 {target}
