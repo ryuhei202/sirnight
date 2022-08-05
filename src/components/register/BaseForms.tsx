@@ -188,7 +188,7 @@ export const BaseForms = ({ onSubmit }: TProps) => {
                 value={birthYear?.toString() ?? ""}
                 onChange={(e) => setBirthYear(parseInt(e.target.value))}
                 placeholder="年"
-                className="mr-2"
+                className="mr-2 w-1/3"
               >
                 {yearOptions}
               </DropdownMenuAlt>
@@ -196,7 +196,7 @@ export const BaseForms = ({ onSubmit }: TProps) => {
                 value={birthMonth?.toString() ?? ""}
                 onChange={(e) => setBirthMonth(parseInt(e.target.value))}
                 placeholder="月"
-                className="mx-2"
+                className="mx-2 w-1/3"
               >
                 {[...Array(12)].map((_, i) => (
                   <option key={i + 1} value={i + 1}>
@@ -208,7 +208,7 @@ export const BaseForms = ({ onSubmit }: TProps) => {
                 value={birthDay?.toString() ?? ""}
                 onChange={(e) => setBirthDay(parseInt(e.target.value))}
                 placeholder="日"
-                className="ml-2"
+                className="ml-2 w-1/3"
               >
                 {[...Array(getDate())].map((_, i) => (
                   <option key={i + 1} value={i + 1}>
