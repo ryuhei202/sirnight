@@ -12,6 +12,11 @@ const Register: NextPage = () => {
           name="description"
           content="メンズファッションレンタルサービスUWear"
         />
+        <script
+          type="text/javascript"
+          src={`${process.env.NEXT_PUBLIC_PAYGENT_URL}/js/PaygentToken.js`}
+          async
+        />
         <link rel="icon" href="/favicon/favicon_head.png" />
       </Head>
       <div
