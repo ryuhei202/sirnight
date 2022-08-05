@@ -6,8 +6,17 @@
     font-weight: bold;
     font-size: 1.1rem;
   }
+  .newsContent h2 {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  .newsContent h3 {
+    font-size: 0.95rem;
+    font-weight: bold;
+  }
   .newsContent div {
     font-size: 0.8rem;
+    margin-top: 20px;
   }
   .newsContent img {
     width: 100%;
