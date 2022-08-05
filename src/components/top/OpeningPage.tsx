@@ -7,7 +7,6 @@ type TProps = {
 };
 export const OpeningPage = ({ className }: TProps) => {
   const router = useRouter();
-  if (router.asPath !== "/") return <></>;
 
   useEffect(() => {
     const logo = document.getElementById("logo") as HTMLElement;
@@ -27,6 +26,8 @@ export const OpeningPage = ({ className }: TProps) => {
       opPage.classList.add("hidden");
     }, 3000);
   }, []);
+
+  if (router.asPath !== "/") return <></>;
 
   return (
     <div
