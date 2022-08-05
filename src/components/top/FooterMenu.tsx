@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useState } from "react";
+import { LinkButton } from "../baseParts/LinkButton";
 import { Menu } from "./Menu";
 
 export const FooterMenu = () => {
@@ -32,11 +33,12 @@ export const FooterMenu = () => {
             )}
           </button>
         </div>
-        <div className="h-full w-1/4 bg-themeGray text-clay text-sm flex justify-center items-center cursor-pointer">
-          <Link href="/plan">
-            <a className="w-[77%] text-center">料金プラン</a>
-          </Link>
-        </div>
+        <LinkButton
+          href="/plan"
+          className="h-full w-1/4 mx-0 rounded-none text-clay text-sm flex justify-center items-center"
+        >
+          料金プラン
+        </LinkButton>
       </div>
     </>
   );
