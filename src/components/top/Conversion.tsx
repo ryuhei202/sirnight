@@ -22,9 +22,9 @@ export const Conversion = () => {
         </div>
       </div>
       <div className="w-[73%] mx-auto">
-        <Link href="/plan">
-          <LinkButton className="my-10" border>プランを選ぶ</LinkButton>
-        </Link>
+        <LinkButton href="/plan" className="my-10" border>
+          プランを選ぶ
+        </LinkButton>
       </div>
     </div>
   );

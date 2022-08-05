@@ -1,4 +1,3 @@
-import Link from "next/link";
 import React from "react";
 import { TPlan } from "../../models/plan/Plan";
 import { LinkButton } from "../baseParts/LinkButton";
@@ -21,6 +20,8 @@ const rowClassName = (index: number, length: number) => {
 };
 
 export const PlanDetail = ({ plan, disabled }: TProps) => {
+  console.log(plan.name, disabled);
+
   return (
     <div className={`linear duration-1000 ${disabled ? "opacity-20" : ""}`}>
       <div className="border-solid border border-themeGray font-semibold rounded-md mx-3 tracking-wider">
@@ -94,11 +95,13 @@ export const PlanDetail = ({ plan, disabled }: TProps) => {
           </div>
         </div>
       </div>
-      <Link href="/register" passHref>
-        <LinkButton className="text-xl font-semibold mt-6 mb-16 py-5">
-          このプランではじめる
-        </LinkButton>
-      </Link>
+      <LinkButton
+        href="/register"
+        className="text-xl font-semibold mt-6 mb-16 py-5"
+        disabled={disabled}
+      >
+        このプランではじめる
+      </LinkButton>
     </div>
   );
 };
