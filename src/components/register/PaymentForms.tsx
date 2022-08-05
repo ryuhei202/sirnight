@@ -24,7 +24,7 @@ export const PaymentForms = ({ memberId }: TProps) => {
 
   const canRegistered = !!cardNumber && !!expMonth && !!expYear && isAgree;
 
-  const handleSubmit = (paygentRes: {
+  const createTokenCallback = (paygentRes: {
     result: string;
     tokenizedCardObject?: {
       token: string;
@@ -69,7 +69,7 @@ export const PaymentForms = ({ memberId }: TProps) => {
     setCardName(undefined);
   };
 
-  // トークンを取得した後にhandleSubmitを実行
+  // トークンを取得した後にPOSTリクエストを実行
   const getToken = () => {
     const paygentToken = new PaygentToken();
 
@@ -83,7 +83,7 @@ export const PaymentForms = ({ memberId }: TProps) => {
         cvc,
         name: cardName,
       },
-      handleSubmit
+      createTokenCallback
     );
   };
 
