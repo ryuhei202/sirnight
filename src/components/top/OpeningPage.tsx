@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { Typography } from "../baseParts/Typography";
 
@@ -5,6 +6,9 @@ type TProps = {
   readonly className?: string;
 };
 export const OpeningPage = ({ className }: TProps) => {
+  const router = useRouter();
+  if (router.asPath !== "/") return <></>;
+
   useEffect(() => {
     const logo = document.getElementById("logo") as HTMLElement;
     const text = document.getElementById("text") as HTMLElement;
