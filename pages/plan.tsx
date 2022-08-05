@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Header } from "../src/components/plan/Header";
 import { PlanDetail } from "../src/components/plan/PlanDetail";
 import { FooterMenu } from "../src/components/top/FooterMenu";
@@ -13,10 +13,7 @@ import {
 const Plan: NextPage = () => {
   const [selectedPlanId, setSelectedPlanId] = useState<number>(LIGHT_PLAN.id);
   const plans = [LIGHT_PLAN, STANDARD_PLAN, PREMIUM_PLAN];
-  const carousel =
-    typeof document !== "undefined"
-      ? document.getElementById("carousel")
-      : null;
+  let carousel: HTMLElement | null;
 
   const onClickLabel = (index: number, planId: number) => {
     if (typeof carousel?.scrollLeft === "undefined") return;
@@ -36,6 +33,10 @@ const Plan: NextPage = () => {
       setSelectedPlanId(PREMIUM_PLAN.id);
     }
   };
+
+  useEffect(() => {
+    carousel = document.getElementById("carousel");
+  }, [selectedPlanId]);
 
   return (
     <div className="h-full bg-clay sm:w-[500px]">
