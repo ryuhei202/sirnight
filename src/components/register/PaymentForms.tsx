@@ -29,7 +29,7 @@ export const PaymentForms = ({ memberId, onSubmit, onBack }: TProps) => {
 
   const canRegistered = !!cardNumber && !!expMonth && !!expYear && isAgree;
 
-  const handleSubmit = (paygentRes: {
+  const createTokenCallback = (paygentRes: {
     result: string;
     tokenizedCardObject?: {
       token: string;
@@ -85,7 +85,7 @@ export const PaymentForms = ({ memberId, onSubmit, onBack }: TProps) => {
     setCardName("");
   };
 
-  // トークンを取得した後にhandleSubmitを実行
+  // トークンを取得した後にPOSTリクエストを実行
   const getToken = () => {
     const paygentToken = new PaygentToken();
 
@@ -99,7 +99,7 @@ export const PaymentForms = ({ memberId, onSubmit, onBack }: TProps) => {
         cvc,
         name: cardName,
       },
-      handleSubmit
+      createTokenCallback
     );
   };
 
@@ -180,7 +180,7 @@ export const PaymentForms = ({ memberId, onSubmit, onBack }: TProps) => {
           </div>
           <div className="pt-8">
             <label htmlFor="csc">
-              セキュリティカード <span className="text-[#CB5F58]">*</span>
+              セキュリティコード <span className="text-[#CB5F58]">*</span>
             </label>
             <input
               id="csc"
