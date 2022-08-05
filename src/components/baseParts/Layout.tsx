@@ -7,7 +7,7 @@ type TProps = {
 };
 export const Layout = ({ children, title, className }: TProps) => {
   return (
-    <div className={`px-12 ${className ?? ""}`}>
+    <div className={`px-12 pb-32${className ?? ""}`}>
       <h2 className="py-12 text-3xl font-bold text-center">{title}</h2>
       <div className="newsContent">{children}</div>
     </div>
