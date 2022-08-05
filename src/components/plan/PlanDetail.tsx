@@ -1,5 +1,7 @@
+import Link from "next/link";
+import React from "react";
 import { TPlan } from "../../models/plan/Plan";
-import { Button } from "../baseParts/Button";
+import { LinkButton } from "../baseParts/LinkButton";
 import { Cloths } from "./Cloths";
 
 type TProps = {
@@ -30,7 +32,6 @@ export const PlanDetail = ({ plan, disabled }: TProps) => {
           </p>
           <div className="flex font-normal flex-wrap justify-center space-x-3 mb-6">
             <p className="text-[#979B9A]">{`¥${plan.price.withoutTax.toLocaleString()}（税抜）`}</p>
-            {/* <p className="underline">継続割引について</p> */}
           </div>
         </div>
         <div className="bg-themeGray text-clay text-center font-normal text-xl py-1">
@@ -42,7 +43,7 @@ export const PlanDetail = ({ plan, disabled }: TProps) => {
           }`}
         >
           {plan.targets.map((target, index) => (
-            <>
+            <React.Fragment key={index}>
               <p
                 key={index}
                 className={`text-md flex justify-center items-center`}
@@ -54,7 +55,7 @@ export const PlanDetail = ({ plan, disabled }: TProps) => {
               ) : (
                 <hr className="border border-dashed border-[#C8C9C3]" />
               )}
-            </>
+            </React.Fragment>
           ))}
         </div>
         <div className="bg-themeGray text-clay text-center font-normal text-xl py-1">
@@ -93,9 +94,11 @@ export const PlanDetail = ({ plan, disabled }: TProps) => {
           </div>
         </div>
       </div>
-      <Button className="text-xl font-semibold mt-6 mb-16 py-5">
-        このプランではじめる
-      </Button>
+      <Link href="/register" passHref>
+        <LinkButton className="text-xl font-semibold mt-6 mb-16 py-5">
+          このプランではじめる
+        </LinkButton>
+      </Link>
     </div>
   );
 };

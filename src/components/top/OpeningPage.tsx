@@ -40,13 +40,15 @@ export const OpeningPage = ({ className }: TProps) => {
         />
         <Typography
           id="text"
-          className="mt-6 text-sm opacity-0 animate-slideInOpText"
+          size="sm"
+          className="mt-6 opacity-0 animate-slideInOpText"
         >
           服の悩みを解決する
         </Typography>
         <Typography
           id="sub-text"
-          className="text-sm opacity-0 animate-slideInOpSubText"
+          size="sm"
+          className="opacity-0 animate-slideInOpSubText"
         >
           メンズファッションレンタルサービス
         </Typography>

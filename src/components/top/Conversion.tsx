@@ -1,4 +1,5 @@
-import { Button } from "../baseParts/Button";
+import Link from "next/link";
+import { LinkButton } from "../baseParts/LinkButton";
 
 export const Conversion = () => {
   return (
@@ -21,10 +22,9 @@ export const Conversion = () => {
         </div>
       </div>
       <div className="w-[73%] mx-auto">
-        {/* TODO: Linkコンポーネントで囲む */}
-        <Button border className="my-10">
-          プランを選ぶ
-        </Button>
+        <Link href="/plan">
+          <LinkButton className="my-10" border>プランを選ぶ</LinkButton>
+        </Link>
       </div>
     </div>
   );
