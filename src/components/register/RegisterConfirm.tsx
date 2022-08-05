@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useMembersCreate } from "../../api/members/useMembersCreate";
 import { findPlan } from "../../models/plan/Plan";
 
@@ -41,16 +41,17 @@ export const RegisterConfirm = ({
   const router = useRouter();
   const [error, setError] = useState<string>();
   const { mutate, isLoading } = useMembersCreate();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [error]);
 
   const plan = findPlan(planId);
-
   const convertDateToStr = (): string => {
     const year = birthDay.getFullYear();
     const month = ("00" + birthDay.getMonth()).slice(-2);
     const date = ("00" + birthDay.getDate()).slice(-2);
     return `${year}/${month}/${date}`;
   };
-
   const handleSubmit = () => {
     const params = {
       memberId,

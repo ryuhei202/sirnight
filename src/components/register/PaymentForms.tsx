@@ -1,6 +1,6 @@
 import { AxiosResponse } from "axios";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { TValidationPaymentResponse } from "../../api/validations/TValidationPaymentResponse";
 import { useValidationsPayment } from "../../api/validations/useValidationsPayment";
 import { TPaymentRegisterData } from "../../models/register/TPaymentRegisterData";
@@ -26,6 +26,9 @@ export const PaymentForms = ({ memberId, onSubmit, onBack }: TProps) => {
   const [isAgree, setIsAgree] = useState<boolean>(false);
   const [errors, setErrors] = useState<string[]>([]);
   const { mutate, isLoading } = useValidationsPayment();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [errors]);
 
   const canRegistered = !!cardNumber && !!expMonth && !!expYear && isAgree;
 

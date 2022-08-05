@@ -1,6 +1,6 @@
 import { AxiosResponse } from "axios";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { TValidationBaseResponse } from "../../api/validations/TValidationBaseResponse";
 import { useValidationsBase } from "../../api/validations/useValidationsBase";
 import { TBaseRegisterData } from "../../models/register/TBaseRegisterData";
@@ -34,10 +34,11 @@ export const BaseForms = ({ onSubmit }: TProps) => {
   const [height, setHeight] = useState<number>();
   const [weight, setWeight] = useState<number>();
   const [prefecture, setPrefecture] = useState<TPrefectures>();
-
   const [errors, setErrors] = useState<string[]>([]);
-
   const { mutate, isLoading } = useValidationsBase();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [errors]);
 
   let yearOptions = [];
   for (let year = 1920; year <= new Date().getFullYear(); year++) {

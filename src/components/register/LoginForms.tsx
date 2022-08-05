@@ -1,5 +1,5 @@
 import { AxiosResponse } from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { TValidationLoginResponse } from "../../api/validations/TValidationLoginResponse";
 import { useValidationsLogin } from "../../api/validations/useValidationsLogin";
 import { TLoginRegisterData } from "../../models/register/TLoginRegisterData";
@@ -17,8 +17,10 @@ export const LoginForms = ({ onSubmit, onBack }: TProps) => {
   const [password, setPassword] = useState<string>();
   const [isVisible, setIsVisible] = useState<Boolean>(false);
   const [errors, setErrors] = useState<string[]>([]);
-
   const { mutate, isLoading } = useValidationsLogin();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [errors]);
 
   const PASSWORD_REGAX = /^[a-zA-Z0-9!-/:-@¥\[`\{-~]{8,16}$/;
   const EMAIL_REGAX =
