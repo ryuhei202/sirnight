@@ -30,11 +30,6 @@ const NewsDetail: NextPage<TProps> = ({ id }: TProps) => {
     <div className="h-full bg-clay sm:w-[500px]">
       <Head>
         <title>お知らせ | UWear公式サイト</title>
-        <meta
-          name="description"
-          content="メンズファッションレンタルサービスUWear"
-        />
-        <link rel="icon" href="/favicon/favicon_head.png" />
         <link
           rel="stylesheet"
           type="text/css"
