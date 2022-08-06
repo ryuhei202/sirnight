@@ -1,4 +1,5 @@
 import Link from "next/link";
+import React from "react";
 
 type TProps = {
   readonly lists?: {
@@ -17,7 +18,7 @@ export const Header = ({ lists }: TProps) => {
       </div>
       {lists &&
         lists.map((list) => (
-          <>
+          <React.Fragment>
             <div className="mx-3">＞</div>
             <div className="flex">
               {list.path ? (
@@ -30,7 +31,7 @@ export const Header = ({ lists }: TProps) => {
                 <p>{list.name}</p>
               )}
             </div>
-          </>
+          </React.Fragment>
         ))}
     </div>
   );
