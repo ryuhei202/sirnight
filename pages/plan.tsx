@@ -42,11 +42,6 @@ const Plan: NextPage = () => {
     <div className="h-full bg-clay sm:w-[500px]">
       <Head>
         <title>プラン | UWear公式サイト</title>
-        <meta
-          name="description"
-          content="メンズファッションレンタルサービスUWear"
-        />
-        <link rel="icon" href="/favicon/favicon_head.png" />
         <link
           rel="stylesheet"
           type="text/css"
@@ -57,7 +52,7 @@ const Plan: NextPage = () => {
         id="container"
         className="h-full bg-clay sm:w-[500px] inset-0 text-themeGray"
       >
-        <Header />
+        <Header lists={[{ name: "料金プラン" }]} />
         <h2 className="text-4xl my-20 text-center font-bold">料金プラン</h2>
         <div>
           <div id="tab" className="flex h-12 relative mb-8">
