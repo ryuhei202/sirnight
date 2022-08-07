@@ -37,11 +37,6 @@ const Home: NextPage<TProps> = ({ articlesData }) => {
     <div className="h-full">
       <Head>
         <title>UWear公式サイト</title>
-        <meta
-          name="description"
-          content="メンズファッションレンタルサービスUWear"
-        />
-        <link rel="icon" href="/favicon/favicon_head.png" />
       </Head>
       <OpeningPage className="z-50" />
       <div id="container" className="sm:w-[500px] bg-clay text-themeGray">

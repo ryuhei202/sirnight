@@ -40,10 +40,18 @@ export const Menu = ({ onClick }: TProps) => {
         </Link>
       </div>
       <div className="flex flex-wrap text-xs pb-5 border-b-2 border-[#D8D8D2] border-solid">
-        <a className="w-[50%] my-5">運営会社</a>
-        <a className="w-[50%] my-5">特定商取引法に基づく表示</a>
-        <a className="w-[50%] my-5">利用規約</a>
-        <a className="w-[50%] my-5">プライバシーポリシー</a>
+        <Link href="/company">
+          <a className="w-[50%] my-5">運営会社</a>
+        </Link>
+        <Link href="/lows">
+          <a className="w-[50%] my-5">特定商取引法に基づく表示</a>
+        </Link>
+        <Link href="/term">
+          <a className="w-[50%] my-5">利用規約</a>
+        </Link>
+        <Link href="/privacy">
+          <a className="w-[50%] my-5">プライバシーポリシー</a>
+        </Link>
       </div>
       <div className="flex space-x-7 pt-10">
         <a
@@ -51,21 +59,33 @@ export const Menu = ({ onClick }: TProps) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="/images/icons/instagram/secondary.svg" alt="icon-instagram" className="h-[20px] fill-[#ffffff]" />
+          <img
+            src="/images/icons/instagram/secondary.svg"
+            alt="icon-instagram"
+            className="h-[20px] fill-[#ffffff]"
+          />
         </a>
         <a
           href="https://twitter.com/leeapjp"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="/images/icons/twitter/secondary.svg" alt="icon-twitter" className="h-[20px]" />
+          <img
+            src="/images/icons/twitter/secondary.svg"
+            alt="icon-twitter"
+            className="h-[20px]"
+          />
         </a>
         <a
           href="https://www.facebook.com/leeapjp/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="/images/icons/facebook/secondary.svg" alt="icon-facebook" className="h-[20px]" />
+          <img
+            src="/images/icons/facebook/secondary.svg"
+            alt="icon-facebook"
+            className="h-[20px]"
+          />
         </a>
       </div>
     </div>
