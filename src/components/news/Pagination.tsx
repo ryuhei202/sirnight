@@ -13,20 +13,20 @@ export const Pagination = ({ totalCount, currentPageId }: TProps) => {
   return (
     <div className="flex justify-between h-14 mt-10">
       {currentPageId === minPageId ? (
-        <span className="bg-[#D8D8D2] rounded-full inline-block w-14 text-center leading-[3rem]">
+        <span className="bg-[#D8D8D2] rounded-full inline-block w-14 text-center relative">
           <img
             src="/images/icons/right-arrow.svg"
             alt="previous-page-icon"
-            className="rotate-180 align-middle inline"
+            className="rotate-180 absolute top-6 left-5 w-4 opacity-50"
           />
         </span>
       ) : (
         <Link href={`/news/page/${currentPageId - 1}`}>
-          <a className="bg-[#F4F3EF] rounded-full inline-block w-14 text-center leading-[3rem]">
+          <a className="bg-[#F4F3EF] rounded-full inline-block w-14 text-center relative">
             <img
               src="/images/icons/right-arrow.svg"
               alt="previous-page-icon"
-              className="rotate-180 align-middle inline"
+              className="rotate-180 absolute top-6 left-5 inline w-4"
             />
           </a>
         </Link>
@@ -39,20 +39,20 @@ export const Pagination = ({ totalCount, currentPageId }: TProps) => {
         </div>
       </div>
       {currentPageId === maxPageId ? (
-        <span className="bg-[#F4F3EF] rounded-full inline-block w-14 text-center leading-[3rem]">
+        <span className="bg-[#D8D8D2] rounded-full inline-block w-14 text-center relative">
           <img
             src="/images/icons/right-arrow.svg"
             alt="next-page-icon"
-            className="align-middle inline"
+            className="absolute top-6 left-5 inline w-4 opacity-50"
           />
         </span>
       ) : (
         <Link href={`/news/page/${currentPageId + 1}`}>
-          <a className="bg-[#F4F3EF] rounded-full inline-block w-14 text-center leading-[3rem]">
+          <a className="bg-[#F4F3EF] rounded-full inline-block w-14 text-center relative">
             <img
               src="/images/icons/right-arrow.svg"
               alt="next-page-icon"
-              className="align-middle inline"
+              className="absolute top-6 left-5 inline w-4"
             />
           </a>
         </Link>
