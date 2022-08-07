@@ -17,8 +17,8 @@ export const Header = ({ lists }: TProps) => {
         </Link>
       </div>
       {lists &&
-        lists.map((list) => (
-          <React.Fragment>
+        lists.map((list, index) => (
+          <React.Fragment key={index}>
             <div className="mx-3">＞</div>
             <div className="flex">
               {list.path ? (
