@@ -5,7 +5,7 @@ import { NewsLinkList } from "../../../src/components/news/NewsLinkList";
 import { Pagination } from "../../../src/components/news/Pagination";
 import { Header } from "../../../src/components/plan/Header";
 
-export const PER_PAGE = 3;
+export const PER_PAGE = 10;
 
 type TProps = {
   articlesData: TArticles;
