@@ -1,16 +1,22 @@
 import { AxiosResponse } from "axios";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { TValidationPaymentResponse } from "../../api/validations/TValidationPaymentResponse";
 import { useValidationsPayment } from "../../api/validations/useValidationsPayment";
+import { TPaymentRegisterData } from "../../models/register/TPaymentRegisterData";
 import { Stepper } from "./Stepper";
-import Script from "next/script";
 
 type TProps = {
   memberId: number;
+  onSubmit: ({
+    customerCardId,
+    serialCode,
+    maskedCardNumber,
+  }: TPaymentRegisterData) => void;
+  onBack: () => void;
 };
 
-export const PaymentForms = ({ memberId }: TProps) => {
+export const PaymentForms = ({ memberId, onSubmit, onBack }: TProps) => {
   const [cardNumber, setCardNumber] = useState<number>();
   const [expMonth, setExpMonth] = useState<number>();
   const [expYear, setExpYear] = useState<number>();
@@ -18,9 +24,11 @@ export const PaymentForms = ({ memberId }: TProps) => {
   const [cardName, setCardName] = useState<string>();
   const [serialCode, setSerialCode] = useState<string>();
   const [isAgree, setIsAgree] = useState<boolean>(false);
-
   const [errors, setErrors] = useState<string[]>([]);
   const { mutate, isLoading } = useValidationsPayment();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [errors]);
 
   const canRegistered = !!cardNumber && !!expMonth && !!expYear && isAgree;
 
@@ -28,8 +36,7 @@ export const PaymentForms = ({ memberId }: TProps) => {
     result: string;
     tokenizedCardObject?: {
       token: string;
-      maskedCardNumber: string;
-      validUntil: number;
+      masked_card_number: string;
     };
   }) => {
     const SUCCESS = "0000";
@@ -38,35 +45,37 @@ export const PaymentForms = ({ memberId }: TProps) => {
       return;
     }
     if (canRegistered && paygentRes.tokenizedCardObject) {
-      clearCardInfo();
-      mutate(
-        {
-          cardToken: paygentRes.tokenizedCardObject.token,
-          memberId,
-          serialCode,
+      const params = {
+        cardToken: paygentRes.tokenizedCardObject.token,
+        memberId,
+        serialCode: !!serialCode ? serialCode : undefined,
+      };
+      mutate(params, {
+        onSuccess: (data: AxiosResponse<TValidationPaymentResponse>) => {
+          if (data.data.errors.length > 0) {
+            setErrors(data.data.errors);
+            return;
+          }
+          if (data.data.customerCardId === null) {
+            setErrors([
+              "予期せぬエラーが発生しました。お手数ですが再度入力お願い致します",
+            ]);
+            return;
+          }
+          if (paygentRes.tokenizedCardObject) {
+            onSubmit({
+              customerCardId: data.data.customerCardId,
+              serialCode: !!serialCode ? serialCode : undefined,
+              maskedCardNumber:
+                paygentRes.tokenizedCardObject.masked_card_number,
+            });
+          }
         },
-        {
-          onSuccess: (data: AxiosResponse<TValidationPaymentResponse>) => {
-            if (data.data.errors.length <= 0) {
-            } else {
-              setErrors(data.data.errors);
-            }
-          },
-          onError: () => {
-            setErrors(["予期せぬエラーが発生しました"]);
-          },
-        }
-      );
+        onError: () => {
+          setErrors(["予期せぬエラーが発生しました"]);
+        },
+      });
     }
-  };
-
-  // カード情報をフロントから削除
-  const clearCardInfo = () => {
-    setCardNumber(undefined);
-    setExpMonth(undefined);
-    setExpYear(undefined);
-    setCvc(undefined);
-    setCardName(undefined);
   };
 
   // トークンを取得した後にPOSTリクエストを実行
@@ -99,7 +108,7 @@ export const PaymentForms = ({ memberId }: TProps) => {
         </div>
         <div className="mt-12">
           {errors.map((error) => (
-            <p key="error" className="bg-[#CB5F58] text-clay p-3">
+            <p key="error" className="bg-[#CB5F58] text-sm text-clay p-3 my-1">
               {error}
             </p>
           ))}
@@ -233,12 +242,17 @@ export const PaymentForms = ({ memberId }: TProps) => {
           <button
             onClick={getToken}
             disabled={!canRegistered || isLoading}
-            className={`relative inline-block p-3 mb-24 text-center w-full font-medium text-base mt-12 rounded-full bg-themeGray text-slate-200 ${
+            className={`relative inline-block p-3 text-center w-full font-medium text-base mt-12 rounded-full bg-themeGray text-slate-200 ${
               (!canRegistered || isLoading) && "bg-[#C8C9C3]"
             }`}
           >
-            ログイン情報の入力へ
+            確認画面へ
           </button>
+          <div onClick={onBack} className="text-center text-xs pt-6 pb-24">
+            <span className="border-b-[1px] border-themeGray">
+              ログイン情報入力に戻る
+            </span>
+          </div>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import { AxiosResponse } from "axios";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { TValidationBaseResponse } from "../../api/validations/TValidationBaseResponse";
 import { useValidationsBase } from "../../api/validations/useValidationsBase";
 import { TBaseRegisterData } from "../../models/register/TBaseRegisterData";
@@ -34,10 +34,11 @@ export const BaseForms = ({ onSubmit }: TProps) => {
   const [height, setHeight] = useState<number>();
   const [weight, setWeight] = useState<number>();
   const [prefecture, setPrefecture] = useState<TPrefectures>();
-
   const [errors, setErrors] = useState<string[]>([]);
-
   const { mutate, isLoading } = useValidationsBase();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [errors]);
 
   let yearOptions = [];
   for (let year = 1920; year <= new Date().getFullYear(); year++) {
@@ -88,7 +89,7 @@ export const BaseForms = ({ onSubmit }: TProps) => {
               lastName,
               firstNameKana,
               lastNameKana,
-              birthDay: new Date(birthYear, birthMonth - birthDay),
+              birthDay: new Date(birthYear, birthMonth, birthDay),
               height,
               weight,
               prefecture,
@@ -116,7 +117,9 @@ export const BaseForms = ({ onSubmit }: TProps) => {
         </div>
         <div className="mt-12">
           {errors.map((error) => (
-            <p className="bg-[#CB5F58] text-clay p-3">{error}</p>
+            <p key={error} className="bg-[#CB5F58] text-sm text-clay p-3 my-1">
+              {error}
+            </p>
           ))}
         </div>
         <div className="pt-12">
@@ -185,7 +188,7 @@ export const BaseForms = ({ onSubmit }: TProps) => {
                 value={birthYear?.toString() ?? ""}
                 onChange={(e) => setBirthYear(parseInt(e.target.value))}
                 placeholder="年"
-                className="mr-2"
+                className="mr-2 w-1/3"
               >
                 {yearOptions}
               </DropdownMenuAlt>
@@ -193,7 +196,7 @@ export const BaseForms = ({ onSubmit }: TProps) => {
                 value={birthMonth?.toString() ?? ""}
                 onChange={(e) => setBirthMonth(parseInt(e.target.value))}
                 placeholder="月"
-                className="mx-2"
+                className="mx-2 w-1/3"
               >
                 {[...Array(12)].map((_, i) => (
                   <option key={i + 1} value={i + 1}>
@@ -205,7 +208,7 @@ export const BaseForms = ({ onSubmit }: TProps) => {
                 value={birthDay?.toString() ?? ""}
                 onChange={(e) => setBirthDay(parseInt(e.target.value))}
                 placeholder="日"
-                className="ml-2"
+                className="ml-2 w-1/3"
               >
                 {[...Array(getDate())].map((_, i) => (
                   <option key={i + 1} value={i + 1}>
@@ -220,38 +223,44 @@ export const BaseForms = ({ onSubmit }: TProps) => {
               <label htmlFor="height">
                 身長 <span className="text-[#CB5F58]">*</span>
               </label>
-              <input
-                id="height"
-                type="number"
-                value={height}
-                onChange={(e) => setHeight(parseInt(e.target.value))}
-                min="160"
-                max="180"
-                placeholder="身長"
-                step="1"
-                className="p-3 mt-3 w-full rounded-md border border-themeGray bg-clay resize-none"
-              />
+              <div className="w-full">
+                <input
+                  id="height"
+                  type="number"
+                  value={height}
+                  onChange={(e) => setHeight(parseInt(e.target.value))}
+                  min="160"
+                  max="180"
+                  placeholder="身長"
+                  step="1"
+                  className="p-3 mt-3 w-[80%] rounded-md border border-themeGray bg-clay resize-none"
+                />
+                <span className="align-bottom">cm</span>
+              </div>
               {(!height || 160 > height || 180 < height) && (
-                <FrontValidText text="160cm~180cmで入力" />
+                <FrontValidText text="160~180cmで入力" />
               )}
             </div>
             <div className="pl-2 w-1/2">
               <label htmlFor="weight">
                 体重 <span className="text-[#CB5F58]">*</span>
               </label>
-              <input
-                id="weight"
-                type="number"
-                value={weight}
-                onChange={(e) => setWeight(parseInt(e.target.value))}
-                min="51"
-                max="80"
-                placeholder="体重"
-                step="1"
-                className="p-3 mt-3 w-full rounded-md border border-themeGray bg-clay resize-none"
-              />
+              <div className="w-full">
+                <input
+                  id="weight"
+                  type="number"
+                  value={weight}
+                  onChange={(e) => setWeight(parseInt(e.target.value))}
+                  min="51"
+                  max="80"
+                  placeholder="体重"
+                  step="1"
+                  className="p-3 mt-3 w-[80%] rounded-md border border-themeGray bg-clay resize-none"
+                />
+                <span className="align-bottom">kg</span>
+              </div>
               {(!weight || 51 > weight || 80 < weight) && (
-                <FrontValidText text="51kg~80kgで入力" />
+                <FrontValidText text="51~80kgで入力" />
               )}
             </div>
           </div>

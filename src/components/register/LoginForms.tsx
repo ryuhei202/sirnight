@@ -1,23 +1,28 @@
 import { AxiosResponse } from "axios";
-import Link from "next/link";
-import { useState } from "react";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import { TValidationLoginResponse } from "../../api/validations/TValidationLoginResponse";
 import { useValidationsLogin } from "../../api/validations/useValidationsLogin";
+import { TLoginRegisterData } from "../../models/register/TLoginRegisterData";
 import { FrontValidText } from "../baseParts/inputs/FrontValidText";
 import { TextAreaAlt } from "../baseParts/inputs/TextAreaAlt";
 import { Stepper } from "./Stepper";
 
 type TProps = {
-  readonly onSubmit: () => void;
+  readonly onSubmit: ({ email, memberId }: TLoginRegisterData) => void;
+  readonly onBack: () => void;
 };
 
-export const LoginForms = ({ onSubmit }: TProps) => {
+export const LoginForms = ({ onSubmit, onBack }: TProps) => {
+  const router = useRouter();
   const [email, setEmail] = useState<string>();
   const [password, setPassword] = useState<string>();
   const [isVisible, setIsVisible] = useState<Boolean>(false);
   const [errors, setErrors] = useState<string[]>([]);
-
   const { mutate, isLoading } = useValidationsLogin();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [errors]);
 
   const PASSWORD_REGAX = /^[a-zA-Z0-9!-/:-@¥\[`\{-~]{8,16}$/;
   const EMAIL_REGAX =
@@ -35,18 +40,29 @@ export const LoginForms = ({ onSubmit }: TProps) => {
         { email, password },
         {
           onSuccess: (data: AxiosResponse<TValidationLoginResponse>) => {
+            if (data.data.isRegistered) {
+              router.push(`${process.env.NEXT_PUBLIC_HOST_URL}/mypage`);
+              return;
+            }
             if (data.data.errors.length > 0) {
               setErrors(data.data.errors);
               return;
             }
-            if (data.data.isRegistered) {
-              window.location.href = `${process.env.NEXT_PUBLIC_BASE_URL}/mypage`;
+            if (data.data.memberId === null) {
+              setErrors([
+                "予期せぬエラーが発生しました。お手数ですが再度入力お願い致します",
+              ]);
               return;
             }
-            onSubmit();
+            onSubmit({
+              email,
+              memberId: data.data.memberId,
+            });
           },
           onError: () => {
-            setErrors(["予期せぬエラーが発生しました"]);
+            setErrors([
+              "予期せぬエラーが発生しました。お手数ですが再度入力お願い致します",
+            ]);
           },
         }
       );
@@ -65,7 +81,9 @@ export const LoginForms = ({ onSubmit }: TProps) => {
         </div>
         <div className="mt-12">
           {errors.map((error) => (
-            <p className="bg-[#CB5F58] text-clay p-3">{error}</p>
+            <p key={error} className="bg-[#CB5F58] text-sm text-clay p-3 my-1">
+              {error}
+            </p>
           ))}
         </div>
         <div className="pt-12 flex flex-col">
@@ -165,12 +183,10 @@ export const LoginForms = ({ onSubmit }: TProps) => {
           >
             お支払い情報の入力へ
           </button>
-          <div className="text-center text-xs pt-6 pb-24">
-            <Link href="/">
-              <span className="border-b-[1px] border-themeGray">
-                サイトに戻る
-              </span>
-            </Link>
+          <div onClick={onBack} className="text-center text-xs pt-6 pb-24">
+            <span className="border-b-[1px] border-themeGray">
+              基本情報入力に戻る
+            </span>
           </div>
         </div>
       </div>
