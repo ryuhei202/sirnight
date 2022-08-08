@@ -26,7 +26,7 @@ export const PlanDetail = ({ plan, disabled }: TProps) => {
         <div className="">
           <p className="text-center text-xl my-6">
             月額
-            <span className="text-4xl ml-2 font-['Times']">{`¥${plan.price.withTax.toLocaleString()}`}</span>
+            <span className="text-4xl ml-2 font-lora">{`¥${plan.price.withTax.toLocaleString()}`}</span>
             （税込）
           </p>
           <div className="flex font-normal flex-wrap justify-center space-x-3 mb-6">
