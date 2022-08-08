@@ -4,7 +4,7 @@ import { Layout } from "../src/components/baseParts/Layout";
 import { Header } from "../src/components/plan/Header";
 import { FooterMenu } from "../src/components/top/FooterMenu";
 
-const Lows: NextPage = () => {
+const Laws: NextPage = () => {
   return (
     <div>
       <Head>
@@ -115,4 +115,4 @@ const Lows: NextPage = () => {
     </div>
   );
 };
-export default Lows;
+export default Laws;

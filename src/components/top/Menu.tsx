@@ -43,7 +43,7 @@ export const Menu = ({ onClick }: TProps) => {
         <Link href="/company">
           <a className="w-[50%] my-5">運営会社</a>
         </Link>
-        <Link href="/lows">
+        <Link href="/laws">
           <a className="w-[50%] my-5">特定商取引法に基づく表示</a>
         </Link>
         <Link href="/term">
