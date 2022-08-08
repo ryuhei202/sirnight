@@ -1,7 +1,6 @@
 import { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
-import { Button } from "../../src/components/baseParts/Button";
 import { NewsContent } from "../../src/components/news/NewsContent";
 import { Header } from "../../src/components/plan/Header";
 import { FooterMenu } from "../../src/components/top/FooterMenu";
