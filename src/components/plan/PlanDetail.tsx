@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { TPlan } from "../../models/plan/Plan";
-import { Button } from "../baseParts/Button";
 import { Cloths } from "./Cloths";
 
 type TProps = {
@@ -94,7 +93,7 @@ export const PlanDetail = ({ plan, disabled }: TProps) => {
           </div>
         </div>
       </div>
-      <Link href={`/register/${plan.id}`}>
+      <Link href={`/register/${plan.enName}`}>
         <span className="inline-block mx-3 text-center w-[calc(100%_-_24px)] text-base relative rounded-full bg-themeGray text-slate-200 font-semibold mt-6 mb-16 py-5 ">
           このプランではじめる
         </span>

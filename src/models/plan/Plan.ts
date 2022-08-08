@@ -2,7 +2,8 @@ import { TAX } from "../shared/Tax";
 
 export const LIGHT_PLAN = {
   id: 11,
-  name: "ライト",
+  jpName: "ライト",
+  enName: "light",
   price: {
     withTax: 6800 + 6800 * TAX,
     withoutTax: 6800,
@@ -15,7 +16,8 @@ export const LIGHT_PLAN = {
 
 export const STANDARD_PLAN = {
   id: 12,
-  name: "スタンダード",
+  jpName: "スタンダード",
+  enName: "standard",
   price: {
     withTax: 9800 + 9800 * TAX,
     withoutTax: 9800,
@@ -36,7 +38,8 @@ export const STANDARD_PLAN = {
 
 export const PREMIUM_PLAN = {
   id: 13,
-  name: "プレミアム",
+  jpName: "プレミアム",
+  enName: "premium",
   price: {
     withTax: 14800 + 14800 * TAX,
     withoutTax: 14800,
@@ -61,7 +64,7 @@ export type TPlan =
   | typeof STANDARD_PLAN
   | typeof PREMIUM_PLAN;
 
-export const findPlan = (planId: number): TPlan => {
+export const findPlanById = (planId: number): TPlan => {
   if (planId === LIGHT_PLAN.id) {
     return LIGHT_PLAN;
   }
@@ -69,6 +72,19 @@ export const findPlan = (planId: number): TPlan => {
     return STANDARD_PLAN;
   }
   if (planId === PREMIUM_PLAN.id) {
+    return PREMIUM_PLAN;
+  }
+  throw Error("存在しないプランです");
+};
+
+export const findPlanByName = (name: string): TPlan => {
+  if (name === LIGHT_PLAN.enName) {
+    return LIGHT_PLAN;
+  }
+  if (name === STANDARD_PLAN.enName) {
+    return STANDARD_PLAN;
+  }
+  if (name === PREMIUM_PLAN.enName) {
     return PREMIUM_PLAN;
   }
   throw Error("存在しないプランです");

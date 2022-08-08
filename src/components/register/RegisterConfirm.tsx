@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useMembersCreate } from "../../api/members/useMembersCreate";
-import { findPlan } from "../../models/plan/Plan";
+import { findPlanById } from "../../models/plan/Plan";
 
 type TProps = {
   readonly memberId: number;
@@ -45,7 +45,7 @@ export const RegisterConfirm = ({
     window.scrollTo(0, 0);
   }, [error]);
 
-  const plan = findPlan(planId);
+  const plan = findPlanById(planId);
   const convertDateToStr = (): string => {
     const year = birthDay.getFullYear();
     const month = ("00" + birthDay.getMonth()).slice(-2);
@@ -89,7 +89,7 @@ export const RegisterConfirm = ({
         <div className="pt-3">
           <div>
             <p className="text-xs">料金プラン</p>
-            <p className="pl-3 font-bold">{`${plan.name}プラン`}</p>
+            <p className="pl-3 font-bold">{`${plan.jpName}プラン`}</p>
           </div>
           <div className="pt-2">
             <p className="text-xs">月額料金</p>

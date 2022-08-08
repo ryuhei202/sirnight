@@ -6,6 +6,7 @@ import { PaymentForms } from "../../src/components/register/PaymentForms";
 import { RegisterConfirm } from "../../src/components/register/RegisterConfirm";
 import { getRegisterHandler } from "../../src/hooks/register/getRegisterHandler";
 import {
+  findPlanByName,
   LIGHT_PLAN,
   PREMIUM_PLAN,
   STANDARD_PLAN,
@@ -17,9 +18,9 @@ import { TPaymentRegisterData } from "../../src/models/register/TPaymentRegister
 export const getStaticPaths = async () => {
   return {
     paths: [
-      { params: { planId: LIGHT_PLAN.id.toString() } },
-      { params: { planId: STANDARD_PLAN.id.toString() } },
-      { params: { planId: PREMIUM_PLAN.id.toString() } },
+      { params: { planName: LIGHT_PLAN.enName } },
+      { params: { planName: STANDARD_PLAN.enName } },
+      { params: { planName: PREMIUM_PLAN.enName } },
     ],
     fallback: false,
   };
@@ -28,13 +29,13 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async ({
   params,
 }: {
-  params: { planId: "11" | "12" | "13" };
+  params: { planName: "light" | "standard" | "premium" };
 }) => {
-  const { planId } = params;
+  const planId = findPlanByName(params.planName).id;
   return { props: { planId } };
 };
 
-const Register = ({ planId }: { planId: "11" | "12" | "13" }) => {
+const Register = ({ planId }: { planId: 11 | 12 | 13 }) => {
   const [step, setStep] =
     useState<"base" | "login" | "payment" | "confirm">("base");
   const [baseData, setBaseData] = useState<TBaseRegisterData>();
@@ -90,7 +91,7 @@ const Register = ({ planId }: { planId: "11" | "12" | "13" }) => {
       forms = (
         <RegisterConfirm
           memberId={loginData.memberId}
-          planId={Number(planId)}
+          planId={planId}
           firstName={baseData.firstName}
           lastName={baseData.lastName}
           firstNameKana={baseData.firstNameKana}
