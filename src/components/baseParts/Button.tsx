@@ -24,6 +24,6 @@ export const Button = ({ children, className, border }: Props) => {
   if (border) classes.push("border-2 border-solid border-white");
 
   return (
-    <a className={`${className ?? ""} ${classes.join(" ")}`}>{children}</a>
+    <a className={`${classes.join(" ")} ${className ?? ""}`}>{children}</a>
   );
 };

@@ -19,8 +19,13 @@ import { Faq } from "../src/components/top/Faq";
 import { Footer } from "../src/components/top/Footer";
 import { News } from "../src/components/top/News";
 import { FooterMenu } from "../src/components/top/FooterMenu";
+import { client, TArticles } from "../src/api/getArticles";
 
-const Home: NextPage = () => {
+type TProps = {
+  articlesData: TArticles;
+};
+
+const Home: NextPage<TProps> = ({ articlesData }) => {
   useEffect(() => {
     setTimeout(() => {
       const container = document.getElementById("container") as HTMLElement;
@@ -32,11 +37,6 @@ const Home: NextPage = () => {
     <div className="h-full">
       <Head>
         <title>UWear公式サイト</title>
-        <meta
-          name="description"
-          content="メンズファッションレンタルサービスUWear"
-        />
-        <link rel="icon" href="/favicon/favicon_head.png" />
       </Head>
       <OpeningPage className="z-50" />
       <div id="container" className="sm:w-[500px] bg-clay text-themeGray">
@@ -61,12 +61,27 @@ const Home: NextPage = () => {
         <CustomerReviews />
         <Faq />
         <Conversion />
-        <News />
+        <News data={articlesData} />
         <Footer />
         <FooterMenu />
       </div>
     </div>
   );
+};
+
+export const getStaticProps = async () => {
+  const articlesData = await client.get<TArticles>({
+    endpoint: "news",
+    queries: {
+      limit: 6,
+    },
+  });
+  return {
+    props: {
+      articlesData,
+    },
+    revalidate: 60,
+  };
 };
 
 export default Home;
