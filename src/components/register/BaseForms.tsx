@@ -223,38 +223,44 @@ export const BaseForms = ({ onSubmit }: TProps) => {
               <label htmlFor="height">
                 身長 <span className="text-[#CB5F58]">*</span>
               </label>
-              <input
-                id="height"
-                type="number"
-                value={height}
-                onChange={(e) => setHeight(parseInt(e.target.value))}
-                min="160"
-                max="180"
-                placeholder="身長"
-                step="1"
-                className="p-3 mt-3 w-full rounded-md border border-themeGray bg-clay resize-none"
-              />
+              <div className="w-full">
+                <input
+                  id="height"
+                  type="number"
+                  value={height}
+                  onChange={(e) => setHeight(parseInt(e.target.value))}
+                  min="160"
+                  max="180"
+                  placeholder="身長"
+                  step="1"
+                  className="p-3 mt-3 w-[80%] rounded-md border border-themeGray bg-clay resize-none"
+                />
+                <span className="align-bottom">cm</span>
+              </div>
               {(!height || 160 > height || 180 < height) && (
-                <FrontValidText text="160cm~180cmで入力" />
+                <FrontValidText text="160~180cmで入力" />
               )}
             </div>
             <div className="pl-2 w-1/2">
               <label htmlFor="weight">
                 体重 <span className="text-[#CB5F58]">*</span>
               </label>
-              <input
-                id="weight"
-                type="number"
-                value={weight}
-                onChange={(e) => setWeight(parseInt(e.target.value))}
-                min="51"
-                max="80"
-                placeholder="体重"
-                step="1"
-                className="p-3 mt-3 w-full rounded-md border border-themeGray bg-clay resize-none"
-              />
+              <div className="w-full">
+                <input
+                  id="weight"
+                  type="number"
+                  value={weight}
+                  onChange={(e) => setWeight(parseInt(e.target.value))}
+                  min="51"
+                  max="80"
+                  placeholder="体重"
+                  step="1"
+                  className="p-3 mt-3 w-[80%] rounded-md border border-themeGray bg-clay resize-none"
+                />
+                <span className="align-bottom">kg</span>
+              </div>
               {(!weight || 51 > weight || 80 < weight) && (
-                <FrontValidText text="51kg~80kgで入力" />
+                <FrontValidText text="51~80kgで入力" />
               )}
             </div>
           </div>
