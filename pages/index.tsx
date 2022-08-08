@@ -29,7 +29,7 @@ const Home: NextPage = () => {
   }, []);
 
   return (
-    <div className="h-full">
+    <>
       <Head>
         <title>UWear公式サイト</title>
         <meta
@@ -39,13 +39,16 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon/favicon_head.png" />
       </Head>
       <OpeningPage className="z-50" />
-      <div id="container" className="sm:w-[500px] bg-clay text-themeGray">
+      <div
+        id="container"
+        className="relative sm:w-[500px] bg-clay text-themeGray z-40"
+      >
         <div className="w-full h-full">
           <KeyVisual />
           <CatchCopy />
         </div>
         <ServiceDescription />
-        <div className="overflow-hidden">
+        <div className="overflow-hidden z-10">
           <ItemList type="tops" />
           <ItemList type="bottoms" />
         </div>
@@ -65,7 +68,7 @@ const Home: NextPage = () => {
         <Footer />
         <FooterMenu />
       </div>
-    </div>
+    </>
   );
 };
 
