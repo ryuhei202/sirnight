@@ -94,5 +94,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: ["@tailwindcss/custom-forms"],
 };

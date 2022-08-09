@@ -1,5 +1,5 @@
-import React from "react";
 import { TPlan } from "../../models/plan/Plan";
+import React from "react";
 import { LinkButton } from "../baseParts/LinkButton";
 import { Cloths } from "./Cloths";
 
@@ -43,9 +43,7 @@ export const PlanDetail = ({ plan, disabled }: TProps) => {
         >
           {plan.targets.map((target, index) => (
             <React.Fragment key={index}>
-              <p
-                className={`text-md flex justify-center items-center`}
-              >
+              <p className={`text-md flex justify-center items-center`}>
                 {target}
               </p>
               {index === plan.targets.length - 1 ? (
@@ -93,7 +91,7 @@ export const PlanDetail = ({ plan, disabled }: TProps) => {
         </div>
       </div>
       <LinkButton
-        href="/register"
+        href={`/register/${plan.enName}`}
         className="text-xl font-semibold mt-6 mb-16 py-5"
         disabled={disabled}
       >

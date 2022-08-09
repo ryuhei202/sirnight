@@ -76,7 +76,7 @@ const Plan: NextPage = () => {
                     selectedPlanId === plan.id ? "opacity-100" : "opacity-20"
                   }`}
                 >
-                  {plan.name}
+                  {plan.jpName}
                 </p>
               </div>
             ))}
