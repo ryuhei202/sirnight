@@ -131,6 +131,7 @@ export const BaseForms = ({ onSubmit }: TProps) => {
               <TextAreaAlt
                 id="lastName"
                 className="mt-3"
+                autoComplete="family-name"
                 value={lastName ?? ""}
                 onChange={(e) => setLastName(e.target.value as string)}
                 placeholder="山田"
@@ -143,6 +144,7 @@ export const BaseForms = ({ onSubmit }: TProps) => {
               <TextAreaAlt
                 id="firstName"
                 className="mt-3"
+                autoComplete="given-name"
                 value={firstName ?? ""}
                 onChange={(e) => setFirstName(e.target.value as string)}
                 placeholder="太郎"
@@ -291,7 +293,7 @@ export const BaseForms = ({ onSubmit }: TProps) => {
           >
             ログイン情報の入力へ
           </button>
-          <div className="text-center text-xs pt-6 pb-24">
+          <div className="text-center text-xs mt-6 pb-24">
             <Link href="/">
               <span className="border-b-[1px] border-themeGray">
                 サイトに戻る

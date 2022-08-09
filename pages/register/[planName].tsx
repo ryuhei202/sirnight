@@ -77,6 +77,7 @@ const Register = ({ planId }: { planId: 11 | 12 | 13 }) => {
       forms = (
         <PaymentForms
           memberId={loginData.memberId}
+          planId={planId}
           onSubmit={handleSubmitPayment}
           onBack={handleBack}
         />

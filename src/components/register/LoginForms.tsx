@@ -94,6 +94,7 @@ export const LoginForms = ({ onSubmit, onBack }: TProps) => {
             <input
               id="email"
               type="email"
+              autoComplete="email"
               placeholder="info@leeap.jp"
               className="p-3 my-3 w-full rounded-md border border-themeGray bg-clay resize-none"
               onChange={(e) => setEmail(e.target.value)}
@@ -145,6 +146,7 @@ export const LoginForms = ({ onSubmit, onBack }: TProps) => {
                 <input
                   type="password"
                   placeholder="半角英数字・記号、8~16文字以内"
+                  autoComplete="new-password"
                   onChange={(e) => setPassword(e.target.value)}
                   value={password}
                   className="mb-[6px] mt-3 p-3 w-full rounded-md border border-themeGray bg-clay resize-none"
@@ -183,7 +185,7 @@ export const LoginForms = ({ onSubmit, onBack }: TProps) => {
           >
             お支払い情報の入力へ
           </button>
-          <div onClick={onBack} className="text-center text-xs pt-6 pb-24">
+          <div onClick={onBack} className="text-center text-xs mt-6 pb-24">
             <span className="border-b-[1px] border-themeGray">
               基本情報入力に戻る
             </span>

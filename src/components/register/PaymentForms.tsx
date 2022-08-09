@@ -8,6 +8,7 @@ import { Stepper } from "./Stepper";
 
 type TProps = {
   memberId: number;
+  planId: number;
   onSubmit: ({
     customerCardId,
     serialCode,
@@ -16,7 +17,12 @@ type TProps = {
   onBack: () => void;
 };
 
-export const PaymentForms = ({ memberId, onSubmit, onBack }: TProps) => {
+export const PaymentForms = ({
+  memberId,
+  planId,
+  onSubmit,
+  onBack,
+}: TProps) => {
   const [cardNumber, setCardNumber] = useState<number>();
   const [expMonth, setExpMonth] = useState<number>();
   const [expYear, setExpYear] = useState<number>();
@@ -48,6 +54,7 @@ export const PaymentForms = ({ memberId, onSubmit, onBack }: TProps) => {
       const params = {
         cardToken: paygentRes.tokenizedCardObject.token,
         memberId,
+        planId: !!serialCode ? planId : undefined,
         serialCode: !!serialCode ? serialCode : undefined,
       };
       mutate(params, {
@@ -136,6 +143,7 @@ export const PaymentForms = ({ memberId, onSubmit, onBack }: TProps) => {
             <div className="flex mt-3">
               <input
                 type="number"
+                min={1}
                 max={12}
                 value={expMonth}
                 onChange={(e) => {
@@ -154,7 +162,8 @@ export const PaymentForms = ({ memberId, onSubmit, onBack }: TProps) => {
               <span className="pt-2 text-2xl"> / </span>
               <input
                 type="number"
-                max={31}
+                min={1}
+                max={99}
                 value={expYear}
                 onChange={(e) => {
                   if (
@@ -230,10 +239,12 @@ export const PaymentForms = ({ memberId, onSubmit, onBack }: TProps) => {
             />
             <label htmlFor="isAgree">
               <span className="text-sm ml-2">
-                <Link href="#">
-                  <span className="border-b-[1px] border-themeGray">
-                    プライバシーポリシー
-                  </span>
+                <Link href="/privacy">
+                  <a target="_blank">
+                    <span className="border-b-[1px] border-themeGray">
+                      プライバシーポリシー
+                    </span>
+                  </a>
                 </Link>
                 に同意する
               </span>
@@ -248,7 +259,7 @@ export const PaymentForms = ({ memberId, onSubmit, onBack }: TProps) => {
           >
             確認画面へ
           </button>
-          <div onClick={onBack} className="text-center text-xs pt-6 pb-24">
+          <div onClick={onBack} className="text-center text-xs mt-6 pb-24">
             <span className="border-b-[1px] border-themeGray">
               ログイン情報入力に戻る
             </span>

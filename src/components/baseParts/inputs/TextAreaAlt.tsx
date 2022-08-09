@@ -4,6 +4,7 @@ type TProps = {
   id?: string;
   value: string;
   onChange: ChangeEventHandler<HTMLTextAreaElement>;
+  autoComplete?: string;
   className?: string;
   placeholder?: string;
   rows?: number;
@@ -15,6 +16,7 @@ export const TextAreaAlt = ({
   value,
   onChange,
   placeholder,
+  autoComplete,
   rows = 1,
   disabled = false,
 }: TProps) => {
@@ -29,6 +31,7 @@ export const TextAreaAlt = ({
       onChange={onChange}
       disabled={disabled}
       rows={rows}
+      autoComplete={autoComplete ?? ""}
     ></textarea>
   );
 };
