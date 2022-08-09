@@ -16,21 +16,33 @@ export const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="/images/icons/instagram/primary.svg" alt="icon-instagram" className="h-[30px]" />
+            <img
+              src="/images/icons/instagram/primary.svg"
+              alt="icon-instagram"
+              className="h-[30px]"
+            />
           </a>
           <a
             href="https://twitter.com/leeapjp"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="/images/icons/twitter/primary.svg" alt="icon-twitter" className="h-[30px]" />
+            <img
+              src="/images/icons/twitter/primary.svg"
+              alt="icon-twitter"
+              className="h-[30px]"
+            />
           </a>
           <a
             href="https://www.facebook.com/leeapjp/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="/images/icons/facebook/primary.svg" alt="icon-facebook" className="h-[30px]" />
+            <img
+              src="/images/icons/facebook/primary.svg"
+              alt="icon-facebook"
+              className="h-[30px]"
+            />
           </a>
         </div>
         <div className="flex flex-wrap font-semibold py-10 border-b-2 border-[#676F72]">
@@ -54,10 +66,18 @@ export const Footer = () => {
           </Link>
         </div>
         <div className="flex flex-wrap text-xs pt-10">
-          <a className="w-1/2 my-5">運営会社</a>
-          <a className="w-1/2 my-5">特定商取引法に基づく表示</a>
-          <a className="w-1/2 my-5">利用規約</a>
-          <a className="w-1/2 my-5">プライバシーポリシー</a>
+          <Link href="/company">
+            <a className="w-1/2 my-5">運営会社</a>
+          </Link>
+          <Link href="/laws">
+            <a className="w-1/2 my-5">特定商取引法に基づく表示</a>
+          </Link>
+          <Link href="/term">
+            <a className="w-1/2 my-5">利用規約</a>
+          </Link>
+          <Link href="/privacy">
+            <a className="w-1/2 my-5">プライバシーポリシー</a>
+          </Link>
         </div>
       </div>
     </div>

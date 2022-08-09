@@ -32,16 +32,14 @@ export const OpeningPage = ({ className }: TProps) => {
   return (
     <div
       id="op-page"
-      className={`fixed inset-0 bg-clay h-screen sm:w-[500px] ${
-        className ?? ""
-      }`}
+      className={`fixed inset-0 bg-clay h-screen ${className ?? ""}`}
     >
       <div className="absolute top-[41%] left-1/2 translate-x-[-50%] w-[65%] text-center">
         <img
           id="logo"
           src="/images/logos/gray.svg"
           alt="logo-gray"
-          className="animate-slideInOpLogo"
+          className="animate-slideInOpLogo mx-auto"
         />
         <Typography
           id="text"
