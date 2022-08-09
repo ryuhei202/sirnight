@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { Typography } from "../baseParts/Typography";
 
@@ -5,6 +6,8 @@ type TProps = {
   readonly className?: string;
 };
 export const OpeningPage = ({ className }: TProps) => {
+  const router = useRouter();
+
   useEffect(() => {
     const logo = document.getElementById("logo") as HTMLElement;
     const text = document.getElementById("text") as HTMLElement;
@@ -24,29 +27,31 @@ export const OpeningPage = ({ className }: TProps) => {
     }, 3000);
   }, []);
 
+  if (router.asPath !== "/") return <></>;
+
   return (
     <div
       id="op-page"
-      className={`fixed inset-0 bg-clay h-screen sm:w-[500px] ${
-        className ?? ""
-      }`}
+      className={`fixed inset-0 bg-clay h-screen ${className ?? ""}`}
     >
       <div className="absolute top-[41%] left-1/2 translate-x-[-50%] w-[65%] text-center">
         <img
           id="logo"
           src="/images/logos/gray.svg"
           alt="logo-gray"
-          className="animate-slideInOpLogo"
+          className="animate-slideInOpLogo mx-auto"
         />
         <Typography
           id="text"
-          className="mt-6 text-sm opacity-0 animate-slideInOpText"
+          size="sm"
+          className="mt-6 opacity-0 animate-slideInOpText"
         >
           服の悩みを解決する
         </Typography>
         <Typography
           id="sub-text"
-          className="text-sm opacity-0 animate-slideInOpSubText"
+          size="sm"
+          className="opacity-0 animate-slideInOpSubText"
         >
           メンズファッションレンタルサービス
         </Typography>
