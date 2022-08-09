@@ -14,7 +14,7 @@ export const News = ({ data }: TProps) => {
       </p>
       <div>
         <NewsLinkList data={data} />
-        <Link href="#">
+        <Link href={`/news/page/${1}`}>
           <div className="bg-clay text-themeGray text-right mt-10 tracking-wider font-semibold cursor-pointer">
             <a className="relative inline-block">
               <span className="text-xs mr-2 absolute top-[20%] -left-[20%]">

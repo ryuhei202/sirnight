@@ -9,7 +9,7 @@ type TProps = {
 };
 export const Header = ({ lists }: TProps) => {
   return (
-    <div className="w-full p-3 h-10 text-[#979B9A] text-xs flex border-b border-[#D8D8D2]">
+    <div className="w-full whitespace-nowrap truncate p-3 h-10 text-[#979B9A] text-xs flex border-b border-[#D8D8D2]">
       <div className="flex w-14">
         <img src="/images/icons/home.svg" alt="icon-home" className="w-1/3" />
         <Link href="/">
