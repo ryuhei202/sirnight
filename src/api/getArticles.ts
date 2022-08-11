@@ -33,8 +33,8 @@ export const handleData = ({ date, type = "dot" }: TProps) => {
 
   const formattedDate =
     type === "dot"
-      ? dateTimeRemoved.replaceAll("-", ".")
-      : dateTimeRemoved.replaceAll(/(\d+)-(\d+)-(\d+)/g, "$1年$2月$3日");
+      ? dateTimeRemoved.replace(/-/g, ".")
+      : dateTimeRemoved.replace(/(\d+)-(\d+)-(\d+)/g, "$1年$2月$3日");
 
   return formattedDate;
 };
