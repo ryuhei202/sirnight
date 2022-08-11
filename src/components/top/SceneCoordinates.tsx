@@ -5,7 +5,8 @@ export const SceneCoordinates = () => {
     <div className="h-fit" id="coordinates">
       <CoordinateCard
         imageFilePath="/images/coordinates/1-1.png"
-        title="シーンコーデ#01 ： 家族と週末のショッピング"
+        coordinateNumber="コーデ#01"
+        title="家族と週末のショッピング"
         mainText={
           <>
             ラフで落ち着いた〇〇〇で、
@@ -17,7 +18,8 @@ export const SceneCoordinates = () => {
       />
       <CoordinateCard
         imageFilePath="/images/coordinates/1-2.png"
-        title="シーンコーデ#02 ： お客様と商談"
+        coordinateNumber="コーデ#02"
+        title="家族と週末のショッピング"
         mainText={
           <>
             ラフで落ち着いた〇〇〇で、
@@ -29,7 +31,8 @@ export const SceneCoordinates = () => {
       />
       <CoordinateCard
         imageFilePath="/images/coordinates/1-3.png"
-        title="シーンコーデ#02 ： お客様と商談"
+        coordinateNumber="コーデ#03"
+        title="家族と週末のショッピング"
         mainText={
           <>
             ラフで落ち着いた〇〇〇で、
@@ -41,7 +44,8 @@ export const SceneCoordinates = () => {
       />
       <CoordinateCard
         imageFilePath="/images/coordinates/1-4.png"
-        title="シーンコーデ#02 ： お客様と商談"
+        coordinateNumber="コーデ#04"
+        title="家族と週末のショッピング"
         mainText={
           <>
             ラフで落ち着いた〇〇〇で、
@@ -53,7 +57,8 @@ export const SceneCoordinates = () => {
       />
       <CoordinateCard
         imageFilePath="/images/coordinates/1-5.png"
-        title="シーンコーデ#02 ： お客様と商談"
+        coordinateNumber="コーデ#05"
+        title="家族と週末のショッピング"
         mainText={
           <>
             ラフで落ち着いた〇〇〇で、
@@ -65,7 +70,8 @@ export const SceneCoordinates = () => {
       />
       <CoordinateCard
         imageFilePath="/images/coordinates/1-6.png"
-        title="シーンコーデ#02 ： お客様と商談"
+        coordinateNumber="コーデ#06"
+        title="家族と週末のショッピング"
         mainText={
           <>
             ラフで落ち着いた〇〇〇で、
@@ -77,7 +83,8 @@ export const SceneCoordinates = () => {
       />
       <CoordinateCard
         imageFilePath="/images/coordinates/1-7.png"
-        title="シーンコーデ#02 ： お客様と商談"
+        coordinateNumber="コーデ#07"
+        title="家族と週末のショッピング"
         mainText={
           <>
             ラフで落ち着いた〇〇〇で、

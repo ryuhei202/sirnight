@@ -1,11 +1,13 @@
 type TProps = {
   readonly imageFilePath: string;
+  readonly coordinateNumber: string;
   readonly title: string;
   readonly mainText: React.ReactNode;
   readonly subText: React.ReactNode;
 };
 export const CoordinateCard = ({
   imageFilePath,
+  coordinateNumber,
   title,
   mainText,
   subText,
@@ -20,27 +22,9 @@ export const CoordinateCard = ({
         />
       </figure>
       <div className="relative h-fit bg-clay z-30">
-        <div className="flex flex-row w-full text-[0.3rem] border-[1px] border-themeGray">
-          <h2 className="bg-themeGray text-clay w-3/4 px-4 py-2.5">{title}</h2>
-          <button className="px-2 py-1">
-            <span>
-              理由を見る
-              <svg
-                className="inline w-fit h-3"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-                ></path>
-              </svg>
-            </span>
-          </button>
+        <div className="flex flex-row w-full text-md border-y border-themeGray font-semibold">
+          <h2 className="bg-themeGray text-clay w-1/4 text-center py-2.5">{coordinateNumber}</h2>
+          <p className="w-3/4 px-5 py-2.5">{title}</p>
         </div>
         <div className="px-6 py-6">
           <p className="text-xl">
