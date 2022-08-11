@@ -7,6 +7,7 @@ import {
   TArticleContent,
   TArticles,
 } from "../../src/api/getArticles";
+import { LinkButton } from "../../src/components/baseParts/LinkButton";
 import { NewsContent } from "../../src/components/news/NewsContent";
 import { Header } from "../../src/components/plan/Header";
 import { FooterMenu } from "../../src/components/top/FooterMenu";
@@ -61,13 +62,13 @@ const NewsDetail: NextPage<TArticleContent> = (article: TArticleContent) => {
               <p>株式会社kizankiizan</p>
             </div>
             <NewsContent content={article?.body} />
-            <button
-              className={`relative inline-block p-3 w-full font-bold text-base mt-12 mb-48 rounded-full bg-clay border-[1px] border-[#D8D8D2]`}
+            <LinkButton
+              href={`/news/page/${1}`}
+              variant="text"
+              className="w-full font-bold text-base mt-12 mb-48 rounded-full border"
             >
-              <Link href={`/news/page/${1}`}>
-                <a>お知らせ一覧に戻る</a>
-              </Link>
-            </button>
+              お知らせ一覧に戻る
+            </LinkButton>
           </div>
         </div>
         <FooterMenu />

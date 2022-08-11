@@ -4,6 +4,7 @@ import React from "react";
 type TProps = {
   href: string;
   children?: React.ReactNode;
+  variant?: "primary" | "text";
   className?: string;
   border?: boolean;
   disabled?: boolean;
@@ -12,6 +13,7 @@ type TProps = {
 export const LinkButton = ({
   href,
   children,
+  variant,
   className,
   border,
   disabled,
@@ -26,9 +28,19 @@ export const LinkButton = ({
     "text-base",
     "relative",
     "rounded-full",
-    "bg-themeGray",
-    "text-slate-200",
   ];
+
+  classes.push(
+    (() => {
+      switch (variant) {
+        case "text":
+          return "bg-clay text-themeGray border border-[#D8D8D2]";
+        case "primary":
+        default:
+          return "bg-themeGray text-slate-200";
+      }
+    })()
+  );
 
   if (border) classes.push("border-2 border-solid border-white");
 
