@@ -5,7 +5,7 @@ export const CatchCopy = () => {
   const isAnimated = useRef(false);
   const toggleIsDisplay = useCallback(() => {
     if (isAnimated.current) return;
-    if (window.scrollY > 110) {
+    if (window.scrollY > 300) {
       isAnimated.current = true;
       setIsDisplay(true);
     }
@@ -20,7 +20,7 @@ export const CatchCopy = () => {
     <div className="relative w-full bg-clay text-center">
       <h2
         className={`z-[100] text-4xl font-semibold tracking-[0.15em] leading-[1.5em] mt-[100px] [writing-mode:vertical-rl] text-left inline-block mx-auto ${
-          isDisplay ? "animate-slideInCatchCopyText" : "hidden"
+          isDisplay ? "animate-slideInCatchCopyText" : "opacity-0"
         }`}
       >
         洋服を選ぶのが
