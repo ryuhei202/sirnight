@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div className="w-screen h-full bg-clay">
       <img
-        src="images/logos/light-gray.svg"
+        src="/images/logos/light-gray.svg"
         alt="logo"
         className="fixed w-[95%] left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%]"
       />
