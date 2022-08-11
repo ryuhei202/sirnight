@@ -9,21 +9,21 @@ export const OpeningPage = ({ className }: TProps) => {
   const router = useRouter();
 
   useEffect(() => {
-    const logo = document.getElementById("logo") as HTMLElement;
-    const text = document.getElementById("text") as HTMLElement;
-    const subText = document.getElementById("sub-text") as HTMLElement;
-    const opPage = document.getElementById("op-page") as HTMLElement;
+    const logo = document.getElementById("logo");
+    const text = document.getElementById("text");
+    const subText = document.getElementById("sub-text");
+    const opPage = document.getElementById("op-page");
     setTimeout(() => {
-      logo.classList.remove("animate-slideInOpLogo");
-      logo.classList.add("animate-slideOutOp");
-      text.classList.remove("animate-slideInOpText");
-      text.classList.add("animate-slideOutOp");
-      subText.classList.remove("animate-slideInOpSubText");
-      subText.classList.add("animate-slideOutOp");
+      logo?.classList.remove("animate-slideInOpLogo");
+      logo?.classList.add("animate-slideOutOp");
+      text?.classList.remove("animate-slideInOpText");
+      text?.classList.add("animate-slideOutOp");
+      subText?.classList.remove("animate-slideInOpSubText");
+      subText?.classList.add("animate-slideOutOp");
     }, 2500);
     setTimeout(() => {
-      opPage.classList.add("animate-slideOutOp");
-      opPage.classList.add("hidden");
+      opPage?.classList.add("animate-slideOutOp");
+      opPage?.classList.add("hidden");
     }, 3000);
   }, []);
 

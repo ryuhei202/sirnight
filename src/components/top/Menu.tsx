@@ -40,10 +40,18 @@ export const Menu = ({ onClick }: TProps) => {
         </Link>
       </div>
       <div className="flex flex-wrap text-xs pb-5 border-b-2 border-[#D8D8D2] border-solid">
-        <a className="w-[50%] my-5">運営会社</a>
-        <a className="w-[50%] my-5">特定商取引法に基づく表示</a>
-        <a className="w-[50%] my-5">利用規約</a>
-        <a className="w-[50%] my-5">プライバシーポリシー</a>
+        <Link href="/company">
+          <a className="w-[50%] my-5">運営会社</a>
+        </Link>
+        <Link href="/laws">
+          <a className="w-[50%] my-5">特定商取引法に基づく表示</a>
+        </Link>
+        <Link href="/term">
+          <a className="w-[50%] my-5">利用規約</a>
+        </Link>
+        <Link href="/privacy">
+          <a className="w-[50%] my-5">プライバシーポリシー</a>
+        </Link>
       </div>
       <div className="flex space-x-7 pt-10">
         <a
