@@ -13,7 +13,7 @@ import {
 const Plan: NextPage = () => {
   const [selectedPlanId, setSelectedPlanId] = useState<number>(LIGHT_PLAN.id);
   const plans = [LIGHT_PLAN, STANDARD_PLAN, PREMIUM_PLAN];
-  let carousel: HTMLElement | null;
+  let carousel: HTMLElement;
 
   const onClickLabel = (index: number, planId: number) => {
     if (typeof carousel?.scrollLeft === "undefined") return;
@@ -35,7 +35,7 @@ const Plan: NextPage = () => {
   };
 
   useEffect(() => {
-    carousel = document.getElementById("carousel");
+    carousel = document.getElementById("carousel") as HTMLElement;
   }, [selectedPlanId]);
 
   return (
