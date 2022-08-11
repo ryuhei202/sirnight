@@ -1,3 +1,5 @@
+import { Worry } from "./Worry";
+
 export const Sympathy = () => {
   return (
     <div className="py-[100px] px-[30px]">
@@ -10,45 +12,57 @@ export const Sympathy = () => {
         ありませんか？
       </p>
       <div className="flex flex-col mt-12 font-semibold">
-        <div>
-          <p className="bg-[#F4F3EF] rounded-[16px] p-5 min-w-[50%] w-fit ml-auto">
-            奥さんの仲良しのファミリーと
-            <br />
-            家での食事会に参加、 <br />
-            着ていく服がわからない...
-          </p>
-          <p className="text-xs w-fit ml-auto mt-2">30代前半 会社員</p>
-        </div>
-        <div className="mb-7">
-          <p className="bg-[#F4F3EF] rounded-[16px] p-5 min-w-[50%] w-fit mr-auto">
-            プライベートで会社の同僚と旅行。
-            <br />
-            普段の洋服で行って良いものか...
-          </p>
-          <p className="text-xs w-fit mr-auto mt-2">40代前半 自営業</p>
-        </div>
-        <div className="mb-7">
-          <p className="bg-[#F4F3EF] rounded-[16px] p-5 min-w-[50%] w-fit ml-auto">
-            同僚で意識している
-            <br />
-            女性と週末にデート。
-            <br />
-            私服を見られて
-            <br />
-            がっかりされたくない...
-          </p>
-          <p className="text-xs w-fit ml-auto mt-2">20代前半 会社員</p>
-        </div>
-        <div className="mb-7">
-          <p className="bg-[#F4F3EF] rounded-[16px] p-5 min-w-[50%] w-fit mr-auto">
-            奥さんの仲良しのファミリーと
-            <br />
-            家での食事会に参加、
-            <br />
-            着ていく服がわからない...
-          </p>
-          <p className="text-xs w-fit mr-auto mt-2">30代前半 会社員</p>
-        </div>
+        <Worry
+          type="right"
+          status="30代前半 会社員"
+          content={
+            <>
+              奥さんの仲良しのファミリーと
+              <br />
+              家での食事会に参加、 <br />
+              着ていく服がわからない...
+            </>
+          }
+        />
+        <Worry
+          type="left"
+          status="40代前半 自営業"
+          content={
+            <>
+              プライベートで会社の同僚と旅行。
+              <br />
+              普段の洋服で行って良いものか...
+            </>
+          }
+        />
+        <Worry
+          type="right"
+          status="20代前半 会社員"
+          content={
+            <>
+              同僚で意識している
+              <br />
+              女性と週末にデート。
+              <br />
+              私服を見られて
+              <br />
+              がっかりされたくない...
+            </>
+          }
+        />
+        <Worry
+          type="left"
+          status="30代前半 会社員"
+          content={
+            <>
+              奥さんの仲良しのファミリーと
+              <br />
+              家での食事会に参加、
+              <br />
+              着ていく服がわからない...
+            </>
+          }
+        />
       </div>
     </div>
   );

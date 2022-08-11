@@ -15,10 +15,13 @@ module.exports = {
         beige: "#E8E7DF",
       },
       animation: {
+        slideIn: "slideIn 0.7s ease-in-out forwards",
         slideInOpLogo: "slideIn 0.7s ease-in-out forwards",
         slideInOpText: "slideIn 0.7s ease-in-out 1.0s forwards",
         slideInOpSubText: "slideIn 0.7s ease-in-out 1.2s forwards",
         slideInCatchCopyText: "slideInLg 1s linear forwards",
+        slideInLeftSide: "slideInLeftSide 0.7s ease-in-out forwards",
+        slideInRightSide: "slideInRightSide 0.7s ease-in-out forwards",
         slideOutOp: "slideOut 0.5s ease-in-out 0s forwards",
         slideOutKeyVisualFirst: "slideOut 0.5s ease-in-out 5s forwards",
         firstFadeOutPanel: "fadeOut 0.3s ease-in-out 3.1s forwards",
@@ -52,6 +55,26 @@ module.exports = {
           "100%": {
             opacity: 1,
             transform: "translateY(0)",
+          },
+        },
+        slideInLeftSide: {
+          "0%": {
+            opacity: 0,
+            transform: "translateX(-30px)",
+          },
+          "100%": {
+            opacity: 1,
+            transform: "translateX(0)",
+          },
+        },
+        slideInRightSide: {
+          "0%": {
+            opacity: 0,
+            transform: "translateX(30px)",
+          },
+          "100%": {
+            opacity: 1,
+            transform: "translateX(0)",
           },
         },
         slideOut: {

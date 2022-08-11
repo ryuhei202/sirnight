@@ -1,3 +1,5 @@
+import { useInView } from "react-intersection-observer";
+
 type TProps = {
   readonly imageFileName: string;
   readonly title: React.ReactNode;
@@ -10,6 +12,12 @@ export const ItemCard = ({
   description,
   className,
 }: TProps) => {
+  const { ref, inView } = useInView({
+    threshold: 0.3,
+    triggerOnce: true,
+    delay: 500,
+  });
+
   let titleSplit: string[];
   if (title) {
     titleSplit = title.toString().split("<br />");
@@ -21,7 +29,8 @@ export const ItemCard = ({
     <div
       className={`relative border-2 rounded border-themeGray ${
         className ?? ""
-      }`}
+      } ${inView ? "animate-slideIn" : "opacity-0"}`}
+      ref={ref}
     >
       <img src={imageFileName} alt={imageFileName} className="mb-12 rounded" />
       <div className="absolute top-[160px] left-0 mb-10">

@@ -1,27 +1,19 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useInView } from "react-intersection-observer";
 
 export const CatchCopy = () => {
-  const [isDisplay, setIsDisplay] = useState(false);
-  const isAnimated = useRef(false);
-  const toggleIsDisplay = useCallback(() => {
-    if (isAnimated.current) return;
-    if (window.scrollY > 300) {
-      isAnimated.current = true;
-      setIsDisplay(true);
-    }
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener("scroll", toggleIsDisplay);
-    return () => window.removeEventListener("scroll", toggleIsDisplay);
-  }, [toggleIsDisplay]);
+  const { ref, inView } = useInView({
+    threshold: 0.3,
+    triggerOnce: true,
+    delay: 500
+  });
 
   return (
     <div className="relative w-full bg-clay text-center">
       <h2
         className={`z-[100] text-4xl font-semibold tracking-[0.15em] leading-[1.5em] mt-[100px] [writing-mode:vertical-rl] text-left inline-block mx-auto ${
-          isDisplay ? "animate-slideInCatchCopyText" : "opacity-0"
+          inView ? "animate-slideInCatchCopyText" : "opacity-0"
         }`}
+        ref={ref}
       >
         洋服を選ぶのが
         <br />
