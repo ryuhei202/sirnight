@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { useInView } from "react-intersection-observer";
+import { SlideIn } from "../baseParts/SlideIn";
 
 type TProps = {
   content: ReactNode;
@@ -8,16 +8,14 @@ type TProps = {
 };
 
 export const Worry = ({ content, status, type }: TProps) => {
-  const { ref, inView } = useInView({
-    threshold: 1,
-    triggerOnce: true,
-    delay: 500,
-  });
-  const animateClass =
+  const animationClassName =
     type === "right" ? "animate-slideInRightSide" : "animate-slideInLeftSide";
 
   return (
-    <div ref={ref} className={`mb-7 ${inView ? animateClass : "opacity-0"}`}>
+    <SlideIn
+      animationClassName={animationClassName}
+      options={{ threshold: 1, triggerOnce: true, delay: 500 }}
+    >
       <p
         className={`bg-[#F4F3EF] rounded-[16px] p-5 min-w-[50%] w-fit ${
           type === "right" ? "ml-auto" : "mr-auto"
@@ -32,6 +30,6 @@ export const Worry = ({ content, status, type }: TProps) => {
       >
         {status}
       </p>
-    </div>
+    </SlideIn>
   );
 };

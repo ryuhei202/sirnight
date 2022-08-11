@@ -1,3 +1,5 @@
+import { SlideIn } from "../baseParts/SlideIn";
+
 export const ServiceValue = () => {
   return (
     <div className="w-full py-28">
@@ -13,47 +15,57 @@ export const ServiceValue = () => {
       </div>
       <div className="w-full bg-white my-14 h-[400px]"></div>
       <div className="w-[73%] mx-auto text-[4vw] text-primary leading-8 sm:text-xl sm:leading-loose">
-        <p className="mb-5">
-          UWearでは、
-          <br />
-          お客様の「毎日の着る」を
-          <br />
-          少しでも楽しくしたいと考えています。
-        </p>
-        <p className="mb-10">
-          そのためには、
-          <br />
-          洋服の悩みがない状態を保つこと、
-          <br />
-          悩みや疑問が出たときに
-          <br />
-          すぐに解決できる環境を
-          <br />
-          UWearを通じて作りたいと思っています。
-        </p>
-        <p className="mb-5">
-          UWearは
-          <br />
-          YOU(あなた)とWEAR(着る)を
-          <br />
-          掛け合わせた造語です。
-        </p>
-        <p className="mb-5">
-          あなたの着る悩みを
-          <br />
-          スタイリストと一緒に考え、
-          <br />
-          毎日の着るが楽しいを作るサービスです。
-        </p>
-        <p>
-          あなたの着る悩みを何でも聞かせてださい。
-          <br />
-          着る悩みが無くなったら、
-          <br />
-          ぜひスタイリストと一緒に新たな洋服に
-          <br />
-          チャレンジが出来ると嬉しいです。
-        </p>
+        <SlideIn>
+          <p className="mb-5">
+            UWearでは、
+            <br />
+            お客様の「毎日の着る」を
+            <br />
+            少しでも楽しくしたいと考えています。
+          </p>
+        </SlideIn>
+        <SlideIn>
+          <p className="mb-10">
+            そのためには、
+            <br />
+            洋服の悩みがない状態を保つこと、
+            <br />
+            悩みや疑問が出たときに
+            <br />
+            すぐに解決できる環境を
+            <br />
+            UWearを通じて作りたいと思っています。
+          </p>
+        </SlideIn>
+        <SlideIn>
+          <p className="mb-5">
+            UWearは
+            <br />
+            YOU(あなた)とWEAR(着る)を
+            <br />
+            掛け合わせた造語です。
+          </p>
+        </SlideIn>
+        <SlideIn>
+          <p className="mb-5">
+            あなたの着る悩みを
+            <br />
+            スタイリストと一緒に考え、
+            <br />
+            毎日の着るが楽しいを作るサービスです。
+          </p>
+        </SlideIn>
+        <SlideIn>
+          <p>
+            あなたの着る悩みを何でも聞かせてださい。
+            <br />
+            着る悩みが無くなったら、
+            <br />
+            ぜひスタイリストと一緒に新たな洋服に
+            <br />
+            チャレンジが出来ると嬉しいです。
+          </p>
+        </SlideIn>
       </div>
     </div>
   );
