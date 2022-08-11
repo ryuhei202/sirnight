@@ -36,7 +36,7 @@ const NewsPageId: NextPage<TProps> = ({ articlesData, pageId }: TProps) => {
 };
 
 export const getStaticPaths = async () => {
-  const data = await client.get({ endpoint: "news" });
+  const data = await client.get<TArticles>({ endpoint: "news" });
 
   const range = (start: number, end: number) =>
     [...Array(end - start + 1)].map((_, i) => start + i);
@@ -51,7 +51,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (context) => {
   const pageId = Number(context.params?.id);
 
-  const data = await client.get({
+  const data = await client.get<TArticles>({
     endpoint: "news",
     queries: { offset: (Number(pageId) - 1) * PER_PAGE, limit: PER_PAGE },
   });
