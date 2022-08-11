@@ -10,7 +10,7 @@ type TProps = {
 export const Worry = ({ content, status, type }: TProps) => {
   const { ref, inView } = useInView({
     threshold: 1,
-    triggerOnce: !true,
+    triggerOnce: true,
     delay: 500,
   });
   const animateClass =
