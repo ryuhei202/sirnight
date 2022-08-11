@@ -1,16 +1,20 @@
+import { useEffect } from "react";
 import { KeyVisualColumn } from "./KeyVisualColumn";
 
-type TProps = {
-  readonly className?: string;
-};
-export const KeyVisual = ({ className }: TProps) => {
+export const KeyVisual = () => {
+  useEffect(() => {
+    const keyVisuals = document.getElementById("key-visuals") as HTMLElement;
+    setTimeout(() => {
+      for (let i = 0; i < keyVisuals?.children.length; i++) {
+        const child = keyVisuals?.children[i];
+        child.classList.add("animate-infiniteScroll");
+      }
+    }, 3000);
+  }, []);
+
   return (
-    <div
-      className={`w-full h-[828px] first:animate-infiniteScrollFirst last:animate-infiniteScrollLast ${
-        className ?? ""
-      }`}
-    >
-      <ul className="h-[1104px] overflow-hidden">
+    <div className="w-hull h-screen overflow-hidden" id="key-visuals">
+      <ul>
         <li>
           <KeyVisualColumn
             imageNames={{ left: "1-1", right: "1-2" }}
@@ -52,7 +56,7 @@ export const KeyVisual = ({ className }: TProps) => {
           <KeyVisualColumn imageNames={{ left: "3-2", right: "3-1" }} />
         </li>
       </ul>
-      <ul className="h-[1104px] overflow-hidden">
+      <ul>
         <li>
           <KeyVisualColumn imageNames={{ left: "1-1", right: "1-2" }} />
         </li>

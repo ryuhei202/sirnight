@@ -29,8 +29,7 @@ module.exports = {
         sixthFadeOutPanel: "fadeOut 0.3s ease-in-out 3.35s forwards",
         seventhFadeOutPanel: "fadeOut 0.3s ease-in-out 3.4s forwards",
         eighthFadeOutPanel: "fadeOut 0.3s ease-in-out 3.45s forwards",
-        infiniteScrollFirst: "infiniteScrollFirst 30s linear infinite",
-        infiniteScrollLast: "infiniteScrollLast 30s linear infinite",
+        infiniteScroll: "infiniteScroll 30s linear infinite",
         infiniteSlideLeft: "infiniteSlideLeft 20s linear infinite",
         infiniteSlideRight: "infiniteSlideRight 20s linear infinite",
       },
@@ -75,13 +74,9 @@ module.exports = {
             opacity: 0,
           },
         },
-        infiniteScrollFirst: {
+        infiniteScroll: {
           "0%": { transform: "translateY(0)" },
-          "100%": { transform: "translateY(-1104px)" },
-        },
-        infiniteScrollLast: {
-          "0%": { transform: "translateY(1104px)" },
-          "100%": { transform: "translateY(0)" },
+          "100%": { transform: "translateY(-100%)" },
         },
         infiniteSlideLeft: {
           "0%": { transform: "translateX(0%)" },
