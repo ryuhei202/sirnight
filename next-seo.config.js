@@ -1,6 +1,6 @@
 export default {
   titleTemplate: "%s | UWear公式サイト",
-  title: "UWear公式サイト",
+  defaultTitle: "UWear公式サイト",
   description:
     "メンズファッションサブスクサービスUWear(ユーウェア)。UWearならプロのスタイリストが選んだ洋服をレンタルできる。洋服を選ぶのが苦手なあなたに最適なファッションをお届けします。",
   openGraph: {
