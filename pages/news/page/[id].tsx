@@ -1,4 +1,5 @@
 import { GetStaticProps, NextPage } from "next";
+import { NextSeo } from "next-seo";
 import Head from "next/head";
 import { client, TArticles } from "../../../src/api/getArticles";
 import { NewsLinkList } from "../../../src/components/news/NewsLinkList";
@@ -16,9 +17,7 @@ type TProps = {
 const NewsPageId: NextPage<TProps> = ({ articlesData, pageId }: TProps) => {
   return (
     <div>
-      <Head>
-        <title>お知らせ | UWear公式サイト</title>
-      </Head>
+      <NextSeo title="お知らせ" />
       <div className="h-full min-h-screen bg-clay sm:w-[500px] text-themeGray">
         <Header lists={[{ name: "お知らせ" }]} />
         <div className="w-4/5 pt-14 mx-auto">
