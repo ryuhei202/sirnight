@@ -295,9 +295,9 @@ export const BaseForms = ({ onSubmit }: TProps) => {
           </button>
           <div className="text-center text-xs mt-6 pb-24">
             <Link href="/">
-              <span className="border-b-[1px] border-themeGray">
+              <a className="border-b-[1px] border-themeGray">
                 サイトに戻る
-              </span>
+              </a>
             </Link>
           </div>
         </div>
