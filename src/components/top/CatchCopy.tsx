@@ -2,11 +2,6 @@ import { Animation } from "../baseParts/Animation";
 
 export const CatchCopy = () => {
   return (
-      <img
-        src="/images/keyVisuals/sub/4-1.png"
-        alt="keyvisuals-4-1"
-        className="-mt-24 z-0"
-      />
     <div className="w-full bg-clay text-center">
       <div className="relative z-20">
         <Animation options={{ threshold: 1, triggerOnce: true }}>
@@ -15,6 +10,19 @@ export const CatchCopy = () => {
             <br />
             苦手なあなたに。
           </h2>
+        </Animation>
+      </div>
+      <div className="relative z-10 w-full overflow-hidden -mt-24">
+        <Animation
+          options={{ threshold: 0.3, triggerOnce: true }}
+          animationClassName="animate-shrink"
+          preAnimationClassName="scale-125"
+        >
+          <img
+            src="/images/keyVisuals/sub/4-1.png"
+            alt="keyvisuals-4-1"
+            className="origin-top"
+          />
         </Animation>
       </div>
     </div>

@@ -35,6 +35,7 @@ module.exports = {
         infiniteScroll: "infiniteScroll 60s linear infinite",
         infiniteSlideLeft: "infiniteSlideLeft 20s linear infinite",
         infiniteSlideRight: "infiniteSlideRight 20s linear infinite",
+        shrink: "shrink 1s ease-in-out forwards",
       },
       keyframes: {
         slideIn: {
@@ -108,6 +109,10 @@ module.exports = {
         infiniteSlideRight: {
           "0%": { transform: "translateX(-100%)" },
           "100%": { transform: "translateX(0)" },
+        },
+        shrink: {
+          "0%": { transform: "scale(125%)" },
+          "100%": { transform: "scale(100%)" },
         },
       },
     },
