@@ -42,11 +42,6 @@ const Plan: NextPage = () => {
     <div className="h-full bg-clay sm:w-[500px]">
       <Head>
         <title>プラン | UWear公式サイト</title>
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="//fonts.googleapis.com/css?family=Lora"
-        />
       </Head>
       <div
         id="container"

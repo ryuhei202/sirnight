@@ -1,5 +1,5 @@
-import { TPlan } from "../../models/plan/Plan";
 import React from "react";
+import { TPlan } from "../../models/plan/Plan";
 import { LinkButton } from "../baseParts/LinkButton";
 import { Cloths } from "./Cloths";
 
