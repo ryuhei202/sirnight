@@ -13,7 +13,9 @@ export const ServiceValue = () => {
         </p>
         <p className="text-right">楽しくなるように</p>
       </div>
-      <div className="w-full bg-white my-14 h-[400px]"></div>
+      <div className="w-full my-14">
+        <img src="/images/serviceValue/1.png" alt="service-value" />
+      </div>
       <div className="w-[73%] mx-auto text-[4vw] text-primary leading-8 sm:text-xl sm:leading-loose">
         <Animation>
           <p className="mb-5">
