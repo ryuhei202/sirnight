@@ -32,7 +32,7 @@ module.exports = {
         sixthFadeOutPanel: "fadeOut 0.3s ease-in-out 3.35s forwards",
         seventhFadeOutPanel: "fadeOut 0.3s ease-in-out 3.4s forwards",
         eighthFadeOutPanel: "fadeOut 0.3s ease-in-out 3.45s forwards",
-        infiniteScroll: "infiniteScroll 30s linear infinite",
+        infiniteScroll: "infiniteScroll 60s linear infinite",
         infiniteSlideLeft: "infiniteSlideLeft 20s linear infinite",
         infiniteSlideRight: "infiniteSlideRight 20s linear infinite",
       },
