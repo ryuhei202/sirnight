@@ -1,4 +1,4 @@
-import { SlideIn } from "./SlideIn";
+import { Animation } from "./Animation";
 
 type TProps = {
   readonly imageFileName: string;
@@ -20,7 +20,7 @@ export const ItemCard = ({
   }
 
   return (
-    <SlideIn options={{ threshold: 0.3, triggerOnce: true }}>
+    <Animation options={{ threshold: 0.3, triggerOnce: true }}>
       <div
         className={`relative border-2 rounded border-themeGray ${
           className ?? ""
@@ -42,6 +42,6 @@ export const ItemCard = ({
           <p>{description}</p>
         </div>
       </div>
-    </SlideIn>
+    </Animation>
   );
 };

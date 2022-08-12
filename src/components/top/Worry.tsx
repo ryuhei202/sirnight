@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { SlideIn } from "../baseParts/SlideIn";
+import { Animation } from "../baseParts/Animation";
 
 type TProps = {
   content: ReactNode;
@@ -12,7 +12,7 @@ export const Worry = ({ content, status, type }: TProps) => {
     type === "right" ? "animate-slideInRightSide" : "animate-slideInLeftSide";
 
   return (
-    <SlideIn
+    <Animation
       animationClassName={animationClassName}
       options={{ threshold: 1, triggerOnce: true, delay: 500 }}
     >
@@ -30,6 +30,6 @@ export const Worry = ({ content, status, type }: TProps) => {
       >
         {status}
       </p>
-    </SlideIn>
+    </Animation>
   );
 };

@@ -1,4 +1,4 @@
-import { SlideIn } from "../baseParts/SlideIn";
+import { Animation } from "../baseParts/Animation";
 
 export const ServiceValue = () => {
   return (
@@ -15,7 +15,7 @@ export const ServiceValue = () => {
       </div>
       <div className="w-full bg-white my-14 h-[400px]"></div>
       <div className="w-[73%] mx-auto text-[4vw] text-primary leading-8 sm:text-xl sm:leading-loose">
-        <SlideIn>
+        <Animation>
           <p className="mb-5">
             UWearでは、
             <br />
@@ -23,8 +23,8 @@ export const ServiceValue = () => {
             <br />
             少しでも楽しくしたいと考えています。
           </p>
-        </SlideIn>
-        <SlideIn>
+        </Animation>
+        <Animation>
           <p className="mb-10">
             そのためには、
             <br />
@@ -36,8 +36,8 @@ export const ServiceValue = () => {
             <br />
             UWearを通じて作りたいと思っています。
           </p>
-        </SlideIn>
-        <SlideIn>
+        </Animation>
+        <Animation>
           <p className="mb-5">
             UWearは
             <br />
@@ -45,8 +45,8 @@ export const ServiceValue = () => {
             <br />
             掛け合わせた造語です。
           </p>
-        </SlideIn>
-        <SlideIn>
+        </Animation>
+        <Animation>
           <p className="mb-5">
             あなたの着る悩みを
             <br />
@@ -54,8 +54,8 @@ export const ServiceValue = () => {
             <br />
             毎日の着るが楽しいを作るサービスです。
           </p>
-        </SlideIn>
-        <SlideIn>
+        </Animation>
+        <Animation>
           <p>
             あなたの着る悩みを何でも聞かせてださい。
             <br />
@@ -65,7 +65,7 @@ export const ServiceValue = () => {
             <br />
             チャレンジが出来ると嬉しいです。
           </p>
-        </SlideIn>
+        </Animation>
       </div>
     </div>
   );

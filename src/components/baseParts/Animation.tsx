@@ -4,6 +4,7 @@ import { useInView } from "react-intersection-observer";
 type TProps = {
   children: ReactNode;
   animationClassName?: string;
+  preAnimationClassName?: string;
   options?: {
     threshold: number;
     triggerOnce?: boolean;
@@ -11,17 +12,23 @@ type TProps = {
   };
 };
 
-export const SlideIn = ({ children, animationClassName, options }: TProps) => {
+export const Animation = ({
+  children,
+  animationClassName,
+  preAnimationClassName,
+  options,
+}: TProps) => {
   const { ref, inView } = useInView(
     options ?? {
       threshold: 1,
       triggerOnce: true,
     }
   );
-  const className = animationClassName ?? "animate-slideIn";
+  const animateClassName = animationClassName ?? "animate-slideIn";
+  const preAnimateClassName = preAnimationClassName ?? "opacity-0";
 
   return (
-    <div ref={ref} className={inView ? className : "opacity-0"}>
+    <div ref={ref} className={inView ? animateClassName : preAnimateClassName}>
       {children}
     </div>
   );

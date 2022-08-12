@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { SlideIn } from "../baseParts/SlideIn";
+import { Animation } from "../baseParts/Animation";
 
 type TProps = {
   customer: {
@@ -13,7 +13,7 @@ type TProps = {
 
 export const ReviewCard = ({ customer, content, type }: TProps) => {
   return (
-    <SlideIn>
+    <Animation>
       <div
         className={`w-full my-10 flex relative ${
           type === "left" ? "" : "justify-end"
@@ -53,6 +53,6 @@ export const ReviewCard = ({ customer, content, type }: TProps) => {
           </>
         )}
       </div>
-    </SlideIn>
+    </Animation>
   );
 };

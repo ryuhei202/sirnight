@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { SlideIn } from "../baseParts/SlideIn";
+import { Animation } from "../baseParts/Animation";
 
 type TProps = {
   illustPosition: "right" | "left";
@@ -13,7 +13,7 @@ export const ServicePoint = ({
   content,
 }: TProps) => {
   return (
-    <SlideIn options={{ threshold: 1, triggerOnce: true }}>
+    <Animation options={{ threshold: 1, triggerOnce: true }}>
       <div
         className={`bg-clay flex flex-row p-7 mt-7 ${
           illustPosition === "right" ? "" : "justify-end"
@@ -53,6 +53,6 @@ export const ServicePoint = ({
           </>
         )}
       </div>
-    </SlideIn>
+    </Animation>
   );
 };
