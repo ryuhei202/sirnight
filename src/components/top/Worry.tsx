@@ -17,7 +17,7 @@ export const Worry = ({ content, status, type }: TProps) => {
       options={{ threshold: 1, triggerOnce: true, delay: 500 }}
     >
       <p
-        className={`bg-[#F4F3EF] rounded-[16px] p-5 min-w-[50%] w-fit ${
+        className={`bg-[#F4F3EF] rounded-[16px] p-5 min-w-[50%] w-fit [font-feature-settings:'palt'on] ${
           type === "right" ? "ml-auto" : "mr-auto"
         }`}
       >
