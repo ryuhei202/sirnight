@@ -36,6 +36,8 @@ module.exports = {
         infiniteSlideLeft: "infiniteSlideLeft 20s linear infinite",
         infiniteSlideRight: "infiniteSlideRight 20s linear infinite",
         shrink: "shrink 1s ease-in-out forwards",
+        rotatePositive: "rotatePositive 2s ease-in-out forwards",
+        rotateNegative: "rotateNegative 2s ease-in-out forwards",
       },
       keyframes: {
         slideIn: {
@@ -113,6 +115,14 @@ module.exports = {
         shrink: {
           "0%": { transform: "scale(125%)" },
           "100%": { transform: "scale(100%)" },
+        },
+        rotatePositive: {
+          "0%": { opacity: 0, transform: "rotate(-12deg)" },
+          "100%": { opacity: 1, transform: "rotate(0deg)" },
+        },
+        rotateNegative: {
+          "0%": { opacity: 0, transform: "rotate(12deg)" },
+          "100%": { opacity: 1, transform: "rotate(0deg)" },
         },
       },
     },
