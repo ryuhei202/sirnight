@@ -22,7 +22,7 @@ export const CoordinateCard = ({
           className="object-cover h-[calc(100vh-70px)] w-full"
         />
       </figure>
-      <div className="h-fit bg-clay z-30 mt-[25vh]">
+      <div className="h-fit bg-clay z-30 mt-[25vh] [transform:translate3d(0,0,0)]">
         <div className="flex flex-row w-full text-sm border-y border-themeGray font-semibold">
           <h2 className="bg-themeGray text-clay w-1/4 text-center py-2.5">
             {coordinateNumber}
