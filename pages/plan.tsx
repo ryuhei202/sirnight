@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { Header } from "../src/components/plan/Header";
 import { PlanDetail } from "../src/components/plan/PlanDetail";
 import { FooterMenu } from "../src/components/top/FooterMenu";
