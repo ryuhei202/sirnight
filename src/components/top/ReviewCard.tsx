@@ -21,7 +21,7 @@ export const ReviewCard = ({ customer, content, type }: TProps) => {
       >
         {type === "left" ? (
           <>
-            <p className="w-[80%] border-2 border-[#D8D8D2] rounded-[16px] p-5 text-xs">
+            <p className="w-[80%] border-2 border-[#D8D8D2] rounded-[16px] p-5 text-sm">
               {content}
             </p>
             <div className="absolute right-0 w-[15%]">
@@ -47,7 +47,7 @@ export const ReviewCard = ({ customer, content, type }: TProps) => {
                 </p>
               </div>
             </div>
-            <p className="w-[80%] border-2 border-[#D8D8D2] rounded-[16px] p-5 text-xs">
+            <p className="w-[80%] border-2 border-[#D8D8D2] rounded-[16px] p-5 text-sm">
               {content}
             </p>
           </>
