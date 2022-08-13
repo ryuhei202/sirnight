@@ -7,7 +7,7 @@ export const HowToUse = () => {
           alt="keyVisuals-5"
           className="absolute"
         />
-        <div className="absolute bottom-0 left-1/2 translate-x-[-50%] h-[50%] w-full p-8 text-white text-2xl text-center bg-gradient-to-b from-transparent to-black ">
+        <div className="absolute bottom-0 left-1/2 translate-x-[-50%] h-[50%] w-full p-8 text-white text-2xl text-center bg-gradient-to-b from-transparent to-black">
           <div className="w-[100%] mx-auto tracking-[0.15em] leading-[1.5em]">
             <p>スタイリストが</p>
             <p className="bg-themeGray p-2 border-2 border-dotted border-white">
