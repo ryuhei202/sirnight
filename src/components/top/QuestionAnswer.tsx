@@ -7,7 +7,7 @@ type TProps = {
 
 export const QuestionAnswer = ({ question, answer }: TProps) => {
   const [isActive, setIsActive] = useState(false);
-  const handleClick = () => setIsActive(!isActive);
+  const handleClick = () => setIsActive((prevState) => !prevState);
   return (
     <div
       className="py-8 px-[10%] flex justify-between cursor-pointer border-t-2 border-solid border-[#D8D8D2]"

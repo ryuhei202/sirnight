@@ -6,12 +6,12 @@ export const ServiceValue = () => {
       <div className="w-[73%] mx-auto leading-relaxed tracking-wide text-[8vw] sm:text-4xl sm:[70%]">
         <p className="my-3">
           毎日の
-          <span className="px-3 py-2 mx-2 border-2 border-dotted border-themeGray">
+          <span className="px-3 py-2 mx-2 border border-dashed border-themeGray">
             着る
           </span>
           が
         </p>
-        <p className="text-right">楽しくなるように</p>
+        <p className="text-right mt-5 sm:mt-10">楽しくなるように</p>
       </div>
       <div className="w-full my-14">
         <img src="/images/serviceValue/1.png" alt="service-value" />

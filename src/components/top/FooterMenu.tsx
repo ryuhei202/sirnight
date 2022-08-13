@@ -5,7 +5,7 @@ import { Menu } from "./Menu";
 export const FooterMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const handleClick = () => {
-    setIsOpen(!isOpen);
+    setIsOpen((prevState) => !prevState);
   };
 
   return (
