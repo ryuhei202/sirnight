@@ -6,7 +6,7 @@ export const GA_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID ?? "";
 export type TGAEvent = {
   readonly action: string;
   readonly category: string;
-  readonly label?: number;
+  readonly label?: string;
 };
 
 export const pageView = (path: string) => {
@@ -18,7 +18,7 @@ export const pageView = (path: string) => {
 export const analyzeEvent = ({ action, category, label }: TGAEvent) => {
   window.gtag("event", action, {
     event_category: category,
-    event_label: String(label),
+    event_label: label,
   });
 };
 

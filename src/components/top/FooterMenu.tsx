@@ -1,16 +1,21 @@
 import Link from "next/link";
 import { useState } from "react";
+import { analyzeEvent } from "../../lib/gtag";
 import { Menu } from "./Menu";
 
 export const FooterMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const handleClick = () => {
+  const onClickIcon = () => {
     setIsOpen((prevState) => !prevState);
   };
 
+  const onClickPlan = () => {
+    analyzeEvent({action: "click", category: "to_plan", label: "footer_menu"})
+  }
+
   return (
     <>
-      {isOpen ? <Menu onClick={handleClick} /> : <></>}
+      {isOpen ? <Menu onClick={onClickIcon} /> : <></>}
       <div className="fixed bottom-0 h-[70px] w-[inherit] bg-clay flex z-40 border-t border-solid border-[#475156]">
         <Link href="/">
           <a className="h-full w-1/4 border-r border-solid border-[#475156] flex justify-center items-center">
@@ -19,7 +24,7 @@ export const FooterMenu = () => {
         </Link>
         <div
           className="h-full w-1/2 flex justify-center items-center cursor-pointer"
-          onClick={handleClick}
+          onClick={onClickIcon}
         >
           <button className="w-[26%]">
             {isOpen ? (

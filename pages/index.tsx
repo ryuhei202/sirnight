@@ -66,16 +66,16 @@ const Home: NextPage<TProps> = ({ articlesData }) => {
         </div>
         <PointDescription />
         <WhatToResolve />
-        <Conversion />
+        <Conversion number={1} leftImagePath="/images/conversions/1.png" rightImagePath="/images/conversions/2.png" />
         <Sympathy />
         <HowToUse />
         <SceneCoordinates />
         <HowToStart />
-        <Conversion />
+        <Conversion number={2} leftImagePath="/images/conversions/1.png" rightImagePath="/images/conversions/2.png" />
         <ServiceValue />
         <CustomerReviews />
         <Faq />
-        <Conversion />
+        <Conversion number={3} leftImagePath="/images/conversions/1.png" rightImagePath="/images/conversions/2.png" />
         <News data={articlesData} />
         <Footer />
         <FooterMenu />

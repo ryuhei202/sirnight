@@ -4,6 +4,7 @@ import React from "react";
 type TProps = {
   href: string;
   children?: React.ReactNode;
+  onClick?: () => void;
   variant?: "primary" | "text";
   className?: string;
   border?: boolean;
@@ -13,6 +14,7 @@ type TProps = {
 export const LinkButton = ({
   href,
   children,
+  onClick,
   variant,
   className,
   border,
@@ -53,7 +55,11 @@ export const LinkButton = ({
 
   return (
     <Link href={href} passHref>
-      <a href={href} className={`${className ?? ""} ${classes.join(" ")}`}>
+      <a
+        href={href}
+        onClick={onClick}
+        className={`${className ?? ""} ${classes.join(" ")}`}
+      >
         {children}
       </a>
     </Link>
