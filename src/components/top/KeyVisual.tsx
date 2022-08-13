@@ -7,7 +7,7 @@ export const KeyVisual = () => {
 
   const toggleVisibility = () => {
     if (isAnimated.current) return;
-    if (window.scrollY > 100) {
+    if (window.scrollY > 10) {
       isAnimated.current = true;
       setIsLabelVisible(false);
     }
