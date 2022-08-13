@@ -1,3 +1,6 @@
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+
 export const GA_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID ?? "";
 
 export type TGAEvent = {
@@ -17,4 +20,17 @@ export const analyzeEvent = ({ action, category, label }: TGAEvent) => {
     event_category: category,
     event_label: String(label),
   });
+};
+
+export const usePageView = () => {
+  const router = useRouter();
+  useEffect(() => {
+    if (GA_ID === "") return;
+    const handleRouteChange = (path: string) => {
+      pageView(path);
+    };
+
+    router.events.on("routeChangeComplete", handleRouteChange);
+    return () => router.events.off("routeChangeComplete", handleRouteChange);
+  }, [router.events]);
 };
