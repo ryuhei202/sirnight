@@ -23,7 +23,7 @@ class Document extends NextDocument<Props> {
                 src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
                 strategy="afterInteractive"
               />
-              <Script defer strategy="afterInteractive">
+              <Script id="Google Analitics" defer strategy="afterInteractive">
                 {`
                   window.dataLayer = window.dataLayer || [];
                   function gtag(){dataLayer.push(arguments);}
