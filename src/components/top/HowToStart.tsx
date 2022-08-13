@@ -2,7 +2,7 @@ export const HowToStart = () => {
   return (
     <div className="mt-16 p-10 text-center">
       <div className="">
-        <span className="pb-2 text-2xl font-semibold tracking-wider border-b-2 border-dashed border-bottom border-themeGray">
+        <span className="pb-2 text-2xl font-semibold border-b-2 border-dashed border-bottom border-themeGray">
           UWearのはじめ方
         </span>
       </div>

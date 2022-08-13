@@ -22,7 +22,7 @@ const rowClassName = (index: number, length: number) => {
 export const PlanDetail = ({ plan, disabled }: TProps) => {
   return (
     <div className={`duration-1000 ${disabled ? "opacity-20" : ""}`}>
-      <div className="border-solid border border-themeGray font-semibold rounded-md mx-3 tracking-wider">
+      <div className="border-solid border border-themeGray font-semibold rounded-md mx-3">
         <div className="">
           <p className="text-center text-xl my-6">
             月額

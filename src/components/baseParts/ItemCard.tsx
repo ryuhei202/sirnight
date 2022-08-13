@@ -40,7 +40,9 @@ export const ItemCard = ({
               </p>
             ))}
           </div>
-          <div className={`p-4 ${titleSplit.length === 1 ? "" : "mt-12"} tracking-wide text-sm`}>
+          <div
+            className={`p-4 ${titleSplit.length === 1 ? "" : "mt-12"} text-sm`}
+          >
             <p>{description}</p>
           </div>
         </div>

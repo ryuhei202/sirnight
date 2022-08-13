@@ -12,7 +12,7 @@ export const NewsLinkList = ({ data }: TProps) => {
       {data.contents.map((content, index) => (
         <Link href={`/news/${content.id}`} key={index}>
           <div
-            className={`py-10 tracking-wider cursor-pointer border-[#D8D8D2] border-t ${
+            className={`py-10 cursor-pointer border-[#D8D8D2] border-t ${
               index === data.contents.length - 1
                 ? "border-b border-[#D8D8D2]"
                 : ""

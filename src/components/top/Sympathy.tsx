@@ -3,7 +3,7 @@ import { Worry } from "./Worry";
 export const Sympathy = () => {
   return (
     <div className="py-[100px] px-[30px]">
-      <p className="text-2xl text-center mx-auto font-semibold leading-10 tracking-wider">
+      <p className="text-2xl text-center mx-auto font-semibold leading-10">
         こんなシーンで
         <br />
         <span className="border-b-2 border-dashed border-bottom border-themeGray pb-0.5">

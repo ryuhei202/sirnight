@@ -3,7 +3,7 @@ import { QuestionAnswer } from "./QuestionAnswer";
 export const Faq = () => {
   return (
     <div className="bg-clay py-28" id="faq">
-      <p className="text-2xl text-center font-extrabold tracking-wider mb-14">
+      <p className="text-2xl text-center font-extrabold mb-14">
         よくあるご質問
       </p>
       <div className="border-b-2 border-solid border-[#D8D8D2]">

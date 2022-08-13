@@ -25,7 +25,6 @@ export const Button = ({
     "rounded-full",
     "bg-themeGray",
     "text-slate-200",
-    "tracking-wider",
   ];
 
   if (border) classes.push("border-2 border-solid border-white");

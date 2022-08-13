@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 @layer base {
+  html,
+  body {
+    letter-spacing: 0.05em;
+  }
   .newsContent h1 {
     font-weight: bold;
     font-size: 1.6rem;

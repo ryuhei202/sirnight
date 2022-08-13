@@ -8,7 +8,7 @@ export const HowToUse = () => {
           className="absolute"
         />
         <div className="absolute bottom-0 left-1/2 translate-x-[-50%] h-[50%] w-full p-8 text-white text-2xl text-center bg-gradient-to-b from-transparent to-black">
-          <div className="w-[100%] mx-auto tracking-[0.15em] leading-[1.5em]">
+          <div className="w-[100%] mx-aut[0.15em] leading-[1.5em]">
             <p>スタイリストが</p>
             <p className="bg-themeGray p-2 border border-dashed border-white">
               あなたに最適なコーデ
@@ -18,7 +18,7 @@ export const HowToUse = () => {
         </div>
       </div>
       <div className="py-[100px]">
-        <ul className="px-[60px] flex overflow-x-scroll space-x-8 snap-x snap-mandatory tracking-wider">
+        <ul className="px-[60px] flex overflow-x-scroll space-x-8 snap-x snap-mandatory">
           <li className="flex-none w-full snap-always snap-center text-center">
             <p className="font-lora font-semibold">STEP 01</p>
             <p className="mx-auto mt-0.5 w-[5%] h-[1px] border-b border-dashed border-themeGray"></p>
