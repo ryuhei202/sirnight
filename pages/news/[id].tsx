@@ -5,7 +5,7 @@ import {
   handleData,
   TArticleContent,
   TArticles,
-} from "../../src/api/getArticles";
+} from "../../src/lib/getArticles";
 import { LinkButton } from "../../src/components/baseParts/LinkButton";
 import { NewsContent } from "../../src/components/news/NewsContent";
 import { Header } from "../../src/components/plan/Header";

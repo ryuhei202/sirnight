@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useEffect } from "react";
-import { client, TArticles } from "../src/api/getArticles";
+import { client, TArticles } from "../src/lib/getArticles";
 import { CatchCopy } from "../src/components/top/CatchCopy";
 import { Conversion } from "../src/components/top/Conversion";
 import { CustomerReviews } from "../src/components/top/CustomerReviews";
