@@ -15,6 +15,7 @@ module.exports = {
         beige: "#E8E7DF",
       },
       animation: {
+        fadeIn: "fadeIn 0.7s ease-in-out forwards",
         slideIn: "slideIn 0.7s ease-in-out forwards",
         slideInOpLogo: "slideIn 0.7s ease-in-out forwards",
         slideInOpText: "slideIn 0.7s ease-in-out 1.0s forwards",
@@ -40,6 +41,10 @@ module.exports = {
         rotateNegative: "rotateNegative 2s ease-in-out forwards",
       },
       keyframes: {
+        fadeIn: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
+        },
         slideIn: {
           "0%": {
             opacity: 0,
