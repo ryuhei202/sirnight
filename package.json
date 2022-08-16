@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.6.6",
+    "@sentry/nextjs": "^7.10.0",
     "@types/react-query": "^1.2.9",
     "axios": "^0.27.2",
     "axios-case-converter": "^0.9.0",

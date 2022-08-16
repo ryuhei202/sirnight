@@ -4,6 +4,7 @@ import { client, TArticles } from "../../../src/api/getArticles";
 import { NewsLinkList } from "../../../src/components/news/NewsLinkList";
 import { Pagination } from "../../../src/components/news/Pagination";
 import { Header } from "../../../src/components/plan/Header";
+import { FooterMenu } from "../../../src/components/top/FooterMenu";
 
 export const PER_PAGE = 10;
 
@@ -28,6 +29,7 @@ const NewsPageId: NextPage<TProps> = ({ articlesData, pageId }: TProps) => {
             currentPageId={pageId}
           />
         </div>
+        <FooterMenu />
       </div>
     </div>
   );
