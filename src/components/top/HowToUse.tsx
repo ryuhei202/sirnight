@@ -18,7 +18,7 @@ export const HowToUse = () => {
         </div>
       </div>
       <div className="py-[100px]">
-        <ul className="px-[60px] flex overflow-x-scroll space-x-8 snap-x snap-mandatory">
+        <ul className="px-[60px] flex overflow-x-scroll space-x-8 snap-x snap-mandatory hidden-scrollbar">
           <li className="flex-none w-full snap-always snap-center text-center">
             <p className="font-lora font-semibold">STEP 01</p>
             <p className="mx-auto mt-0.5 w-[5%] h-[1px] border-b border-dashed border-themeGray"></p>
