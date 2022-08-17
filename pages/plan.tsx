@@ -40,7 +40,7 @@ const Plan: NextPage = () => {
   };
 
   return (
-    <div className="h-full bg-clay sm:w-[500px]">
+    <div className="h-full">
       <NextSeo title="プラン" />
       <Head>
         <link
@@ -51,7 +51,7 @@ const Plan: NextPage = () => {
       </Head>
       <div
         id="container"
-        className="h-full min-h-screen bg-clay sm:w-[500px] inset-0 text-themeGray"
+        className="h-full min-h-screen inset-0 text-themeGray"
       >
         <Header lists={[{ name: "料金プラン" }]} />
         <h2 className="text-4xl my-20 text-center font-bold">料金プラン</h2>

@@ -126,7 +126,7 @@ const Register = ({ planId }: { planId: 11 | 12 | 13 }) => {
       </Head>
       <div
         id="container"
-        className="h-full min-h-screen bg-clay sm:w-[500px] inset-0 text-themeGray"
+        className="h-full min-h-screen inset-0 text-themeGray"
       >
         <h2 className="text-3xl font-bold text-center py-12">会員情報登録</h2>
         {forms}

@@ -11,7 +11,7 @@ const Company: NextPage = () => {
       <NextSeo title="会社概要" />
       <div
         id="container"
-        className="h-full min-h-screen bg-clay sm:w-[500px] inset-0 text-themeGray"
+        className="h-full min-h-screen inset-0 text-themeGray"
       >
         <Header lists={[{ name: "会社概要" }]} />
         <Layout title="会社概要" className="px-12">

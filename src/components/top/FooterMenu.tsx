@@ -11,7 +11,7 @@ export const FooterMenu = () => {
   return (
     <>
       {isOpen ? <Menu onClick={handleClick} /> : <></>}
-      <div className="fixed bottom-0 h-[70px] w-[inherit] bg-clay flex z-40 border-t border-solid border-[#475156]">
+      <div className="fixed bottom-0 h-[70px] sm:w-[498px] bg-clay flex z-40 border-t border-solid border-[#475156]">
         <Link href="/">
           <a className="h-full w-1/4 border-r border-solid border-[#475156] flex justify-center items-center">
             <img src="/images/logos/gray.svg" alt="logo" className="w-[77%]" />

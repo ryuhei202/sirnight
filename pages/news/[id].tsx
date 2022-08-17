@@ -30,7 +30,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 const NewsDetail: NextPage<TArticleContent> = (article: TArticleContent) => {
   return (
-    <div className="h-full bg-clay sm:w-[500px]">
+    <div className="h-full">
       <NextSeo title={`${article.title}`} />
       <Head>
         <link
@@ -41,7 +41,7 @@ const NewsDetail: NextPage<TArticleContent> = (article: TArticleContent) => {
       </Head>
       <div
         id="container"
-        className="h-full min-h-screen bg-clay sm:w-[500px] inset-0 text-themeGray"
+        className="h-full min-h-screen inset-0 text-themeGray"
       >
         <Header
           lists={[

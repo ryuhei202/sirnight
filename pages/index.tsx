@@ -52,7 +52,7 @@ const Home: NextPage<TProps> = ({ articlesData }) => {
       <OpeningPage className="z-50" />
       <div
         id="container"
-        className="relative sm:w-[500px] bg-clay text-themeGray z-40"
+        className="relative text-themeGray z-40"
       >
         <KeyVisual />
         <CatchCopy />

@@ -11,7 +11,7 @@ const Term: NextPage = () => {
       <NextSeo title="利用規約" />
       <div
         id="container"
-        className="h-full min-h-screen bg-clay sm:w-[500px] inset-0 text-themeGray"
+        className="h-full min-h-screen inset-0 text-themeGray"
       >
         <Header lists={[{ name: "利用規約" }]} />
         <Layout title="利用規約">

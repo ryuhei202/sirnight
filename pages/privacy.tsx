@@ -11,7 +11,7 @@ const Privacy: NextPage = () => {
       <NextSeo title="プライバシーポリシー" />
       <div
         id="container"
-        className="h-full min-h-screen bg-clay sm:w-[500px] inset-0 text-themeGray"
+        className="h-full min-h-screen inset-0 text-themeGray"
       >
         <Header lists={[{ name: "プライバシーポリシー" }]} />
         <Layout title="プライバシーポリシー">

@@ -9,7 +9,7 @@ const Thanks: NextPage = () => {
       <NextSeo title="会員登録完了" />
       <div
         id="container"
-        className="h-full min-h-screen bg-clay sm:w-[500px] inset-0 text-themeGray"
+        className="h-full min-h-screen inset-0 text-themeGray"
       >
         <h2 className="text-3xl font-bold text-center py-12">会員登録完了</h2>
         <div className="px-6">

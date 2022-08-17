@@ -11,7 +11,7 @@ const Laws: NextPage = () => {
       <NextSeo title="特定商取引法・古物営業法に基づく表示" />
       <div
         id="container"
-        className="h-full min-h-screen bg-clay sm:w-[500px] inset-0 text-themeGray"
+        className="h-full min-h-screen inset-0 text-themeGray"
       >
         <Header lists={[{ name: "特定商取引法・古物営業法に基づく表示" }]} />
         <Layout title="特定商取引法・古物営業法に基づく表示">
