@@ -5,7 +5,7 @@ import { Menu } from "./Menu";
 export const FooterMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const handleClick = () => {
-    setIsOpen(!isOpen);
+    setIsOpen((prevState) => !prevState);
   };
 
   return (
@@ -34,7 +34,9 @@ export const FooterMenu = () => {
         </div>
         <div className="h-full w-1/4 bg-themeGray text-clay text-sm flex justify-center items-center cursor-pointer">
           <Link href="/plan">
-            <a className="w-[77%] text-center">料金プラン</a>
+            <a className="w-[77%] text-center [font-feature-settings:'palt'on]">
+              料金プラン
+            </a>
           </Link>
         </div>
       </div>

@@ -1,6 +1,5 @@
 import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
-import Link from "next/link";
 import {
   client,
   handleData,
@@ -33,11 +32,6 @@ const NewsDetail: NextPage<TArticleContent> = (article: TArticleContent) => {
     <div className="h-full bg-clay sm:w-[500px]">
       <Head>
         <title>{`${article.title} | UWear公式サイト`}</title>
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="//fonts.googleapis.com/css?family=Lora"
-        />
       </Head>
       <div
         id="container"

@@ -1,7 +1,9 @@
 {
   "editor.tabSize": 2,
   "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": null,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "files.exclude": {
     "amplify/.config": true,

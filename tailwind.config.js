@@ -15,10 +15,14 @@ module.exports = {
         beige: "#E8E7DF",
       },
       animation: {
+        fadeIn: "fadeIn 0.7s ease-in-out forwards",
+        slideIn: "slideIn 0.7s ease-in-out forwards",
         slideInOpLogo: "slideIn 0.7s ease-in-out forwards",
         slideInOpText: "slideIn 0.7s ease-in-out 1.0s forwards",
         slideInOpSubText: "slideIn 0.7s ease-in-out 1.2s forwards",
         slideInCatchCopyText: "slideInLg 1s linear forwards",
+        slideInLeftSide: "slideInLeftSide 0.7s ease-in-out forwards",
+        slideInRightSide: "slideInRightSide 0.7s ease-in-out forwards",
         slideOutOp: "slideOut 0.5s ease-in-out 0s forwards",
         slideOutKeyVisualFirst: "slideOut 0.5s ease-in-out 5s forwards",
         firstFadeOutPanel: "fadeOut 0.3s ease-in-out 3.1s forwards",
@@ -29,12 +33,18 @@ module.exports = {
         sixthFadeOutPanel: "fadeOut 0.3s ease-in-out 3.35s forwards",
         seventhFadeOutPanel: "fadeOut 0.3s ease-in-out 3.4s forwards",
         eighthFadeOutPanel: "fadeOut 0.3s ease-in-out 3.45s forwards",
-        infiniteScrollFirst: "infiniteScrollFirst 30s linear infinite",
-        infiniteScrollLast: "infiniteScrollLast 30s linear infinite",
+        infiniteScroll: "infiniteScroll 60s linear infinite",
         infiniteSlideLeft: "infiniteSlideLeft 20s linear infinite",
         infiniteSlideRight: "infiniteSlideRight 20s linear infinite",
+        shrink: "shrink 1s ease-in-out forwards",
+        rotatePositive: "rotatePositive 2s ease-in-out forwards",
+        rotateNegative: "rotateNegative 2s ease-in-out forwards",
       },
       keyframes: {
+        fadeIn: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
+        },
         slideIn: {
           "0%": {
             opacity: 0,
@@ -53,6 +63,26 @@ module.exports = {
           "100%": {
             opacity: 1,
             transform: "translateY(0)",
+          },
+        },
+        slideInLeftSide: {
+          "0%": {
+            opacity: 0,
+            transform: "translateX(-30px)",
+          },
+          "100%": {
+            opacity: 1,
+            transform: "translateX(0)",
+          },
+        },
+        slideInRightSide: {
+          "0%": {
+            opacity: 0,
+            transform: "translateX(30px)",
+          },
+          "100%": {
+            opacity: 1,
+            transform: "translateX(0)",
           },
         },
         slideOut: {
@@ -75,13 +105,9 @@ module.exports = {
             opacity: 0,
           },
         },
-        infiniteScrollFirst: {
+        infiniteScroll: {
           "0%": { transform: "translateY(0)" },
-          "100%": { transform: "translateY(-1104px)" },
-        },
-        infiniteScrollLast: {
-          "0%": { transform: "translateY(1104px)" },
-          "100%": { transform: "translateY(0)" },
+          "100%": { transform: "translateY(-100%)" },
         },
         infiniteSlideLeft: {
           "0%": { transform: "translateX(0%)" },
@@ -90,6 +116,18 @@ module.exports = {
         infiniteSlideRight: {
           "0%": { transform: "translateX(-100%)" },
           "100%": { transform: "translateX(0)" },
+        },
+        shrink: {
+          "0%": { transform: "scale(125%)" },
+          "100%": { transform: "scale(100%)" },
+        },
+        rotatePositive: {
+          "0%": { opacity: 0, transform: "rotate(-12deg)" },
+          "100%": { opacity: 1, transform: "rotate(0deg)" },
+        },
+        rotateNegative: {
+          "0%": { opacity: 0, transform: "rotate(12deg)" },
+          "100%": { opacity: 1, transform: "rotate(0deg)" },
         },
       },
     },
