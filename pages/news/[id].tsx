@@ -32,7 +32,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 const NewsDetail: NextPage<TArticleContent> = (article: TArticleContent) => {
   return (
     <div className="h-full bg-clay sm:w-[500px]">
-      <NextSeo title={`${article.title} | UWear公式サイト`} />
+      <NextSeo title={`${article.title}`} />
       <Head>
         <link
           rel="stylesheet"
