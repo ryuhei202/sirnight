@@ -25,7 +25,7 @@ type TProps = {
   articlesData: TArticles;
 };
 
-const forbitScroll = () => {
+const forbidScroll = () => {
   document.addEventListener("mousewheel", preventScroll, { passive: false });
   document.addEventListener("touchmove", preventScroll, { passive: false });
 };
@@ -41,7 +41,7 @@ const preventScroll = (e: Event) => {
 
 const Home: NextPage<TProps> = ({ articlesData }) => {
   useEffect(() => {
-    forbitScroll();
+    forbidScroll();
     setTimeout(() => {
       allowScroll();
     }, 3000);
