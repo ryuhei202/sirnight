@@ -49,9 +49,6 @@ const Home: NextPage<TProps> = ({ articlesData }) => {
 
   return (
     <>
-      <Head>
-        <title>UWear公式サイト</title>
-      </Head>
       <OpeningPage className="z-50" />
       <div
         id="container"

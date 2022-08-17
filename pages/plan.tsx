@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import { NextSeo } from "next-seo";
 import Head from "next/head";
 import React, { useRef, useState } from "react";
 import { Header } from "../src/components/plan/Header";
@@ -40,8 +41,13 @@ const Plan: NextPage = () => {
 
   return (
     <div className="h-full bg-clay sm:w-[500px]">
+      <NextSeo title="プラン" />
       <Head>
-        <title>プラン | UWear公式サイト</title>
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="//fonts.googleapis.com/css?family=Lora"
+        />
       </Head>
       <div
         id="container"

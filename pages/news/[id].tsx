@@ -1,4 +1,5 @@
 import { GetStaticProps, NextPage } from "next";
+import { NextSeo } from "next-seo";
 import Head from "next/head";
 import {
   client,
@@ -30,8 +31,13 @@ export const getStaticProps: GetStaticProps = async (context) => {
 const NewsDetail: NextPage<TArticleContent> = (article: TArticleContent) => {
   return (
     <div className="h-full bg-clay sm:w-[500px]">
+      <NextSeo title={`${article.title}`} />
       <Head>
-        <title>{`${article.title} | UWear公式サイト`}</title>
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="//fonts.googleapis.com/css?family=Lora"
+        />
       </Head>
       <div
         id="container"
