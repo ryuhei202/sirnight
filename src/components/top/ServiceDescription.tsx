@@ -1,6 +1,6 @@
 export const ServiceDescription = () => {
   return (
-    <div className="relative py-14 text-center bg-clay" id="service-description">
+    <div className="relative py-14 text-center bg-clay [font-feature-settings:'palt'on]" id="service-description">
       <h3 className="text-[6vw] sm:text-3xl leading-10 font-semibold">
         UWearは､あなたと一緒に
         <br />
