@@ -21,9 +21,7 @@ const NewsPageId: NextPage<TProps> = ({ articlesData, pageId }: TProps) => {
       <div className="h-full min-h-screen bg-clay sm:w-[500px] text-themeGray">
         <Header lists={[{ name: "お知らせ" }]} />
         <div className="w-4/5 pt-14 mx-auto">
-          <p className="text-3xl text-center font-extrabold tracking-wider mb-14">
-            お知らせ
-          </p>
+          <p className="text-3xl text-center font-extrabold mb-14">お知らせ</p>
           <NewsLinkList data={articlesData} />
           <Pagination
             totalCount={articlesData.totalCount}

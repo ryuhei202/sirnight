@@ -7,10 +7,10 @@ export const HowToUse = () => {
           alt="keyVisuals-5"
           className="absolute"
         />
-        <div className="absolute bottom-0 left-1/2 translate-x-[-50%] h-[50%] w-full p-8 text-white text-2xl text-center bg-gradient-to-b from-transparent to-black ">
-          <div className="w-[100%] mx-auto tracking-[0.15em] leading-[1.5em]">
+        <div className="absolute bottom-0 left-1/2 translate-x-[-50%] h-[50%] w-full p-8 text-white text-2xl text-center bg-gradient-to-b from-transparent to-black">
+          <div className="w-[100%] mx-aut[0.15em] leading-[1.5em]">
             <p>スタイリストが</p>
-            <p className="bg-themeGray p-2 border-2 border-dotted border-white">
+            <p className="bg-themeGray p-2 border border-dashed border-white">
               あなたに最適なコーデ
             </p>
             <p>を提案します</p>
@@ -18,26 +18,62 @@ export const HowToUse = () => {
         </div>
       </div>
       <div className="py-[100px]">
-        <div className="px-[40px] text-center mb-4">
-          <p>01•••04</p>
-          <p>
-            コーデの利用シーンと悩みを
-            <br />
-            お聞きします
-          </p>
-        </div>
-        <ul className="px-[40px] flex overflow-x-scroll space-x-8 whitespace-no-wrap snap-x snap-mandatory">
-          <li className="flex-none w-[85%] snap-always snap-center">
-            <img src="/images/howToUse/1-1.png" alt="howToUse1-1" />
+        <ul className="px-[60px] flex overflow-x-scroll space-x-8 snap-x snap-mandatory hidden-scrollbar">
+          <li className="flex-none w-full snap-always snap-center text-center">
+            <p className="font-lora font-semibold">STEP 01</p>
+            <p className="mx-auto mt-0.5 w-[5%] h-[1px] border-b border-dashed border-themeGray"></p>
+            <p className="mt-5 font-semibold sm:text-xl">
+              コーデの利用シーンと悩みを
+              <br />
+              お聞きします
+            </p>
+            <img
+              src="/images/howToUse/1-1.png"
+              alt="howToUse1-1"
+              className="mt-7"
+            />
           </li>
-          <li className="flex-none w-[85%] snap-always snap-center">
-            <img src="/images/howToUse/1-2.png" alt="howToUse1-2" />
+          <li className="flex-none w-full snap-always snap-center text-center">
+            <p className="font-lora font-semibold">STEP 02</p>
+            <p className="mx-auto mt-0.5 w-[5%] h-[1px] border-b border-dashed border-themeGray"></p>
+            <p className="mt-5 font-semibold sm:text-xl">
+              利用シーンと悩みにあわせた
+              <br />
+              コーデを提案します
+            </p>
+            <img
+              src="/images/howToUse/1-2.png"
+              alt="howToUse1-2"
+              className="mt-7"
+            />
           </li>
-          <li className="flex-none w-[85%] snap-always snap-center">
-            <img src="/images/howToUse/1-3.png" alt="howToUse1-3" />
+          <li className="flex-none w-full snap-always snap-center text-center">
+            <p className="font-lora font-semibold">STEP 03</p>
+            <p className="mx-auto mt-0.5 w-[5%] h-[1px] border-b border-dashed border-themeGray"></p>
+            <p className="mt-5 font-semibold sm:text-xl">
+              今回のコーデが
+              <br />
+              あなたに最適な理由を説明します
+            </p>
+            <img
+              src="/images/howToUse/1-3.png"
+              alt="howToUse1-3"
+              className="mt-7"
+            />
           </li>
-          <li className="flex-none w-[85%] snap-always snap-center">
-            <img src="/images/howToUse/1-4.png" alt="howToUse1-4" />
+          <li className="flex-none w-full snap-always snap-center text-center">
+            <p className="font-lora font-semibold">STEP 04</p>
+            <p className="mx-auto mt-0.5 w-[5%] h-[1px] border-b border-dashed border-themeGray"></p>
+            <p className="mt-5 font-semibold sm:text-xl">
+              次回のコーデに活かすため
+              <br />
+              着用の感想をお聞きします
+            </p>
+            <img
+              src="/images/howToUse/1-4.png"
+              alt="howToUse1-4"
+              className="mt-7"
+            />
           </li>
         </ul>
       </div>

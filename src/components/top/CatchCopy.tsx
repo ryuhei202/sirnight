@@ -1,37 +1,30 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { Animation } from "../baseParts/Animation";
 
 export const CatchCopy = () => {
-  const [isDisplay, setIsDisplay] = useState(false);
-  const isAnimated = useRef(false);
-  const toggleIsDisplay = useCallback(() => {
-    if (isAnimated.current) return;
-    if (window.scrollY > 110) {
-      isAnimated.current = true;
-      setIsDisplay(true);
-    }
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener("scroll", toggleIsDisplay);
-    return () => window.removeEventListener("scroll", toggleIsDisplay);
-  }, [toggleIsDisplay]);
-
   return (
-    <div className="relative w-full bg-clay text-center">
-      <h2
-        className={`z-[100] text-4xl font-semibold tracking-[0.15em] leading-[1.5em] mt-[100px] [writing-mode:vertical-rl] text-left inline-block mx-auto ${
-          isDisplay ? "animate-slideInCatchCopyText" : "hidden"
-        }`}
-      >
-        洋服を選ぶのが
-        <br />
-        苦手なあなたに。
-      </h2>
-      <img
-        src="/images/keyVisuals/sub/4-1.png"
-        alt="keyvisuals-4-1"
-        className="-mt-24"
-      />
+    <div className="w-full bg-clay text-center">
+      <div className="relative z-20">
+        <Animation options={{ threshold: 1, triggerOnce: true }}>
+          <h2 className="text-4xl font-semibold tracking-[0.15em] leading-[1.5em] mt-[100px] [writing-mode:vertical-rl] text-left inline-block mx-auto">
+            洋服を選ぶのが
+            <br />
+            苦手なあなたに。
+          </h2>
+        </Animation>
+      </div>
+      <div className="relative z-10 w-full overflow-hidden -mt-24">
+        <Animation
+          options={{ threshold: 0.4, triggerOnce: true }}
+          animationClassName="animate-shrink"
+          preAnimationClassName="scale-125"
+        >
+          <img
+            src="/images/keyVisuals/sub/4-1.png"
+            alt="keyvisuals-4-1"
+            className="origin-top"
+          />
+        </Animation>
+      </div>
     </div>
   );
 };

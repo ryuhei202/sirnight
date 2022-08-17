@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { NextSeo } from "next-seo";
 import Head from "next/head";
-import React, { useEffect, useState } from "react";
+import React, { useRef, useState } from "react";
 import { Header } from "../src/components/plan/Header";
 import { PlanDetail } from "../src/components/plan/PlanDetail";
 import { FooterMenu } from "../src/components/top/FooterMenu";
@@ -14,30 +14,30 @@ import {
 const Plan: NextPage = () => {
   const [selectedPlanId, setSelectedPlanId] = useState<number>(LIGHT_PLAN.id);
   const plans = [LIGHT_PLAN, STANDARD_PLAN, PREMIUM_PLAN];
-  let carousel: HTMLElement | null;
+  const carousel = useRef<HTMLDivElement>(null);
 
   const onClickLabel = (index: number, planId: number) => {
-    if (typeof carousel?.scrollLeft === "undefined") return;
+    if (typeof carousel.current!.scrollLeft === "undefined") return;
 
-    carousel.scrollLeft = (carousel.offsetWidth as number) * index;
+    carousel.current!.scrollLeft =
+      (carousel.current!.offsetWidth as number) * index;
     setSelectedPlanId(planId);
   };
 
   const onScroll = (e: React.UIEvent<HTMLElement>) => {
-    if (typeof carousel?.scrollLeft === "undefined") return;
+    if (typeof carousel.current!.scrollLeft === "undefined") return;
 
-    if (e.currentTarget.scrollLeft < carousel.offsetWidth / 2) {
+    if (e.currentTarget.scrollLeft < carousel.current!.offsetWidth / 2) {
       setSelectedPlanId(LIGHT_PLAN.id);
-    } else if (e.currentTarget.scrollLeft < (carousel.offsetWidth * 3) / 2) {
+    } else if (
+      e.currentTarget.scrollLeft <
+      (carousel.current!.offsetWidth * 3) / 2
+    ) {
       setSelectedPlanId(STANDARD_PLAN.id);
     } else {
       setSelectedPlanId(PREMIUM_PLAN.id);
     }
   };
-
-  useEffect(() => {
-    carousel = document.getElementById("carousel");
-  }, [selectedPlanId]);
 
   return (
     <div className="h-full bg-clay sm:w-[500px]">
@@ -51,7 +51,7 @@ const Plan: NextPage = () => {
       </Head>
       <div
         id="container"
-        className="h-full bg-clay sm:w-[500px] inset-0 text-themeGray"
+        className="h-full min-h-screen bg-clay sm:w-[500px] inset-0 text-themeGray"
       >
         <Header lists={[{ name: "料金プラン" }]} />
         <h2 className="text-4xl my-20 text-center font-bold">料金プラン</h2>
@@ -80,6 +80,7 @@ const Plan: NextPage = () => {
 
           <div
             id="carousel"
+            ref={carousel}
             className="flex overflow-x-auto snap-mandatory snap-x hidden-scrollbar"
             onScroll={onScroll}
           >

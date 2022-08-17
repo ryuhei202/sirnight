@@ -4,9 +4,9 @@ type Props = {
   id?: string;
   className?: string;
   children?: React.ReactNode;
-  size?: "2xl" | "sm" | "xs" | "base";
+  size?: "2xl" | "xl" | "sm" | "xs" | "base";
   color?: "primary" | "secondary" | "strong-gray";
-  weight?: "regular" | "medium" | "bold";
+  weight?: "normal" | "medium" | "semibold" | "bold";
 };
 
 export const Typography = ({
@@ -24,6 +24,8 @@ export const Typography = ({
       switch (size) {
         case "2xl":
           return "text-2xl";
+        case "xl":
+          return "text-xl";
         case "sm":
           return "text-sm";
         case "xs":
@@ -53,8 +55,10 @@ export const Typography = ({
   classes.push(
     (() => {
       switch (weight) {
-        case "regular":
-          return "font-regular";
+        case "normal":
+          return "font-normal";
+        case "semibold":
+          return "font-semibold";
         case "bold":
           return "font-bold";
         case "medium":

@@ -6,7 +6,7 @@ type TProps = {
 
 export const Menu = ({ onClick }: TProps) => {
   return (
-    <div className="fixed top-0 z-40 h-screen px-[13%] sm:w-[500px] sm:px-[66px] bg-clay text-themeGray">
+    <div className="fixed top-0 z-40 h-[calc(100vh_-_70px)] overflow-auto  px-[13%] sm:w-[500px] sm:px-[66px] bg-clay text-themeGray">
       <div className="font-semibold text-xl mt-16 mb-5 border-b-2 border-[#D8D8D2] border-solid">
         <Link href="/#service-description">
           <a onClick={onClick} className="my-10 block">
@@ -53,7 +53,7 @@ export const Menu = ({ onClick }: TProps) => {
           <a className="w-[50%] my-5">プライバシーポリシー</a>
         </Link>
       </div>
-      <div className="flex space-x-7 pt-10">
+      <div className="flex space-x-7 pt-10 pb-14">
         <a
           href="https://www.instagram.com/leeapjp/"
           target="_blank"

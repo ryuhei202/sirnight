@@ -1,4 +1,5 @@
 import { ReactElement } from "react";
+import { Animation } from "../baseParts/Animation";
 
 type TProps = {
   customer: {
@@ -12,44 +13,46 @@ type TProps = {
 
 export const ReviewCard = ({ customer, content, type }: TProps) => {
   return (
-    <div
-      className={`w-full my-5 flex relative ${
-        type === "left" ? "" : "justify-end"
-      }`}
-    >
-      {type === "left" ? (
-        <>
-          <p className="w-[80%] border-2 border-[#D8D8D2] rounded-[16px] p-5 text-xs tracking-wider">
-            {content}
-          </p>
-          <div className="absolute right-0 w-[15%]">
-            <img src={customer.imagePath} alt="customer-icon" />
-            <div className="mt-3">
-              <p className="text-xs text-center">
-                {customer.age + "代"}
-                <br />
-                {customer.work}
-              </p>
+    <Animation>
+      <div
+        className={`w-full my-10 flex relative ${
+          type === "left" ? "" : "justify-end"
+        }`}
+      >
+        {type === "left" ? (
+          <>
+            <p className="w-[80%] border-2 border-[#D8D8D2] rounded-[16px] p-5 text-sm">
+              {content}
+            </p>
+            <div className="absolute right-0 w-[15%]">
+              <img src={customer.imagePath} alt="customer-icon" />
+              <div className="mt-3">
+                <p className="text-xs text-center">
+                  {customer.age + "代"}
+                  <br />
+                  {customer.work}
+                </p>
+              </div>
             </div>
-          </div>
-        </>
-      ) : (
-        <>
-          <div className="absolute left-0 text-center w-[15%]">
-            <img src={customer.imagePath} alt="customer-icon" />
-            <div className="mt-3">
-              <p className="text-xs">
-                {customer.age + "代"}
-                <br />
-                {customer.work}
-              </p>
+          </>
+        ) : (
+          <>
+            <div className="absolute left-0 text-center w-[15%]">
+              <img src={customer.imagePath} alt="customer-icon" />
+              <div className="mt-3">
+                <p className="text-xs">
+                  {customer.age + "代"}
+                  <br />
+                  {customer.work}
+                </p>
+              </div>
             </div>
-          </div>
-          <p className="w-[80%] border-2 border-[#D8D8D2] rounded-[16px] p-5 text-xs tracking-wider">
-            {content}
-          </p>
-        </>
-      )}
-    </div>
+            <p className="w-[80%] border-2 border-[#D8D8D2] rounded-[16px] p-5 text-sm">
+              {content}
+            </p>
+          </>
+        )}
+      </div>
+    </Animation>
   );
 };
