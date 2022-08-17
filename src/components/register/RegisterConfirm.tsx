@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useMembersCreate } from "../../api/members/useMembersCreate";
+import { analyzeEvent } from "../../lib/gtag";
 import { findPlanById } from "../../models/plan/Plan";
 
 type TProps = {
@@ -75,6 +76,7 @@ export const RegisterConfirm = ({
         setError("予期せぬエラーが発生しました");
       },
     });
+    analyzeEvent({ action: "click", category: "register", label: "confirm" });
   };
 
   return (

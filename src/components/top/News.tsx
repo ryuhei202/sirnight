@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { TArticles } from "../../api/getArticles";
+import { TArticles } from "../../lib/getArticles";
 import { NewsLinkList } from "../news/NewsLinkList";
 
 type TProps = {

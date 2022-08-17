@@ -1,6 +1,6 @@
 import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
-import { client, TArticles } from "../../../src/api/getArticles";
+import { client, TArticles } from "../../../src/lib/getArticles";
 import { NewsLinkList } from "../../../src/components/news/NewsLinkList";
 import { Pagination } from "../../../src/components/news/Pagination";
 import { Header } from "../../../src/components/plan/Header";

@@ -1,6 +1,7 @@
 import type { AppProps } from "next/app";
 import { QueryClient, QueryClientProvider } from "react-query";
 import "tailwindcss/tailwind.css";
+import { usePageView } from "../src/lib/gtag";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -11,6 +12,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       },
     },
   });
+
+  usePageView();
 
   return (
     <div className="w-screen h-full bg-clay">
