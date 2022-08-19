@@ -10,7 +10,7 @@ const nextConfig = {
 };
 
 const sentryWebpackPluginOptions = {
-  silent: true,
+  silent: false,
   authToken: process.env.NEXT_PUBLIC_SENTRY_AUTH_TOKEN,
   org: process.env.NEXT_PUBLIC_SENTRY_ORG,
   project: process.env.NEXT_PUBLIC_SENTRY_PROJECT,
