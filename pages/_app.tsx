@@ -1,9 +1,10 @@
 import { DefaultSeo } from "next-seo";
 import type { AppProps } from "next/app";
+import Script from "next/script";
 import { QueryClient, QueryClientProvider } from "react-query";
 import "tailwindcss/tailwind.css";
 import SEO from "../next-seo.config";
-import { usePageView } from "../src/lib/gtag";
+import { GA_ID, usePageView } from "../src/lib/gtag";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -19,6 +20,25 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
+      {GA_ID === "" ? (
+        <></>
+      ) : (
+        <>
+          <Script
+            defer
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+            strategy="afterInteractive"
+          />
+          <Script id="ga" defer strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());    
+              gtag('config', '${GA_ID}');
+          `}
+          </Script>
+        </>
+      )}
       <DefaultSeo {...SEO} />
       <div className="w-screen h-full bg-clay">
         <img
