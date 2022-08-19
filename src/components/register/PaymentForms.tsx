@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { TValidationPaymentResponse } from "../../api/validations/TValidationPaymentResponse";
 import { useValidationsPayment } from "../../api/validations/useValidationsPayment";
+import { analyzeEvent } from "../../lib/gtag";
 import { TPaymentRegisterData } from "../../models/register/TPaymentRegisterData";
 import { Stepper } from "./Stepper";
 
@@ -101,6 +102,11 @@ export const PaymentForms = ({
       },
       createTokenCallback
     );
+  };
+
+  const onClick = () => {
+    getToken();
+    analyzeEvent({ action: "click", category: "register", label: "payment" });
   };
 
   return (
@@ -251,7 +257,7 @@ export const PaymentForms = ({
             </label>
           </div>
           <button
-            onClick={getToken}
+            onClick={onClick}
             disabled={!canRegistered || isLoading}
             className={`relative inline-block p-3 text-center w-full font-medium text-base mt-12 rounded-full bg-themeGray text-slate-200 ${
               (!canRegistered || isLoading) && "bg-[#C8C9C3]"

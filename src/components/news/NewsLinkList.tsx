@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { handleData, TArticles } from "../../api/getArticles";
+import { handleData, TArticles } from "../../lib/getArticles";
 import { Typography } from "../baseParts/Typography";
 
 type TProps = {

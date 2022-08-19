@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import { QueryClient, QueryClientProvider } from "react-query";
 import "tailwindcss/tailwind.css";
 import SEO from "../next-seo.config";
+import { usePageView } from "../src/lib/gtag";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -13,6 +14,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       },
     },
   });
+
+  usePageView();
 
   return (
     <>

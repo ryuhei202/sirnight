@@ -1,10 +1,10 @@
 import { GetStaticProps, NextPage } from "next";
 import { NextSeo } from "next-seo";
-import { client, TArticles } from "../../../src/api/getArticles";
 import { NewsLinkList } from "../../../src/components/news/NewsLinkList";
 import { Pagination } from "../../../src/components/news/Pagination";
 import { Header } from "../../../src/components/plan/Header";
 import { FooterMenu } from "../../../src/components/top/FooterMenu";
+import { client, TArticles } from "../../../src/lib/getArticles";
 
 export const PER_PAGE = 10;
 
