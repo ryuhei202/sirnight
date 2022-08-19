@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import { useEffect } from "react";
 import { client, TArticles } from "../src/api/getArticles";
 import { CatchCopy } from "../src/components/top/CatchCopy";
@@ -50,10 +49,7 @@ const Home: NextPage<TProps> = ({ articlesData }) => {
   return (
     <>
       <OpeningPage className="z-50" />
-      <div
-        id="container"
-        className="relative text-themeGray z-40"
-      >
+      <div id="container" className="relative text-themeGray z-40">
         <KeyVisual />
         <CatchCopy />
         <ServiceDescription />

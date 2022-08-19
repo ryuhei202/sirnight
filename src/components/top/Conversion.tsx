@@ -1,4 +1,3 @@
-import { Animation } from "../baseParts/Animation";
 import { LinkButton } from "../baseParts/LinkButton";
 import { ConversionImages } from "./ConversionImages";
 
