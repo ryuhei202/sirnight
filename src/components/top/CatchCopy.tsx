@@ -19,8 +19,8 @@ export const CatchCopy = () => {
           preAnimationClassName="scale-125"
         >
           <img
-            src="/images/keyVisuals/sub/4-1.png"
-            alt="keyvisuals-4-1"
+            src="/images/keyVisuals/sub/1.webp"
+            alt="catchcopy-1"
             className="origin-top"
           />
         </Animation>

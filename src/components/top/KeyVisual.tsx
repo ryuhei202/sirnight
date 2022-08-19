@@ -58,16 +58,22 @@ export const KeyVisual = () => {
             />
           </li>
           <li>
-            <KeyVisualColumn imageNames={{ left: "2-2", right: "2-1" }} />
+            <KeyVisualColumn imageNames={{ left: "5-1", right: "5-2" }} />
           </li>
           <li>
-            <KeyVisualColumn imageNames={{ left: "1-2", right: "1-1" }} />
+            <KeyVisualColumn imageNames={{ left: "6-1", right: "6-2" }} />
           </li>
           <li>
-            <KeyVisualColumn imageNames={{ left: "4-2", right: "4-1" }} />
+            <KeyVisualColumn imageNames={{ left: "7-1", right: "7-2" }} />
           </li>
           <li>
-            <KeyVisualColumn imageNames={{ left: "3-2", right: "3-1" }} />
+            <KeyVisualColumn imageNames={{ left: "8-1", right: "8-2" }} />
+          </li>
+          <li>
+            <KeyVisualColumn imageNames={{ left: "9-1", right: "9-2" }} />
+          </li>
+          <li>
+            <KeyVisualColumn imageNames={{ left: "10-1", right: "10-2" }} />
           </li>
         </ul>
         <ul>
@@ -84,16 +90,22 @@ export const KeyVisual = () => {
             <KeyVisualColumn imageNames={{ left: "4-1", right: "4-2" }} />
           </li>
           <li>
-            <KeyVisualColumn imageNames={{ left: "2-2", right: "2-1" }} />
+            <KeyVisualColumn imageNames={{ left: "5-1", right: "5-2" }} />
           </li>
           <li>
-            <KeyVisualColumn imageNames={{ left: "1-2", right: "1-1" }} />
+            <KeyVisualColumn imageNames={{ left: "6-1", right: "6-2" }} />
           </li>
           <li>
-            <KeyVisualColumn imageNames={{ left: "4-2", right: "4-1" }} />
+            <KeyVisualColumn imageNames={{ left: "7-1", right: "7-2" }} />
           </li>
           <li>
-            <KeyVisualColumn imageNames={{ left: "3-2", right: "3-1" }} />
+            <KeyVisualColumn imageNames={{ left: "8-1", right: "8-2" }} />
+          </li>
+          <li>
+            <KeyVisualColumn imageNames={{ left: "9-1", right: "9-2" }} />
+          </li>
+          <li>
+            <KeyVisualColumn imageNames={{ left: "10-1", right: "10-2" }} />
           </li>
         </ul>
       </div>
