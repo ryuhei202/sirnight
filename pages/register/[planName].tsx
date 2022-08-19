@@ -1,3 +1,4 @@
+import { NextSeo } from "next-seo";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import { BaseForms } from "../../src/components/register/BaseForms";
@@ -114,12 +115,8 @@ const Register = ({ planId }: { planId: 11 | 12 | 13 }) => {
 
   return (
     <div>
+      <NextSeo title="会員登録" />
       <Head>
-        <title>会員登録 | UWear公式サイト</title>
-        <meta
-          name="description"
-          content="メンズファッションレンタルサービスUWear"
-        />
         <script
           type="text/javascript"
           src={`${process.env.NEXT_PUBLIC_PAYGENT_URL}/js/PaygentToken.js`}
@@ -129,7 +126,7 @@ const Register = ({ planId }: { planId: 11 | 12 | 13 }) => {
       </Head>
       <div
         id="container"
-        className="h-full min-h-screen bg-clay sm:w-[500px] inset-0 text-themeGray"
+        className="h-full min-h-screen inset-0 text-themeGray"
       >
         <h2 className="text-3xl font-bold text-center py-12">会員情報登録</h2>
         {forms}

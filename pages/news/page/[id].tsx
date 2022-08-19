@@ -1,10 +1,10 @@
 import { GetStaticProps, NextPage } from "next";
-import Head from "next/head";
-import { client, TArticles } from "../../../src/lib/getArticles";
+import { NextSeo } from "next-seo";
 import { NewsLinkList } from "../../../src/components/news/NewsLinkList";
 import { Pagination } from "../../../src/components/news/Pagination";
 import { Header } from "../../../src/components/plan/Header";
 import { FooterMenu } from "../../../src/components/top/FooterMenu";
+import { client, TArticles } from "../../../src/lib/getArticles";
 
 export const PER_PAGE = 10;
 
@@ -16,10 +16,8 @@ type TProps = {
 const NewsPageId: NextPage<TProps> = ({ articlesData, pageId }: TProps) => {
   return (
     <div>
-      <Head>
-        <title>お知らせ | UWear公式サイト</title>
-      </Head>
-      <div className="h-full min-h-screen bg-clay sm:w-[500px] text-themeGray">
+      <NextSeo title="お知らせ" />
+      <div className="h-full min-h-screen text-themeGray">
         <Header lists={[{ name: "お知らせ" }]} />
         <div className="w-4/5 pt-14 mx-auto">
           <p className="text-3xl text-center font-extrabold mb-14">お知らせ</p>

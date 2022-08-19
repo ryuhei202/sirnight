@@ -1,21 +1,15 @@
 import { NextPage } from "next";
+import { NextSeo } from "next-seo";
 import Head from "next/head";
 import Link from "next/link";
 
 const Thanks: NextPage = () => {
   return (
     <div>
-      <Head>
-        <title>会員登録完了 | UWear公式サイト</title>
-        <meta
-          name="description"
-          content="メンズファッションレンタルサービスUWear"
-        />
-        <link rel="icon" href="/favicon/favicon_head.png" />
-      </Head>
+      <NextSeo title="会員登録完了" />
       <div
         id="container"
-        className="h-full min-h-screen bg-clay sm:w-[500px] inset-0 text-themeGray"
+        className="h-full min-h-screen inset-0 text-themeGray"
       >
         <h2 className="text-3xl font-bold text-center py-12">会員登録完了</h2>
         <div className="px-6">

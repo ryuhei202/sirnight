@@ -16,7 +16,7 @@ export const ServiceValue = () => {
       <div className="w-full my-14">
         <img src="/images/serviceValue/1.png" alt="service-value" />
       </div>
-      <div className="w-[73%] mx-auto text-[max(3vw,0.85em)] text-primary leading-6 sm:text-base sm:leading-loose">
+      <div className="w-[73%] mx-auto font-semibold text-[max(3vw,0.85em)] text-primary leading-6 sm:text-base sm:leading-loose">
         <Animation>
           <p className="mb-5">
             UWearでは、

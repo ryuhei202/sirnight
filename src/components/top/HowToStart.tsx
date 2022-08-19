@@ -4,7 +4,7 @@ export const HowToStart = () => {
       <span className="pb-2 text-2xl font-semibold border-b-2 border-dashed border-bottom border-themeGray">
         UWearのはじめ方
       </span>
-      <ul className="flex mt-20 px-[60px] overflow-x-scroll whitespace-nowrap space-x-12 snap-x snap-mandatory">
+      <ul className="flex mt-20 px-[60px] overflow-x-scroll whitespace-nowrap space-x-12 snap-x snap-mandatory hidden-scrollbar">
         <li className="flex-none px-2 w-[85%] snap-always snap-center">
           <img src="/images/howToStart/1-1.png" alt="howToStart1-1" />
           <p className="mt-4 text-lg">サイトから会員登録</p>

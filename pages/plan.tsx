@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import { NextSeo } from "next-seo";
 import Head from "next/head";
 import React, { useRef, useState } from "react";
 import { Header } from "../src/components/plan/Header";
@@ -39,13 +40,18 @@ const Plan: NextPage = () => {
   };
 
   return (
-    <div className="h-full bg-clay sm:w-[500px]">
+    <div className="h-full">
+      <NextSeo title="プラン" />
       <Head>
-        <title>プラン | UWear公式サイト</title>
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="//fonts.googleapis.com/css?family=Lora"
+        />
       </Head>
       <div
         id="container"
-        className="h-full min-h-screen bg-clay sm:w-[500px] inset-0 text-themeGray"
+        className="h-full min-h-screen inset-0 text-themeGray"
       >
         <Header lists={[{ name: "料金プラン" }]} />
         <h2 className="text-4xl my-20 text-center font-bold">料金プラン</h2>

@@ -7,11 +7,6 @@ class Document extends NextDocument<Props> {
     return (
       <Html lang="ja">
         <Head>
-          <title>UWear公式サイト</title>
-          <meta
-            name="description"
-            content="メンズファッションレンタルサービスUWear"
-          />
           <link rel="icon" href="/favicon/favicon_head.png" />
           {GA_ID === "" ? (
             <></>
