@@ -1,7 +1,5 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import { useEffect } from "react";
-import { client, TArticles } from "../src/lib/getArticles";
 import { CatchCopy } from "../src/components/top/CatchCopy";
 import { Conversion } from "../src/components/top/Conversion";
 import { CustomerReviews } from "../src/components/top/CustomerReviews";
@@ -20,6 +18,7 @@ import { ServiceDescription } from "../src/components/top/ServiceDescription";
 import { ServiceValue } from "../src/components/top/ServiceValue";
 import { Sympathy } from "../src/components/top/Sympathy";
 import { WhatToResolve } from "../src/components/top/WhatToResolve";
+import { client, TArticles } from "../src/lib/getArticles";
 
 type TProps = {
   articlesData: TArticles;
@@ -50,10 +49,7 @@ const Home: NextPage<TProps> = ({ articlesData }) => {
   return (
     <>
       <OpeningPage className="z-50" />
-      <div
-        id="container"
-        className="relative text-themeGray z-40"
-      >
+      <div id="container" className="relative text-themeGray z-40">
         <KeyVisual />
         <CatchCopy />
         <ServiceDescription />
@@ -63,16 +59,28 @@ const Home: NextPage<TProps> = ({ articlesData }) => {
         </div>
         <PointDescription />
         <WhatToResolve />
-        <Conversion number={1} leftImagePath="/images/conversions/1.png" rightImagePath="/images/conversions/2.png" />
+        <Conversion
+          number={1}
+          leftImagePath="/images/conversions/1/1.webp"
+          rightImagePath="/images/conversions/1/2.webp"
+        />
         <Sympathy />
         <HowToUse />
         <SceneCoordinates />
         <HowToStart />
-        <Conversion number={2} leftImagePath="/images/conversions/1.png" rightImagePath="/images/conversions/2.png" />
+        <Conversion
+          number={2}
+          leftImagePath="/images/conversions/2/1.webp"
+          rightImagePath="/images/conversions/2/2.webp"
+        />
         <ServiceValue />
         <CustomerReviews />
         <Faq />
-        <Conversion number={3} leftImagePath="/images/conversions/1.png" rightImagePath="/images/conversions/2.png" />
+        <Conversion
+          number={3}
+          leftImagePath="/images/conversions/3/1.webp"
+          rightImagePath="/images/conversions/3/2.webp"
+        />
         <News data={articlesData} />
         <Footer />
         <FooterMenu />
