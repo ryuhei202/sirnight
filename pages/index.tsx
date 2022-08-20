@@ -47,7 +47,14 @@ const Home: NextPage<TProps> = ({ articlesData }) => {
 
   // オープニング画面を表示判定
   useEffect(() => {
-    if (path !== "/") setIsOpeningVisible(false);
+    if (path !== "/") {
+      setIsOpeningVisible(false);
+      return;
+    }
+    forbidScroll();
+    setTimeout(() => {
+      allowScroll();
+    }, 3000);
   }, [path]);
 
   // キャンペーンコードの有無を判定
@@ -59,13 +66,6 @@ const Home: NextPage<TProps> = ({ articlesData }) => {
       localStorage.setItem("campaignCode", campaignCodeString);
     }
   }, [campaignCode]);
-
-  useEffect(() => {
-    forbidScroll();
-    setTimeout(() => {
-      allowScroll();
-    }, 3000);
-  }, []);
 
   return (
     <>
