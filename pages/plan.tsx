@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import { NextSeo } from "next-seo";
-import Head from "next/head";
 import React, { useRef, useState } from "react";
 import { Header } from "../src/components/plan/Header";
 import { PlanDetail } from "../src/components/plan/PlanDetail";
@@ -42,13 +41,6 @@ const Plan: NextPage = () => {
   return (
     <div className="h-full">
       <NextSeo title="プラン" />
-      <Head>
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="//fonts.googleapis.com/css?family=Lora"
-        />
-      </Head>
       <div
         id="container"
         className="h-full min-h-screen inset-0 text-themeGray"

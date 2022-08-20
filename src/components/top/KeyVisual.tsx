@@ -1,17 +1,17 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { KeyVisualColumn } from "./KeyVisualColumn";
 
 export const KeyVisual = () => {
   const [isLabelVisible, setIsLabelVisible] = useState(true);
   const isAnimated = useRef(false);
 
-  const toggleVisibility = () => {
+  const toggleVisibility = useCallback(() => {
     if (isAnimated.current) return;
     if (window.scrollY > 10) {
       isAnimated.current = true;
       setIsLabelVisible(false);
     }
-  };
+  }, [isAnimated, setIsLabelVisible]);
 
   useEffect(() => {
     const keyVisuals = document.getElementById("key-visuals") as HTMLElement;
@@ -23,7 +23,7 @@ export const KeyVisual = () => {
       }
     }, 3000);
     return () => window.removeEventListener("scroll", toggleVisibility);
-  }, []);
+  }, [toggleVisibility]);
 
   return (
     <div className="w-hull h-screen overflow-hidden relative">

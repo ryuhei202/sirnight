@@ -70,6 +70,7 @@ export const RegisterConfirm = ({
     };
     mutate(params, {
       onSuccess: () => {
+        localStorage.removeItem("campaignCode");
         router.push("/register/thanks");
       },
       onError: () => {

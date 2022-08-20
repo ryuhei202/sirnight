@@ -7,6 +7,7 @@ type Props = {
   size?: "2xl" | "xl" | "sm" | "xs" | "base";
   color?: "primary" | "secondary" | "strong-gray";
   weight?: "normal" | "medium" | "semibold" | "bold";
+  component?: "span";
 };
 
 export const Typography = ({
@@ -16,6 +17,7 @@ export const Typography = ({
   size,
   color,
   weight,
+  component,
 }: Props) => {
   let classes: string[] = [];
 
@@ -69,6 +71,18 @@ export const Typography = ({
   );
 
   classes.push();
+
+  switch (component) {
+    case "span":
+      return (
+        <span
+          id={id ?? ""}
+          className={`font-body ${className ?? ""} ${classes.join(" ")}`}
+        >
+          {children}
+        </span>
+      );
+  }
 
   return (
     <p

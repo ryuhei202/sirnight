@@ -1,6 +1,5 @@
 import { NextPage } from "next";
 import { NextSeo } from "next-seo";
-import Head from "next/head";
 import Link from "next/link";
 
 const Thanks: NextPage = () => {

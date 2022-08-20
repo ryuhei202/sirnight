@@ -1,16 +1,15 @@
 import { GetStaticProps, NextPage } from "next";
 import { NextSeo } from "next-seo";
-import Head from "next/head";
+import { LinkButton } from "../../src/components/baseParts/LinkButton";
+import { NewsContent } from "../../src/components/news/NewsContent";
+import { Header } from "../../src/components/plan/Header";
+import { FooterMenu } from "../../src/components/top/FooterMenu";
 import {
   client,
   handleData,
   TArticleContent,
   TArticles,
 } from "../../src/lib/getArticles";
-import { LinkButton } from "../../src/components/baseParts/LinkButton";
-import { NewsContent } from "../../src/components/news/NewsContent";
-import { Header } from "../../src/components/plan/Header";
-import { FooterMenu } from "../../src/components/top/FooterMenu";
 
 export const getStaticPaths = async () => {
   const articlesData = await client.get<TArticles>({ endpoint: "news" });
@@ -32,13 +31,6 @@ const NewsDetail: NextPage<TArticleContent> = (article: TArticleContent) => {
   return (
     <div className="h-full">
       <NextSeo title={`${article.title}`} />
-      <Head>
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="//fonts.googleapis.com/css?family=Lora"
-        />
-      </Head>
       <div
         id="container"
         className="h-full min-h-screen inset-0 text-themeGray"

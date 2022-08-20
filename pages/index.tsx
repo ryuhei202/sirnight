@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
-import { useEffect } from "react";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import { CatchCopy } from "../src/components/top/CatchCopy";
 import { Conversion } from "../src/components/top/Conversion";
 import { CustomerReviews } from "../src/components/top/CustomerReviews";
@@ -39,6 +40,26 @@ const preventScroll = (e: Event) => {
 };
 
 const Home: NextPage<TProps> = ({ articlesData }) => {
+  const [isOpeningVisible, setIsOpeningVisible] = useState(true);
+  const router = useRouter();
+  const path = router.asPath;
+  const campaignCode = router.query.campaignCode;
+
+  // オープニング画面を表示判定
+  useEffect(() => {
+    if (path !== "/") setIsOpeningVisible(false);
+  }, [path]);
+
+  // キャンペーンコードの有無を判定
+  useEffect(() => {
+    const campaignCodeString = Array.isArray(campaignCode)
+      ? undefined
+      : campaignCode;
+    if (campaignCodeString) {
+      localStorage.setItem("campaignCode", campaignCodeString);
+    }
+  }, [campaignCode]);
+
   useEffect(() => {
     forbidScroll();
     setTimeout(() => {
@@ -48,7 +69,7 @@ const Home: NextPage<TProps> = ({ articlesData }) => {
 
   return (
     <>
-      <OpeningPage className="z-50" />
+      {isOpeningVisible && <OpeningPage className="z-50" />}
       <div id="container" className="relative text-themeGray z-40">
         <KeyVisual />
         <CatchCopy />
