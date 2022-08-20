@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import { useEffect } from "react";
 import { client, TArticles } from "../src/lib/getArticles";
+import { useRouter } from "next/router";
 import { CatchCopy } from "../src/components/top/CatchCopy";
 import { Conversion } from "../src/components/top/Conversion";
 import { CustomerReviews } from "../src/components/top/CustomerReviews";
@@ -40,6 +40,19 @@ const preventScroll = (e: Event) => {
 };
 
 const Home: NextPage<TProps> = ({ articlesData }) => {
+  const router = useRouter();
+  const campaignCode = router.query.campaignCode;
+
+  // キャンペーンコードの有無を判定
+  useEffect(() => {
+    const campaignCodeString = Array.isArray(campaignCode)
+      ? undefined
+      : campaignCode;
+    if (campaignCodeString) {
+      localStorage.setItem("campaignCode", campaignCodeString);
+    }
+  }, [campaignCode]);
+
   useEffect(() => {
     forbidScroll();
     setTimeout(() => {
