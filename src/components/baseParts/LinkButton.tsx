@@ -56,7 +56,6 @@ export const LinkButton = ({
   return (
     <Link href={href} passHref>
       <a
-        href={href}
         onClick={onClick}
         className={`${className ?? ""} ${classes.join(" ")}`}
       >
