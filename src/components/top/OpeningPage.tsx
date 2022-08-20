@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { Typography } from "../baseParts/Typography";
 
@@ -6,8 +5,6 @@ type TProps = {
   readonly className?: string;
 };
 export const OpeningPage = ({ className }: TProps) => {
-  const router = useRouter();
-
   useEffect(() => {
     const logo = document.getElementById("logo");
     const text = document.getElementById("text");
@@ -26,8 +23,6 @@ export const OpeningPage = ({ className }: TProps) => {
       opPage?.classList.add("hidden");
     }, 3000);
   }, []);
-
-  if (router.asPath !== "/") return <></>;
 
   return (
     <div
