@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import { useEffect } from "react";
-import { client, TArticles } from "../src/api/getArticles";
+import { client, TArticles } from "../src/lib/getArticles";
 import { CatchCopy } from "../src/components/top/CatchCopy";
 import { Conversion } from "../src/components/top/Conversion";
 import { CustomerReviews } from "../src/components/top/CustomerReviews";
@@ -24,7 +24,7 @@ type TProps = {
   articlesData: TArticles;
 };
 
-const forbitScroll = () => {
+const forbidScroll = () => {
   document.addEventListener("mousewheel", preventScroll, { passive: false });
   document.addEventListener("touchmove", preventScroll, { passive: false });
 };
@@ -40,7 +40,7 @@ const preventScroll = (e: Event) => {
 
 const Home: NextPage<TProps> = ({ articlesData }) => {
   useEffect(() => {
-    forbitScroll();
+    forbidScroll();
     setTimeout(() => {
       allowScroll();
     }, 3000);
@@ -59,16 +59,16 @@ const Home: NextPage<TProps> = ({ articlesData }) => {
         </div>
         <PointDescription />
         <WhatToResolve />
-        <Conversion />
+        <Conversion number={1} leftImagePath="/images/conversions/1.png" rightImagePath="/images/conversions/2.png" />
         <Sympathy />
         <HowToUse />
         <SceneCoordinates />
         <HowToStart />
-        <Conversion />
+        <Conversion number={2} leftImagePath="/images/conversions/1.png" rightImagePath="/images/conversions/2.png" />
         <ServiceValue />
         <CustomerReviews />
         <Faq />
-        <Conversion />
+        <Conversion number={3} leftImagePath="/images/conversions/1.png" rightImagePath="/images/conversions/2.png" />
         <News data={articlesData} />
         <Footer />
         <FooterMenu />

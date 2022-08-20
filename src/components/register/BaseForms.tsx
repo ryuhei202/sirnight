@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { TValidationBaseResponse } from "../../api/validations/TValidationBaseResponse";
 import { useValidationsBase } from "../../api/validations/useValidationsBase";
+import { analyzeEvent } from "../../lib/gtag";
 import { TBaseRegisterData } from "../../models/register/TBaseRegisterData";
 import { PREFECTURES, TPrefectures } from "../../models/shared/TPrefectures";
 import { DropdownMenuAlt } from "../baseParts/inputs/DropdownMenuAlt";
@@ -103,6 +104,7 @@ export const BaseForms = ({ onSubmit }: TProps) => {
         },
       });
     }
+    analyzeEvent({ action: "click", category: "register", label: "base" });
   };
 
   return (
@@ -295,9 +297,7 @@ export const BaseForms = ({ onSubmit }: TProps) => {
           </button>
           <div className="text-center text-xs mt-6 pb-24">
             <Link href="/">
-              <a className="border-b-[1px] border-themeGray">
-                サイトに戻る
-              </a>
+              <a className="border-b-[1px] border-themeGray">サイトに戻る</a>
             </Link>
           </div>
         </div>

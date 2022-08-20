@@ -1,7 +1,26 @@
+import { analyzeEvent } from "../../lib/gtag";
 import { LinkButton } from "../baseParts/LinkButton";
 import { ConversionImages } from "./ConversionImages";
 
-export const Conversion = () => {
+type TProps = {
+  number: number;
+  leftImagePath: string;
+  rightImagePath: string;
+};
+
+export const Conversion = ({
+  number,
+  leftImagePath,
+  rightImagePath,
+}: TProps) => {
+  const onClick = () => {
+    analyzeEvent({
+      action: "click",
+      category: "to_plan",
+      label: `conversion_${number}th`,
+    });
+  };
+
   return (
     <div className="bg-themeGray overflow-hidden pt-5">
       <div className="w-[62%] mx-auto pt-[98px] mb-10">
@@ -14,8 +33,8 @@ export const Conversion = () => {
           </p>
         </div>
         <ConversionImages
-          leftImagePath="/images/conversions/1.png"
-          rightImagePath="/images/conversions/2.png"
+          leftImagePath={leftImagePath}
+          rightImagePath={rightImagePath}
         />
         <div className="w-[20%] relative z-10">
           <p className="absolute h-full [writing-mode:vertical-rl] text-white left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] text-center">
@@ -24,7 +43,7 @@ export const Conversion = () => {
         </div>
       </div>
       <div className="w-[73%] mx-auto mb-16">
-        <LinkButton href="/plan" className="my-10" border>
+        <LinkButton href="/plan" onClick={onClick} className="my-10" border>
           プランを選ぶ
         </LinkButton>
       </div>

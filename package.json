@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3001",
-    "build": "next build && next export && next-sitemap",
+    "build": "next build && next export && find ./out -name *.map -delete && next-sitemap",
     "start": "next start -p 3001",
     "lint": "next lint",
     "storybook": "start-storybook -p 6006",
@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.6.6",
+    "@sentry/nextjs": "^7.10.0",
     "@types/react-query": "^1.2.9",
     "axios": "^0.27.2",
     "axios-case-converter": "^0.9.0",
@@ -36,6 +37,7 @@
     "@storybook/react": "^6.5.9",
     "@storybook/testing-library": "^0.0.13",
     "@tailwindcss/custom-forms": "^0.2.1",
+    "@types/gtag.js": "^0.0.10",
     "@types/node": "18.0.4",
     "@types/react": "18.0.15",
     "@types/react-dom": "18.0.6",
