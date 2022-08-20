@@ -8,32 +8,52 @@ export const Menu = ({ onClick }: TProps) => {
   return (
     <div className="fixed top-0 z-40 h-[calc(100vh_-_70px)] overflow-auto  px-[13%] sm:w-[498px] sm:px-[66px] bg-clay text-themeGray">
       <div className="font-semibold text-xl mt-16 mb-5 border-b-2 border-[#D8D8D2] border-solid">
-        <Link href="/#service-description">
+        <Link
+          href={{
+            pathname: "/",
+            hash: "service-description",
+          }}
+        >
           <a onClick={onClick} className="my-10 block">
             UWearとは
           </a>
         </Link>
-        <Link href="/#">
-          <a onClick={onClick} className="my-10 block">
-            スタイリスト紹介
-          </a>
-        </Link>
-        <Link href="/#coordinates">
+        <Link
+          href={{
+            pathname: "/",
+            hash: "coordinates",
+          }}
+        >
           <a onClick={onClick} className="my-10 block">
             コーデ例
           </a>
         </Link>
-        <Link href="/#how-to-use">
+        <Link
+          href={{
+            pathname: "/",
+            hash: "how-to-use",
+          }}
+        >
           <a onClick={onClick} className="my-10 block">
             ご利用の流れ
           </a>
         </Link>
-        <Link href="/#faq">
+        <Link
+          href={{
+            pathname: "/",
+            hash: "faq",
+          }}
+        >
           <a onClick={onClick} className="my-10 block">
             よくあるご質問
           </a>
         </Link>
-        <Link href="/#news">
+        <Link
+          href={{
+            pathname: "/",
+            hash: "news",
+          }}
+        >
           <a onClick={onClick} className="my-10 block">
             お知らせ
           </a>
