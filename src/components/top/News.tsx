@@ -12,16 +12,16 @@ export const News = ({ data }: TProps) => {
       <p className="text-2xl text-center font-extrabold mb-14">お知らせ</p>
       <div>
         <NewsLinkList data={data} />
-        <Link href={`/news/page/${1}`}>
-          <div className="bg-clay text-themeGray text-right mt-10 font-semibold cursor-pointer">
+        <div className="bg-clay text-themeGray text-right mt-10 font-semibold">
+          <Link href={{ pathname: "/news/page/1" }}>
             <a className="relative inline-block">
               <span className="text-xs mr-2 absolute top-[20%] -left-[20%]">
                 &#9679;
               </span>
               もっと見る
             </a>
-          </div>
-        </Link>
+          </Link>
+        </div>
       </div>
     </div>
   );
