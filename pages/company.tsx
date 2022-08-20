@@ -1,6 +1,5 @@
 import { NextPage } from "next";
 import { NextSeo } from "next-seo";
-import Head from "next/head";
 import { Layout } from "../src/components/baseParts/Layout";
 import { Header } from "../src/components/plan/Header";
 import { FooterMenu } from "../src/components/top/FooterMenu";
