@@ -111,7 +111,7 @@ export const KeyVisual = () => {
       </div>
       <span
         className={`absolute bottom-32 inset-x-0 z-10 block bg-themeGray py-1 px-6 font-lora w-fit mx-auto text-clay rounded-full ${
-          isLabelVisible ? "" : "transition opacity-0 duration-500"
+          isLabelVisible ? "" : "transition opacity-0 duration-1000"
         }`}
       >
         Scroll
