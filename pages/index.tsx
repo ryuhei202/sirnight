@@ -41,14 +41,12 @@ const preventScroll = (e: Event) => {
 
 const Home: NextPage<TProps> = ({ articlesData }) => {
   const [isOpeningVisible, setIsOpeningVisible] = useState(true);
-  const router = useRouter();
-  const path = router.asPath;
-  const campaignCode = router.query.campaignCode;
+  const campaignCode = useRouter().query.campaignCode;
 
   // オープニング画面を表示判定
   useEffect(() => {
-    if (path !== "/") setIsOpeningVisible(false);
-  }, [path]);
+    if (window.location.hash !== "") setIsOpeningVisible(false);
+  }, []);
 
   // キャンペーンコードの有無を判定
   useEffect(() => {
@@ -80,16 +78,28 @@ const Home: NextPage<TProps> = ({ articlesData }) => {
         </div>
         <PointDescription />
         <WhatToResolve />
-        <Conversion number={1} leftImagePath="/images/conversions/1.png" rightImagePath="/images/conversions/2.png" />
+        <Conversion
+          number={1}
+          leftImagePath="/images/conversions/1.png"
+          rightImagePath="/images/conversions/2.png"
+        />
         <Sympathy />
         <HowToUse />
         <SceneCoordinates />
         <HowToStart />
-        <Conversion number={2} leftImagePath="/images/conversions/1.png" rightImagePath="/images/conversions/2.png" />
+        <Conversion
+          number={2}
+          leftImagePath="/images/conversions/1.png"
+          rightImagePath="/images/conversions/2.png"
+        />
         <ServiceValue />
         <CustomerReviews />
         <Faq />
-        <Conversion number={3} leftImagePath="/images/conversions/1.png" rightImagePath="/images/conversions/2.png" />
+        <Conversion
+          number={3}
+          leftImagePath="/images/conversions/1.png"
+          rightImagePath="/images/conversions/2.png"
+        />
         <News data={articlesData} />
         <Footer />
         <FooterMenu />
