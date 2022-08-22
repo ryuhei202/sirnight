@@ -27,6 +27,8 @@ module.exports = {
           "slideInCoordinateDescription 1s ease forwards",
         slideOutOp: "slideOut 0.5s ease-in-out 0s forwards",
         slideOutKeyVisualFirst: "slideOut 0.5s ease-in-out 5s forwards",
+        slideFromBottom: "slideFromBottom 1s ease-in-out forwards",
+        slideToBottom: "slideToBottom 1s ease-in-out forwards",
         firstFadeOutPanel: "fadeOut 0.3s ease-in-out 3.1s forwards",
         secondFadeOutPanel: "fadeOut 0.3s ease-in-out 3.15s forwards",
         thirdFadeOutPanel: "fadeOut 0.3s ease-in-out 3.2s forwards",
@@ -105,6 +107,31 @@ module.exports = {
           "100%": {
             opacity: 0,
             transform: "translateY(-15px)",
+          },
+        },
+        slideFromBottom: {
+          "0%": {
+            opacity: 0,
+            transform: "translateY(100%)",
+          },
+          "70%": {
+            opacity: 1,
+          },
+          "100%": {
+            transform: "translateY(0)",
+          },
+        },
+        slideToBottom: {
+          "0%": {
+            opacity: 1,
+            transform: "translateY(0)",
+          },
+          "70%": {
+            opacity: 0,
+          },
+          "100%": {
+            opacity: 0,
+            transform: "translateY(100%)",
           },
         },
         fadeOut: {
