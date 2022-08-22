@@ -51,19 +51,19 @@ export const CoordinateCard = ({
             <div
               className={`h-fit absolute bottom-0 bg-clay ${descZIndexClass}`}
             >
-              <div className="flex flex-row w-full text-sm border-y border-themeGray font-semibold">
+              <div className="flex flex-row w-full text-[2.5vw] sm:text-sm border-y border-themeGray font-semibold">
                 <h2 className="bg-themeGray text-clay w-1/4 text-center py-2.5">
                   {`コーデ#${number.toString().padStart(2, "0")}`}
                 </h2>
-                <p className="w-3/4 px-5 py-2.5">{title}</p>
+                <p className="w-3/4 text-[3vw] sm:text-sm px-5 py-2.5">{title}</p>
               </div>
-              <div className="px-7 py-8">
-                <p className="text-xl leading-10">
-                  <span className="pb-1 border-b-2 border-dashed border-themeGray">
+              <div className="p-[5vw] sm:p-7">
+                <p className="text-[4vw] sm:text-xl leading-[8vw] sm:leading-10 font-semibold">
+                  <span className="pb-1 border-b-[1.5px] sm:border-b-2 border-dashed border-themeGray">
                     {mainText}
                   </span>
                 </p>
-                <p className="text-sm mt-5">{subText}</p>
+                <p className="text-[3vw] sm:text-sm mt-5">{subText}</p>
               </div>
             </div>
           </Animation>
