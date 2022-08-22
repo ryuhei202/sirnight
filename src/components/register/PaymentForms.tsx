@@ -34,6 +34,10 @@ export const PaymentForms = ({
   const [errors, setErrors] = useState<string[]>([]);
   const { mutate, isLoading } = useValidationsPayment();
   useEffect(() => {
+    const campaignCode = localStorage.getItem("campaignCode");
+    if (campaignCode) setSerialCode(campaignCode);
+  }, []);
+  useEffect(() => {
     window.scrollTo(0, 0);
   }, [errors]);
 

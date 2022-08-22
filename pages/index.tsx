@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import { useEffect } from "react";
 import { client, TArticles } from "../src/lib/getArticles";
+import { useRouter } from "next/router";
 import { CatchCopy } from "../src/components/top/CatchCopy";
 import { Conversion } from "../src/components/top/Conversion";
 import { CustomerReviews } from "../src/components/top/CustomerReviews";
@@ -39,6 +40,24 @@ const preventScroll = (e: Event) => {
 };
 
 const Home: NextPage<TProps> = ({ articlesData }) => {
+  const router = useRouter();
+  const campaignCode = router.query.campaignCode;
+
+  // キャンペーンコードの有無を判定
+  useEffect(() => {
+    const campaignCodeString = Array.isArray(campaignCode)
+      ? undefined
+      : campaignCode;
+    if (campaignCodeString) {
+      localStorage.setItem("campaignCode", campaignCodeString);
+      // TODO: 10月31日で削除もしくはより汎用的な実装にして以下を削除
+      if (campaignCode == "GP29736")
+        window.alert(
+          "【コンパde恋ぷらん会員様限定クーポンが適用されました】\nUWear（旧leeap）にようこそ！！\nコンパde恋プラン会員様専用のページから起こし頂いたので\nライトプラン：6,800円(税抜)→3,400円(税抜)\nスタンダードプラン：9,800円(税抜)→6,400円(税抜)\nになるクーポンが自動的に適用完了しています。\n割引後の金額は最終確認画面でご確認いただくことができます。\n\n※2022年9月1日よりleeapはUWearとしてリニューアルしました。"
+        );
+    }
+  }, [campaignCode]);
+
   useEffect(() => {
     forbidScroll();
     setTimeout(() => {
