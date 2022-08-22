@@ -41,14 +41,12 @@ const preventScroll = (e: Event) => {
 
 const Home: NextPage<TProps> = ({ articlesData }) => {
   const [isOpeningVisible, setIsOpeningVisible] = useState(true);
-  const router = useRouter();
-  const path = router.asPath;
-  const campaignCode = router.query.campaignCode;
+  const campaignCode = useRouter().query.campaignCode;
 
   // オープニング画面を表示判定
   useEffect(() => {
-    if (path !== "/") setIsOpeningVisible(false);
-  }, [path]);
+    if (window.location.hash !== "") setIsOpeningVisible(false);
+  }, []);
 
   // キャンペーンコードの有無を判定
   useEffect(() => {
