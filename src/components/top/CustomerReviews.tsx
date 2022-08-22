@@ -7,8 +7,8 @@ export const CustomerReviews = () => {
       <ReviewCard
         customer={{
           imagePath: "/images/customerReviews/1.webp",
-          age: 40,
-          work: "自営業",
+          age: 30,
+          work: "会社員",
         }}
         content={
           <>
@@ -37,8 +37,8 @@ export const CustomerReviews = () => {
       <ReviewCard
         customer={{
           imagePath: "/images/customerReviews/3.webp",
-          age: 40,
-          work: "自営業",
+          age: 20,
+          work: "会社員",
         }}
         content={
           <>

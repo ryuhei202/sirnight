@@ -18,7 +18,7 @@ export const NewsLinkList = ({ data }: TProps) => {
                 : ""
             }`}
           >
-            <Typography className="mb-3 block" component="span">
+            <Typography size="sm" className="mb-3 block" component="span">
               {content.title}
             </Typography>
             <Typography className="font-lora block" size="sm" component="span">
