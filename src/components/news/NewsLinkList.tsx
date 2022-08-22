@@ -11,18 +11,20 @@ export const NewsLinkList = ({ data }: TProps) => {
     <>
       {data.contents.map((content, index) => (
         <Link href={`/news/${content.id}`} key={index}>
-          <div
-            className={`py-10 cursor-pointer border-[#D8D8D2] border-t ${
+          <a
+            className={`block py-10 border-[#D8D8D2] border-t ${
               index === data.contents.length - 1
                 ? "border-b border-[#D8D8D2]"
                 : ""
             }`}
           >
-            <Typography className="mb-3">{content.title}</Typography>
-            <Typography className="font-lora" size="sm">
+            <Typography className="mb-3 block" component="span">
+              {content.title}
+            </Typography>
+            <Typography className="font-lora block" size="sm" component="span">
               {handleData({ date: content.publishedAt })}
             </Typography>
-          </div>
+          </a>
         </Link>
       ))}
     </>
