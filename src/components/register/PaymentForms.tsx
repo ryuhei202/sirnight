@@ -59,7 +59,7 @@ export const PaymentForms = ({
       const params = {
         cardToken: paygentRes.tokenizedCardObject.token,
         memberId,
-        planId: !!serialCode ? planId : undefined,
+        planId: planId,
         serialCode: !!serialCode ? serialCode : undefined,
       };
       mutate(params, {
@@ -80,6 +80,7 @@ export const PaymentForms = ({
               serialCode: !!serialCode ? serialCode : undefined,
               maskedCardNumber:
                 paygentRes.tokenizedCardObject.masked_card_number,
+              discount: data.data.discount ?? undefined,
             });
           }
         },
