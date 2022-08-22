@@ -57,9 +57,9 @@ export const CoordinateCard = ({
                 </h2>
                 <p className="w-3/4 px-5 py-2.5">{title}</p>
               </div>
-              <div className="px-6 py-6">
-                <p className="text-xl">
-                  <span className="border-b-2 border-dashed border-themeGray">
+              <div className="px-7 py-8">
+                <p className="text-xl leading-10">
+                  <span className="pb-1 border-b-2 border-dashed border-themeGray">
                     {mainText}
                   </span>
                 </p>
