@@ -23,7 +23,7 @@ export const KeyVisualColumn = ({
           <></>
         )}
         <img
-          src={`/images/keyVisuals/main/${imageNames.left}.png`}
+          src={`/images/keyVisuals/main/${imageNames.left}.webp`}
           alt={`key-visual-${imageNames.left}`}
         />
       </div>
@@ -36,7 +36,7 @@ export const KeyVisualColumn = ({
           <></>
         )}
         <img
-          src={`/images/keyVisuals/main/${imageNames.right}.png`}
+          src={`/images/keyVisuals/main/${imageNames.right}.webp`}
           alt={`key-visual-${imageNames.right}`}
         />
       </div>

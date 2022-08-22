@@ -6,7 +6,7 @@ export const CustomerReviews = () => {
       <p className="text-2xl text-center font-extrabold mb-14">ご利用者の声</p>
       <ReviewCard
         customer={{
-          imagePath: "/images/customerReviews/1.png",
+          imagePath: "/images/customerReviews/1.webp",
           age: 40,
           work: "自営業",
         }}
@@ -21,7 +21,7 @@ export const CustomerReviews = () => {
       />
       <ReviewCard
         customer={{
-          imagePath: "/images/customerReviews/2.png",
+          imagePath: "/images/customerReviews/2.webp",
           age: 40,
           work: "自営業",
         }}
@@ -36,7 +36,7 @@ export const CustomerReviews = () => {
       />
       <ReviewCard
         customer={{
-          imagePath: "/images/customerReviews/3.png",
+          imagePath: "/images/customerReviews/3.webp",
           age: 40,
           work: "自営業",
         }}

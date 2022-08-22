@@ -23,8 +23,12 @@ module.exports = {
         slideInCatchCopyText: "slideInLg 1s linear forwards",
         slideInLeftSide: "slideInLeftSide 0.7s ease-in-out forwards",
         slideInRightSide: "slideInRightSide 0.7s ease-in-out forwards",
+        slideInCoordinateDescription:
+          "slideInCoordinateDescription 1s ease forwards",
         slideOutOp: "slideOut 0.5s ease-in-out 0s forwards",
         slideOutKeyVisualFirst: "slideOut 0.5s ease-in-out 5s forwards",
+        slideFromBottom: "slideFromBottom 1s ease-in-out forwards",
+        slideToBottom: "slideToBottom 1s ease-in-out forwards",
         firstFadeOutPanel: "fadeOut 0.3s ease-in-out 3.1s forwards",
         secondFadeOutPanel: "fadeOut 0.3s ease-in-out 3.15s forwards",
         thirdFadeOutPanel: "fadeOut 0.3s ease-in-out 3.2s forwards",
@@ -34,8 +38,8 @@ module.exports = {
         seventhFadeOutPanel: "fadeOut 0.3s ease-in-out 3.4s forwards",
         eighthFadeOutPanel: "fadeOut 0.3s ease-in-out 3.45s forwards",
         infiniteScroll: "infiniteScroll 60s linear infinite",
-        infiniteSlideLeft: "infiniteSlideLeft 20s linear infinite",
-        infiniteSlideRight: "infiniteSlideRight 20s linear infinite",
+        infiniteSlideLeft: "infiniteSlideLeft 40s linear infinite",
+        infiniteSlideRight: "infiniteSlideRight 30s linear infinite",
         shrink: "shrink 1s ease-in-out forwards",
         rotatePositive: "rotatePositive 2s ease-in-out forwards",
         rotateNegative: "rotateNegative 2s ease-in-out forwards",
@@ -85,6 +89,16 @@ module.exports = {
             transform: "translateX(0)",
           },
         },
+        slideInCoordinateDescription: {
+          "0%": {
+            opacity: 0,
+            transform: "translateY(200px)",
+          },
+          "100%": {
+            opacity: 1,
+            transform: "translateY(0)",
+          },
+        },
         slideOut: {
           "0%": {
             opacity: 1,
@@ -93,6 +107,31 @@ module.exports = {
           "100%": {
             opacity: 0,
             transform: "translateY(-15px)",
+          },
+        },
+        slideFromBottom: {
+          "0%": {
+            opacity: 0,
+            transform: "translateY(100%)",
+          },
+          "70%": {
+            opacity: 1,
+          },
+          "100%": {
+            transform: "translateY(0)",
+          },
+        },
+        slideToBottom: {
+          "0%": {
+            opacity: 1,
+            transform: "translateY(0)",
+          },
+          "70%": {
+            opacity: 0,
+          },
+          "100%": {
+            opacity: 0,
+            transform: "translateY(100%)",
           },
         },
         fadeOut: {

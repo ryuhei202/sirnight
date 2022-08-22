@@ -2,11 +2,16 @@ import Link from "next/link";
 
 type TProps = {
   onClick: () => void;
+  isOpen: boolean;
 };
 
-export const Menu = ({ onClick }: TProps) => {
+export const Menu = ({ onClick, isOpen }: TProps) => {
   return (
-    <div className="fixed top-0 z-40 h-[calc(100vh_-_70px)] overflow-auto  px-[13%] sm:w-[498px] sm:px-[66px] bg-clay text-themeGray">
+    <div
+      className={`fixed top-0 z-40 overflow-auto px-[13%] h-[calc(100vh_-_70px)] sm:w-[498px] sm:px-[66px] bg-clay text-themeGray ${
+        isOpen ? "animate-slideFromBottom" : "animate-slideToBottom"
+      }`}
+    >
       <div className="font-semibold text-xl mt-16 mb-5 border-b-2 border-[#D8D8D2] border-solid">
         <Link
           href={{

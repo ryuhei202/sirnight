@@ -14,7 +14,7 @@ export const ServiceValue = () => {
         <p className="text-right mt-5 sm:mt-10">楽しくなるように</p>
       </div>
       <div className="w-full my-14">
-        <img src="/images/serviceValue/1.png" alt="service-value" />
+        <img src="/images/serviceValue/1.webp" alt="service-value" />
       </div>
       <div className="w-[73%] mx-auto font-semibold text-[max(3vw,0.85em)] text-primary leading-6 sm:text-base sm:leading-loose">
         <Animation>

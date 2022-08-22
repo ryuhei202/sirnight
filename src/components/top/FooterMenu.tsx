@@ -19,7 +19,7 @@ export const FooterMenu = () => {
 
   return (
     <>
-      {isOpen ? <Menu onClick={onClickIcon} /> : <></>}
+      <Menu onClick={onClickIcon} isOpen={isOpen} />
       <div className="fixed bottom-0 h-[70px] sm:w-[498px] bg-clay flex z-40 border-t border-solid border-[#475156]">
         <Link href={{ pathname: "/" }}>
           <a className="h-full w-1/4 border-r border-solid border-[#475156] flex justify-center items-center">

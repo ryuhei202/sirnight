@@ -45,7 +45,14 @@ const Home: NextPage<TProps> = ({ articlesData }) => {
 
   // オープニング画面を表示判定
   useEffect(() => {
-    if (window.location.hash !== "") setIsOpeningVisible(false);
+    if (window.location.hash !== "") {
+      setIsOpeningVisible(false);
+      return;
+    }
+    forbidScroll();
+    setTimeout(() => {
+      allowScroll();
+    }, 3000);
   }, []);
 
   // キャンペーンコードの有無を判定
@@ -63,13 +70,6 @@ const Home: NextPage<TProps> = ({ articlesData }) => {
     }
   }, [campaignCode]);
 
-  useEffect(() => {
-    forbidScroll();
-    setTimeout(() => {
-      allowScroll();
-    }, 3000);
-  }, []);
-
   return (
     <>
       {isOpeningVisible && <OpeningPage className="z-50" />}
@@ -85,8 +85,8 @@ const Home: NextPage<TProps> = ({ articlesData }) => {
         <WhatToResolve />
         <Conversion
           number={1}
-          leftImagePath="/images/conversions/1.png"
-          rightImagePath="/images/conversions/2.png"
+          leftImagePath="/images/conversions/1/1.webp"
+          rightImagePath="/images/conversions/1/2.webp"
         />
         <Sympathy />
         <HowToUse />
@@ -94,16 +94,16 @@ const Home: NextPage<TProps> = ({ articlesData }) => {
         <HowToStart />
         <Conversion
           number={2}
-          leftImagePath="/images/conversions/1.png"
-          rightImagePath="/images/conversions/2.png"
+          leftImagePath="/images/conversions/2/1.webp"
+          rightImagePath="/images/conversions/2/2.webp"
         />
         <ServiceValue />
         <CustomerReviews />
         <Faq />
         <Conversion
           number={3}
-          leftImagePath="/images/conversions/1.png"
-          rightImagePath="/images/conversions/2.png"
+          leftImagePath="/images/conversions/3/1.webp"
+          rightImagePath="/images/conversions/3/2.webp"
         />
         <News data={articlesData} />
         <Footer />
