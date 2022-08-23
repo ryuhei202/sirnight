@@ -60,7 +60,7 @@ const Plan: NextPage = () => {
                 key={index}
               >
                 <p
-                  className={`font-semibold text-lg sm:text-xl cursor-pointer ${
+                  className={`font-semibold sm:text-xl cursor-pointer ${
                     selectedPlanId === plan.id ? "opacity-100" : "opacity-20"
                   }`}
                 >
