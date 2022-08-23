@@ -22,7 +22,7 @@ export const ServicePoint = ({
         {illustPosition === "right" ? (
           <>
             <div className="w-2/5">
-              <p className="text-primary text-xs w-fit mx-auto border-b border-dashed border-themeGray">
+              <p className="font-lora text-primary text-xs w-fit mx-auto border-b border-dashed border-themeGray ">
                 Point
               </p>
               <h4 className="[writing-mode:vertical-rl] mx-auto text-xl pt-4 font-semibold">
@@ -43,7 +43,7 @@ export const ServicePoint = ({
               className="h-[280px] absolute top-1 left-0 sm:left-5 mix-blend-darken"
             />
             <div className="w-2/5">
-              <p className="text-primary text-xs w-fit mx-auto border-b border-dashed border-themeGray">
+              <p className="font-lora text-primary text-xs w-fit mx-auto border-b border-dashed border-themeGray">
                 Point
               </p>
               <h4 className="[writing-mode:vertical-rl] mx-auto text-xl pt-4 font-semibold">
