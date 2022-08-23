@@ -106,6 +106,7 @@ const Register = ({ planId }: { planId: 11 | 12 | 13 }) => {
           maskedCardNumber={paymentData.maskedCardNumber}
           serialCode={paymentData.serialCode}
           customerCardId={paymentData.customerCardId}
+          discount={paymentData.discount}
           onBack={handleBack}
         />
       );

@@ -34,6 +34,7 @@ type TRegisterHandler = {
     customerCardId,
     serialCode,
     maskedCardNumber,
+    discount,
   }: TPaymentRegisterData) => void;
   readonly handleBack: () => void;
 };
@@ -77,11 +78,13 @@ export const getRegisterHandler = ({
     customerCardId,
     serialCode,
     maskedCardNumber,
+    discount,
   }: TPaymentRegisterData) => {
     setPaymentData({
       customerCardId,
       serialCode,
       maskedCardNumber,
+      discount,
     });
     setStep("confirm");
   };
