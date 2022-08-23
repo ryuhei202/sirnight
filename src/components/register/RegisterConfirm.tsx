@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { useMembersCreate } from "../../api/members/useMembersCreate";
 import { analyzeEvent } from "../../lib/gtag";
 import { findPlanById } from "../../models/plan/Plan";
+import { TDiscount } from "../../models/register/TDiscount";
+import { TAX } from "../../models/shared/Tax";
 
 type TProps = {
   readonly memberId: number;
@@ -19,6 +21,7 @@ type TProps = {
   readonly maskedCardNumber: string;
   readonly serialCode?: string;
   readonly customerCardId: number;
+  readonly discount?: TDiscount;
   readonly onBack: () => void;
 };
 
@@ -37,6 +40,7 @@ export const RegisterConfirm = ({
   maskedCardNumber,
   serialCode,
   customerCardId,
+  discount,
   onBack,
 }: TProps) => {
   const router = useRouter();
@@ -101,6 +105,21 @@ export const RegisterConfirm = ({
               {plan.price.withTax.toLocaleString()})
             </p>
           </div>
+          {discount && (
+            <>
+              <div className="pt-2">
+                <p className="text-xs">クーポン</p>
+                <p className="pl-3 font-bold">{discount.name}</p>
+              </div>
+              <div className="pt-2">
+                <p className="text-xs">割引価格</p>
+                <p className="pl-3 font-bold">
+                  税込¥{discount.discountPrice.toLocaleString()}(¥
+                  {(discount.discountPrice * (1 + TAX)).toLocaleString()})
+                </p>
+              </div>
+            </>
+          )}
         </div>
       </div>
       <div className="mt-9">
