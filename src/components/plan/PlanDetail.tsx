@@ -22,28 +22,30 @@ const rowClassName = (index: number, length: number) => {
 export const PlanDetail = ({ plan, disabled }: TProps) => {
   return (
     <div className={`duration-1000 ${disabled ? "opacity-20" : ""}`}>
-      <div className="border-solid border border-themeGray font-semibold rounded-md mx-3">
+      <div className="border-solid border border-themeGray rounded-md mx-3">
         <div className="">
-          <p className="text-center text-xl my-6">
+          <p className="font-semibold text-center text-[5vw] sm:text-xl my-6">
             月額
-            <span className="text-4xl ml-2 font-lora">{`¥${plan.price.withTax.toLocaleString()}`}</span>
+            <span className="text-[10vw] sm:text-4xl ml-2 font-lora">{`¥${plan.price.withTax.toLocaleString()}`}</span>
             （税込）
           </p>
-          <div className="flex font-normal flex-wrap justify-center space-x-3 mb-6">
-            <p className="text-[#979B9A]">{`¥${plan.price.withoutTax.toLocaleString()}（税抜）`}</p>
+          <div className="flex flex-wrap justify-center space-x-3 mb-6">
+            <p className="text-[4vw] sm:text-xl text-[#979B9A]">{`¥${plan.price.withoutTax.toLocaleString()}（税抜）`}</p>
           </div>
         </div>
-        <div className="bg-themeGray text-clay text-center font-normal text-xl py-1">
+        <div className="bg-themeGray text-clay text-center text-[4vw] sm:text-xl py-1">
           こんな方におすすめ
         </div>
         <div
-          className={`h-44 flex flex-col justify-evenly ${
+          className={`h-[30vw] sm:h-44 font-semibold flex flex-col justify-evenly ${
             plan.targets.length % 2 === 0 ? "" : ""
           }`}
         >
           {plan.targets.map((target, index) => (
             <React.Fragment key={index}>
-              <p className={`text-md flex justify-center items-center`}>
+              <p
+                className={`text-[3.5vw] sm:text-base flex justify-center items-center`}
+              >
                 {target}
               </p>
               {index === plan.targets.length - 1 ? (
@@ -54,13 +56,13 @@ export const PlanDetail = ({ plan, disabled }: TProps) => {
             </React.Fragment>
           ))}
         </div>
-        <div className="bg-themeGray text-clay text-center font-normal text-xl py-1">
+        <div className="bg-themeGray text-clay text-center text-[4vw] sm:text-xl py-1">
           シーン例
         </div>
-        <div className="flex flex-wrap text-center">
+        <div className="flex flex-wrap text-center font-semibold">
           {plan.scenes.map((scene, index) => (
             <p
-              className={`w-1/2 text-md py-4 border-dashed border-[#C8C9C3] ${rowClassName(
+              className={`w-1/2 text-[3.5vw] sm:text-base py-4 border-dashed border-[#C8C9C3] ${rowClassName(
                 index,
                 plan.scenes.length
               )}`}
@@ -71,28 +73,43 @@ export const PlanDetail = ({ plan, disabled }: TProps) => {
               ) : (
                 <>
                   {scene.main}
-                  <span className="font-normal ml-3">{scene.sub}</span>
+                  <span className="font-normal ml-[1vw] sm:ml-3">
+                    {scene.sub}
+                  </span>
                 </>
               )}
             </p>
           ))}
         </div>
-        <div className="bg-themeGray text-clay text-center font-normal text-xl py-1">
+        <div className="bg-themeGray text-clay text-center text-[4vw] sm:text-xl py-1">
           コーデ数
         </div>
-        <div className="mx-auto flex justify-center items-center">
+        <div className="h-[25.5vw] sm:h-fit mx-auto flex justify-center text-[3.5vw] sm:text-base items-center font-semibold">
           <Cloths planId={plan.id} />
           <div className="py-8">
-            <p className="h-full flex">
-              <span>{plan.coordinateNum}</span>コーデ<span>／</span>
-              <span>{plan.itemNum}</span>アイテム
+            <p className="h-full flex items-center">
+              <span className="font-lora text-[7vw] sm:text-3xl mr-[1vw] sm:mr-1">
+                {plan.coordinateNum}
+              </span>
+              コーデ
+              <span className="mx-2">
+                <img
+                  src="/images/icons/diagonal-line.svg"
+                  alt="diagonal-line"
+                  width="18vw"
+                />
+              </span>
+              <span className="font-lora text-[7vw] sm:text-3xl mr-[1vw] sm:mr-1">
+                {plan.itemNum}
+              </span>
+              アイテム
             </p>
           </div>
         </div>
       </div>
       <LinkButton
         href={`/register/${plan.enName}`}
-        className="text-xl font-semibold mt-6 mb-16 py-5"
+        className="text-[4vw] sm:text-xl font-semibold mt-6 mb-16 py-[4vw] sm:py-5"
         disabled={disabled}
       >
         このプランではじめる

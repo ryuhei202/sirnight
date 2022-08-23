@@ -7,17 +7,17 @@ export const HowToUse = () => {
           alt="keyVisuals-5"
           className="absolute"
         />
-        <div className="absolute bottom-0 left-1/2 translate-x-[-50%] h-[50%] w-full p-8 text-white text-2xl text-center bg-gradient-to-b from-transparent to-black">
-          <div className="w-[100%] mx-aut[0.15em] leading-[1.5em]">
-            <p>スタイリストが</p>
-            <p className="bg-themeGray p-2 border border-dashed border-white">
+        <div className="absolute bottom-0 left-1/2 translate-x-[-50%] h-[50%] w-full text-white text-[6vw] sm:text-3xl text-center bg-gradient-to-b from-transparent to-black/80">
+          <div className="absolute bottom-0 w-full mb-[12vw] sm:mb-16 leading-[1.5em]">
+            <p className="mb-1">スタイリストが</p>
+            <p className="bg-themeGray px-4 py-2 mb-1 border border-dashed border-white inline-block">
               あなたに最適なコーデ
             </p>
             <p>を提案します</p>
           </div>
         </div>
       </div>
-      <div className="py-[100px]">
+      <div className="py-[12vw] sm:py-16">
         <ul className="px-[60px] flex overflow-x-scroll space-x-8 snap-x snap-mandatory hidden-scrollbar">
           <li className="flex-none w-full snap-always snap-center text-center">
             <p className="font-lora font-semibold">STEP 01</p>

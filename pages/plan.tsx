@@ -46,7 +46,7 @@ const Plan: NextPage = () => {
         className="h-full min-h-screen inset-0 text-themeGray"
       >
         <Header lists={[{ name: "料金プラン" }]} />
-        <h2 className="text-4xl my-20 text-center font-bold">料金プラン</h2>
+        <h2 className="text-[10vw] sm:text-4xl my-[12vw] sm:my-20 text-center font-bold">料金プラン</h2>
         <div>
           <div id="tab" className="flex h-12 relative mb-8">
             {plans.map((plan, index) => (
@@ -60,7 +60,7 @@ const Plan: NextPage = () => {
                 key={index}
               >
                 <p
-                  className={`font-semibold sm:text-xl cursor-pointer ${
+                  className={`font-semibold text-[4vw] sm:text-xl cursor-pointer ${
                     selectedPlanId === plan.id ? "opacity-100" : "opacity-20"
                   }`}
                 >
@@ -87,7 +87,7 @@ const Plan: NextPage = () => {
               </div>
             ))}
           </div>
-          <div className="mx-[7%] pb-36 text-xs text-[#979B9A]">
+          <div className="mx-[7%] pb-36 text-[3vw] sm:text-xs text-[#979B9A]">
             <div className="flex">
               <span className="w-[8%]">※</span>
               <p>

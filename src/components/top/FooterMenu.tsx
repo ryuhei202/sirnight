@@ -3,10 +3,16 @@ import { useState } from "react";
 import { analyzeEvent } from "../../lib/gtag";
 import { Menu } from "./Menu";
 
+export type TFooterState = "initial" | "open" | "close";
+
 export const FooterMenu = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [footerState, setFooterState] = useState<TFooterState>("initial");
   const onClickIcon = () => {
-    setIsOpen((prevState) => !prevState);
+    if (footerState === "initial") {
+      setFooterState("open");
+    } else {
+      setFooterState(footerState === "open" ? "close" : "open");
+    }
   };
 
   const onClickPlan = () => {
@@ -19,7 +25,7 @@ export const FooterMenu = () => {
 
   return (
     <>
-      <Menu onClick={onClickIcon} isOpen={isOpen} />
+      <Menu onClick={onClickIcon} footerState={footerState} />
       <div className="fixed bottom-0 h-[70px] sm:w-[498px] bg-clay flex z-40 border-t border-solid border-[#475156]">
         <Link href={{ pathname: "/" }}>
           <a className="h-full w-1/4 border-r border-solid border-[#475156] flex justify-center items-center">
@@ -31,7 +37,7 @@ export const FooterMenu = () => {
           onClick={onClickIcon}
         >
           <button className="w-[26%]">
-            {isOpen ? (
+            {footerState === "open" ? (
               <img src="/images/icons/one-line.svg" alt="one-line" />
             ) : (
               <img
