@@ -15,7 +15,7 @@ export const Pagination = ({ totalCount, currentPageId }: TProps) => {
       {currentPageId === minPageId ? (
         <span className="bg-[#D8D8D2] rounded-full inline-block w-14 text-center relative">
           <img
-            src="/images/icons/right-arrow.svg"
+            src="/images/icons/vector.svg"
             alt="previous-page-icon"
             className="rotate-180 absolute top-6 left-5 w-4 opacity-50"
           />
@@ -24,7 +24,7 @@ export const Pagination = ({ totalCount, currentPageId }: TProps) => {
         <Link href={`/news/page/${currentPageId - 1}`}>
           <a className="bg-[#F4F3EF] rounded-full inline-block w-14 text-center relative">
             <img
-              src="/images/icons/right-arrow.svg"
+              src="/images/icons/vector.svg"
               alt="previous-page-icon"
               className="rotate-180 absolute top-6 left-5 inline w-4"
             />
@@ -41,7 +41,7 @@ export const Pagination = ({ totalCount, currentPageId }: TProps) => {
       {currentPageId === maxPageId ? (
         <span className="bg-[#D8D8D2] rounded-full inline-block w-14 text-center relative">
           <img
-            src="/images/icons/right-arrow.svg"
+            src="/images/icons/vector.svg"
             alt="next-page-icon"
             className="absolute top-6 left-5 inline w-4 opacity-50"
           />
@@ -50,7 +50,7 @@ export const Pagination = ({ totalCount, currentPageId }: TProps) => {
         <Link href={`/news/page/${currentPageId + 1}`}>
           <a className="bg-[#F4F3EF] rounded-full inline-block w-14 text-center relative">
             <img
-              src="/images/icons/right-arrow.svg"
+              src="/images/icons/vector.svg"
               alt="next-page-icon"
               className="absolute top-6 left-5 inline w-4"
             />
