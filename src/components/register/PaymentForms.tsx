@@ -14,6 +14,7 @@ type TProps = {
     customerCardId,
     serialCode,
     maskedCardNumber,
+    discount,
   }: TPaymentRegisterData) => void;
   onBack: () => void;
 };

@@ -15,6 +15,7 @@ type TValidationsPayment = {
 export type TValidationsPaymentParams = {
   readonly cardToken: string;
   readonly memberId: number;
+  readonly planId: number;
   readonly serialCode?: string;
 };
 
