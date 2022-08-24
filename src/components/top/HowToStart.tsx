@@ -6,7 +6,7 @@ export const HowToStart = () => {
       <span className="pb-2 text-2xl font-semibold border-b-2 border-dashed border-bottom border-themeGray">
         UWearのはじめ方
       </span>
-      <ul className="flex mt-16 px-[60px] overflow-x-scroll whitespace-nowrap space-x-8 snap-x snap-mandatory hidden-scrollbar">
+      <ul className="flex pt-16 px-16 overflow-x-scroll whitespace-nowrap space-x-8 snap-x snap-mandatory hidden-scrollbar">
         <StartStep
           number={1}
           title="会員登録とLINEお友達登録"
