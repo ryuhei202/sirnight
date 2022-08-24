@@ -1,53 +1,56 @@
+import { StartStep } from "./StartStep";
+
 export const HowToStart = () => {
   return (
-    <div className="my-28 text-center">
+    <div className="mt-32 mb-28 text-center">
       <span className="pb-2 text-2xl font-semibold border-b-2 border-dashed border-bottom border-themeGray">
         UWearのはじめ方
       </span>
-      <ul className="flex mt-20 px-[60px] overflow-x-scroll whitespace-nowrap space-x-12 snap-x snap-mandatory hidden-scrollbar">
-        <li className="flex-none ml-12 w-[85%] snap-always snap-center">
-          <img src="/images/howToStart/1.webp" alt="howToStart-1" />
-          <p className="mt-4 text-lg">サイトから会員登録</p>
-          <p className="mt-3 text-xs">
-            <span>
-              当サイトから
+      <ul className="flex mt-16 px-[60px] overflow-x-scroll whitespace-nowrap space-x-8 snap-x snap-mandatory hidden-scrollbar">
+        <StartStep
+          number={1}
+          title="会員登録とLINEお友達登録"
+          subTitle={
+            <>
+              サイトから会員登録をし、UWearの
               <br />
-              会員情報を登録してください。
-            </span>
-          </p>
-        </li>
-        <li className="flex-none w-[85%] snap-always snap-center">
-          <img src="/images/howToStart/2.webp" alt="howToStart-2" />
-          <p className="mt-4 text-lg">スタイリストをLINE登録</p>
-          <p className="mt-3 text-xs">
-            <span>
-              登録後、スタイリストをご案内します。
-              <br /> LINEで登録してください。
-            </span>
-          </p>
-        </li>
-        <li className="flex-none w-[85%] snap-always snap-center">
-          <img src="/images/howToStart/3.webp" alt="howToStart1" />
-          <p className="mt-4 text-lg">スタイリストとやりとり</p>
-          <p className="mt-3 text-xs">
-            <span>
-              スタイリストがコーデの利用シーンや
+              LINEアカウントをお友達追加します。
+            </>
+          }
+        />
+        <StartStep
+          number={2}
+          title="利用したいシーンを回答"
+          subTitle={
+            <>
+              コーデを利用したいシーンを
               <br />
-              悩みをお聞きし、コーデをご提案します。
-            </span>
-          </p>
-        </li>
-        <li className="flex-none !mr-12 w-[85%] snap-always snap-center">
-          <img src="/images/howToStart/4.webp" alt="howToStart1" />
-          <p className="mt-4 text-lg">コーデ受け取り</p>
-          <p className="mt-3 text-xs">
-            <span>
-              配送先住所、もしくはヤマト営業所で
+              選択します。
+            </>
+          }
+        />
+        <StartStep
+          number={3}
+          title="コーデの受け取り"
+          subTitle={
+            <>
+              指定した配送先で
               <br />
-              コーデをお受け取りください。
-            </span>
-          </p>
-        </li>
+              コーデを受け取ります。
+            </>
+          }
+        />
+        <StartStep
+          number={4}
+          title="着こなしの不安を解消し利用開始"
+          subTitle={
+            <>
+              コーデを試着し、不安な点をスタイリストに相談し
+              <br />
+              解消してからコーデの利用を開始します。
+            </>
+          }
+        />
       </ul>
     </div>
   );

@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import { NextSeo } from "next-seo";
-import Link from "next/link";
+import { LinkButton } from "../../src/components/baseParts/LinkButton";
 
 const Thanks: NextPage = () => {
   return (
@@ -23,15 +23,12 @@ const Thanks: NextPage = () => {
             お手数ですが下記からご登録をお願い致します。
           </p>
           <div className="text-center">
-            <button
-              className={`relative inline-block p-3 w-full font-medium text-base mt-12 rounded-full bg-themeGray text-slate-200 `}
+            <LinkButton
+              href={`${process.env.NEXT_PUBLIC_HOST_URL}/line_login/authorize?tp=Xu7KVD8d`}
+              className="mt-12"
             >
-              <Link
-                href={`${process.env.NEXT_PUBLIC_HOST_URL}/line_login/authorize?tp=Xu7KVD8d`}
-              >
-                <a>LINEでスタイリストを友達追加する</a>
-              </Link>
-            </button>
+              LINEでスタイリストを友達追加する
+            </LinkButton>
           </div>
         </div>
       </div>
