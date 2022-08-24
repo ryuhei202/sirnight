@@ -10,9 +10,9 @@ export const SceneCoordinates = () => {
   return (
     <div className="h-fit" id="coordinates">
       <CoordinateCard
-        number={1}
         imageFilePath="/images/coordinates/1.webp"
         title="彼女と野外イベントへ"
+        coordinateNumber="コーデ#01"
         mainText={
           <>
             アクティブに動きやすく、
@@ -25,9 +25,9 @@ export const SceneCoordinates = () => {
         足元に白のスニーカーを合わせることでより明るさをプラスして、コーデに抜け感を出してくれます！"
       />
       <CoordinateCard
-        number={2}
         imageFilePath="/images/coordinates/2.webp"
         title="同僚とオフィスで休憩"
+        coordinateNumber="コーデ#02"
         mainText={
           <>
             きちんと感とリラックス感の両方を感じられる
@@ -40,9 +40,9 @@ export const SceneCoordinates = () => {
         トップスとボトムスの色にメリハリを出すことで、まとまりが出てお仕事シーンでもぴったりのコーデです！"
       />
       <CoordinateCard
-        number={3}
         imageFilePath="/images/coordinates/3.webp"
         title="恋人と記念日ディナー"
+        coordinateNumber="コーデ#03"
         mainText={
           <>
             ジャケットとタートルニットで
@@ -56,9 +56,9 @@ export const SceneCoordinates = () => {
         小物類は黒にして、足元を革靴で合わせることでより引き締まり上品さをプラスしてくれます。"
       />
       <CoordinateCard
-        number={4}
         imageFilePath="/images/coordinates/4.webp"
         title="同僚と飲みに"
+        coordinateNumber="コーデ#04"
         mainText={
           <>
             気兼ねなく長時間でも
@@ -71,9 +71,9 @@ export const SceneCoordinates = () => {
         足元はスニーカーでカジュアルさを出しています。"
       />
       <CoordinateCard
-        number={5}
         imageFilePath="/images/coordinates/5.webp"
         title="家族と休日のショッピング"
+        coordinateNumber="コーデ#05"
         mainText={
           <>
             アースカラーとゆったりシルエットで
@@ -90,9 +90,9 @@ export const SceneCoordinates = () => {
         <>
           <div className="animate-fadeIn">
             <CoordinateCard
-              number={6}
               imageFilePath="/images/coordinates/6.webp"
               title="彼女とショッピングへ"
+              coordinateNumber="コーデ#06"
               mainText={
                 <>
                   温かみを感じる素材感とダークカラーで
@@ -105,9 +105,9 @@ export const SceneCoordinates = () => {
               ブラウンや黒などのダークトーンに合わせることで、落ち着いた雰囲気に見えるコーデにしました。"
             />
             <CoordinateCard
-              number={7}
               imageFilePath="/images/coordinates/7.webp"
               title="お客様と商談"
+              coordinateNumber="コーデ#07"
               mainText={
                 <>
                   全体をダークにキッチリ感をだしつつ、
@@ -120,9 +120,9 @@ export const SceneCoordinates = () => {
               インナーに明るい色を合わせることで顔周りが華やかに見えて、表情がよく見えるコーデにしました。"
             />
             <CoordinateCard
-              number={8}
               imageFilePath="/images/coordinates/8.webp"
               title="婚活でのお見合いに"
+              coordinateNumber="コーデ#08"
               mainText={
                 <>
                   お見合いで好印象を与える、
@@ -136,9 +136,9 @@ export const SceneCoordinates = () => {
               小物類は黒で統一させることで引き締まり、まとまりのあるコーデにしました。"
             />
             <CoordinateCard
-              number={9}
               imageFilePath="/images/coordinates/9.webp"
               title="友人と国内一泊旅行"
+              coordinateNumber="コーデ#09"
               mainText={
                 <>
                   楽しい旅行の気分に合わせた
@@ -151,9 +151,9 @@ export const SceneCoordinates = () => {
               カットソーだけではラフすぎるので、シャツを合わせることできちんと感もプラスされることで、幅広い旅行先に合うコーデにしました。"
             />
             <CoordinateCard
-              number={10}
               imageFilePath="/images/coordinates/10.webp"
               title="家族で公園におでかけ"
+              coordinateNumber="コーデ#10"
               mainText={
                 <>
                   色味があるトップスで
@@ -170,9 +170,9 @@ export const SceneCoordinates = () => {
       ) : (
         <div className="relative">
           <CoordinateCard
-            number={6}
             imageFilePath="/images/coordinates/6.webp"
             title="彼女とショッピングへ"
+            coordinateNumber="コーデ#06"
             mainText={
               <>
                 温かみを感じる素材感とダークカラーで

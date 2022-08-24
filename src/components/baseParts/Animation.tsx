@@ -9,7 +9,6 @@ type TProps = {
     threshold: number;
     triggerOnce?: boolean;
     delay?: number;
-    rootMargin?: string;
   };
 };
 

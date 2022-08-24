@@ -23,8 +23,6 @@ module.exports = {
         slideInCatchCopyText: "slideInLg 1s linear forwards",
         slideInLeftSide: "slideInLeftSide 0.7s ease-in-out forwards",
         slideInRightSide: "slideInRightSide 0.7s ease-in-out forwards",
-        slideInCoordinateDescription:
-          "slideInCoordinateDescription 1s ease forwards",
         slideOutOp: "slideOut 0.5s ease-in-out 0s forwards",
         slideOutKeyVisualFirst: "slideOut 0.5s ease-in-out 5s forwards",
         slideFromBottom: "slideFromBottom 1s ease-in-out forwards",
@@ -87,16 +85,6 @@ module.exports = {
           "100%": {
             opacity: 1,
             transform: "translateX(0)",
-          },
-        },
-        slideInCoordinateDescription: {
-          "0%": {
-            opacity: 0,
-            transform: "translateY(200px)",
-          },
-          "100%": {
-            opacity: 1,
-            transform: "translateY(0)",
           },
         },
         slideOut: {
