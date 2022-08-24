@@ -145,7 +145,7 @@ module.exports = {
           "100%": { transform: "translateX(0)" },
         },
         shrink: {
-          "0%": { transform: "scale(125%)" },
+          "0%": { transform: "scale(110%)" },
           "100%": { transform: "scale(100%)" },
         },
         rotatePositive: {
