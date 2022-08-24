@@ -22,19 +22,19 @@ export const ItemCard = ({
   return (
     <Animation options={{ threshold: 0.5, triggerOnce: true }}>
       <div
-        className={`relative border rounded border-themeGray ${
+        className={`relative border rounded-[6px] border-themeGray ${
           className ?? ""
         }`}
       >
         <div className="relative">
           <div className="relative">
-            <img src={imageFileName} alt="service-value" className="rounded" />
+            <img src={imageFileName} alt="service-value" />
             {titleSplit.map((title, index) => (
               <p
                 key={title}
                 className={`absolute ${
                   index === 0 ? "bottom-0" : ""
-                } bg-themeGray w-fit text-lg p-2`}
+                } bg-themeGray w-fit text-[4vw] sm:text-lg p-2`}
               >
                 <span className="text-gray-100">{title}</span>
               </p>
