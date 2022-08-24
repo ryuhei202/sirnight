@@ -9,6 +9,7 @@ type TProps = {
     threshold: number;
     triggerOnce?: boolean;
     delay?: number;
+    rootMargin?: string;
   };
 };
 
@@ -18,12 +19,12 @@ export const Animation = ({
   preAnimationClassName,
   options,
 }: TProps) => {
-  const { ref, inView } = useInView(
-    options ?? {
-      threshold: 1,
-      triggerOnce: true,
-    }
-  );
+  const { ref, inView } = useInView({
+    threshold: options?.threshold ?? 1,
+    triggerOnce: options?.triggerOnce ?? true,
+    delay: options?.delay ?? 0,
+    rootMargin: options?.rootMargin ?? "-70px",
+  });
   const animateClassName = animationClassName ?? "animate-slideIn";
   const preAnimateClassName = preAnimationClassName ?? "opacity-0";
 

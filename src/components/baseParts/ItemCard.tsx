@@ -20,7 +20,7 @@ export const ItemCard = ({
   }
 
   return (
-    <Animation options={{ threshold: 0.3, triggerOnce: true }}>
+    <Animation options={{ threshold: 0.5, triggerOnce: true }}>
       <div
         className={`relative border rounded border-themeGray ${
           className ?? ""

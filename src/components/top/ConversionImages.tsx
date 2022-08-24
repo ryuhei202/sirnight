@@ -11,7 +11,7 @@ export const ConversionImages = ({ leftImagePath, rightImagePath }: TProps) => {
       <Animation
         animationClassName="animate-rotatePositive origin-[50%_300%]"
         preAnimationClassName="opacity-0"
-        options={{ threshold: 1, triggerOnce: true }}
+        options={{ threshold: 0.7, triggerOnce: true }}
       >
         <img
           src={leftImagePath}
@@ -23,7 +23,7 @@ export const ConversionImages = ({ leftImagePath, rightImagePath }: TProps) => {
         <Animation
           animationClassName="animate-rotateNegative origin-[50%_300%]"
           preAnimationClassName="opacity-0"
-          options={{ threshold: 1, triggerOnce: true, delay: 500 }}
+          options={{ threshold: 0.7, triggerOnce: true }}
         >
           <img
             src={rightImagePath}

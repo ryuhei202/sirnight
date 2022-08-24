@@ -17,7 +17,7 @@ export const CustomerReviews = () => {
             」と言われる。日々のいろんな変化を通じて、毎日の着るが楽しくなります。
           </>
         }
-        type="left"
+        type="right"
       />
       <ReviewCard
         customer={{
@@ -32,7 +32,7 @@ export const CustomerReviews = () => {
             」と言われる。日々のいろんな変化を通じて、毎日の着るが楽しくなります。
           </>
         }
-        type="right"
+        type="left"
       />
       <ReviewCard
         customer={{
@@ -47,7 +47,7 @@ export const CustomerReviews = () => {
             」と言われる。日々のいろんな変化を通じて、毎日の着るが楽しくなります。
           </>
         }
-        type="left"
+        type="right"
       />
     </div>
   );
