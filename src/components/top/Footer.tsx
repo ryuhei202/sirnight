@@ -49,6 +49,9 @@ export const Footer = () => {
           <Link href={{ hash: "service-description" }}>
             <a className="w-1/2 my-5">UWearとは</a>
           </Link>
+          <Link href={{ hash: "how-to-use" }}>
+            <a className="w-1/2 my-5">スタイリスト紹介</a>
+          </Link>
           <Link href={{ hash: "coordinates" }}>
             <a className="w-1/2 my-5">コーデ例</a>
           </Link>

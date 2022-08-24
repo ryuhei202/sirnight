@@ -32,6 +32,16 @@ export const Menu = ({ onClick, footerState }: TProps) => {
         <Link
           href={{
             pathname: "/",
+            hash: "how-to-use",
+          }}
+        >
+          <a onClick={onClick} className="my-10 block">
+            スタイリスト紹介
+          </a>
+        </Link>
+        <Link
+          href={{
+            pathname: "/",
             hash: "coordinates",
           }}
         >
