@@ -23,7 +23,7 @@ export const Animation = ({
     threshold: options?.threshold ?? 1,
     triggerOnce: options?.triggerOnce ?? true,
     delay: options?.delay ?? 0,
-    rootMargin: options?.rootMargin ?? "-70px",
+    rootMargin: options?.rootMargin ?? undefined,
   });
   const animateClassName = animationClassName ?? "animate-slideIn";
   const preAnimateClassName = preAnimationClassName ?? "opacity-0";

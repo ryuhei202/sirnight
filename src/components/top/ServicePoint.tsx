@@ -13,7 +13,7 @@ export const ServicePoint = ({
   content,
 }: TProps) => {
   return (
-    <Animation options={{ threshold: 0.5, triggerOnce: true }}>
+    <Animation options={{ threshold: 1, triggerOnce: true }}>
       <div
         className={`bg-clay flex flex-row p-7 mt-7 ${
           illustPosition === "right" ? "" : "justify-end"
