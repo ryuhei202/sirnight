@@ -1,3 +1,5 @@
+import { StepUse } from "./StepUse";
+
 export const HowToUse = () => {
   return (
     <div id="flow">
@@ -17,9 +19,53 @@ export const HowToUse = () => {
           </div>
         </div>
       </div>
-      <div className="py-[12vw] sm:py-16">
+      <div className="bg-themeGray pt-[12vw] pb-[20vw] sm:pt-16 sm:pb-24 text-white">
         <ul className="px-[60px] flex overflow-x-scroll space-x-8 snap-x snap-mandatory hidden-scrollbar">
-          <li className="flex-none w-full snap-always snap-center text-center">
+          <StepUse
+            number={1}
+            imagePath="/images/howToUse/1.gif"
+            title={
+              <>
+                コーデの利用シーンと悩みを
+                <br />
+                お聞きします
+              </>
+            }
+          />
+          <StepUse
+            number={2}
+            imagePath="/images/howToUse/2.png"
+            title={
+              <>
+                利用シーンと悩みにあわせた
+                <br />
+                コーデを提案します
+              </>
+            }
+          />
+          <StepUse
+            number={3}
+            imagePath="/images/howToUse/3.gif"
+            title={
+              <>
+                今回のコーデが
+                <br />
+                あなたに最適な理由を説明します
+              </>
+            }
+          />
+          <StepUse
+            number={4}
+            imagePath="/images/howToUse/4.webp"
+            title={
+              <>
+                利用した感想をお聞きし、
+                <br />
+                次回以降のコーデをより良くします
+              </>
+            }
+          />
+          {/* <li className="flex-none w-full snap-always snap-center text-center">
             <p className="font-lora font-semibold">STEP 01</p>
             <p className="mx-auto mt-0.5 w-[5%] h-[1px] border-b border-dashed border-themeGray"></p>
             <p className="mt-5 font-semibold sm:text-xl">
@@ -28,12 +74,12 @@ export const HowToUse = () => {
               お聞きします
             </p>
             <img
-              src="/images/howToUse/1-1.png"
+              src="/images/howToUse/1.gif"
               alt="howToUse1-1"
               className="mt-7"
             />
-          </li>
-          <li className="flex-none w-full snap-always snap-center text-center">
+          </li> */}
+          {/* <li className="flex-none w-full snap-always snap-center text-center">
             <p className="font-lora font-semibold">STEP 02</p>
             <p className="mx-auto mt-0.5 w-[5%] h-[1px] border-b border-dashed border-themeGray"></p>
             <p className="mt-5 font-semibold sm:text-xl">
@@ -56,7 +102,7 @@ export const HowToUse = () => {
               あなたに最適な理由を説明します
             </p>
             <img
-              src="/images/howToUse/1-3.png"
+              src="/images/howToUse/3.gif"
               alt="howToUse1-3"
               className="mt-7"
             />
@@ -65,16 +111,16 @@ export const HowToUse = () => {
             <p className="font-lora font-semibold">STEP 04</p>
             <p className="mx-auto mt-0.5 w-[5%] h-[1px] border-b border-dashed border-themeGray"></p>
             <p className="mt-5 font-semibold sm:text-xl">
-              次回のコーデに活かすため
+              利用した感想をお聞きし、
               <br />
-              着用の感想をお聞きします
+              次回以降のコーデをより良くします
             </p>
             <img
-              src="/images/howToUse/1-4.png"
+              src="/images/howToUse/4.webp"
               alt="howToUse1-4"
               className="mt-7"
             />
-          </li>
+          </li> */}
         </ul>
       </div>
     </div>

@@ -6,7 +6,7 @@ type TProps = {
   subTitle: ReactNode;
 };
 
-export const StartStep = ({ number, title, subTitle }: TProps) => {
+export const StepStart = ({ number, title, subTitle }: TProps) => {
   return (
     <>
       <li className="flex-none w-full snap-always snap-center">
