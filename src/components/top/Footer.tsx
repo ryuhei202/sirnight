@@ -46,17 +46,20 @@ export const Footer = () => {
           </a>
         </div>
         <div className="flex flex-wrap font-semibold py-10 border-b-2 border-[#676F72]">
-          <Link href={{ hash: "service-description" }}>
+          <Link href={{ hash: "about" }}>
             <a className="w-1/2 my-5">UWearとは</a>
           </Link>
-          <Link href={{ hash: "how-to-use" }}>
-            <a className="w-1/2 my-5">スタイリスト紹介</a>
+          <Link href={{ hash: "service-value" }}>
+            <a className="w-1/2 my-5">UWearで出来ること</a>
+          </Link>
+          <Link href={{ hash: "flow" }}>
+            <a className="w-1/2 my-5">コーデの提供方法</a>
           </Link>
           <Link href={{ hash: "coordinates" }}>
             <a className="w-1/2 my-5">コーデ例</a>
           </Link>
-          <Link href={{ hash: "how-to-use" }}>
-            <a className="w-1/2 my-5">ご利用の流れ</a>
+          <Link href={{ hash: "how-to-start" }}>
+            <a className="w-1/2 my-5">UWearのはじめ方</a>
           </Link>
           <Link href={{ hash: "faq" }}>
             <a className="w-1/2 my-5">よくあるご質問</a>

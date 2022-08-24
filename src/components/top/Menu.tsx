@@ -22,7 +22,7 @@ export const Menu = ({ onClick, footerState }: TProps) => {
         <Link
           href={{
             pathname: "/",
-            hash: "service-description",
+            hash: "about",
           }}
         >
           <a onClick={onClick} className="my-10 block">
@@ -32,11 +32,21 @@ export const Menu = ({ onClick, footerState }: TProps) => {
         <Link
           href={{
             pathname: "/",
-            hash: "how-to-use",
+            hash: "service-value",
           }}
         >
           <a onClick={onClick} className="my-10 block">
-            スタイリスト紹介
+            UWearで出来ること
+          </a>
+        </Link>
+        <Link
+          href={{
+            pathname: "/",
+            hash: "flow",
+          }}
+        >
+          <a onClick={onClick} className="my-10 block">
+            コーデの提供方法
           </a>
         </Link>
         <Link
@@ -52,11 +62,11 @@ export const Menu = ({ onClick, footerState }: TProps) => {
         <Link
           href={{
             pathname: "/",
-            hash: "how-to-use",
+            hash: "how-to-start",
           }}
         >
           <a onClick={onClick} className="my-10 block">
-            ご利用の流れ
+            UWearのはじめ方
           </a>
         </Link>
         <Link

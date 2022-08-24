@@ -2,7 +2,7 @@ import { StartStep } from "./StartStep";
 
 export const HowToStart = () => {
   return (
-    <div className="mt-32 mb-28 text-center">
+    <div className="mt-8 pt-24 pb-28 text-center" id="how-to-start">
       <span className="pb-2 text-2xl font-semibold border-b-2 border-dashed border-bottom border-themeGray">
         UWearのはじめ方
       </span>

@@ -1,6 +1,6 @@
 export const HowToUse = () => {
   return (
-    <div id="how-to-use">
+    <div id="flow">
       <div className="relative h-[133.33vw] sm:h-[666.66px]">
         <img
           src="/images/keyVisuals/sub/2.webp"
