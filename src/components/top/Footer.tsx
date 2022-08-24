@@ -47,39 +47,61 @@ export const Footer = () => {
         </div>
         <div className="flex flex-wrap font-semibold py-10 border-b-2 border-[#676F72]">
           <Link href={{ hash: "about" }}>
-            <a className="w-1/2 my-5">UWearとは</a>
+            <a className="w-1/2 my-[4vw] sm:my-5 text-[3.5vw] sm:text-base">
+              UWearとは
+            </a>
           </Link>
           <Link href={{ hash: "service-value" }}>
-            <a className="w-1/2 my-5">UWearで出来ること</a>
+            <a className="w-1/2 my-[4vw] sm:my-5 text-[3.5vw] sm:text-base">
+              UWearで出来ること
+            </a>
           </Link>
           <Link href={{ hash: "flow" }}>
-            <a className="w-1/2 my-5">コーデの提供方法</a>
+            <a className="w-1/2 my-[4vw] sm:my-5 text-[3.5vw] sm:text-base">
+              コーデの提供方法
+            </a>
           </Link>
           <Link href={{ hash: "coordinates" }}>
-            <a className="w-1/2 my-5">コーデ例</a>
+            <a className="w-1/2 my-[4vw] sm:my-5 text-[3.5vw] sm:text-base">
+              コーデ例
+            </a>
           </Link>
           <Link href={{ hash: "how-to-start" }}>
-            <a className="w-1/2 my-5">UWearのはじめ方</a>
+            <a className="w-1/2 my-[4vw] sm:my-5 text-[3.5vw] sm:text-base">
+              UWearのはじめ方
+            </a>
           </Link>
           <Link href={{ hash: "faq" }}>
-            <a className="w-1/2 my-5">よくあるご質問</a>
+            <a className="w-1/2 my-[4vw] sm:my-5 text-[3.5vw] sm:text-base">
+              よくあるご質問
+            </a>
           </Link>
           <Link href={{ hash: "news" }}>
-            <a className="w-1/2 my-5">お知らせ</a>
+            <a className="w-1/2 my-[4vw] sm:my-5 text-[3.5vw] sm:text-base">
+              お知らせ
+            </a>
           </Link>
         </div>
         <div className="flex flex-wrap text-xs pt-10">
           <Link href={{ pathname: "/company" }}>
-            <a className="w-1/2 my-5">運営会社</a>
+            <a className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-base">
+              運営会社
+            </a>
           </Link>
           <Link href={{ pathname: "/laws" }}>
-            <a className="w-1/2 my-5">特定商取引法に基づく表示</a>
+            <a className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-base">
+              特定商取引法に基づく表示
+            </a>
           </Link>
           <Link href={{ pathname: "/term" }}>
-            <a className="w-1/2 my-5">利用規約</a>
+            <a className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-base">
+              利用規約
+            </a>
           </Link>
           <Link href={{ pathname: "/privacy" }}>
-            <a className="w-1/2 my-5">プライバシーポリシー</a>
+            <a className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-base">
+              プライバシーポリシー
+            </a>
           </Link>
         </div>
       </div>
