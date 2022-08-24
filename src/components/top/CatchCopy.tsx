@@ -14,7 +14,7 @@ export const CatchCopy = () => {
       </div>
       <div className="relative z-10 w-full overflow-hidden -mt-24">
         <Animation
-          options={{ threshold: 0.4, triggerOnce: false }}
+          options={{ threshold: 0.4, triggerOnce: true }}
           animationClassName="animate-shrink"
           preAnimationClassName="scale-[1.1]"
         >
