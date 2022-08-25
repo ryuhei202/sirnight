@@ -13,7 +13,7 @@ export const ConversionImages = ({
 }: TProps) => {
   useAnimate({
     id: `#conversion-left-${number}`,
-    from: { opacity: 0, transform: "rotate(-12deg)" },
+    from: { opacity: 0, transform: "rotate(-6deg)" },
     to: {
       opacity: 1,
       transform: "rotate(0deg)",
@@ -29,7 +29,7 @@ export const ConversionImages = ({
   });
   useAnimate({
     id: `#conversion-right-${number}`,
-    from: { opacity: 0, transform: "rotate(12deg)" },
+    from: { opacity: 0, transform: "rotate(6deg)" },
     to: {
       opacity: 1,
       transform: "rotate(0deg)",
