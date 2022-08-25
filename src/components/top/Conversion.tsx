@@ -33,6 +33,7 @@ export const Conversion = ({
           </p>
         </div>
         <ConversionImages
+          number={number}
           leftImagePath={leftImagePath}
           rightImagePath={rightImagePath}
         />

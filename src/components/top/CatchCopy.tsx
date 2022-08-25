@@ -12,7 +12,7 @@ export const CatchCopy = () => {
         start: "top 80%",
         end: "top 30%",
         scrub: true,
-        markers: process.env.NEXT_PUBLIC_ENV === "development",
+        markers: false,
         once: true,
       },
     },
