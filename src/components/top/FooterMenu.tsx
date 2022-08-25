@@ -50,7 +50,7 @@ export const FooterMenu = () => {
         <Link href={{ pathname: "/plan" }}>
           <a
             onClick={onClickPlan}
-            className="h-full w-1/4 bg-themeGray text-clay text-sm flex justify-center items-center"
+            className="h-full w-1/4 bg-themeGray text-clay text-[3.5vw] sm:text-sm flex justify-center items-center"
           >
             <span className="w-[77%] text-center [font-feature-settings:'palt'on]">
               料金プラン

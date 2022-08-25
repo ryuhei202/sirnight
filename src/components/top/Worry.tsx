@@ -14,7 +14,7 @@ export const Worry = ({ content, status, type }: TProps) => {
   return (
     <Animation
       animationClassName={animationClassName}
-      options={{ threshold: 1, triggerOnce: true, delay: 500 }}
+      options={{ threshold: 1, triggerOnce: true }}
     >
       <div className="my-2">
         <p

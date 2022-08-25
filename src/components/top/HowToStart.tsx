@@ -1,13 +1,13 @@
-import { StartStep } from "./StartStep";
+import { StepStart } from "./StepStart";
 
 export const HowToStart = () => {
   return (
-    <div className="mt-32 mb-28 text-center">
+    <div className="mt-8 pt-24 pb-28 text-center" id="how-to-start">
       <span className="pb-2 text-2xl font-semibold border-b-2 border-dashed border-bottom border-themeGray">
         UWearのはじめ方
       </span>
-      <ul className="flex mt-16 px-[60px] overflow-x-scroll whitespace-nowrap space-x-8 snap-x snap-mandatory hidden-scrollbar">
-        <StartStep
+      <ul className="flex pt-16 px-16 overflow-x-scroll whitespace-nowrap space-x-8 snap-x snap-mandatory hidden-scrollbar">
+        <StepStart
           number={1}
           title="会員登録とLINEお友達登録"
           subTitle={
@@ -18,7 +18,7 @@ export const HowToStart = () => {
             </>
           }
         />
-        <StartStep
+        <StepStart
           number={2}
           title="利用したいシーンを回答"
           subTitle={
@@ -29,7 +29,7 @@ export const HowToStart = () => {
             </>
           }
         />
-        <StartStep
+        <StepStart
           number={3}
           title="コーデの受け取り"
           subTitle={
@@ -40,7 +40,7 @@ export const HowToStart = () => {
             </>
           }
         />
-        <StartStep
+        <StepStart
           number={4}
           title="着こなしの不安を解消し利用開始"
           subTitle={
