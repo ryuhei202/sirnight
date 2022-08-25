@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { TValidationPaymentResponse } from "../../api/validations/TValidationPaymentResponse";
 import { useValidationsPayment } from "../../api/validations/useValidationsPayment";
+import { convertHalfWidthNumber } from "../../lib/convertHalfWidthNumber";
 import { analyzeEvent } from "../../lib/gtag";
 import { TPaymentRegisterData } from "../../models/register/TPaymentRegisterData";
 import { Stepper } from "./Stepper";
@@ -25,7 +26,7 @@ export const PaymentForms = ({
   onSubmit,
   onBack,
 }: TProps) => {
-  const [cardNumber, setCardNumber] = useState<number>();
+  const [cardNumber, setCardNumber] = useState<string>();
   const [expMonth, setExpMonth] = useState<number>();
   const [expYear, setExpYear] = useState<number>();
   const [cvc, setCvc] = useState<number>();
@@ -100,7 +101,7 @@ export const PaymentForms = ({
       process.env.NEXT_PUBLIC_MARCHANT_ID,
       process.env.NEXT_PUBLIC_TOKEN_KEY,
       {
-        card_number: cardNumber,
+        card_number: Number(cardNumber?.replace(/\s/g, "")),
         expire_year: expYear,
         expire_month: expMonth,
         cvc,
@@ -140,9 +141,15 @@ export const PaymentForms = ({
             <input
               id="cc-number"
               autoComplete="cc-number"
-              type="number"
+              type="text"
               value={cardNumber}
-              onChange={(e) => setCardNumber(parseInt(e.target.value))}
+              onChange={(e) => {
+                const convertedNumber = convertHalfWidthNumber(e.target.value);
+                // 4文字ごとに区切る
+                const separatedNumber: Array<string> | null =
+                  convertedNumber.match(/.{1,4}/g);
+                setCardNumber(separatedNumber?.join(" "));
+              }}
               placeholder="0000000000000000"
               step="1"
               className="p-3 mt-3 w-full rounded-md border border-themeGray bg-clay resize-none"
