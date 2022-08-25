@@ -141,7 +141,7 @@ export const PaymentForms = ({
             <input
               id="cc-number"
               autoComplete="cc-number"
-              type="text"
+              type="tel"
               value={cardNumber}
               onChange={(e) => {
                 const convertedNumber = convertHalfWidthNumber(e.target.value);
