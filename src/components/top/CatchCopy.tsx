@@ -10,7 +10,7 @@ export const CatchCopy = () => {
       scrollTrigger: {
         trigger: "#catchcopy",
         start: "top 80%",
-        end: "top center",
+        end: "top 30%",
         scrub: true,
         markers: process.env.NEXT_PUBLIC_ENV === "development",
         once: true,
