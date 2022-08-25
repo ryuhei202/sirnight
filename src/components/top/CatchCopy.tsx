@@ -1,6 +1,23 @@
+import { useAnimate } from "../../hooks/useAnimate";
 import { Animation } from "../baseParts/Animation";
 
 export const CatchCopy = () => {
+  useAnimate({
+    id: "#catchcopy",
+    from: { scale: 2 },
+    to: {
+      scale: 1,
+      scrollTrigger: {
+        trigger: "#catchcopy",
+        start: "top 80%",
+        end: "top center",
+        scrub: true,
+        markers: process.env.NEXT_PUBLIC_ENV === "development",
+        once: true,
+      },
+    },
+  });
+
   return (
     <div className="w-full bg-clay text-center">
       <div className="relative z-20">
@@ -13,17 +30,12 @@ export const CatchCopy = () => {
         </Animation>
       </div>
       <div className="relative z-10 w-full overflow-hidden -mt-24">
-        <Animation
-          options={{ threshold: 0.5, triggerOnce: true }}
-          animationClassName="animate-shrink"
-          preAnimationClassName="scale-[1.1]"
-        >
-          <img
-            src="/images/keyVisuals/sub/1.webp"
-            alt="catchcopy-1"
-            className="origin-top"
-          />
-        </Animation>
+        <img
+          id="catchcopy"
+          src="/images/keyVisuals/sub/1.webp"
+          alt="catchcopy-1"
+          className="origin-top"
+        />
       </div>
     </div>
   );
