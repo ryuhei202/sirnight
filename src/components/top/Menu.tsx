@@ -111,6 +111,14 @@ export const Menu = ({ onClick, footerState }: TProps) => {
             プライバシーポリシー
           </a>
         </Link>
+        <a
+          href={`${process.env.NEXT_PUBLIC_HOST_URL}/inquiry`}
+          className="w-2/3 my-[3vw] sm:my-5 text-[3vw] sm:text-base"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          お問い合わせ
+        </a>
       </div>
       <div className="flex space-x-7 pt-10 pb-14">
         <a
