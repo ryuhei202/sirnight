@@ -16,7 +16,7 @@ export const getStaticPaths = async () => {
   const paths = articlesData.contents.map(
     (data: TArticleContent) => `/news/${data.id}`
   );
-  return { paths, fallback: false };
+  return { paths, fallback: "blocking" };
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
@@ -24,7 +24,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const article = await client.get<TArticleContent>({
     endpoint: `news/${articleId}`,
   });
-  return { props: article };
+  return { props: article, revalidate: 60 };
 };
 
 const NewsDetail: NextPage<TArticleContent> = (article: TArticleContent) => {

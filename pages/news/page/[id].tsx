@@ -43,7 +43,7 @@ export const getStaticPaths = async () => {
     (page) => `/news/page/${page}`
   );
 
-  return { paths, fallback: false };
+  return { paths, fallback: "blocking" };
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
@@ -51,7 +51,11 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   const data = await client.get<TArticles>({
     endpoint: "news",
-    queries: { offset: (Number(pageId) - 1) * PER_PAGE, limit: PER_PAGE },
+    queries: {
+      offset: (Number(pageId) - 1) * PER_PAGE,
+      limit: PER_PAGE,
+      filters: "unlisted[equals]false",
+    },
   });
 
   return {

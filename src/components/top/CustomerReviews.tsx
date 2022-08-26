@@ -3,7 +3,7 @@ import { ReviewCard } from "./ReviewCard";
 export const CustomerReviews = () => {
   return (
     <div className="bg-[#F4F3EF] py-28 px-[6%]">
-      <p className="text-2xl text-center font-extrabold mb-14">ご利用者の声</p>
+      <p className="text-[6vw] sm:text-2xl text-center font-extrabold mb-14">ご利用者の声</p>
       <ReviewCard
         customer={{
           imagePath: "/images/customerReviews/1.webp",
