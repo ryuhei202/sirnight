@@ -21,9 +21,9 @@ export const ConversionImages = ({
         trigger: `#conversion-left-${number}`,
         start: "top 80%",
         end: "top 40%",
-        scrub: true,
+        scrub: 3,
         markers: false,
-        once: true,
+        once: false,
       },
     },
   });
@@ -35,11 +35,11 @@ export const ConversionImages = ({
       transform: "rotate(0deg)",
       scrollTrigger: {
         trigger: `#conversion-right-${number}`,
-        start: "top 70%",
-        end: "top 30%",
-        scrub: true,
+        start: "top 50%",
+        end: "top 10%",
+        scrub: 3,
         markers: false,
-        once: true,
+        once: false,
       },
     },
   });
