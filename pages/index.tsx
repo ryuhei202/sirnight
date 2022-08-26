@@ -118,6 +118,7 @@ export const getStaticProps = async () => {
     endpoint: "news",
     queries: {
       limit: 6,
+      filters: "unlisted[equals]false",
     },
   });
   return {
