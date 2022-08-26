@@ -46,7 +46,9 @@ const Plan: NextPage = () => {
         className="h-full min-h-screen inset-0 text-themeGray"
       >
         <Header lists={[{ name: "料金プラン" }]} />
-        <h2 className="text-[10vw] sm:text-4xl my-[12vw] sm:my-20 text-center font-bold">料金プラン</h2>
+        <h2 className="text-[10vw] sm:text-4xl my-[12vw] sm:my-20 text-center font-bold">
+          料金プラン
+        </h2>
         <div>
           <div id="tab" className="flex h-12 relative mb-8">
             {plans.map((plan, index) => (
@@ -94,12 +96,13 @@ const Plan: NextPage = () => {
                 コーデのご利用シーンにジャケットorライトアウターが不要な場合、トップスを1点追加。（スタンダード：4アイテム、プレミアム7アイテム）
               </p>
             </div>
-            <div className="flex">
+            {/* TODO: 持ち続ける割引実装時にコメントを外す */}
+            {/* <div className="flex">
               <span className="w-[8%]">※</span>
               <p>
                 お申込み後に、配送タイミングを「毎月配送」から変更することが可能です。その場合は、現在のコーデを持ち続けることとなり、毎月の金額がディスカウントされていきます。
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
         <FooterMenu />
