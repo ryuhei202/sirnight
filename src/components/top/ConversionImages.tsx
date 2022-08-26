@@ -23,7 +23,7 @@ export const ConversionImages = ({
         end: "top 40%",
         scrub: 3,
         markers: false,
-        once: false,
+        once: true,
       },
     },
   });
@@ -39,7 +39,7 @@ export const ConversionImages = ({
         end: "top 10%",
         scrub: 3,
         markers: false,
-        once: false,
+        once: true,
       },
     },
   });
