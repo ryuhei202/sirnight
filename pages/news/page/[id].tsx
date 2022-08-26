@@ -43,7 +43,7 @@ export const getStaticPaths = async () => {
     (page) => `/news/page/${page}`
   );
 
-  return { paths, fallback: false };
+  return { paths, fallback: "blocking" };
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
