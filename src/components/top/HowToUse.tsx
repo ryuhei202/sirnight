@@ -45,7 +45,7 @@ export const HowToUse = () => {
           />
           <StepUse
             number={3}
-            imagePath="/images/howToUse/3.gif"
+            imagePath="/images/howToUse/3.webp"
             title={
               <>
                 今回のコーデが
@@ -65,62 +65,6 @@ export const HowToUse = () => {
               </>
             }
           />
-          {/* <li className="flex-none w-full snap-always snap-center text-center">
-            <p className="font-lora font-semibold">STEP 01</p>
-            <p className="mx-auto mt-0.5 w-[5%] h-[1px] border-b border-dashed border-themeGray"></p>
-            <p className="mt-5 font-semibold sm:text-xl">
-              コーデの利用シーンと悩みを
-              <br />
-              お聞きします
-            </p>
-            <img
-              src="/images/howToUse/1.gif"
-              alt="howToUse1-1"
-              className="mt-7"
-            />
-          </li> */}
-          {/* <li className="flex-none w-full snap-always snap-center text-center">
-            <p className="font-lora font-semibold">STEP 02</p>
-            <p className="mx-auto mt-0.5 w-[5%] h-[1px] border-b border-dashed border-themeGray"></p>
-            <p className="mt-5 font-semibold sm:text-xl">
-              利用シーンと悩みにあわせた
-              <br />
-              コーデを提案します
-            </p>
-            <img
-              src="/images/howToUse/1-2.png"
-              alt="howToUse1-2"
-              className="mt-7"
-            />
-          </li>
-          <li className="flex-none w-full snap-always snap-center text-center">
-            <p className="font-lora font-semibold">STEP 03</p>
-            <p className="mx-auto mt-0.5 w-[5%] h-[1px] border-b border-dashed border-themeGray"></p>
-            <p className="mt-5 font-semibold sm:text-xl">
-              今回のコーデが
-              <br />
-              あなたに最適な理由を説明します
-            </p>
-            <img
-              src="/images/howToUse/3.gif"
-              alt="howToUse1-3"
-              className="mt-7"
-            />
-          </li>
-          <li className="flex-none w-full snap-always snap-center text-center">
-            <p className="font-lora font-semibold">STEP 04</p>
-            <p className="mx-auto mt-0.5 w-[5%] h-[1px] border-b border-dashed border-themeGray"></p>
-            <p className="mt-5 font-semibold sm:text-xl">
-              利用した感想をお聞きし、
-              <br />
-              次回以降のコーデをより良くします
-            </p>
-            <img
-              src="/images/howToUse/4.webp"
-              alt="howToUse1-4"
-              className="mt-7"
-            />
-          </li> */}
         </ul>
       </div>
     </div>

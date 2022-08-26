@@ -19,7 +19,7 @@ export const KeyVisual = () => {
     setTimeout(() => {
       for (let i = 0; i < keyVisuals?.children.length; i++) {
         const child = keyVisuals?.children[i];
-        child.classList.add("animate-infiniteScroll");
+        child.classList.add("animate-infiniteScrollKeyVisual");
       }
     }, 3000);
     return () => window.removeEventListener("scroll", toggleVisibility);
