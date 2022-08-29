@@ -52,7 +52,9 @@ export const CoordinateCard = ({
                   {mainText}
                 </span>
               </p>
-              <p className="text-[3vw] sm:text-sm mt-5">{subText}</p>
+              <p className="font-hiragino400 text-[3vw] sm:text-sm mt-5">
+                {subText}
+              </p>
             </div>
           </div>
         </div>

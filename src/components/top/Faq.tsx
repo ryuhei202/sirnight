@@ -6,7 +6,7 @@ export const Faq = () => {
       <p className="text-[6vw] sm:text-2xl text-center font-extrabold mb-14">
         よくあるご質問
       </p>
-      <div className="border-b-2 border-solid border-[#D8D8D2]">
+      <div className="font-hiragino400 border-b-2 border-solid border-[#D8D8D2]">
         <QuestionAnswer
           question="配送前に中身を見ることはできますか？"
           answer="UWearでは、新しい服との出会いやスタイリストからの提案を楽しんでいただきたいと考えているため、事前にコーデやアイテムお見せすることはご遠慮いただいております。もちろん、お客様からいただく情報や好みも取り入れてコーデを作成いたしますので、ご不安な点などございましたら、お気軽にスタイリストへご質問ください。"

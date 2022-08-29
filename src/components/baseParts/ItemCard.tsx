@@ -41,7 +41,9 @@ export const ItemCard = ({
             ))}
           </div>
           <div
-            className={`p-4 ${titleSplit.length === 1 ? "" : "mt-12"} text-sm`}
+            className={`font-hiragino400 p-4 ${
+              titleSplit.length === 1 ? "" : "mt-12"
+            } text-sm`}
           >
             <p>{description}</p>
           </div>

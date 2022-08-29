@@ -8,6 +8,8 @@ module.exports = {
     extend: {
       fontFamily: {
         lora: ["Lora"],
+        hiragino400: ["Hiragino UD Sans W4 JIS2004"],
+        hiragino600: ["Hiragino UD Sans W6 JIS2004"],
       },
       colors: {
         themeGray: "#475156",

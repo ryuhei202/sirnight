@@ -89,7 +89,7 @@ const Plan: NextPage = () => {
               </div>
             ))}
           </div>
-          <div className="mx-[7%] pb-36 text-[3vw] sm:text-xs text-[#979B9A]">
+          <div className="font-hiragino400 mx-[7%] pb-36 text-[3vw] sm:text-xs text-[#979B9A]">
             <div className="flex">
               <span className="w-[8%]">※</span>
               <p>

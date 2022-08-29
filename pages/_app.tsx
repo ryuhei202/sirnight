@@ -40,7 +40,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         </>
       )}
       <DefaultSeo {...SEO} />
-      <div className="w-screen h-full bg-clay">
+      <div className="w-screen h-full bg-clay font-hiragino600">
         <img
           src="/images/logos/light-gray.svg"
           alt="logo"
