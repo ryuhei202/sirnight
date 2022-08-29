@@ -12,7 +12,7 @@ export const Menu = ({ onClick, footerState }: TProps) => {
       id="menu"
       className={`fixed top-0 z-40 overflow-auto px-[13%] h-[calc(100vh_-_70px)] sm:w-[498px] sm:px-[66px] bg-clay text-themeGray ${
         footerState === "initial"
-          ? "translate-y-[100%]"
+          ? "hidden"
           : footerState === "open"
           ? "animate-slideFromBottom"
           : "animate-slideToBottom"
