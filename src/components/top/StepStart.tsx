@@ -20,7 +20,9 @@ export const StepStart = ({ number, title, subTitle }: TProps) => {
           </p>
           <p className="mx-auto mt-0.5 w-[5%] h-[1px] border-b border-dashed border-themeGray"></p>
           <p className="mt-4 text-[4vw] sm:text-xl font-semibold">{title}</p>
-          <p className="mt-3 text-[2.75vw] sm:text-base">{subTitle}</p>
+          <p className="font-hiragino400 mt-3 text-[2.75vw] sm:text-base">
+            {subTitle}
+          </p>
         </div>
       </li>
     </>

@@ -90,7 +90,7 @@ export const Menu = ({ onClick, footerState }: TProps) => {
           </a>
         </Link>
       </div>
-      <div className="flex flex-wrap text-xs py-[5vw] sm:py-5 border-b-2 border-[#D8D8D2] border-solid">
+      <div className="font-hiragino400 flex flex-wrap text-xs py-[5vw] sm:py-5 border-b-2 border-[#D8D8D2] border-solid">
         <Link href="/company">
           <a className="w-1/3 my-[3vw] sm:my-5 text-[3vw] sm:text-base">
             運営会社
