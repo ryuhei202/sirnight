@@ -26,7 +26,7 @@ export const CoordinateCard = ({
               className="object-cover object-top w-full h-[50vw] sm:h-[250px]"
             />
           </figure>
-          <div className="absolute -bottom-1 h-[25vw] w-full bg-gradient-to-b from-transparent to-clay"></div>
+          <div className="absolute -bottom-1 h-[40vw] sm:h-[200px] w-full bg-gradient-to-b from-transparent to-clay"></div>
         </div>
       ) : (
         <div className="grid grid-rows-[var(--firstViewHeight)_1fr] w-full">

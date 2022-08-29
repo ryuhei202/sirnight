@@ -4,8 +4,9 @@ import { Animation } from "../baseParts/Animation";
 type TProps = {
   customer: {
     imagePath: string;
+    initial: string;
     age: number;
-    work: string;
+    address: string;
   };
   content: ReactElement;
   type: "left" | "right";
@@ -26,32 +27,36 @@ export const ReviewCard = ({ customer, content, type }: TProps) => {
       >
         {type === "left" ? (
           <>
-            <div className="absolute left-0 text-center w-[15%]">
+            <div className="absolute left-0 w-[15%]">
               <img src={customer.imagePath} alt="customer-icon" />
               <div className="mt-3">
-                <p className="text-xs">
-                  {customer.age + "代"}
+                <p className="text-xs text-center">
+                  {customer.initial}様
                   <br />
-                  {customer.work}
+                  {customer.age}歳
+                  <br />
+                  {customer.address}
                 </p>
               </div>
             </div>
-            <p className="w-[80%] border-2 border-[#D8D8D2] rounded-[16px] p-5 text-sm">
+            <p className="w-[80%] border-2 border-[#D8D8D2] rounded-[16px] p-[6vw] sm:p-7 text-sm">
               {content}
             </p>
           </>
         ) : (
           <>
-            <p className="w-[80%] border-2 border-[#D8D8D2] rounded-[16px] p-5 text-sm">
+            <p className="w-[80%] border-2 border-[#D8D8D2] rounded-[16px] p-[6vw] sm:p-7 text-sm">
               {content}
             </p>
             <div className="absolute right-0 w-[15%]">
               <img src={customer.imagePath} alt="customer-icon" />
               <div className="mt-3">
                 <p className="text-xs text-center">
-                  {customer.age + "代"}
+                  {customer.initial}様
                   <br />
-                  {customer.work}
+                  {customer.age}歳
+                  <br />
+                  {customer.address}
                 </p>
               </div>
             </div>
