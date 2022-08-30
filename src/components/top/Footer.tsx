@@ -103,15 +103,14 @@ export const Footer = () => {
               プライバシーポリシー
             </a>
           </Link>
-          <Link href={`${process.env.NEXT_PUBLIC_HOST_URL}/inquiry`}>
-            <a
-              className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-sm"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              お問い合わせ
-            </a>
-          </Link>
+          <a
+            href={`${process.env.NEXT_PUBLIC_HOST_URL}/inquiry`}
+            className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-sm"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            お問い合わせ
+          </a>
         </div>
       </div>
     </div>
