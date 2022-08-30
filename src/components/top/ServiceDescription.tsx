@@ -9,7 +9,7 @@ export const ServiceDescription = () => {
         <br />
         最適なコーデを考えます。
       </h3>
-      <p className="font-hiragino400 text-[max(3vw,0.85em)] sm:text-[1.125rem] mt-10 leading-[8vw] sm:leading-9">
+      <p className="font-hiragino400 text-[4vw] sm:text-lg mt-[8vw] sm:mt-10 leading-[8vw] sm:leading-9">
         UWear（ユーウェア）は、
         <br />
         洋服の悩みをスタイリストが解決し、
