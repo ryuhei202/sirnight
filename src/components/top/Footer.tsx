@@ -84,33 +84,34 @@ export const Footer = () => {
         </div>
         <div className="font-hiragino400 flex flex-wrap text-xs pt-10">
           <Link href={{ pathname: "/company" }}>
-            <a className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-base">
+            <a className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-sm">
               運営会社
             </a>
           </Link>
           <Link href={{ pathname: "/laws" }}>
-            <a className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-base">
+            <a className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-sm">
               特定商取引法に基づく表示
             </a>
           </Link>
           <Link href={{ pathname: "/term" }}>
-            <a className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-base">
+            <a className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-sm">
               利用規約
             </a>
           </Link>
           <Link href={{ pathname: "/privacy" }}>
-            <a className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-base">
+            <a className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-sm">
               プライバシーポリシー
             </a>
           </Link>
-          <a
-            href={`${process.env.NEXT_PUBLIC_HOST_URL}/inquiry`}
-            className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-base"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            お問い合わせ
-          </a>
+          <Link href={`${process.env.NEXT_PUBLIC_HOST_URL}/inquiry`}>
+            <a
+              className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-sm"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              お問い合わせ
+            </a>
+          </Link>
         </div>
       </div>
     </div>

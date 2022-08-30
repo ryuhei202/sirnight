@@ -92,33 +92,35 @@ export const Menu = ({ onClick, footerState }: TProps) => {
       </div>
       <div className="font-hiragino400 flex flex-wrap text-xs py-[5vw] sm:py-5 border-b-2 border-[#D8D8D2] border-solid">
         <Link href="/company">
-          <a className="w-1/3 my-[3vw] sm:my-5 text-[3vw] sm:text-base">
+          <a className="w-1/3 my-[3vw] sm:my-5 text-[3vw] sm:text-sm">
             運営会社
           </a>
         </Link>
         <Link href="/laws">
-          <a className="w-2/3 my-[3vw] sm:my-5 text-[3vw] sm:text-base">
+          <a className="w-2/3 my-[3vw] sm:my-5 text-[3vw] sm:text-sm">
             特定商取引法に基づく表示
           </a>
         </Link>
         <Link href="/term">
-          <a className="w-1/3 my-[3vw] sm:my-5 text-[3vw] sm:text-base">
+          <a className="w-1/3 my-[3vw] sm:my-5 text-[3vw] sm:text-sm">
             利用規約
           </a>
         </Link>
         <Link href="/privacy">
-          <a className="w-2/3 my-[3vw] sm:my-5 text-[3vw] sm:text-base">
+          <a className="w-2/3 my-[3vw] sm:my-5 text-[3vw] sm:text-sm">
             プライバシーポリシー
           </a>
         </Link>
-        <a
-          href={`${process.env.NEXT_PUBLIC_HOST_URL}/inquiry`}
-          className="w-2/3 my-[3vw] sm:my-5 text-[3vw] sm:text-base"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          お問い合わせ
-        </a>
+        <Link href={`${process.env.NEXT_PUBLIC_HOST_URL}/inquiry`}>
+          <a
+            href={`${process.env.NEXT_PUBLIC_HOST_URL}/inquiry`}
+            className="w-2/3 my-[3vw] sm:my-5 text-[3vw] sm:text-sm"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            お問い合わせ
+          </a>
+        </Link>
       </div>
       <div className="flex space-x-7 pt-10 pb-14">
         <a
