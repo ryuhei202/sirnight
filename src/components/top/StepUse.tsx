@@ -16,14 +16,14 @@ export const StepUse = ({ number, imagePath, title }: TProps) => {
         <div className="rounded-[15px] mt-7 h-[120vw] sm:h-[83.5%] absolute overflow-hidden">
           <img
             src={imagePath}
-            alt="howToUse1-1"
+            alt={`howToUse-${number}`}
             className="rounded-[15px] animate-infiniteScrollStepUse"
           />
         </div>
       ) : (
         <img
           src={imagePath}
-          alt="howToUse1-1"
+          alt={`howToUse-${number}`}
           className="rounded-[15px] mt-7 sm:h-fit block mx-auto"
         />
       )}
