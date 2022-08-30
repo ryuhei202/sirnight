@@ -34,7 +34,7 @@ export const HowToUse = () => {
           />
           <StepUse
             number={2}
-            imagePath="/images/howToUse/2.png"
+            imagePath="/images/howToUse/2.gif"
             title={
               <>
                 利用シーンと悩みにあわせた
@@ -45,7 +45,7 @@ export const HowToUse = () => {
           />
           <StepUse
             number={3}
-            imagePath="/images/howToUse/3.webp"
+            imagePath="/images/howToUse/3.gif"
             title={
               <>
                 今回のコーデが
