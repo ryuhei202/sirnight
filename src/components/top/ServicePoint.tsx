@@ -22,17 +22,17 @@ export const ServicePoint = ({
         {illustPosition === "right" ? (
           <>
             <div className="w-2/5">
-              <p className="font-lora text-primary text-xs w-fit mx-auto border-b border-dashed border-themeGray ">
+              <p className="font-lora text-primary text-[3vw] sm:text-sm w-fit mx-auto border-b border-dashed border-themeGray ">
                 Point
               </p>
-              <h4 className="[writing-mode:vertical-rl] mx-auto text-xl pt-4 font-semibold">
+              <h4 className="[writing-mode:vertical-rl] mx-auto text-[4vw] sm:text-xl pt-5 font-semibold tracking-widest leading-7 sm:!leading-8">
                 {content}
               </h4>
             </div>
             <img
               src={imagePath}
               alt="points-illust"
-              className="h-[280px] absolute top-1 right-0 sm:right-5 mix-blend-darken"
+              className="w-[55%] object-contain"
             />
           </>
         ) : (
@@ -40,13 +40,13 @@ export const ServicePoint = ({
             <img
               src={imagePath}
               alt="points-illust"
-              className="h-[280px] absolute top-1 left-0 sm:left-5 mix-blend-darken"
+              className="w-[55%] object-contain"
             />
             <div className="w-2/5">
-              <p className="font-lora text-primary text-xs w-fit mx-auto border-b border-dashed border-themeGray">
+              <p className="font-lora text-primary text-[3vw] sm:text-sm w-fit mx-auto border-b border-dashed border-themeGray">
                 Point
               </p>
-              <h4 className="[writing-mode:vertical-rl] mx-auto text-xl pt-4 font-semibold">
+              <h4 className="[writing-mode:vertical-rl] mx-auto text-[4vw] sm:text-xl pt-5 font-semibold tracking-widest leading-7 sm:!leading-8">
                 {content}
               </h4>
             </div>
