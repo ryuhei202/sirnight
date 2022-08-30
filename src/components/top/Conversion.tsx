@@ -44,7 +44,7 @@ export const Conversion = ({
         </div>
       </div>
       <div className="w-[73%] mx-auto mb-16">
-        <LinkButton href="/plan" onClick={onClick} className="my-10" border>
+        <LinkButton href="/plan" onClick={onClick} className="my-10 font-semibold" border>
           プランを選ぶ
         </LinkButton>
       </div>

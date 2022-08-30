@@ -26,7 +26,7 @@ export const LinkButton = ({
     "mx-3",
     "text-center",
     "w-[calc(100%_-_24px)]",
-    "font-medium",
+    "font-semibold",
     "text-base",
     "relative",
     "rounded-full",

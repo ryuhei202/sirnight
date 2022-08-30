@@ -22,7 +22,7 @@ export const CatchCopy = () => {
     <div className="w-full bg-clay text-center">
       <div className="relative z-20">
         <Animation options={{ threshold: 1, triggerOnce: true }}>
-          <h2 className="text-[10vw] sm:text-4xl font-semibold tracking-[0.15em] leading-[1.5em] mt-[100px] [writing-mode:vertical-rl] text-left inline-block mx-auto">
+          <h2 className="text-[10vw] sm:text-4xl font-semibold tracking-widest leading-[1.5em] mt-[100px] [writing-mode:vertical-rl] text-left inline-block mx-auto">
             洋服を選ぶのが
             <br />
             苦手なあなたに。
