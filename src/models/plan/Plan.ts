@@ -8,7 +8,7 @@ export const LIGHT_PLAN = {
     withTax: 6800 + 6800 * TAX,
     withoutTax: 6800,
   },
-  targets: ["プライベートで使用したい方", "カジュアルな仕事着で利用したい方"],
+  targets: ["プライベートで使いたい方", "カジュアルな仕事着で利用したい方"],
   scenes: ["公園", "カフェ", "ショッピング"],
   coordinateNum: 1,
   itemNum: 3,
