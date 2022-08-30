@@ -22,14 +22,14 @@ export const CatchCopy = () => {
     <div className="w-full bg-clay text-center">
       <div className="relative z-20">
         <Animation options={{ threshold: 1, triggerOnce: true }}>
-          <h2 className="text-[10vw] sm:text-4xl font-semibold tracking-widest leading-[1.5em] mt-[100px] [writing-mode:vertical-rl] text-left inline-block mx-auto">
+          <h2 className="text-[10vw] sm:text-5xl !leading-[1.5em] tracking-widest font-semibold mt-[100px] [writing-mode:vertical-rl] text-left inline-block mx-auto">
             洋服を選ぶのが
             <br />
             苦手なあなたに。
           </h2>
         </Animation>
       </div>
-      <div className="relative z-10 w-full overflow-hidden -mt-24">
+      <div className="relative z-10 w-full overflow-hidden -mt-[28vw] sm:-mt-32">
         <img
           id="catchcopy"
           src="/images/keyVisuals/sub/1.webp"
