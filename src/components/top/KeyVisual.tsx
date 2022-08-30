@@ -84,7 +84,7 @@ export const KeyVisual = () => {
             <KeyVisualColumn imageNames={{ left: "2-1", right: "2-2" }} />
           </li>
           <li>
-            <KeyVisualColumn imageNames={{ left: "8-1", right: "8-2" }} />
+            <KeyVisualColumn imageNames={{ left: "8-2", right: "8-1" }} />
           </li>
           <li>
             <KeyVisualColumn imageNames={{ left: "9-2", right: "9-1" }} />
