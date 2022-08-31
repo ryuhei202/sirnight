@@ -16,7 +16,7 @@ export const Worry = ({ content, status, type }: TProps) => {
       animationClassName={animationClassName}
       options={{ threshold: 1, triggerOnce: true }}
     >
-      <div className="my-2">
+      <div className="my-3">
         <p
           className={`bg-[#F4F3EF] rounded-[16px] p-5 min-w-[50%] w-fit [font-feature-settings:'palt'on] ${
             type === "right" ? "ml-auto" : "mr-auto"

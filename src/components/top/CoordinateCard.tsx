@@ -26,7 +26,7 @@ export const CoordinateCard = ({
               className="object-cover object-top w-full h-[50vw] sm:h-[250px]"
             />
           </figure>
-          <div className="absolute -bottom-1 h-[25vw] w-full bg-gradient-to-b from-transparent to-clay"></div>
+          <div className="absolute -bottom-1 h-[40vw] sm:h-[200px] w-full bg-gradient-to-b from-transparent to-clay"></div>
         </div>
       ) : (
         <div className="grid grid-rows-[var(--firstViewHeight)_1fr] w-full">
@@ -47,12 +47,14 @@ export const CoordinateCard = ({
               </p>
             </div>
             <div className="p-[5vw] sm:p-7 bg-clay">
-              <p className="text-[4vw] sm:text-xl leading-[8vw] sm:leading-10 font-semibold">
+              <p className="text-[min(4vw,15px)] sm:text-xl leading-[8vw] sm:leading-10 font-semibold">
                 <span className="pb-1 border-b-[1.5px] sm:border-b-2 border-dashed border-themeGray">
                   {mainText}
                 </span>
               </p>
-              <p className="text-[3vw] sm:text-sm mt-5">{subText}</p>
+              <p className="font-hiragino400 text-[3vw] sm:text-sm mt-5">
+                {subText}
+              </p>
             </div>
           </div>
         </div>

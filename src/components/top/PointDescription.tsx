@@ -5,10 +5,10 @@ type TProps = {
 };
 export const PointDescription = ({ className }: TProps) => {
   return (
-    <div className={`w-full my-14 ${className ?? ""}`}>
+    <div className={`w-full my-24 ${className ?? ""}`}>
       <ServicePoint
         illustPosition="right"
-        imagePath="/images/points/illust1.png"
+        imagePath="/images/points/1.webp"
         content={
           <>
             着るシーンにあわせた
@@ -20,7 +20,7 @@ export const PointDescription = ({ className }: TProps) => {
 
       <ServicePoint
         illustPosition="left"
-        imagePath="/images/points/illust2.png"
+        imagePath="/images/points/2.webp"
         content={
           <>
             スタイリストに
@@ -34,7 +34,7 @@ export const PointDescription = ({ className }: TProps) => {
 
       <ServicePoint
         illustPosition="right"
-        imagePath="/images/points/illust3.png"
+        imagePath="/images/points/3.webp"
         content={
           <>
             動きやすさや快適さを

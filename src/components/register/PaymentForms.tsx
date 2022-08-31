@@ -113,7 +113,10 @@ export const PaymentForms = ({
 
   const onClick = () => {
     getToken();
-    analyzeEvent({ action: "click", category: "register", label: "payment" });
+    analyzeEvent({
+      action: "click",
+      category: "register_payment",
+    });
   };
 
   return (
@@ -150,7 +153,7 @@ export const PaymentForms = ({
                   convertedNumber.match(/.{1,4}/g);
                 setCardNumber(separatedNumber?.join(" "));
               }}
-              placeholder="0000000000000000"
+              placeholder="0000 0000 0000 0000"
               step="1"
               className="p-3 mt-3 w-full rounded-md border border-themeGray bg-clay resize-none"
             />

@@ -31,17 +31,19 @@ export const ItemCard = ({
             <img src={imageFileName} alt="service-value" />
             {titleSplit.map((title, index) => (
               <p
-                key={title}
+                key={index}
                 className={`absolute ${
-                  index === 0 ? "bottom-0" : ""
-                } bg-themeGray w-fit text-[4vw] sm:text-lg p-2`}
+                  index === 0 ? "-bottom-3" : ""
+                } bg-themeGray w-fit font-semibold text-[4vw] sm:text-lg p-2`}
               >
                 <span className="text-gray-100">{title}</span>
               </p>
             ))}
           </div>
           <div
-            className={`p-4 ${titleSplit.length === 1 ? "" : "mt-12"} text-sm`}
+            className={`font-hiragino400 p-[6vw] sm:p-6 ${
+              titleSplit.length === 1 ? "mt-4" : "mt-12"
+            } text-sm`}
           >
             <p>{description}</p>
           </div>

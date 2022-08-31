@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 
 type TProps = {
   question: string;
-  answer: string;
+  answer: ReactNode;
 };
 
 export const QuestionAnswer = ({ question, answer }: TProps) => {

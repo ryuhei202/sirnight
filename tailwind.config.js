@@ -8,6 +8,8 @@ module.exports = {
     extend: {
       fontFamily: {
         lora: ["Lora"],
+        hiragino400: ["Hiragino UD Sans W4 JIS2004"],
+        hiragino600: ["Hiragino UD Sans W6 JIS2004"],
       },
       colors: {
         themeGray: "#475156",
@@ -39,7 +41,6 @@ module.exports = {
         infiniteScrollStepUse: "infiniteScrollStepUse 7s linear infinite",
         infiniteSlideLeft: "infiniteSlideLeft 40s linear infinite",
         infiniteSlideRight: "infiniteSlideRight 30s linear infinite",
-        shrink: "shrink 1s ease-in-out forwards",
         rotatePositive: "rotatePositive 2s ease-in-out forwards",
         rotateNegative: "rotateNegative 2s ease-in-out forwards",
       },
@@ -150,10 +151,6 @@ module.exports = {
         infiniteSlideRight: {
           "0%": { transform: "translateX(-100%)" },
           "100%": { transform: "translateX(0)" },
-        },
-        shrink: {
-          "0%": { transform: "scale(110%)" },
-          "100%": { transform: "scale(100%)" },
         },
         rotatePositive: {
           "0%": { opacity: 0, transform: "rotate(-12deg)" },

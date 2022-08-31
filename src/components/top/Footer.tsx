@@ -5,7 +5,7 @@ export const Footer = () => {
     <div className="py-28 bg-themeGray">
       <div className="mx-[13%] text-beige">
         <img src="/images/logos/beige.svg" alt="logo" />
-        <p className="text-sm text-center mt-8 mb-16">
+        <p className="font-hiragino400 text-sm text-center mt-8 mb-16">
           服の悩みを解決する
           <br />
           メンズファッションレンタルサービス
@@ -82,30 +82,30 @@ export const Footer = () => {
             </a>
           </Link>
         </div>
-        <div className="flex flex-wrap text-xs pt-10">
+        <div className="font-hiragino400 flex flex-wrap text-xs pt-10">
           <Link href={{ pathname: "/company" }}>
-            <a className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-base">
+            <a className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-sm">
               運営会社
             </a>
           </Link>
           <Link href={{ pathname: "/laws" }}>
-            <a className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-base">
+            <a className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-sm">
               特定商取引法に基づく表示
             </a>
           </Link>
           <Link href={{ pathname: "/term" }}>
-            <a className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-base">
+            <a className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-sm">
               利用規約
             </a>
           </Link>
           <Link href={{ pathname: "/privacy" }}>
-            <a className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-base">
+            <a className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-sm">
               プライバシーポリシー
             </a>
           </Link>
           <a
             href={`${process.env.NEXT_PUBLIC_HOST_URL}/inquiry`}
-            className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-base"
+            className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-sm"
             target="_blank"
             rel="noopener noreferrer"
           >

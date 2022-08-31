@@ -44,6 +44,7 @@ const Register = ({ planId }: { planId: 11 | 12 | 13 }) => {
   const [paymentData, setPaymentData] = useState<TPaymentRegisterData>();
 
   useEffect(() => {
+    Ts.loadFont();
     window.scrollTo(0, 0);
   }, [step]);
 

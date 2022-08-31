@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import "tailwindcss/tailwind.css";
 import SEO from "../next-seo.config";
 import { GA_ID, usePageView } from "../src/lib/gtag";
+import { useLoadFont } from "../src/lib/useLoadFont";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -16,6 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     },
   });
 
+  useLoadFont();
   usePageView();
 
   return (
@@ -25,22 +27,27 @@ function MyApp({ Component, pageProps }: AppProps) {
       ) : (
         <>
           <Script
-            defer
-            src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
             strategy="afterInteractive"
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
           />
-          <Script id="ga" defer strategy="afterInteractive">
-            {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());    
-              gtag('config', '${GA_ID}');
-          `}
-          </Script>
+          <Script
+            id="gtag-init"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_ID}', {
+              page_path: window.location.pathname,
+            });
+          `,
+            }}
+          />
         </>
       )}
       <DefaultSeo {...SEO} />
-      <div className="w-screen h-full bg-clay">
+      <div className="w-screen h-full bg-clay font-hiragino600">
         <img
           src="/images/logos/light-gray.svg"
           alt="logo"

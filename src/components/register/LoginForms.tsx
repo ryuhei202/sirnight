@@ -68,7 +68,10 @@ export const LoginForms = ({ onSubmit, onBack }: TProps) => {
         }
       );
     }
-    analyzeEvent({ action: "click", category: "register", label: "login" });
+    analyzeEvent({
+      action: "click",
+      category: "register_login",
+    });
   };
 
   return (

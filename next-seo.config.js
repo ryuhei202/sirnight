@@ -1,13 +1,15 @@
 export default {
-  titleTemplate: "%s | UWear公式サイト",
-  defaultTitle: "UWear公式サイト",
+  titleTemplate:
+    "%s | UWear（ユーウェア）-メンズファッションのサブスク！スタイリストのコーデをレンタル！洋服の悩みをなくします。",
+  defaultTitle:
+    "UWear（ユーウェア）-メンズファッションのサブスク！スタイリストのコーデをレンタル！洋服の悩みをなくします。",
   description:
-    "メンズファッションサブスクサービスUWear(ユーウェア)。UWearならプロのスタイリストが選んだ洋服をレンタルできる。洋服を選ぶのが苦手なあなたに最適なファッションをお届けします。",
+    "メンズファッションのサブスクUWear(ユーウェア)。スタイリストが選ぶ洋服がレンタルできる。洋服を選ぶのが苦手なあなたに最適なコーデをお届けします。",
   openGraph: {
     type: "website",
     images: [
       {
-        url: `https://uwear.jp/images/meta/ogp.png`,
+        url: `https://uwear.jp/images/meta/ogp.jpg`,
         width: 1200,
         height: 630,
         alt: "UWear OG",
