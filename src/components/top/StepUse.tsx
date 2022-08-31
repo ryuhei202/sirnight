@@ -20,7 +20,7 @@ export const StepUse = ({ number, imagePath, title, className }: TProps) => {
       <img
         src={imagePath}
         alt={`howToUse-${number}`}
-        className="rounded-[15px] mt-7 block mx-auto w-[80vw]"
+        className="rounded-[15px] mt-7 block mx-auto w-[80vw] sm:w-[80%]"
       />
     </li>
   );
