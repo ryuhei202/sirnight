@@ -5,7 +5,7 @@ type TProps = {
 };
 export const PointDescription = ({ className }: TProps) => {
   return (
-    <div className={`w-full my-14 ${className ?? ""}`}>
+    <div className={`w-full my-24 ${className ?? ""}`}>
       <ServicePoint
         illustPosition="right"
         imagePath="/images/points/1.webp"
