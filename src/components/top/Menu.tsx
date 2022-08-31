@@ -133,7 +133,7 @@ export const Menu = ({ onClick, footerState }: TProps) => {
           />
         </a>
         <a
-          href="https://twitter.com/leeapjp"
+          href="https://twitter.com/UWearJP"
           target="_blank"
           rel="noopener noreferrer"
         >
