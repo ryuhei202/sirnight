@@ -8,7 +8,7 @@ export const CustomerReviews = () => {
       </p>
       <ReviewCard
         customer={{
-          imagePath: "/images/customerReviews/1.webp",
+          imagePath: "/images/customerReviews/3.webp",
           initial: "M",
           age: 35,
           address: "東京",
@@ -22,7 +22,7 @@ export const CustomerReviews = () => {
       />
       <ReviewCard
         customer={{
-          imagePath: "/images/customerReviews/2.webp",
+          imagePath: "/images/customerReviews/1.webp",
           initial: "S",
           age: 39,
           address: "神奈川",
@@ -36,7 +36,7 @@ export const CustomerReviews = () => {
       />
       <ReviewCard
         customer={{
-          imagePath: "/images/customerReviews/3.webp",
+          imagePath: "/images/customerReviews/2.webp",
           initial: "K",
           age: 41,
           address: "千葉",
