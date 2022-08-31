@@ -26,7 +26,7 @@ export const KeyVisual = () => {
   }, [toggleVisibility]);
 
   return (
-    <div className="w-hull h-screen overflow-hidden relative z-[888]">
+    <div className="w-hull h-screen overflow-hidden relative">
       <div id="key-visuals">
         <ul>
           <li>
