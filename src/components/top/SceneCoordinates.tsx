@@ -189,7 +189,7 @@ export const SceneCoordinates = () => {
             <Button
               onClick={handleClick}
               weight="semibold"
-              className="text-[3vw] sm:text-sm sm:px-5 py-5"
+              className="text-[3.5vw] sm:text-sm sm:px-5 py-5"
             >
               コーデをもっと見る
             </Button>
