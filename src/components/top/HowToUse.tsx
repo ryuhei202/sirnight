@@ -20,7 +20,7 @@ export const HowToUse = () => {
         </div>
       </div>
       <div className="bg-themeGray pt-[12vw] pb-[20vw] sm:pt-16 sm:pb-24 text-white">
-        <ul className="px-[60px] flex overflow-x-scroll space-x-8 snap-x snap-mandatory hidden-scrollbar">
+        <ul className="flex overflow-x-scroll snap-x snap-mandatory hidden-scrollbar">
           <StepUse
             number={1}
             imagePath="/images/howToUse/1.gif"
@@ -31,6 +31,7 @@ export const HowToUse = () => {
                 お聞きします
               </>
             }
+            className="pl-8"
           />
           <StepUse
             number={2}
@@ -64,6 +65,7 @@ export const HowToUse = () => {
                 次回以降のコーデをより良くします
               </>
             }
+            className="pr-8"
           />
         </ul>
       </div>
