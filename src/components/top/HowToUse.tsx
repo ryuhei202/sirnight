@@ -31,7 +31,7 @@ export const HowToUse = () => {
                 お聞きします
               </>
             }
-            className="pl-8"
+            className="pl-[10vw] sm:pl-14"
           />
           <StepUse
             number={2}
@@ -65,7 +65,7 @@ export const HowToUse = () => {
                 次回以降のコーデをより良くします
               </>
             }
-            className="pr-8"
+            className="pr-[10vw] sm:pr-14"
           />
         </ul>
       </div>
