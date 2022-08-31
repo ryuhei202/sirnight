@@ -47,7 +47,7 @@ export const CoordinateCard = ({
               </p>
             </div>
             <div className="p-[5vw] sm:p-7 bg-clay">
-              <p className="text-[4vw] sm:text-xl leading-[8vw] sm:leading-10 font-semibold">
+              <p className="text-[min(4vw,15px)] sm:text-xl leading-[8vw] sm:leading-10 font-semibold">
                 <span className="pb-1 border-b-[1.5px] sm:border-b-2 border-dashed border-themeGray">
                   {mainText}
                 </span>
