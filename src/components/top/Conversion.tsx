@@ -16,8 +16,7 @@ export const Conversion = ({
   const onClick = () => {
     analyzeEvent({
       action: "click",
-      category: "to_plan",
-      label: `conversion_${number}th`,
+      category: `conversion_${number}th`,
     });
   };
 
@@ -44,7 +43,12 @@ export const Conversion = ({
         </div>
       </div>
       <div className="w-[73%] mx-auto mb-16">
-        <LinkButton href="/plan" onClick={onClick} className="my-10 font-semibold" border>
+        <LinkButton
+          href="/plan"
+          onClick={onClick}
+          className="my-10 font-semibold"
+          border
+        >
           プランを選ぶ
         </LinkButton>
       </div>

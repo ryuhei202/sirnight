@@ -104,7 +104,7 @@ export const BaseForms = ({ onSubmit }: TProps) => {
         },
       });
     }
-    analyzeEvent({ action: "click", category: "register", label: "base" });
+    analyzeEvent({ action: "click", category: "register_base" });
   };
 
   return (

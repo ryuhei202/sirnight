@@ -18,8 +18,7 @@ export const FooterMenu = () => {
   const onClickPlan = () => {
     analyzeEvent({
       action: "click",
-      category: "to_plan",
-      label: "footer_menu",
+      category: "footer_plan",
     });
   };
 

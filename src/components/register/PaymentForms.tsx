@@ -113,7 +113,10 @@ export const PaymentForms = ({
 
   const onClick = () => {
     getToken();
-    analyzeEvent({ action: "click", category: "register", label: "payment" });
+    analyzeEvent({
+      action: "click",
+      category: "register_payment",
+    });
   };
 
   return (

@@ -81,7 +81,10 @@ export const RegisterConfirm = ({
         setError("予期せぬエラーが発生しました");
       },
     });
-    analyzeEvent({ action: "click", category: "register", label: "confirm" });
+    analyzeEvent({
+      action: "click",
+      category: "register_confirm",
+    });
   };
 
   return (
