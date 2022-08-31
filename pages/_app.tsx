@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import "tailwindcss/tailwind.css";
 import SEO from "../next-seo.config";
 import { GA_ID, usePageView } from "../src/lib/gtag";
+import { useLoadFont } from "../src/lib/useLoadFont";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -16,6 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     },
   });
 
+  useLoadFont();
   usePageView();
 
   return (
