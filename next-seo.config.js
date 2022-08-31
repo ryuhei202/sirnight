@@ -17,7 +17,7 @@ export default {
     ],
   },
   twitter: {
-    handle: "@LeeapJP",
-    site: "@LeeapJP",
+    handle: "@UWearJP",
+    site: "@UWearJP",
   },
 };
