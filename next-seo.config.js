@@ -9,7 +9,7 @@ export default {
     type: "website",
     images: [
       {
-        url: `https://uwear.jp/images/meta/ogp.png`,
+        url: `https://uwear.jp/images/meta/ogp.jpg`,
         width: 1200,
         height: 630,
         alt: "UWear OG",
