@@ -24,13 +24,13 @@ export const PlanDetail = ({ plan, disabled }: TProps) => {
     <div className={`duration-1000 ${disabled ? "opacity-20" : ""}`}>
       <div className="border-solid border border-themeGray rounded-md mx-3">
         <div className="">
-          <p className="font-semibold text-center text-[5vw] sm:text-xl my-6">
+          <p className="text-center text-[5vw] sm:text-xl my-6">
             月額
             <span className="text-[10vw] sm:text-4xl ml-2 font-lora">{`¥${plan.price.withTax.toLocaleString()}`}</span>
             （税込）
           </p>
           <div className="flex flex-wrap justify-center space-x-3 mb-6">
-            <p className="text-[4vw] sm:text-xl text-[#979B9A]">{`¥${plan.price.withoutTax.toLocaleString()}（税抜）`}</p>
+            <p className="text-[4vw] sm:text-xl text-[#979B9A] font-hiragino400">{`¥${plan.price.withoutTax.toLocaleString()}（税抜）`}</p>
           </div>
         </div>
         <div className="bg-themeGray text-clay text-center text-[4vw] sm:text-xl py-1">
