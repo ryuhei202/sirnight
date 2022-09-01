@@ -24,6 +24,10 @@
     font-size: 0.8rem;
     margin-top: 20px;
   }
+  .newsContent p {
+    font-family: "Hiragino UD Sans W4 JIS2004";
+    line-height: 1.6rem;
+  }
   .newsContent img {
     width: 100%;
   }

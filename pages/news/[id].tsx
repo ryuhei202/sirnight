@@ -41,7 +41,7 @@ const NewsDetail: NextPage<TArticleContent> = (article: TArticleContent) => {
             { name: `${article.title}` },
           ]}
         />
-        <div className="px-12">
+        <div className="px-10">
           <div className="py-12 border-b-[1px] border-[#D8D8D2]">
             <p className="text-xs">
               {handleData({ date: article.publishedAt })}
@@ -51,7 +51,7 @@ const NewsDetail: NextPage<TArticleContent> = (article: TArticleContent) => {
           <div className="pt-12 text-sm">
             <div className="text-right pb-12">
               <p>{handleData({ date: article.publishedAt, type: "kanji" })}</p>
-              <p>株式会社kizankiizan</p>
+              <p>株式会社kiizankiizan</p>
             </div>
             <NewsContent content={article?.body} />
             <LinkButton
