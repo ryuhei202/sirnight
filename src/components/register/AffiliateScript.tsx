@@ -2,7 +2,7 @@ type TProps = {
   readonly memberId: number;
 };
 
-const Affiliate = ({ memberId }: TProps) => {
+export const AffiliateScript = ({ memberId }: TProps) => {
   return (
     <>
       {/* もしもアフィリエイトコンバージョンタグ */}
@@ -22,4 +22,3 @@ const Affiliate = ({ memberId }: TProps) => {
     </>
   );
 };
-export default Affiliate;

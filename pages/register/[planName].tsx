@@ -5,7 +5,6 @@ import { BaseForms } from "../../src/components/register/BaseForms";
 import { LoginForms } from "../../src/components/register/LoginForms";
 import { PaymentForms } from "../../src/components/register/PaymentForms";
 import { RegisterConfirm } from "../../src/components/register/RegisterConfirm";
-import { Thanks } from "../../src/components/register/thanks";
 import { getRegisterHandler } from "../../src/hooks/register/getRegisterHandler";
 import {
   findPlanByName,
@@ -39,7 +38,7 @@ export const getStaticProps = async ({
 
 const Register = ({ planId }: { planId: 11 | 12 | 13 }) => {
   const [step, setStep] =
-    useState<"base" | "login" | "payment" | "confirm" | "thanks">("base");
+    useState<"base" | "login" | "payment" | "confirm">("base");
   const [baseData, setBaseData] = useState<TBaseRegisterData>();
   const [loginData, setLoginData] = useState<TLoginRegisterData>();
   const [paymentData, setPaymentData] = useState<TPaymentRegisterData>();
@@ -112,14 +111,6 @@ const Register = ({ planId }: { planId: 11 | 12 | 13 }) => {
           onBack={handleBack}
         />
       );
-      break;
-    }
-    case "thanks": {
-      if (!loginData) {
-        forms = <p>Loading...</p>;
-        return;
-      }
-      <Thanks memberId={loginData.memberId} />;
       break;
     }
   }

@@ -3,9 +3,9 @@ import { TLoginRegisterData } from "../../models/register/TLoginRegisterData";
 import { TPaymentRegisterData } from "../../models/register/TPaymentRegisterData";
 
 type TArgs = {
-  readonly step: "base" | "login" | "payment" | "confirm" | "thanks";
+  readonly step: "base" | "login" | "payment" | "confirm";
   readonly setStep: React.Dispatch<
-    React.SetStateAction<"base" | "login" | "payment" | "confirm" | "thanks">
+    React.SetStateAction<"base" | "login" | "payment" | "confirm">
   >;
   readonly setBaseData: React.Dispatch<
     React.SetStateAction<TBaseRegisterData | undefined>
@@ -36,7 +36,6 @@ type TRegisterHandler = {
     maskedCardNumber,
     discount,
   }: TPaymentRegisterData) => void;
-  readonly handleSubmitConfirm: () => void;
   readonly handleBack: () => void;
 };
 
@@ -90,10 +89,6 @@ export const getRegisterHandler = ({
     setStep("confirm");
   };
 
-  const handleSubmitConfirm = () => {
-    setStep("thanks");
-  };
-
   const handleBack = () => {
     switch (step) {
       case "login": {
@@ -118,7 +113,6 @@ export const getRegisterHandler = ({
     handleSubmitBase,
     handleSubmitLogin,
     handleSubmitPayment,
-    handleSubmitConfirm,
     handleBack,
   };
 };

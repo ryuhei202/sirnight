@@ -1,14 +1,27 @@
-import { LinkButton } from "../baseParts/LinkButton";
-import Affiliate from "./Affiliate";
+import { NextPage } from "next";
+import { NextSeo } from "next-seo";
+import Head from "next/head";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import { LinkButton } from "../../src/components/baseParts/LinkButton";
+import { AffiliateScript } from "../../src/components/register/AffiliateScript";
 
-type TProps = {
-  readonly memberId: number;
-};
-
-export const Thanks = ({ memberId }: TProps) => {
+const Thanks: NextPage = () => {
+  const [memberId, setMemberId] = useState<number>();
+  const { memberId: memberIdQuery } = useRouter().query;
+  useEffect(() => {
+    if (Array.isArray(memberIdQuery)) {
+      setMemberId(undefined);
+    } else {
+      setMemberId(Number(memberIdQuery) ?? undefined);
+    }
+  }, [memberIdQuery]);
   return (
     <div>
-      <Affiliate memberId={memberId}></Affiliate>
+      <NextSeo title="会員登録完了" />
+      <Head>
+        {memberId && <AffiliateScript memberId={memberId}></AffiliateScript>}
+      </Head>
       <div
         id="container"
         className="h-full min-h-screen inset-0 text-themeGray"
@@ -38,3 +51,4 @@ export const Thanks = ({ memberId }: TProps) => {
     </div>
   );
 };
+export default Thanks;

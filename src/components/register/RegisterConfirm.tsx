@@ -75,7 +75,10 @@ export const RegisterConfirm = ({
     mutate(params, {
       onSuccess: () => {
         localStorage.removeItem("campaignCode");
-        router.push("/register/thanks");
+        router.push({
+          pathname: "/register/thanks",
+          query: { memberId: memberId },
+        });
       },
       onError: () => {
         setError("予期せぬエラーが発生しました");
