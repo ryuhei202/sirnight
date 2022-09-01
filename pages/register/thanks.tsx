@@ -53,6 +53,14 @@ const Thanks: NextPage = () => {
           </div>
         </div>
       </div>
+      {/* Rentracksコンバージョンタグ */}
+      {memberId && (
+        <img
+          src={`https://www.rentracks.jp/secure/e.gifx?sid=1847&pid=2838&price=1&quantity=1&reward=-1&cinfo=${memberId}`}
+          width="1"
+          height="1"
+        ></img>
+      )}
     </div>
   );
 };
