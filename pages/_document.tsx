@@ -14,6 +14,8 @@ class Document extends NextDocument<Props> {
               charSet="utf-8"
             ></script>
           )}
+          {/* もしもアフィリエイトトラッキングタグ */}
+          <script src="https://r.moshimo.com/af/r/maftag.js"></script>
         </Head>
         <body>
           <Main />
