@@ -5,7 +5,7 @@ type TProps = {
   readonly memberId: number;
 };
 
-const Thanks = ({ memberId }: TProps) => {
+export const Thanks = ({ memberId }: TProps) => {
   return (
     <div>
       <Affiliate memberId={memberId}></Affiliate>
@@ -38,4 +38,3 @@ const Thanks = ({ memberId }: TProps) => {
     </div>
   );
 };
-export default Thanks;

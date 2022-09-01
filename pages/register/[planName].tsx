@@ -5,7 +5,7 @@ import { BaseForms } from "../../src/components/register/BaseForms";
 import { LoginForms } from "../../src/components/register/LoginForms";
 import { PaymentForms } from "../../src/components/register/PaymentForms";
 import { RegisterConfirm } from "../../src/components/register/RegisterConfirm";
-import Thanks from "../../src/components/register/thanks";
+import { Thanks } from "../../src/components/register/thanks";
 import { getRegisterHandler } from "../../src/hooks/register/getRegisterHandler";
 import {
   findPlanByName,
