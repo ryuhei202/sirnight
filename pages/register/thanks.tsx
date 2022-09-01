@@ -4,7 +4,6 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { LinkButton } from "../../src/components/baseParts/LinkButton";
-import { AffiliateScript } from "../../src/components/register/AffiliateScript";
 
 const Thanks: NextPage = () => {
   const [memberId, setMemberId] = useState<number>();
@@ -20,7 +19,13 @@ const Thanks: NextPage = () => {
     <div>
       <NextSeo title="会員登録完了" />
       <Head>
-        {memberId && <AffiliateScript memberId={memberId}></AffiliateScript>}
+        {/* もしもアフィリエイトコンバージョンタグ */}
+        {memberId && (
+          <script
+            src={`https://r.moshimo.com/af/r/result.js?p_id=1063&pc_id=1537&m_v=${memberId}`}
+            id="msmaf"
+          ></script>
+        )}
       </Head>
       <div
         id="container"
