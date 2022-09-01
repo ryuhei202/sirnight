@@ -38,7 +38,7 @@ const Laws: NextPage = () => {
           </div>
           <div>
             <h3>メールアドレス</h3>
-            <p>info@leeap.jp</p>
+            <p>info@uwear.jp</p>
           </div>
           <div>
             <h3>連絡先</h3>
