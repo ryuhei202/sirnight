@@ -122,7 +122,7 @@ export const Menu = ({ onClick, footerState }: TProps) => {
       </div>
       <div className="flex space-x-7 pt-10 pb-14">
         <a
-          href="https://www.instagram.com/leeapjp/"
+          href="https://www.instagram.com/UWearJP/"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -144,7 +144,7 @@ export const Menu = ({ onClick, footerState }: TProps) => {
           />
         </a>
         <a
-          href="https://www.facebook.com/leeapjp/"
+          href="https://www.facebook.com/UWearJP/"
           target="_blank"
           rel="noopener noreferrer"
         >

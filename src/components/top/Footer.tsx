@@ -12,7 +12,7 @@ export const Footer = () => {
         </p>
         <div className="flex justify-center space-x-7 pb-20 border-b-2 border-[#676F72]">
           <a
-            href="https://www.instagram.com/leeapjp/"
+            href="https://www.instagram.com/UWearJP/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -34,7 +34,7 @@ export const Footer = () => {
             />
           </a>
           <a
-            href="https://www.facebook.com/leeapjp/"
+            href="https://www.facebook.com/UWearJP/"
             target="_blank"
             rel="noopener noreferrer"
           >
