@@ -4,10 +4,13 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { LinkButton } from "../../src/components/baseParts/LinkButton";
+import { GA_ID } from "../../src/lib/gtag";
 
 const Thanks: NextPage = () => {
   const [memberId, setMemberId] = useState<number>();
   const { memberId: memberIdQuery } = useRouter().query;
+
+  // ユーザーIDをクエリパラメータから取得
   useEffect(() => {
     if (Array.isArray(memberIdQuery)) {
       setMemberId(undefined);
@@ -15,6 +18,16 @@ const Thanks: NextPage = () => {
       setMemberId(Number(memberIdQuery) ?? undefined);
     }
   }, [memberIdQuery]);
+
+  // Google AnalyticsにユーザーIDを送信
+  useEffect(() => {
+    if (memberId && GA_ID) {
+      window.gtag("config", GA_ID, {
+        user_id: memberId,
+      });
+    }
+  }, [memberId]);
+
   return (
     <div>
       <NextSeo title="会員登録完了" />
