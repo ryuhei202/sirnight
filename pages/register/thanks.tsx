@@ -2,6 +2,7 @@ import { NextPage } from "next";
 import { NextSeo } from "next-seo";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import Script from "next/script";
 import { useEffect, useState } from "react";
 import { LinkButton } from "../../src/components/baseParts/LinkButton";
 import { GA_ID } from "../../src/lib/gtag";
@@ -39,10 +40,10 @@ const Thanks: NextPage = () => {
       <Head>
         {/* もしもアフィリエイトコンバージョンタグ */}
         {memberId && (
-          <script
+          <Script
             src={`https://r.moshimo.com/af/r/result.js?p_id=1063&pc_id=1537&m_v=${memberId}`}
             id="msmaf"
-          ></script>
+          ></Script>
         )}
       </Head>
       <div
