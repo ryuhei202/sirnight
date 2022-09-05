@@ -2,12 +2,16 @@ import { NextPage } from "next";
 import { NextSeo } from "next-seo";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import Script from "next/script";
 import { useEffect, useState } from "react";
 import { LinkButton } from "../../src/components/baseParts/LinkButton";
+import { GA_ID } from "../../src/lib/gtag";
 
 const Thanks: NextPage = () => {
   const [memberId, setMemberId] = useState<number>();
   const { memberId: memberIdQuery } = useRouter().query;
+
+  // ユーザーIDをクエリパラメータから取得
   useEffect(() => {
     if (Array.isArray(memberIdQuery)) {
       setMemberId(undefined);
@@ -15,16 +19,31 @@ const Thanks: NextPage = () => {
       setMemberId(Number(memberIdQuery) ?? undefined);
     }
   }, [memberIdQuery]);
+
+  // Google Analytics ユーザーIDを送信
+  useEffect(() => {
+    if (memberId && GA_ID) {
+      window.gtag("config", GA_ID, {
+        user_id: memberId,
+      });
+    }
+  }, [memberId]);
+
+  // Google　Analytics コンバージョンイベント送信
+  useEffect(() => {
+    window.gtag("event", "register");
+  }, []);
+
   return (
     <div>
       <NextSeo title="会員登録完了" />
       <Head>
         {/* もしもアフィリエイトコンバージョンタグ */}
         {memberId && (
-          <script
+          <Script
             src={`https://r.moshimo.com/af/r/result.js?p_id=1063&pc_id=1537&m_v=${memberId}`}
             id="msmaf"
-          ></script>
+          ></Script>
         )}
       </Head>
       <div
@@ -59,6 +78,7 @@ const Thanks: NextPage = () => {
           src={`https://www.rentracks.jp/secure/e.gifx?sid=1847&pid=2838&price=1&quantity=1&reward=-1&cinfo=${memberId}`}
           width="1"
           height="1"
+          alt=""
         ></img>
       )}
     </div>
