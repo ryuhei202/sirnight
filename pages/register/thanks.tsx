@@ -19,7 +19,7 @@ const Thanks: NextPage = () => {
     }
   }, [memberIdQuery]);
 
-  // Google AnalyticsにユーザーIDを送信
+  // Google Analytics ユーザーIDを送信
   useEffect(() => {
     if (memberId && GA_ID) {
       window.gtag("config", GA_ID, {
@@ -27,6 +27,11 @@ const Thanks: NextPage = () => {
       });
     }
   }, [memberId]);
+
+  // Google　Analytics コンバージョンイベント送信
+  useEffect(() => {
+    window.gtag("event", "register");
+  }, []);
 
   return (
     <div>
