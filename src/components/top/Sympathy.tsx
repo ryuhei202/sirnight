@@ -50,19 +50,6 @@ export const Sympathy = () => {
             </>
           }
         />
-        <Worry
-          type="left"
-          status="30代前半 会社員"
-          content={
-            <>
-              奥さんの仲良しのファミリーと
-              <br />
-              家での食事会に参加、
-              <br />
-              着ていく服がわからない...
-            </>
-          }
-        />
       </div>
     </div>
   );
