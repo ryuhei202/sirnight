@@ -4,7 +4,7 @@ export const ServiceDescription = () => {
       className="relative pt-14 pb-20 text-center bg-clay [font-feature-settings:'palt'on]"
       id="about"
     >
-      <h3 className="font-hiragino600 text-[6vw] sm:text-3xl sm:!leading-[3rem] font-bold">
+      <h3 className="font-hiragino600 text-[6vw] sm:text-3xl sm:!leading-[3rem] font-semibold">
         UWearは､あなたと一緒に
         <br />
         最適なコーデを考えます。
