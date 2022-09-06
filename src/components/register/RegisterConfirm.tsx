@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useMembersCreate } from "../../api/members/useMembersCreate";
-import { analyzeEvent, setUserId } from "../../lib/gtag";
+import { setUserId, trackConversion } from "../../lib/gtag";
 import { findPlanById } from "../../models/plan/Plan";
 import { TDiscount } from "../../models/register/TDiscount";
 import { TAX } from "../../models/shared/Tax";
@@ -75,10 +75,7 @@ export const RegisterConfirm = ({
     mutate(params, {
       onSuccess: () => {
         localStorage.removeItem("campaignCode");
-        analyzeEvent({
-          action: "register",
-          category: findPlanById(planId).jpName,
-        }).then(() =>
+        trackConversion(findPlanById(planId).jpName).then(() =>
           setUserId(memberId).then(() =>
             router.push({
               pathname: "/register/thanks",
