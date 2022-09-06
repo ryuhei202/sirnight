@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+JP&subset=japanese");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Lora");
 
 @tailwind base;
@@ -26,7 +25,7 @@
     margin-top: 20px;
   }
   .newsContent p {
-    /* font-family: "Hiragino UD Sans W4 JIS2004"; */
+    font-family: "Hiragino UD Sans W4 JIS2004";
     line-height: 1.6rem;
   }
   .newsContent img {
@@ -40,7 +39,8 @@ body {
   margin: 0;
   letter-spacing: 0.05em;
 
-  font-family: "Noto Sans JP";
+  font-family: "Hiragino UD Sans Std", "HiraKakuProN-W3", "Noto Sans JP",
+    sans-serif;
 }
 
 a {
