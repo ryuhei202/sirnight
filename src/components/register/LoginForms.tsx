@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { TValidationLoginResponse } from "../../api/validations/TValidationLoginResponse";
 import { useValidationsLogin } from "../../api/validations/useValidationsLogin";
-import { analyzeEvent } from "../../lib/gtag";
 import { TLoginRegisterData } from "../../models/register/TLoginRegisterData";
 import { FrontValidText } from "../baseParts/inputs/FrontValidText";
 import { TextAreaAlt } from "../baseParts/inputs/TextAreaAlt";
@@ -68,10 +67,6 @@ export const LoginForms = ({ onSubmit, onBack }: TProps) => {
         }
       );
     }
-    analyzeEvent({
-      action: "click",
-      category: "register_login",
-    });
   };
 
   return (

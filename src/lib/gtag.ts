@@ -15,8 +15,9 @@ export const pageView = (path: string) => {
   });
 };
 
-export const analyzeEvent = ({ action, category, label }: TGAEvent) => {
-  window.gtag("event", action, {
+export const analyzeEvent = async ({ action, category, label }: TGAEvent) => {
+  if (GA_ID === "") return;
+  return window.gtag("event", action, {
     event_category: category,
     event_label: label,
   });

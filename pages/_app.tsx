@@ -5,7 +5,6 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import "tailwindcss/tailwind.css";
 import SEO from "../next-seo.config";
 import { GA_ID, usePageView } from "../src/lib/gtag";
-import { useLoadFont } from "../src/lib/useLoadFont";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -17,33 +16,25 @@ function MyApp({ Component, pageProps }: AppProps) {
     },
   });
 
-  useLoadFont();
   usePageView();
 
   return (
     <>
-      {GA_ID === "" ? (
-        <></>
-      ) : (
+      {GA_ID !== "" && (
         <>
           <Script
             strategy="afterInteractive"
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
           />
-          <Script
-            id="gtag-init"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_ID}', {
-              page_path: window.location.pathname,
-            });
-          `,
-            }}
-          />
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', '${GA_ID}');
+        `}
+          </Script>
         </>
       )}
       <DefaultSeo {...SEO} />
