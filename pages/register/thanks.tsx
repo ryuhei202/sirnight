@@ -5,7 +5,6 @@ import { useRouter } from "next/router";
 import Script from "next/script";
 import { useEffect, useState } from "react";
 import { LinkButton } from "../../src/components/baseParts/LinkButton";
-import { GA_ID } from "../../src/lib/gtag";
 
 const Thanks: NextPage = () => {
   const [memberId, setMemberId] = useState<number>();
@@ -19,20 +18,6 @@ const Thanks: NextPage = () => {
       setMemberId(Number(memberIdQuery) ?? undefined);
     }
   }, [memberIdQuery]);
-
-  // Google Analytics ユーザーIDを送信
-  useEffect(() => {
-    if (memberId && GA_ID) {
-      window.gtag("config", GA_ID, {
-        user_id: memberId,
-      });
-    }
-  }, [memberId]);
-
-  // Google　Analytics コンバージョンイベント送信
-  useEffect(() => {
-    window.gtag("event", "register");
-  }, []);
 
   return (
     <div>

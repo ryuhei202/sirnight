@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { TValidationBaseResponse } from "../../api/validations/TValidationBaseResponse";
 import { useValidationsBase } from "../../api/validations/useValidationsBase";
+import { analyzeEvent } from "../../lib/gtag";
 import { TBaseRegisterData } from "../../models/register/TBaseRegisterData";
 import { PREFECTURES, TPrefectures } from "../../models/shared/TPrefectures";
 import { DropdownMenuAlt } from "../baseParts/inputs/DropdownMenuAlt";
@@ -84,16 +85,18 @@ export const BaseForms = ({ onSubmit }: TProps) => {
       mutate(params, {
         onSuccess: (data: AxiosResponse<TValidationBaseResponse>) => {
           if (data.data.errors.length <= 0) {
-            onSubmit({
-              firstName,
-              lastName,
-              firstNameKana,
-              lastNameKana,
-              birthDay: new Date(birthYear, birthMonth, birthDay),
-              height,
-              weight,
-              prefecture,
-            });
+            analyzeEvent({ action: "submit", category: "base" }).then(() =>
+              onSubmit({
+                firstName,
+                lastName,
+                firstNameKana,
+                lastNameKana,
+                birthDay: new Date(birthYear, birthMonth, birthDay),
+                height,
+                weight,
+                prefecture,
+              })
+            );
           } else {
             setErrors(data.data.errors);
           }
