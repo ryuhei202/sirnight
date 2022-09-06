@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useMembersCreate } from "../../api/members/useMembersCreate";
-import { analyzeEvent } from "../../lib/gtag";
+import { analyzeEvent, setUserId } from "../../lib/gtag";
 import { findPlanById } from "../../models/plan/Plan";
 import { TDiscount } from "../../models/register/TDiscount";
 import { TAX } from "../../models/shared/Tax";
@@ -79,10 +79,12 @@ export const RegisterConfirm = ({
           action: "register",
           category: findPlanById(planId).jpName,
         }).then(() =>
-          router.push({
-            pathname: "/register/thanks",
-            query: { memberId: memberId },
-          })
+          setUserId(memberId).then(() =>
+            router.push({
+              pathname: "/register/thanks",
+              query: { memberId: memberId },
+            })
+          )
         );
       },
       onError: () => {

@@ -15,6 +15,13 @@ export const pageView = (path: string) => {
   });
 };
 
+export const setUserId = async (userId: number) => {
+  if (GA_ID === "") return;
+  return window.gtag("config", GA_ID, {
+    user_id: userId,
+  });
+};
+
 export const analyzeEvent = async ({ action, category, label }: TGAEvent) => {
   if (GA_ID === "") return;
   return window.gtag("event", action, {
