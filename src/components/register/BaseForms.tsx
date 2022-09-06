@@ -3,7 +3,6 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { TValidationBaseResponse } from "../../api/validations/TValidationBaseResponse";
 import { useValidationsBase } from "../../api/validations/useValidationsBase";
-import { analyzeEvent } from "../../lib/gtag";
 import { TBaseRegisterData } from "../../models/register/TBaseRegisterData";
 import { PREFECTURES, TPrefectures } from "../../models/shared/TPrefectures";
 import { DropdownMenuAlt } from "../baseParts/inputs/DropdownMenuAlt";
@@ -104,7 +103,6 @@ export const BaseForms = ({ onSubmit }: TProps) => {
         },
       });
     }
-    analyzeEvent({ action: "click", category: "register_base" });
   };
 
   return (

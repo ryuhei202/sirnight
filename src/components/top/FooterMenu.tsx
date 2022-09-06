@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { analyzeEvent } from "../../lib/gtag";
 import { Menu } from "./Menu";
@@ -6,6 +7,7 @@ import { Menu } from "./Menu";
 export type TFooterState = "initial" | "open" | "close";
 
 export const FooterMenu = () => {
+  const router = useRouter();
   const [footerState, setFooterState] = useState<TFooterState>("initial");
   const onClickIcon = () => {
     if (footerState === "initial") {
@@ -15,11 +17,11 @@ export const FooterMenu = () => {
     }
   };
 
-  const onClickPlan = () => {
+  const handleClickPlan = () => {
     analyzeEvent({
       action: "click",
       category: "footer_plan",
-    });
+    }).then(() => router.push({ pathname: "/plan" }));
   };
 
   return (
@@ -46,16 +48,14 @@ export const FooterMenu = () => {
             )}
           </button>
         </div>
-        <Link href={{ pathname: "/plan" }}>
-          <a
-            onClick={onClickPlan}
-            className="h-full w-1/4 bg-themeGray text-clay text-[3.5vw] sm:text-sm flex justify-center items-center"
-          >
-            <span className="w-[77%] text-center [font-feature-settings:'palt'on]">
-              料金プラン
-            </span>
-          </a>
-        </Link>
+        <a
+          onClick={handleClickPlan}
+          className="h-full w-1/4 bg-themeGray text-clay text-[3.5vw] sm:text-sm flex justify-center items-center"
+        >
+          <span className="w-[77%] text-center [font-feature-settings:'palt'on]">
+            料金プラン
+          </span>
+        </a>
       </div>
     </>
   );

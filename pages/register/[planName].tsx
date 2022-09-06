@@ -1,6 +1,6 @@
 import { NextSeo } from "next-seo";
 import Head from "next/head";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { BaseForms } from "../../src/components/register/BaseForms";
 import { LoginForms } from "../../src/components/register/LoginForms";
 import { PaymentForms } from "../../src/components/register/PaymentForms";
@@ -42,11 +42,6 @@ const Register = ({ planId }: { planId: 11 | 12 | 13 }) => {
   const [baseData, setBaseData] = useState<TBaseRegisterData>();
   const [loginData, setLoginData] = useState<TLoginRegisterData>();
   const [paymentData, setPaymentData] = useState<TPaymentRegisterData>();
-
-  useEffect(() => {
-    Ts.loadFont();
-    window.scrollTo(0, 0);
-  }, [step]);
 
   const {
     handleSubmitBase,

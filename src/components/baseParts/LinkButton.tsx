@@ -53,6 +53,16 @@ export const LinkButton = ({
       </span>
     );
 
+  if (onClick)
+    return (
+      <a
+        onClick={onClick}
+        className={`${className ?? ""} ${classes.join(" ")}`}
+      >
+        {children}
+      </a>
+    );
+
   return (
     <Link href={href} passHref>
       <a

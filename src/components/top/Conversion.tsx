@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { analyzeEvent } from "../../lib/gtag";
 import { LinkButton } from "../baseParts/LinkButton";
 import { ConversionImages } from "./ConversionImages";
@@ -13,11 +14,12 @@ export const Conversion = ({
   leftImagePath,
   rightImagePath,
 }: TProps) => {
-  const onClick = () => {
+  const router = useRouter();
+  const handleClick = () => {
     analyzeEvent({
       action: "click",
       category: `conversion_${number}th`,
-    });
+    }).then(() => router.push("/plan"));
   };
 
   return (
@@ -45,7 +47,7 @@ export const Conversion = ({
       <div className="w-[73%] mx-auto mb-16">
         <LinkButton
           href="/plan"
-          onClick={onClick}
+          onClick={handleClick}
           className="my-10 font-semibold"
           border
         >

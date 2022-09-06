@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { TValidationPaymentResponse } from "../../api/validations/TValidationPaymentResponse";
 import { useValidationsPayment } from "../../api/validations/useValidationsPayment";
 import { convertHalfWidthNumber } from "../../lib/convertHalfWidthNumber";
-import { analyzeEvent } from "../../lib/gtag";
 import { TPaymentRegisterData } from "../../models/register/TPaymentRegisterData";
 import { Stepper } from "./Stepper";
 
@@ -113,10 +112,6 @@ export const PaymentForms = ({
 
   const onClick = () => {
     getToken();
-    analyzeEvent({
-      action: "click",
-      category: "register_payment",
-    });
   };
 
   return (

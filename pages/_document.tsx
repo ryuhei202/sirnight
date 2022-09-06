@@ -1,4 +1,5 @@
 import NextDocument, { Head, Html, Main, NextScript } from "next/document";
+import Script from "next/script";
 type Props = {};
 
 class Document extends NextDocument<Props> {
@@ -7,15 +8,8 @@ class Document extends NextDocument<Props> {
       <Html lang="ja">
         <Head>
           <link rel="icon" href="/favicon/favicon_head.png" />
-          {typeof window !== undefined && (
-            <script
-              type="text/javascript"
-              src="//typesquare.com/3/tsst/script/ja/typesquare.js?630eda9dcf5c46eea556398eac1e02e5"
-              charSet="utf-8"
-            ></script>
-          )}
           {/* もしもアフィリエイトトラッキングタグ */}
-          <script src="https://r.moshimo.com/af/r/maftag.js"></script>
+          <Script src="https://r.moshimo.com/af/r/maftag.js" />
         </Head>
         <body>
           <Main />
