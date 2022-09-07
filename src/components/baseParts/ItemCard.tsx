@@ -34,14 +34,14 @@ export const ItemCard = ({
                 key={index}
                 className={`absolute ${
                   index === 0 ? "-bottom-3" : ""
-                } bg-themeGray w-fit font-semibold text-[4vw] sm:text-lg p-2`}
+                } bg-themeGray w-fit font-medium text-[4vw] sm:text-lg p-2`}
               >
                 <span className="text-gray-100">{title}</span>
               </p>
             ))}
           </div>
           <div
-            className={`font-hiragino400 p-[6vw] sm:p-6 ${
+            className={`p-[6vw] sm:p-6 ${
               titleSplit.length === 1 ? "mt-4" : "mt-12"
             } text-sm`}
           >

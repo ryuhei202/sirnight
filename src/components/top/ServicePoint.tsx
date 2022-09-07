@@ -25,7 +25,7 @@ export const ServicePoint = ({
               <p className="font-lora text-primary text-[3vw] sm:text-sm w-fit mx-auto border-b border-dashed border-themeGray ">
                 Point
               </p>
-              <h4 className="[writing-mode:vertical-rl] mx-auto text-[4vw] sm:text-xl pt-5 font-semibold tracking-widest leading-7 sm:!leading-8">
+              <h4 className="[writing-mode:vertical-rl] mx-auto text-[4vw] sm:text-xl pt-5 font-medium tracking-widest leading-7 sm:!leading-8">
                 {content}
               </h4>
             </div>
@@ -46,7 +46,7 @@ export const ServicePoint = ({
               <p className="font-lora text-primary text-[3vw] sm:text-sm w-fit mx-auto border-b border-dashed border-themeGray">
                 Point
               </p>
-              <h4 className="[writing-mode:vertical-rl] mx-auto text-[4vw] sm:text-xl pt-5 font-semibold tracking-widest leading-7 sm:!leading-8">
+              <h4 className="[writing-mode:vertical-rl] mx-auto text-[4vw] sm:text-xl pt-5 font-medium tracking-widest leading-7 sm:!leading-8">
                 {content}
               </h4>
             </div>

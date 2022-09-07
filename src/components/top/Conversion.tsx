@@ -48,7 +48,7 @@ export const Conversion = ({
         <LinkButton
           href="/plan"
           onClick={handleClick}
-          className="my-10 font-semibold"
+          className="my-10 font-medium"
           border
         >
           プランを選ぶ

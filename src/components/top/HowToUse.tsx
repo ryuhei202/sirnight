@@ -10,7 +10,7 @@ export const HowToUse = () => {
           className="absolute"
         />
         <div className="absolute bottom-0 left-1/2 translate-x-[-50%] h-[50%] w-full text-white text-[6vw] sm:text-3xl text-center bg-gradient-to-b from-transparent to-black/80">
-          <div className="absolute bottom-0 w-full mb-[12vw] sm:mb-16 leading-[1.5em]">
+          <div className="absolute bottom-0 w-full mb-[12vw] sm:mb-16 leading-[1.5em] font-medium">
             <p className="mb-1">スタイリストが</p>
             <p className="bg-themeGray px-4 py-2 mb-1 border border-dashed border-white inline-block">
               あなたに最適なコーデ

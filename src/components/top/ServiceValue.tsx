@@ -3,7 +3,7 @@ import { Animation } from "../baseParts/Animation";
 export const ServiceValue = () => {
   return (
     <div className="w-full py-28">
-      <div className="w-[73%] mx-auto leading-relaxed tracking-wide text-[8vw] font-semibold sm:text-4xl sm:[70%]">
+      <div className="w-[73%] mx-auto leading-relaxed tracking-wide text-[8vw] font-bold sm:text-4xl sm:[70%]">
         <p className="my-3">
           毎日の
           <span className="px-3 py-2 mx-2 border border-dashed border-themeGray">
@@ -16,7 +16,7 @@ export const ServiceValue = () => {
       <div className="w-full my-14">
         <img src="/images/serviceValue/1.webp" alt="service-value" />
       </div>
-      <div className="w-[73%] mx-auto font-semibold text-[max(3vw,0.85em)] text-primary leading-6 sm:text-base sm:leading-loose">
+      <div className="w-[73%] mx-auto font-medium text-[max(3vw,0.85em)] text-primary leading-6 sm:text-base sm:leading-loose">
         <Animation>
           <p className="mb-5">
             UWearでは、

@@ -18,7 +18,7 @@ export const Menu = ({ onClick, footerState }: TProps) => {
           : "animate-slideToBottom"
       }`}
     >
-      <div className="font-semibold sm:text-xl mt-16 border-b-2 border-[#D8D8D2] border-solid">
+      <div className="font-medium sm:text-xl mt-16 border-b-2 border-[#D8D8D2] border-solid">
         <Link
           href={{
             pathname: "/",
@@ -90,7 +90,7 @@ export const Menu = ({ onClick, footerState }: TProps) => {
           </a>
         </Link>
       </div>
-      <div className="font-hiragino400 flex flex-wrap text-xs py-[5vw] sm:py-5 border-b-2 border-[#D8D8D2] border-solid">
+      <div className="flex flex-wrap text-xs py-[5vw] sm:py-5 border-b-2 border-[#D8D8D2] border-solid">
         <Link href="/company">
           <a className="w-1/3 my-[3vw] sm:my-5 text-[3vw] sm:text-sm">
             運営会社

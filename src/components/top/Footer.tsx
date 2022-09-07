@@ -5,7 +5,7 @@ export const Footer = () => {
     <div className="py-28 bg-themeGray">
       <div className="mx-[13%] text-beige">
         <img src="/images/logos/beige.svg" alt="logo" />
-        <p className="font-hiragino400 text-sm text-center mt-8 mb-16">
+        <p className="text-sm text-center mt-8 mb-16">
           服の悩みを解決する
           <br />
           メンズファッションレンタルサービス
@@ -45,7 +45,7 @@ export const Footer = () => {
             />
           </a>
         </div>
-        <div className="flex flex-wrap font-semibold py-10 border-b-2 border-[#676F72]">
+        <div className="flex flex-wrap font-medium py-10 border-b-2 border-[#676F72]">
           <Link href={{ hash: "about" }}>
             <a className="w-1/2 my-[4vw] sm:my-5 text-[3.5vw] sm:text-base">
               UWearとは
@@ -82,7 +82,7 @@ export const Footer = () => {
             </a>
           </Link>
         </div>
-        <div className="font-hiragino400 flex flex-wrap text-xs pt-10">
+        <div className="flex flex-wrap text-xs pt-10">
           <Link href={{ pathname: "/company" }}>
             <a className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-sm">
               運営会社
