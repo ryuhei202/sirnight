@@ -6,10 +6,10 @@ export const WhatToResolve = () => {
       <div className="relative">
         <img src="/images/resolves/1.webp" alt="resolve" />
         <div className="absolute h-[250px] bottom-0 left-1/2 pt-14 translate-x-[-50%] text-slate-50 text-center w-full bg-gradient-to-b from-transparent to-black">
-          <p className="text-3xl font-semibold tracking-wider">
+          <p className="text-3xl font-medium tracking-wider">
             UWearで出来ること
           </p>
-          <p className="font-semibold mt-3 font-lora border-b border-white border-dashed w-fit mx-auto">
+          <p className="font-medium mt-3 font-lora border-b border-white border-dashed w-fit mx-auto">
             Service Value
           </p>
         </div>

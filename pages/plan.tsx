@@ -62,7 +62,7 @@ const Plan: NextPage = () => {
                 key={index}
               >
                 <p
-                  className={`font-semibold text-[4vw] sm:text-xl cursor-pointer ${
+                  className={`font-bold text-[4vw] sm:text-xl cursor-pointer ${
                     selectedPlanId === plan.id ? "opacity-100" : "opacity-20"
                   }`}
                 >
@@ -89,7 +89,7 @@ const Plan: NextPage = () => {
               </div>
             ))}
           </div>
-          <div className="font-hiragino400 mx-[7%] pb-36 text-[3vw] sm:text-xs text-[#979B9A]">
+          <div className="mx-[7%] pb-36 text-[3vw] sm:text-xs text-[#979B9A]">
             <div className="flex">
               <span className="w-[8%]">※</span>
               <p>

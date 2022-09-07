@@ -188,7 +188,7 @@ export const SceneCoordinates = () => {
           <div className="absolute bottom-0 left-1/2 w-2/3 sm:w-1/2 translate-x-[-50%] translate-y-[50%]">
             <Button
               onClick={handleClick}
-              weight="semibold"
+              weight="medium"
               className="text-[3.5vw] sm:text-sm sm:px-5 py-5"
             >
               コーデをもっと見る

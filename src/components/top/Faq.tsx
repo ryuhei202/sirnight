@@ -6,7 +6,7 @@ export const Faq = () => {
       <p className="text-[6vw] sm:text-2xl text-center font-extrabold mb-14">
         よくあるご質問
       </p>
-      <div className="font-hiragino400 border-b-2 border-solid border-[#D8D8D2]">
+      <div className="border-b-2 border-solid border-[#D8D8D2]">
         <QuestionAnswer
           question="料金はレンタル回数ごとの支払いですか？"
           answer={

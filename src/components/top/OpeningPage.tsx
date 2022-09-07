@@ -39,7 +39,7 @@ export const OpeningPage = ({ className }: TProps) => {
         <Typography
           id="text"
           color="primary"
-          weight="semibold"
+          weight="bold"
           className="text-[4vw] sm:text-xl mt-[7vw] sm:mt-7 opacity-0 animate-slideInOpText"
         >
           服の悩みを解決する
@@ -47,7 +47,7 @@ export const OpeningPage = ({ className }: TProps) => {
         <Typography
           id="sub-text"
           color="primary"
-          weight="semibold"
+          weight="bold"
           className="text-[4vw] sm:text-xl mt-[2vw] sm:mt-1 opacity-0 animate-slideInOpSubText"
         >
           メンズファッションレンタルサービス
