@@ -26,7 +26,6 @@ export const trackConversion = async (planName: string) => {
   if (GA_ID === "") return;
   return window.gtag("event", "register", {
     event_category: planName,
-    send_to: "AW-711459474/CMT9CIvXg9sDEJKFoNMC",
   });
 };
 
