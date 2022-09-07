@@ -57,7 +57,7 @@ export const LinkButton = ({
     return (
       <a
         onClick={onClick}
-        className={`${className ?? ""} ${classes.join(" ")}`}
+        className={`cursor-pointer ${className ?? ""} ${classes.join(" ")}`}
       >
         {children}
       </a>

@@ -50,7 +50,7 @@ export const FooterMenu = () => {
         </div>
         <a
           onClick={handleClickPlan}
-          className="h-full w-1/4 bg-themeGray text-clay text-[3.5vw] sm:text-sm flex justify-center items-center"
+          className="h-full w-1/4 bg-themeGray text-clay text-[3.5vw] sm:text-sm flex justify-center items-center cursor-pointer"
         >
           <span className="w-[77%] text-center [font-feature-settings:'palt'on]">
             料金プラン
