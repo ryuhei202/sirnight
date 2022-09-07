@@ -15,8 +15,23 @@ export const pageView = (path: string) => {
   });
 };
 
-export const analyzeEvent = ({ action, category, label }: TGAEvent) => {
-  window.gtag("event", action, {
+export const setUserId = async (userId: number) => {
+  if (GA_ID === "") return;
+  return window.gtag("config", GA_ID, {
+    user_id: userId,
+  });
+};
+
+export const trackConversion = async (planName: string) => {
+  if (GA_ID === "") return;
+  return window.gtag("event", "register", {
+    event_category: planName,
+  });
+};
+
+export const analyzeEvent = async ({ action, category, label }: TGAEvent) => {
+  if (GA_ID === "") return;
+  return window.gtag("event", action, {
     event_category: category,
     event_label: label,
   });

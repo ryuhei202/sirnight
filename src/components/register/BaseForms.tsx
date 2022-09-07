@@ -85,16 +85,18 @@ export const BaseForms = ({ onSubmit }: TProps) => {
       mutate(params, {
         onSuccess: (data: AxiosResponse<TValidationBaseResponse>) => {
           if (data.data.errors.length <= 0) {
-            onSubmit({
-              firstName,
-              lastName,
-              firstNameKana,
-              lastNameKana,
-              birthDay: new Date(birthYear, birthMonth, birthDay),
-              height,
-              weight,
-              prefecture,
-            });
+            analyzeEvent({ action: "submit", category: "base" }).then(() =>
+              onSubmit({
+                firstName,
+                lastName,
+                firstNameKana,
+                lastNameKana,
+                birthDay: new Date(birthYear, birthMonth, birthDay),
+                height,
+                weight,
+                prefecture,
+              })
+            );
           } else {
             setErrors(data.data.errors);
           }
@@ -104,7 +106,6 @@ export const BaseForms = ({ onSubmit }: TProps) => {
         },
       });
     }
-    analyzeEvent({ action: "click", category: "register_base" });
   };
 
   return (

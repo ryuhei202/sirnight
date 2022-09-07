@@ -21,7 +21,9 @@ const rowClassName = (index: number, length: number) => {
 
 export const PlanDetail = ({ plan, disabled }: TProps) => {
   return (
-    <div className={`duration-1000 ${disabled ? "opacity-20" : ""}`}>
+    <div
+      className={`duration-1000 font-medium ${disabled ? "opacity-20" : ""}`}
+    >
       <div className="border-solid border border-themeGray rounded-md mx-3">
         <div className="">
           <p className="text-center text-[5vw] sm:text-xl my-6">
@@ -30,14 +32,14 @@ export const PlanDetail = ({ plan, disabled }: TProps) => {
             （税込）
           </p>
           <div className="flex flex-wrap justify-center space-x-3 mb-6">
-            <p className="text-[4vw] sm:text-xl text-[#979B9A] font-hiragino400">{`¥${plan.price.withoutTax.toLocaleString()}（税抜）`}</p>
+            <p className="text-[4vw] sm:text-xl text-[#979B9A]">{`¥${plan.price.withoutTax.toLocaleString()}（税抜）`}</p>
           </div>
         </div>
         <div className="bg-themeGray text-clay text-center text-[4vw] sm:text-xl py-1">
           こんな方におすすめ
         </div>
         <div
-          className={`h-[30vw] sm:h-44 font-semibold flex flex-col justify-evenly ${
+          className={`h-[30vw] sm:h-44 font-medium flex flex-col justify-evenly ${
             plan.targets.length % 2 === 0 ? "" : ""
           }`}
         >
@@ -59,7 +61,7 @@ export const PlanDetail = ({ plan, disabled }: TProps) => {
         <div className="bg-themeGray text-clay text-center text-[4vw] sm:text-xl py-1">
           シーン例
         </div>
-        <div className="flex flex-wrap text-center font-semibold">
+        <div className="flex flex-wrap text-center font-medium">
           {plan.scenes.map((scene, index) => (
             <p
               className={`w-1/2 text-[3.5vw] sm:text-base py-4 border-dashed border-[#C8C9C3] ${rowClassName(
@@ -84,7 +86,7 @@ export const PlanDetail = ({ plan, disabled }: TProps) => {
         <div className="bg-themeGray text-clay text-center text-[4vw] sm:text-xl py-1">
           コーデ数
         </div>
-        <div className="h-[25.5vw] sm:h-fit mx-auto flex justify-center text-[3.5vw] sm:text-base items-center font-semibold">
+        <div className="h-[25.5vw] sm:h-fit mx-auto flex justify-center text-[3.5vw] sm:text-base items-center font-medium">
           <Cloths planId={plan.id} />
           <div className="py-8">
             <p className="h-full flex items-center">
@@ -109,7 +111,7 @@ export const PlanDetail = ({ plan, disabled }: TProps) => {
       </div>
       <LinkButton
         href={`/register/${plan.enName}`}
-        className="text-[4vw] sm:text-xl font-semibold mt-6 mb-16 py-[4vw] sm:py-5"
+        className="text-[4vw] sm:text-xl font-medium mt-6 mb-16 py-[4vw] sm:py-5"
         disabled={disabled}
       >
         このプランではじめる

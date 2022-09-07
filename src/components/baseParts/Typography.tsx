@@ -6,7 +6,7 @@ type Props = {
   children?: React.ReactNode;
   size?: "2xl" | "xl" | "sm" | "xs" | "base";
   color?: "primary" | "secondary" | "strong-gray";
-  weight?: "normal" | "medium" | "semibold" | "bold";
+  weight?: "normal" | "medium" | "medium" | "bold";
   component?: "span";
 };
 
@@ -59,8 +59,8 @@ export const Typography = ({
       switch (weight) {
         case "normal":
           return "font-normal";
-        case "semibold":
-          return "font-semibold";
+        case "medium":
+          return "font-medium";
         case "bold":
           return "font-bold";
         case "medium":

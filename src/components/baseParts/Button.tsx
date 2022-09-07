@@ -4,7 +4,7 @@ type Props = {
   children?: React.ReactNode;
   className?: string;
   border?: boolean;
-  weight?: "normal" | "semibold" | "bold";
+  weight?: "normal" | "medium" | "bold";
   onClick?: () => void;
 };
 
@@ -32,8 +32,8 @@ export const Button = ({
   classes.push(
     (() => {
       switch (weight) {
-        case "semibold":
-          return "font-semibold";
+        case "medium":
+          return "font-medium";
         case "bold":
           return "font-bold";
         case "normal":

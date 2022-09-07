@@ -26,7 +26,7 @@ export const LinkButton = ({
     "mx-3",
     "text-center",
     "w-[calc(100%_-_24px)]",
-    "font-semibold",
+    "font-medium",
     "text-base",
     "relative",
     "rounded-full",
@@ -51,6 +51,16 @@ export const LinkButton = ({
       <span className={`${className ?? ""} ${classes.join(" ")}`}>
         {children}
       </span>
+    );
+
+  if (onClick)
+    return (
+      <a
+        onClick={onClick}
+        className={`cursor-pointer ${className ?? ""} ${classes.join(" ")}`}
+      >
+        {children}
+      </a>
     );
 
   return (

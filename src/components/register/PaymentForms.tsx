@@ -70,20 +70,23 @@ export const PaymentForms = ({
             setErrors(data.data.errors);
             return;
           }
-          if (data.data.customerCardId === null) {
+          const customerCardId = data.data.customerCardId;
+          if (customerCardId === null) {
             setErrors([
               "予期せぬエラーが発生しました。お手数ですが再度入力お願い致します",
             ]);
             return;
           }
-          if (paygentRes.tokenizedCardObject) {
-            onSubmit({
-              customerCardId: data.data.customerCardId,
-              serialCode: !!serialCode ? serialCode : undefined,
-              maskedCardNumber:
-                paygentRes.tokenizedCardObject.masked_card_number,
-              discount: data.data.discount ?? undefined,
-            });
+          const tokenizedCardObject = paygentRes.tokenizedCardObject;
+          if (tokenizedCardObject) {
+            analyzeEvent({ action: "submit", category: "payment" }).then(() =>
+              onSubmit({
+                customerCardId: customerCardId,
+                serialCode: !!serialCode ? serialCode : undefined,
+                maskedCardNumber: tokenizedCardObject.masked_card_number,
+                discount: data.data.discount ?? undefined,
+              })
+            );
           }
         },
         onError: () => {
@@ -113,10 +116,6 @@ export const PaymentForms = ({
 
   const onClick = () => {
     getToken();
-    analyzeEvent({
-      action: "click",
-      category: "register_payment",
-    });
   };
 
   return (

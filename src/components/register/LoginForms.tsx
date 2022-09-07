@@ -49,16 +49,19 @@ export const LoginForms = ({ onSubmit, onBack }: TProps) => {
               setErrors(data.data.errors);
               return;
             }
-            if (data.data.memberId === null) {
+            const memberId = data.data.memberId;
+            if (memberId === null) {
               setErrors([
                 "予期せぬエラーが発生しました。お手数ですが再度入力お願い致します",
               ]);
               return;
             }
-            onSubmit({
-              email,
-              memberId: data.data.memberId,
-            });
+            analyzeEvent({ action: "submit", category: "login" }).then(() =>
+              onSubmit({
+                email,
+                memberId: memberId,
+              })
+            );
           },
           onError: () => {
             setErrors([
@@ -68,10 +71,6 @@ export const LoginForms = ({ onSubmit, onBack }: TProps) => {
         }
       );
     }
-    analyzeEvent({
-      action: "click",
-      category: "register_login",
-    });
   };
 
   return (

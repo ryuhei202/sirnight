@@ -38,7 +38,7 @@ export const CoordinateCard = ({
             />
           </figure>
           <div className="h-fit z-30 mt-[25vh] -mb-1 [transform:translate3d(0,0,0)]">
-            <div className="flex flex-row w-full text-[2.5vw] sm:text-sm border-y border-themeGray font-semibold">
+            <div className="flex flex-row w-full text-[2.5vw] sm:text-sm border-y border-themeGray font-medium">
               <p className="bg-themeGray text-clay w-1/4 text-[3vw] sm:text-sm text-center py-2.5">
                 {coordinateNumber}
               </p>
@@ -47,14 +47,12 @@ export const CoordinateCard = ({
               </p>
             </div>
             <div className="p-[5vw] sm:p-7 bg-clay">
-              <p className="text-[min(4vw,15px)] sm:text-xl leading-[8vw] sm:leading-10 font-semibold">
+              <p className="text-[min(4vw,15px)] sm:text-xl leading-[8vw] sm:leading-10 font-bold">
                 <span className="pb-1 border-b-[1.5px] sm:border-b-2 border-dashed border-themeGray">
                   {mainText}
                 </span>
               </p>
-              <p className="font-hiragino400 text-[3vw] sm:text-sm mt-5">
-                {subText}
-              </p>
+              <p className="text-[3vw] sm:text-sm mt-5">{subText}</p>
             </div>
           </div>
         </div>
