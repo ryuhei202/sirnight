@@ -1,52 +1,76 @@
 import { Worry } from "./Worry";
 
-export const Sympathy = () => {
+type TProps = {
+  readonly className?: string;
+};
+export const Sympathy = ({ className }: TProps) => {
   return (
-    <div className="py-[100px] px-[30px]">
+    <div className={`${className}`}>
       <p className="text-[6vw] sm:text-2xl text-center mx-auto font-medium leading-10">
-        こんなシーンで
-        <br />
+        こんな洋服の
         <span className="border-b-2 border-dashed border-bottom border-themeGray pb-0.5">
-          コーデの悩み
+          選ぶ面倒
         </span>
-        ありませんか？
+        はありませんか？
       </p>
-      <div className="flex flex-col mt-12 font-medium">
+      <div className="flex flex-col mt-12 font-medium px-[30px]">
         <Worry
           type="right"
-          status="30代前半 会社員"
           content={
             <>
-              奥さんの仲良しのファミリーと
+              イタリアンデートで、 どんなアイテムを
               <br />
-              家での食事会に参加、 <br />
-              着ていく服がわからない...
+              組み合わせれば良いのか分からない。
             </>
           }
         />
         <Worry
           type="left"
-          status="40代前半 自営業"
           content={
             <>
-              プライベートで会社の同僚と旅行。
+              スタイリストがTPOにあわせて、
               <br />
-              普段の洋服で行って良いものか...
+              あなたが魅力的に見えるコーデをお届けします。
             </>
           }
         />
         <Worry
           type="right"
-          status="20代前半 会社員"
           content={
             <>
-              同僚で意識している
+              店員さんに勧められて買ったシャツが、
               <br />
-              女性と週末にデート。
+              自分のイメージと合ってない気がする。
+            </>
+          }
+        />
+        <Worry
+          type="left"
+          content={
+            <>
+              届いたコーデのレビューをすることで、
               <br />
-              私服を見られて
+              あなたのイメージのコーデに近づきます。
+            </>
+          }
+        />
+        <Worry
+          type="right"
+          content={
+            <>
+              同じようなアイテムを着てしまい、
               <br />
-              がっかりされたくない...
+              いつも同じ感じの組み合わせになる。
+            </>
+          }
+        />
+        <Worry
+          type="left"
+          content={
+            <>
+              自分の洋服との着こなし方をスタイリストに相談でき、
+              <br />
+              組み合わせの幅が広がります。
             </>
           }
         />

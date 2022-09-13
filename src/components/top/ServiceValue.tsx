@@ -11,7 +11,7 @@ export const ServiceValue = () => {
           </span>
           が
         </p>
-        <p className="text-right mt-5 sm:mt-10">楽しくなるように</p>
+        <p className="text-right mt-5 sm:mt-10">もっと良くなるように</p>
       </div>
       <div className="w-full my-14">
         <img src="/images/serviceValue/1.webp" alt="service-value" />
@@ -19,24 +19,19 @@ export const ServiceValue = () => {
       <div className="w-[73%] mx-auto font-medium text-[max(3vw,0.85em)] text-primary leading-6 sm:text-base sm:leading-loose">
         <Animation>
           <p className="mb-5">
-            UWearでは、
+            UWear（ユーウェア）は、
             <br />
-            お客様の「毎日の着る」を
-            <br />
-            少しでも楽しくしたいと考えています。
+            「洋服の面倒」をなくすサービスです。
           </p>
         </Animation>
         <Animation>
           <p className="mb-10">
-            そのためには、
-            <br />
-            洋服の悩みがない状態を保つこと、
-            <br />
-            悩みや疑問が出たときに
-            <br />
-            すぐに解決できる環境を
-            <br />
-            UWearを通じて作りたいと思っています。
+            スタイリストが、あなたの「洋服の面倒」に寄り添って、洋服の面倒を一緒に解決します。
+          </p>
+        </Animation>
+        <Animation>
+          <p className="mb-5">
+            そして洋服の面倒がなくなった先に、顔なじみの美容師のように、あなたのことを理解したうえで、あなたの着るを良くするサービスにしていきたいと考えています。
           </p>
         </Animation>
         <Animation>
@@ -50,22 +45,7 @@ export const ServiceValue = () => {
         </Animation>
         <Animation>
           <p className="mb-5">
-            あなたの着る悩みを
-            <br />
-            スタイリストと一緒に考え、
-            <br />
-            毎日の着るが楽しいを作るサービスです。
-          </p>
-        </Animation>
-        <Animation>
-          <p>
-            あなたの着る悩みを何でも聞かせてださい。
-            <br />
-            着る悩みが無くなったら、
-            <br />
-            ぜひスタイリストと一緒に新たな洋服に
-            <br />
-            チャレンジが出来ると嬉しいです。
+            あなたの毎日の着るをもっと良くするサービスを目指していきます。
           </p>
         </Animation>
       </div>
