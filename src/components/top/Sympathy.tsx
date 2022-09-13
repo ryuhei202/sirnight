@@ -20,7 +20,6 @@ export const Sympathy = ({ className }: TProps) => {
             content={
               <>
                 イタリアンデートで、 どんなアイテムを
-                <br />
                 組み合わせれば良いのか分からない。
               </>
             }
@@ -30,7 +29,6 @@ export const Sympathy = ({ className }: TProps) => {
             content={
               <>
                 スタイリストがイタリアンデートにあわせて、
-                <br />
                 あなたが魅力的に見えるコーデをお届けします。
               </>
             }
@@ -42,7 +40,6 @@ export const Sympathy = ({ className }: TProps) => {
             content={
               <>
                 店員さんに勧められて買ったシャツが、
-                <br />
                 自分のイメージと合ってない気がする。
               </>
             }
@@ -52,7 +49,6 @@ export const Sympathy = ({ className }: TProps) => {
             content={
               <>
                 届いたコーデのレビューをすることで、
-                <br />
                 あなたがイメージするコーデに近づきます。
               </>
             }
@@ -64,7 +60,6 @@ export const Sympathy = ({ className }: TProps) => {
             content={
               <>
                 同じようなアイテムを着てしまい、
-                <br />
                 いつも同じ感じの組み合わせになる。
               </>
             }
@@ -74,7 +69,6 @@ export const Sympathy = ({ className }: TProps) => {
             content={
               <>
                 自分の服との着こなし方をスタイリストに相談でき、
-                <br />
                 組み合わせの幅が広がります。
               </>
             }
