@@ -17,7 +17,7 @@ export const Worry = ({ content, type }: TProps) => {
     >
       <div className="my-2">
         <p
-          className={`rounded-[16px] p-5 min-w-[50%] max-w-[75%] w-fit [font-feature-settings:'palt'on] ${
+          className={`rounded-[16px] p-5 min-w-[50%] max-w-[85%] w-fit [font-feature-settings:'palt'on] ${
             type === "right"
               ? "ml-auto bg-[#F4F3EF]"
               : "mr-auto bg-themeGray text-beige"
