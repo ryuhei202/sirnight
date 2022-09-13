@@ -26,9 +26,9 @@ export const HowToUse = () => {
             imagePath="/images/howToUse/1.gif"
             title={
               <>
-                コーデの利用シーンと悩みを
+                コーデの利用シーンを
                 <br />
-                お聞きします
+                お聞きします。
               </>
             }
             className="pl-[10vw] sm:pl-14"
@@ -38,7 +38,7 @@ export const HowToUse = () => {
             imagePath="/images/howToUse/2.gif"
             title={
               <>
-                利用シーンと悩みにあわせた
+                利用シーンにあわせた
                 <br />
                 コーデを提案します
               </>
