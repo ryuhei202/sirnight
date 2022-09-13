@@ -13,7 +13,7 @@ export const PointDescription = ({ className }: TProps) => {
           <>
             着るシーンにあわせた
             <br />
-            最適な洋服が届きます
+            最適な服が届きます
           </>
         }
       />
