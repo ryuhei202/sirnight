@@ -42,7 +42,7 @@ export const OpeningPage = ({ className }: TProps) => {
           weight="bold"
           className="text-[4vw] sm:text-xl mt-[7vw] sm:mt-7 opacity-0 animate-slideInOpText"
         >
-          服の悩みを解決する
+          服選びの面倒から解放する
         </Typography>
         <Typography
           id="sub-text"
