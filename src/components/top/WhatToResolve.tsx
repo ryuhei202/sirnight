@@ -19,19 +19,19 @@ export const WhatToResolve = () => {
           className="-mt-16 mb-10 absolute "
           imageFileName="/images/resolves/3.webp"
           title={"LINEで服の相談ができます。"}
-          description="着こなしに迷ったらLINEでスタイリストに相談ができます。どんな靴を買えばいいか？どんなアウターを買うかなど、洋服の悩みをご相談ください。"
+          description="着こなしに迷ったらLINEでスタイリストに相談ができます。どんな靴を買えばいいか？どんなアウターを買うかなど、服の悩みをご相談ください。"
         />
         <ItemCard
           className="my-10"
           imageFileName="/images/resolves/4.webp"
-          title={"洋服はすべて購入できます。"}
-          description="着てみてお気に入りのアイテムを購入できます。また毎月購入に使えるポイントも貯まります。自分に似合う服だけのクローゼットになります。"
+          title={"服はすべて購入できます。"}
+          description="着てみてお気に入りのアイテムを購入できます。また毎月購入に使えるポイントも貯まります。"
         />
         <ItemCard
           className="my-10"
           imageFileName="/images/resolves/5.webp"
           title={"ライフスタイルにあわせて使えます。"}
-          description="お気に入りのコーデは交換せずにそのまま使えます。その場合、次月の料金が割引されます。また停止・退会もスムーズです。季節のタイミングなどライフスタイルにあわせてお使いください。"
+          description="お気に入りのコーデは交換せずに次月も持ち続けられます。その場合、次月の料金が割引されます。また停止・再開もスムーズです。洋服が必要なタイミングでお使いください。"
         />
       </div>
     </div>

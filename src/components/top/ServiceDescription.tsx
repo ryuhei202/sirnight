@@ -5,7 +5,7 @@ export const ServiceDescription = () => {
       id="about"
     >
       <h3 className="text-[6vw] sm:text-3xl sm:!leading-[3rem] font-bold">
-        UWearは、利用シーンにあわせた
+        UWearは利用シーンにあわせた
         <br />
         コーデがレンタルできます。
       </h3>
@@ -14,9 +14,10 @@ export const ServiceDescription = () => {
         <br />
         どこで使うか、誰と会うかを聞かせてください。
         <br />
-        利用シーンにあわせて、あなたが
         <br />
-        もっと魅力的になるようなコーデをお届けします。
+        利用シーンであなたが
+        <br />
+        もっと魅力的になるコーデをお届けします。
       </p>
     </div>
   );

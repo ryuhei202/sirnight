@@ -40,7 +40,7 @@ export const Conversion = ({
         />
         <div className="w-[20%] relative z-10">
           <p className="absolute h-full [writing-mode:vertical-rl] text-white left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] text-center">
-            服の悩みを解決する
+            服選びの面倒から解放する
           </p>
         </div>
       </div>
