@@ -81,14 +81,14 @@ const Home: NextPage<TProps> = ({ articlesData }) => {
           <ItemList type="tops" />
           <ItemList type="bottoms" />
         </div>
-        <PointDescription />
-        <WhatToResolve />
+        <PointDescription className="my-24" />
+        <Sympathy className="my-24" />
         <Conversion
           number={1}
           leftImagePath="/images/conversions/1/1.webp"
           rightImagePath="/images/conversions/1/2.webp"
         />
-        <Sympathy />
+        <WhatToResolve />
         <HowToUse />
         <SceneCoordinates />
         <HowToStart />

@@ -17,27 +17,21 @@ export const WhatToResolve = () => {
       <div className="w-[75%] mx-auto">
         <ItemCard
           className="-mt-16 mb-10 absolute "
-          imageFileName="/images/resolves/2.webp"
-          title={"イベントやシーンに<br />自信をもってお出かけできます"}
-          description="スタイリストがあなたの利用シーンと見せたい印象にあったコーデをお作りします。イベントに自信をもってお出かけできます。"
-        />
-        <ItemCard
-          className="my-10"
           imageFileName="/images/resolves/3.webp"
-          title={"洋服を着たときの悩みから<br />解放されます"}
-          description="毎日の洋服の悩みをスタイリストに相談できます。「サイズの不安」「着こなしの不安」すべてスタイリストが回答します。"
+          title={"LINEで服の相談ができます。"}
+          description="着こなしに迷ったらLINEでスタイリストに相談ができます。どんな靴を買えばいいか？どんなアウターを買うかなど、服の悩みをご相談ください。"
         />
         <ItemCard
           className="my-10"
           imageFileName="/images/resolves/4.webp"
-          title={"毎日の着るが良くなります"}
-          description="洋服の合わせ方、相手から見られたい印象のコーデのつくり方、サイズを考える面倒から解放されます。毎日の着るがどんどん良くなります。"
+          title={"服はすべて購入できます。"}
+          description="着てみてお気に入りのアイテムを購入できます。また毎月購入に使えるポイントも貯まります。"
         />
         <ItemCard
           className="my-10"
           imageFileName="/images/resolves/5.webp"
-          title={"お出かけするイベントが<br />もっと楽しみになります"}
-          description="次のイベントに合う洋服をスタイリストに相談する。次のイベントで見せたい印象にあった洋服をスタイリストと一緒に考える。それだけで次のイベントがもっと楽しみになります！"
+          title={"ライフスタイルにあわせて使えます。"}
+          description="お気に入りのコーデは交換せずに次月も持ち続けられます。その場合、次月の料金が割引されます。また停止・再開もスムーズです。服が必要なタイミングでお使いください。"
         />
       </div>
     </div>

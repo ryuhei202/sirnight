@@ -6,7 +6,7 @@ export const Footer = () => {
       <div className="mx-[13%] text-beige">
         <img src="/images/logos/beige.svg" alt="logo" />
         <p className="text-sm text-center mt-8 mb-16">
-          服の悩みを解決する
+          服選びの面倒から解放する
           <br />
           メンズファッションレンタルサービス
         </p>

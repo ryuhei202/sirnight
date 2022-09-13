@@ -3,11 +3,10 @@ import { Animation } from "../baseParts/Animation";
 
 type TProps = {
   content: ReactNode;
-  status: string;
   type: "right" | "left";
 };
 
-export const Worry = ({ content, status, type }: TProps) => {
+export const Worry = ({ content, type }: TProps) => {
   const animationClassName =
     type === "right" ? "animate-slideInRightSide" : "animate-slideInLeftSide";
 
@@ -16,20 +15,15 @@ export const Worry = ({ content, status, type }: TProps) => {
       animationClassName={animationClassName}
       options={{ threshold: 1, triggerOnce: true }}
     >
-      <div className="my-3">
+      <div className="my-2">
         <p
-          className={`bg-[#F4F3EF] rounded-[16px] p-5 min-w-[50%] w-fit [font-feature-settings:'palt'on] ${
-            type === "right" ? "ml-auto" : "mr-auto"
+          className={`rounded-[16px] p-5 min-w-[50%] max-w-[85%] w-fit [font-feature-settings:'palt'on] ${
+            type === "right"
+              ? "ml-auto bg-[#F4F3EF]"
+              : "mr-auto bg-themeGray text-beige"
           }`}
         >
           {content}
-        </p>
-        <p
-          className={`text-xs w-fit ${
-            type === "right" ? "ml-auto" : "mr-auto"
-          } mt-2`}
-        >
-          {status}
         </p>
       </div>
     </Animation>

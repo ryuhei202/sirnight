@@ -1,55 +1,79 @@
 import { Worry } from "./Worry";
 
-export const Sympathy = () => {
+type TProps = {
+  readonly className?: string;
+};
+export const Sympathy = ({ className }: TProps) => {
   return (
-    <div className="py-[100px] px-[30px]">
-      <p className="text-[6vw] sm:text-2xl text-center mx-auto font-medium leading-10">
-        こんなシーンで
-        <br />
+    <div className={`${className}`}>
+      <p className="text-[6vw] sm:text-3xl text-center mx-auto font-bold leading-10">
+        こんな
         <span className="border-b-2 border-dashed border-bottom border-themeGray pb-0.5">
-          コーデの悩み
+          選ぶ面倒
         </span>
-        ありませんか？
+        はありませんか？
       </p>
-      <div className="flex flex-col mt-12 font-medium">
-        <Worry
-          type="right"
-          status="30代前半 会社員"
-          content={
-            <>
-              奥さんの仲良しのファミリーと
-              <br />
-              家での食事会に参加、 <br />
-              着ていく服がわからない...
-            </>
-          }
-        />
-        <Worry
-          type="left"
-          status="40代前半 自営業"
-          content={
-            <>
-              プライベートで会社の同僚と旅行。
-              <br />
-              普段の洋服で行って良いものか...
-            </>
-          }
-        />
-        <Worry
-          type="right"
-          status="20代前半 会社員"
-          content={
-            <>
-              同僚で意識している
-              <br />
-              女性と週末にデート。
-              <br />
-              私服を見られて
-              <br />
-              がっかりされたくない...
-            </>
-          }
-        />
+      <div className="flex flex-col font-medium px-[30px]">
+        <div className="mt-12">
+          <Worry
+            type="right"
+            content={
+              <>
+                イタリアンデートで、 どんなアイテムを
+                組み合わせれば良いのか分からない。
+              </>
+            }
+          />
+          <Worry
+            type="left"
+            content={
+              <>
+                スタイリストがイタリアンデートにあわせて、
+                あなたが魅力的に見えるコーデをお届けします。
+              </>
+            }
+          />
+        </div>
+        <div className="mt-12">
+          <Worry
+            type="right"
+            content={
+              <>
+                店員さんに勧められて買ったシャツが、
+                自分のイメージと合ってない気がする。
+              </>
+            }
+          />
+          <Worry
+            type="left"
+            content={
+              <>
+                届いたコーデのレビューをすることで、
+                あなたがイメージするコーデに近づきます。
+              </>
+            }
+          />
+        </div>
+        <div className="mt-12">
+          <Worry
+            type="right"
+            content={
+              <>
+                同じようなアイテムを着てしまい、
+                いつも同じ感じの組み合わせになる。
+              </>
+            }
+          />
+          <Worry
+            type="left"
+            content={
+              <>
+                自分の服との着こなし方をスタイリストに相談でき、
+                組み合わせの幅が広がります。
+              </>
+            }
+          />
+        </div>
       </div>
     </div>
   );

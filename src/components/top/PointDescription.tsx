@@ -5,7 +5,7 @@ type TProps = {
 };
 export const PointDescription = ({ className }: TProps) => {
   return (
-    <div className={`w-full my-24 ${className ?? ""}`}>
+    <div className={`w-full ${className ?? ""}`}>
       <ServicePoint
         illustPosition="right"
         imagePath="/images/points/1.webp"
@@ -13,7 +13,7 @@ export const PointDescription = ({ className }: TProps) => {
           <>
             着るシーンにあわせた
             <br />
-            最適な洋服が届きます
+            最適な服が届きます
           </>
         }
       />

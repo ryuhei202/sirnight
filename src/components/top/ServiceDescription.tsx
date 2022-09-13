@@ -5,18 +5,19 @@ export const ServiceDescription = () => {
       id="about"
     >
       <h3 className="text-[6vw] sm:text-3xl sm:!leading-[3rem] font-bold">
-        UWearは､あなたと一緒に
+        UWearは利用シーンにあわせた
         <br />
-        最適なコーデを考えます。
+        コーデがレンタルできます。
       </h3>
       <p className="text-[4vw] sm:text-lg mt-[8vw] sm:mt-10 leading-[7vw] sm:leading-[2.1rem]">
-        UWear（ユーウェア）は、
+        スタイリストが利用シーンにあったコーデを作ります。
         <br />
-        洋服の悩みをスタイリストが解決し、
+        どこで使うか、誰と会うかを聞かせてください。
         <br />
-        あなたに最適なコーデが届く
         <br />
-        月額制のファッションレンタルサービスです。
+        利用シーンであなたが
+        <br />
+        もっと魅力的になるコーデをお届けします。
       </p>
     </div>
   );
