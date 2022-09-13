@@ -3,7 +3,7 @@ import { Animation } from "../baseParts/Animation";
 export const ServiceValue = () => {
   return (
     <div className="w-full py-28">
-      <div className="w-[73%] mx-auto leading-relaxed tracking-wide text-[8vw] font-bold sm:text-4xl sm:[70%]">
+      <div className="w-[83%] mx-auto leading-relaxed tracking-wide text-[8vw] font-bold sm:text-4xl sm:[80%]">
         <p className="my-3">
           毎日の
           <span className="px-3 py-2 mx-2 border border-dashed border-themeGray">
