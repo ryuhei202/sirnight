@@ -1,5 +1,10 @@
 import { createClient } from "microcms-js-sdk";
 
+export const uwearClient = createClient({
+  serviceDomain: "uwear",
+  apiKey: `${process.env.NEXT_PUBLIC_MICRO_CMS_UWEAR_API_KEY}`,
+});
+
 export type TNewsContent = {
   id: string;
   title: string;
@@ -18,26 +23,4 @@ export type TNews = {
   totalCount: number;
   offset: number;
   limit: number;
-};
-
-export const uwearClient = createClient({
-  serviceDomain: "uwear",
-  apiKey: `${process.env.NEXT_PUBLIC_MICRO_CMS_UWEAR_API_KEY}`,
-});
-
-type TProps = {
-  date: string;
-  type?: "dot" | "kanji";
-};
-
-export const handleDate = ({ date, type = "dot" }: TProps) => {
-  const regex = new RegExp("T.+Z", "g");
-  const dateTimeRemoved = date.replace(regex, "");
-
-  const formattedDate =
-    type === "dot"
-      ? dateTimeRemoved.replace(/-/g, ".")
-      : dateTimeRemoved.replace(/(\d+)-(\d+)-(\d+)/g, "$1年$2月$3日");
-
-  return formattedDate;
 };

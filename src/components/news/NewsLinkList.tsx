@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { handleDate, TNews } from "../../lib/microCMS/uwearClient";
+import { handleDate } from "../../lib/microCMS/handleDate";
+import { TNews } from "../../lib/microCMS/uwearClient";
 import { Typography } from "../baseParts/Typography";
 
 type TProps = {

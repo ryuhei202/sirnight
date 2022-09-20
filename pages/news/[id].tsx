@@ -4,11 +4,11 @@ import { LinkButton } from "../../src/components/baseParts/LinkButton";
 import { NewsContent } from "../../src/components/news/NewsContent";
 import { Header } from "../../src/components/plan/Header";
 import { FooterMenu } from "../../src/components/top/FooterMenu";
+import { handleDate } from "../../src/lib/microCMS/handleDate";
 import {
-  uwearClient,
-  handleDate,
   TNews,
   TNewsContent,
+  uwearClient,
 } from "../../src/lib/microCMS/uwearClient";
 
 export const getStaticPaths = async () => {
