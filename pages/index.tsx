@@ -19,10 +19,12 @@ import { ServiceDescription } from "../src/components/top/ServiceDescription";
 import { ServiceValue } from "../src/components/top/ServiceValue";
 import { Sympathy } from "../src/components/top/Sympathy";
 import { WhatToResolve } from "../src/components/top/WhatToResolve";
-import { uwearClient, TNews } from "../src/lib/microCMS/uwearClient";
+import { TNews, uwearClient } from "../src/lib/microCMS/uwearClient";
+import { TFaq, uwearFaqClient } from "../src/lib/microCMS/uwearFaqClient";
 
 type TProps = {
   articlesData: TNews;
+  faqData: TFaq;
 };
 
 const forbidScroll = () => {
@@ -39,7 +41,7 @@ const preventScroll = (e: Event) => {
   e.preventDefault();
 };
 
-const Home: NextPage<TProps> = ({ articlesData }) => {
+const Home: NextPage<TProps> = ({ articlesData, faqData }) => {
   const [isOpeningVisible, setIsOpeningVisible] = useState(true);
   const campaignCode = useRouter().query.campaignCode;
 
@@ -99,7 +101,7 @@ const Home: NextPage<TProps> = ({ articlesData }) => {
         />
         <ServiceValue />
         <CustomerReviews />
-        <Faq />
+        <Faq data={faqData} />
         <Conversion
           number={3}
           leftImagePath="/images/conversions/3/1.webp"
@@ -121,11 +123,17 @@ export const getStaticProps = async () => {
       filters: "unlisted[equals]false",
     },
   });
+  const faqData = await uwearFaqClient.get<TFaq>({
+    endpoint: "faq",
+    queries: {
+      filters: "isDisplayTop[equals]true",
+    },
+  });
   return {
     props: {
       articlesData,
+      faqData,
     },
-    revalidate: 60,
   };
 };
 

@@ -1,8 +1,8 @@
-import { ReactNode, useState } from "react";
+import { useState } from "react";
 
 type TProps = {
   question: string;
-  answer: ReactNode;
+  answer: string;
 };
 
 export const QuestionAnswer = ({ question, answer }: TProps) => {
@@ -15,7 +15,12 @@ export const QuestionAnswer = ({ question, answer }: TProps) => {
     >
       <div className="w-[90%] text-sm">
         <p>{question}</p>
-        <p className={isActive ? "mt-4" : "hidden"}>{answer}</p>
+        <div
+          className={isActive ? "mt-4" : "hidden"}
+          dangerouslySetInnerHTML={{
+            __html: answer,
+          }}
+        />
       </div>
       <div className="w-[4%] pt-1">
         <img
