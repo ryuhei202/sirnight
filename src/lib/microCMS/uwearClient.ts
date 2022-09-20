@@ -1,6 +1,6 @@
 import { createClient } from "microcms-js-sdk";
 
-export type TArticleContent = {
+export type TNewsContent = {
   id: string;
   title: string;
   body: string;
@@ -13,16 +13,16 @@ export type TArticleContent = {
   revisedAt: string;
 };
 
-export type TArticles = {
-  contents: TArticleContent[];
+export type TNews = {
+  contents: TNewsContent[];
   totalCount: number;
   offset: number;
   limit: number;
 };
 
-export const client = createClient({
+export const uwearClient = createClient({
   serviceDomain: "uwear",
-  apiKey: `${process.env.NEXT_PUBLIC_MICRO_CMS_API_KEY}`,
+  apiKey: `${process.env.NEXT_PUBLIC_MICRO_CMS_UWEAR_API_KEY}`,
 });
 
 type TProps = {
@@ -30,7 +30,7 @@ type TProps = {
   type?: "dot" | "kanji";
 };
 
-export const handleData = ({ date, type = "dot" }: TProps) => {
+export const handleDate = ({ date, type = "dot" }: TProps) => {
   const regex = new RegExp("T.+Z", "g");
   const dateTimeRemoved = date.replace(regex, "");
 

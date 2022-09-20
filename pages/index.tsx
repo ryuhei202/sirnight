@@ -19,10 +19,10 @@ import { ServiceDescription } from "../src/components/top/ServiceDescription";
 import { ServiceValue } from "../src/components/top/ServiceValue";
 import { Sympathy } from "../src/components/top/Sympathy";
 import { WhatToResolve } from "../src/components/top/WhatToResolve";
-import { client, TArticles } from "../src/lib/getArticles";
+import { uwearClient, TNews } from "../src/lib/microCMS/uwearClient";
 
 type TProps = {
-  articlesData: TArticles;
+  articlesData: TNews;
 };
 
 const forbidScroll = () => {
@@ -114,7 +114,7 @@ const Home: NextPage<TProps> = ({ articlesData }) => {
 };
 
 export const getStaticProps = async () => {
-  const articlesData = await client.get<TArticles>({
+  const articlesData = await uwearClient.get<TNews>({
     endpoint: "news",
     queries: {
       limit: 6,
