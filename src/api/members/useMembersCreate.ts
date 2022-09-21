@@ -4,7 +4,7 @@ import { usePostRequest } from "../usePostRequest";
 
 type TMemberCreate = {
   readonly mutate: UseMutateFunction<
-    AxiosResponse,
+    void | AxiosResponse,
     unknown,
     TMembersCreateParams,
     unknown
