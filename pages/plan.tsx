@@ -89,20 +89,13 @@ const Plan: NextPage = () => {
               </div>
             ))}
           </div>
-          <div className="mx-[7%] pb-36 text-[3vw] sm:text-xs text-[#979B9A]">
+          <div className="mx-[7%] pb-36 text-[3vw] sm:text-xs text-[#979B9A] font-light">
             <div className="flex">
               <span className="w-[8%]">※</span>
               <p>
                 コーデのご利用シーンにジャケットorライトアウターが不要な場合、トップスを1点追加。（スタンダード：4アイテム、プレミアム7アイテム）
               </p>
             </div>
-            {/* TODO: 持ち続ける割引実装時にコメントを外す */}
-            {/* <div className="flex">
-              <span className="w-[8%]">※</span>
-              <p>
-                お申込み後に、配送タイミングを「毎月配送」から変更することが可能です。その場合は、現在のコーデを持ち続けることとなり、毎月の金額がディスカウントされていきます。
-              </p>
-            </div> */}
           </div>
         </div>
         <FooterMenu />
