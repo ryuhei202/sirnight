@@ -65,7 +65,9 @@ export const PaymentForms = ({
         serialCode: !!serialCode ? serialCode : undefined,
       };
       mutate(params, {
-        onSuccess: (data: AxiosResponse<TValidationPaymentResponse>) => {
+        onSuccess: (data: void | AxiosResponse<TValidationPaymentResponse>) => {
+          if (!data) return;
+
           if (data.data.errors.length > 0) {
             setErrors(data.data.errors);
             return;

@@ -40,7 +40,8 @@ export const LoginForms = ({ onSubmit, onBack }: TProps) => {
       mutate(
         { email, password },
         {
-          onSuccess: (data: AxiosResponse<TValidationLoginResponse>) => {
+          onSuccess: (data: void | AxiosResponse<TValidationLoginResponse>) => {
+            if (!data) return;
             if (data.data.isRegistered) {
               router.push(`${process.env.NEXT_PUBLIC_HOST_URL}/mypage`);
               return;

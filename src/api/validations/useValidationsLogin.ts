@@ -4,7 +4,7 @@ import { usePostRequest } from "../usePostRequest";
 
 type TValidationsLogin = {
   readonly mutate: UseMutateFunction<
-    AxiosResponse,
+    void | AxiosResponse,
     unknown,
     TValidationsLoginParams,
     unknown
