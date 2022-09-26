@@ -236,7 +236,13 @@ export const PaymentForms = ({
               id="ccName"
               autoComplete="cc-name"
               value={cardName}
-              onChange={(e) => setCardName(e.target.value)}
+              onChange={(e) => {
+                const replacedHalfWidthSpace = e.target.value.replace(
+                  /　/g,
+                  " "
+                );
+                setCardName(replacedHalfWidthSpace);
+              }}
               placeholder="TARO YAMADA"
               step="1"
               className="p-3 mt-3 w-full rounded-md border border-themeGray bg-clay resize-none"
