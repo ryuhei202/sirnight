@@ -8,7 +8,8 @@
     "start": "next start -p 3001",
     "lint": "next lint",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "prepare": "mkdir -p .git/hooks && cp git-hooks/* .git/hooks/ && chmod +x .git/hooks/*"
   },
   "dependencies": {
     "@headlessui/react": "^1.6.6",

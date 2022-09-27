@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { TPlan } from "../../models/plan/Plan";
 import { LinkButton } from "../baseParts/LinkButton";
@@ -32,7 +33,14 @@ export const PlanDetail = ({ plan, disabled }: TProps) => {
             （税込）
           </p>
           <div className="flex flex-wrap justify-center space-x-3 mb-6">
-            <p className="text-[4vw] sm:text-xl text-[#979B9A]">{`¥${plan.price.withoutTax.toLocaleString()}（税抜）`}</p>
+            <p className="text-[4vw] sm:text-xl text-[#979B9A]">
+              {`¥${plan.price.withoutTax.toLocaleString()}（税抜） `}
+              <Link href={"/news/cro5lzty_e72/"}>
+                <a className="text-themeGray font-normal underline decoration-from-font underline-offset-2">
+                  継続割引について
+                </a>
+              </Link>
+            </p>
           </div>
         </div>
         <div className="bg-themeGray text-clay text-center text-[4vw] sm:text-xl py-1">

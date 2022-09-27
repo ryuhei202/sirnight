@@ -83,7 +83,9 @@ export const BaseForms = ({ onSubmit }: TProps) => {
         prefecture,
       };
       mutate(params, {
-        onSuccess: (data: AxiosResponse<TValidationBaseResponse>) => {
+        onSuccess: (data: void | AxiosResponse<TValidationBaseResponse>) => {
+          if (!data) return;
+
           if (data.data.errors.length <= 0) {
             analyzeEvent({ action: "submit", category: "base" }).then(() =>
               onSubmit({
