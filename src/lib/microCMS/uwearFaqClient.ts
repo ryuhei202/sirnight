@@ -12,11 +12,18 @@ export type TFaq = {
   limit: number;
 };
 
+export type TCategory = {
+  contents: TCategoryContent[];
+  totalCount: number;
+  offset: number;
+  limit: number;
+};
+
 export type TFaqContent = {
   id: string;
   question: string;
   answer: string;
-  category: TCategory | null;
+  category: TCategoryContent | null;
   isDisplayTop: boolean;
   createdAt: string;
   updatedAt: string;
@@ -24,7 +31,7 @@ export type TFaqContent = {
   revisedAt: string;
 };
 
-type TCategory = {
+export type TCategoryContent = {
   id: string;
   name: string;
   createdAt: string;
