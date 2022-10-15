@@ -17,7 +17,7 @@ const index: NextPage<TProps> = ({ faqData }) => {
     <div>
       <NextSeo title="FAQ" />
       <div className="h-full min-h-screen text-themeGray">
-        <Header lists={[{ name: "お知らせ" }]} />
+        <Header lists={[{ name: "FAQ" }]} />
         <div className="w-4/5 pt-14 mx-auto pb-40">
           <p className="text-3xl text-center font-extrabold mb-14">FAQ</p>
           {faqData.contents.map((content, index) => (

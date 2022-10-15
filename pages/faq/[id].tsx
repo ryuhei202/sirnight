@@ -14,7 +14,6 @@ type TProps = {
   faqContents: TFaq;
 };
 export const FaqCategoryName: NextPage<TProps> = ({ faqContents }) => {
-  console.log(faqContents);
   return (
     <div className="h-full">
       <NextSeo title={`${faqContents.contents[0].category?.name}`} />
