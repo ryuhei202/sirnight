@@ -3,6 +3,7 @@ import { NextSeo } from "next-seo";
 import { LinkButton } from "../../src/components/baseParts/LinkButton";
 import { Header } from "../../src/components/plan/Header";
 import { FooterMenu } from "../../src/components/top/FooterMenu";
+import { QuestionAnswer } from "../../src/components/top/QuestionAnswer";
 import {
   TCategory,
   TCategoryContent,
@@ -13,6 +14,7 @@ type TProps = {
   faqContents: TFaq;
 };
 export const FaqCategoryName: NextPage<TProps> = ({ faqContents }) => {
+  console.log(faqContents);
   return (
     <div className="h-full">
       <NextSeo title={`${faqContents.contents[0].category?.name}`} />
@@ -26,19 +28,29 @@ export const FaqCategoryName: NextPage<TProps> = ({ faqContents }) => {
             { name: `${faqContents.contents[0].category?.name}` },
           ]}
         />
-        <div className="px-10">
-          <div className="py-12 border-b-[1px] border-[#D8D8D2]">
-            <h2 className="pt-2 text-xl font-bold">{`${faqContents.contents[0].category?.name}`}</h2>
-          </div>
-          <div className="pt-12 text-sm">
-            {/* <NewsContent content={article?.body} /> */}
-            <LinkButton
-              href={"/faq"}
-              variant="text"
-              className="w-full font-bold text-base mt-12 mb-48 rounded-full border"
-            >
-              FAQ一覧に戻る
-            </LinkButton>
+        <div>
+          <div className="bg-clay py-28" id="faq">
+            <p className="text-[6vw] sm:text-2xl text-center font-extrabold mb-14">{`${faqContents.contents[0].category?.name}`}</p>
+            <div>
+              {faqContents.contents.map((content) => {
+                return (
+                  <QuestionAnswer
+                    question={content.question}
+                    answer={content.answer}
+                    key={content.id}
+                  />
+                );
+              })}
+            </div>
+            <div className="text-center">
+              <LinkButton
+                href={"/faq"}
+                variant="text"
+                className="w-3/4 font-bold text-base mt-12 mb-48 rounded-full border"
+              >
+                FAQ一覧に戻る
+              </LinkButton>
+            </div>
           </div>
         </div>
         <FooterMenu />

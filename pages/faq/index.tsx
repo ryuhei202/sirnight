@@ -29,7 +29,7 @@ const index: NextPage<TProps> = ({ faqData }) => {
                     : ""
                 }`}
               >
-                <Typography size="sm" className="mb-3 block" component="span">
+                <Typography size="sm" className="block" component="span">
                   {content.name}
                 </Typography>
               </a>
