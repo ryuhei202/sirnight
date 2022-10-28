@@ -12,11 +12,15 @@ import {
 } from "../../src/lib/microCMS/uwearFaqClient";
 type TProps = {
   faqContents: TFaq;
+  faqCategoryName: TCategoryContent;
 };
-export const FaqCategoryName: NextPage<TProps> = ({ faqContents }) => {
+export const FaqCategoryName: NextPage<TProps> = ({
+  faqContents,
+  faqCategoryName,
+}) => {
   return (
     <div className="h-full">
-      <NextSeo title={`${faqContents.contents[0].category?.name}`} />
+      <NextSeo title={`${faqCategoryName.name}`} />
       <div
         id="container"
         className="h-full min-h-screen inset-0 text-themeGray"
@@ -24,12 +28,12 @@ export const FaqCategoryName: NextPage<TProps> = ({ faqContents }) => {
         <Header
           lists={[
             { name: "FAQ", path: "/faq" },
-            { name: `${faqContents.contents[0].category?.name}` },
+            { name: `${faqCategoryName.name}` },
           ]}
         />
         <div>
           <div className="bg-clay py-28" id="faq">
-            <p className="text-[6vw] sm:text-2xl text-center font-extrabold mb-14">{`${faqContents.contents[0].category?.name}`}</p>
+            <p className="text-[6vw] sm:text-2xl text-center font-extrabold mb-14">{`${faqCategoryName.name}`}</p>
             <div>
               {faqContents.contents.map((content) => {
                 return (
@@ -77,9 +81,14 @@ export const getStaticProps: GetStaticProps = async (context) => {
     endpoint: "faq",
     queries: { filters: `category[equals]${context.params?.id}` },
   });
+  const faqCategoryName = await uwearFaqClient.get<TCategoryContent>({
+    endpoint: "category",
+    contentId: `${context.params?.id}`,
+  });
   return {
     props: {
       faqContents,
+      faqCategoryName,
     },
   };
 };

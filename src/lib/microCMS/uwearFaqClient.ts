@@ -23,7 +23,7 @@ export type TFaqContent = {
   id: string;
   question: string;
   answer: string;
-  category: TCategoryContent | null;
+  category: TCategoryContent;
   isDisplayTop: boolean;
   createdAt: string;
   updatedAt: string;
