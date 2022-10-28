@@ -21,7 +21,7 @@ const index: NextPage<TProps> = ({ faqData }) => {
         <div className="w-4/5 pt-14 mx-auto pb-40">
           <p className="text-3xl text-center font-extrabold mb-14">FAQ</p>
           {faqData.contents.map((content, index) => (
-            <Link href={`/faq/${content.id}`} key={index}>
+            <Link href={`/faq/${content.id}`} key={content.id}>
               <a
                 className={`block py-10 border-[#D8D8D2] border-t ${
                   index === faqData.contents.length - 1
