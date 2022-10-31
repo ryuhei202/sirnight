@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { TFaq } from "../../lib/microCMS/uwearFaqClient";
 import { QuestionAnswer } from "./QuestionAnswer";
 
@@ -19,6 +20,16 @@ export const Faq = ({ data }: TProps) => {
             key={index}
           />
         ))}
+      </div>
+      <div className="bg-clay text-themeGray text-right mt-10 font-medium  w-4/5 mx-auto">
+        <Link href={{ pathname: "/faq" }}>
+          <a className="relative inline-block">
+            <span className="text-xs mr-2 absolute top-[20%] -left-[20%]">
+              &#9679;
+            </span>
+            もっと見る
+          </a>
+        </Link>
       </div>
     </div>
   );
