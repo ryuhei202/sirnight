@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import { NextSeo } from "next-seo";
+import Link from "next/link";
 import React, { useRef, useState } from "react";
 import { Header } from "../src/components/plan/Header";
 import { PlanDetail } from "../src/components/plan/PlanDetail";
@@ -89,13 +90,27 @@ const Plan: NextPage = () => {
               </div>
             ))}
           </div>
-          <div className="mx-[7%] pb-36 text-[3vw] sm:text-xs text-[#979B9A] font-light">
+          <div className="mx-[7%] pb-4 text-[3vw] sm:text-xs">
             <div className="flex">
               <span className="w-[8%]">※</span>
               <p>
-                コーデのご利用シーンにジャケットorライトアウターが不要な場合、トップスを1点追加。（スタンダード：4アイテム、プレミアム7アイテム）
+                コーデのご利用シーンにジャケットorライトアウターが不要な場合、トップスを1点追加（スタンダード：4アイテム、プレミアム7アイテム）
               </p>
             </div>
+          </div>
+          <div className="mx-[7%] pb-36 text-[3vw] sm:text-xs text-[#979B9A] font-light">
+            <div className="flex">
+              <span className="w-[8%]">※</span>
+              <div>
+                <p>
+                  返却期日までにご返却いただけない場合、延滞料金が発生します。延滞金は1ヶ月を30日とした場合の日割り料金×2の料金となっております。
+                </p>
+                <Link href={"/faq/return"}>
+                  <a className="underline underline-offset-2">延滞金について</a>
+                </Link>
+              </div>
+            </div>
+            <br />
           </div>
         </div>
         <FooterMenu />
