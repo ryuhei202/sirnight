@@ -4,7 +4,7 @@ import { usePostRequest } from "../usePostRequest";
 
 type TValidationsPayment = {
   readonly mutate: UseMutateFunction<
-    AxiosResponse,
+    void | AxiosResponse,
     unknown,
     TValidationsPaymentParams,
     unknown

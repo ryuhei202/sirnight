@@ -70,13 +70,13 @@ const Privacy: NextPage = () => {
               </p>
               <h3 className="pt-4">連絡先</h3>
               <p>
-                電話 06-6533-2030
+                <span>電話: 06-6533-2030</span>
                 <br />
-                FAX 06-4868-5381 WEB
+                <span>FAX: 06-4868-5381</span>
                 <br />
-                https://kiizan-kiizan.co.jp/contact/
+                WEB: https://kiizan-kiizan.co.jp/contact/
                 <br />
-                MAIL info＠kiizan-kiizan.co.jp
+                MAIL: info＠kiizan-kiizan.co.jp
                 <br />
               </p>
               <h3 className="pt-4">個人情報の利用目的</h3>
@@ -359,10 +359,12 @@ const Privacy: NextPage = () => {
                 <p>
                   個人情報保護管理者 住山 大介【問い合わせ窓口】
                   <br />
-                  電話06-6533-2030 <br />
-                  FAX 06-4868-5381 <br />
-                  WEB https://kiizan-kiizan.co.jp/contact/ <br />
-                  MAIL info＠kiizan-kiizan.co.jp
+                  <span>電話: 06-6533-2030</span>
+                  <br />
+                  <span>FAX: 06-4868-5381</span>
+                  <br />
+                  WEB: https://kiizan-kiizan.co.jp/contact/ <br />
+                  MAIL: info＠kiizan-kiizan.co.jp
                   <br />
                   制定：2018年（平成30年）1月4日
                   <br />

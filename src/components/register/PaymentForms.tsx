@@ -65,7 +65,9 @@ export const PaymentForms = ({
         serialCode: !!serialCode ? serialCode : undefined,
       };
       mutate(params, {
-        onSuccess: (data: AxiosResponse<TValidationPaymentResponse>) => {
+        onSuccess: (data: void | AxiosResponse<TValidationPaymentResponse>) => {
+          if (!data) return;
+
           if (data.data.errors.length > 0) {
             setErrors(data.data.errors);
             return;
@@ -161,7 +163,7 @@ export const PaymentForms = ({
             <label>
               有効期限 <span className="text-[#CB5F58]">*</span>
             </label>
-            <div className="flex mt-3">
+            <div className="flex items-end mt-3">
               <input
                 type="number"
                 min={1}
@@ -177,10 +179,10 @@ export const PaymentForms = ({
                   }
                 }}
                 autoComplete="cc-exp-month"
-                placeholder="月"
+                placeholder="00"
                 className="p-3 mr-2 w-full rounded-md border border-themeGray bg-clay resize-none"
               />
-              <span className="pt-2 text-2xl"> / </span>
+              <span className="w-1/3">月 /</span>
               <input
                 type="number"
                 min={1}
@@ -188,17 +190,18 @@ export const PaymentForms = ({
                 value={expYear}
                 onChange={(e) => {
                   if (
-                    (e.target.value.match(/^[0-9]+/) &&
-                      e.target.value.length <= 2) ||
+                    e.target.value.match(/^[0-9]+/) ||
                     e.target.value === ""
                   ) {
-                    setExpYear(parseInt(e.target.value) || undefined);
+                    const lastTwoDigits = e.target.value.slice(-2);
+                    setExpYear(Number(lastTwoDigits) || undefined);
                   }
                 }}
                 autoComplete="cc-exp-year"
-                placeholder="年"
-                className="p-3 ml-2 w-full rounded-md border border-themeGray bg-clay resize-none"
+                placeholder="00"
+                className="p-3 mx-2 w-full rounded-md border border-themeGray bg-clay resize-none"
               />
+              <span className="">年</span>
             </div>
           </div>
           <div className="pt-8">
@@ -233,7 +236,13 @@ export const PaymentForms = ({
               id="ccName"
               autoComplete="cc-name"
               value={cardName}
-              onChange={(e) => setCardName(e.target.value)}
+              onChange={(e) => {
+                const replacedHalfWidthSpace = e.target.value.replace(
+                  /　/g,
+                  " "
+                );
+                setCardName(replacedHalfWidthSpace);
+              }}
               placeholder="TARO YAMADA"
               step="1"
               className="p-3 mt-3 w-full rounded-md border border-themeGray bg-clay resize-none"
