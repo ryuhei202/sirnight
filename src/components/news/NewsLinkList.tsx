@@ -1,9 +1,10 @@
 import Link from "next/link";
-import { handleData, TArticles } from "../../lib/getArticles";
+import { handleDate } from "../../lib/microCMS/handleDate";
+import { TNews } from "../../lib/microCMS/uwearClient";
 import { Typography } from "../baseParts/Typography";
 
 type TProps = {
-  data: TArticles;
+  data: TNews;
 };
 
 export const NewsLinkList = ({ data }: TProps) => {
@@ -22,7 +23,7 @@ export const NewsLinkList = ({ data }: TProps) => {
               {content.title}
             </Typography>
             <Typography className="font-lora block" size="sm" component="span">
-              {handleData({ date: content.publishedAt })}
+              {handleDate({ date: content.publishedAt })}
             </Typography>
           </a>
         </Link>
