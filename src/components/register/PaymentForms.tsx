@@ -29,7 +29,7 @@ export const PaymentForms = ({
   const [cardNumber, setCardNumber] = useState<string>();
   const [expMonth, setExpMonth] = useState<number>();
   const [expYear, setExpYear] = useState<number>();
-  const [cvc, setCvc] = useState<number>();
+  const [cvc, setCvc] = useState<string>();
   const [cardName, setCardName] = useState<string>();
   const [serialCode, setSerialCode] = useState<string>();
   const [isAgree, setIsAgree] = useState<boolean>(false);
@@ -43,7 +43,8 @@ export const PaymentForms = ({
     window.scrollTo(0, 0);
   }, [errors]);
 
-  const canRegistered = !!cardNumber && !!expMonth && !!expYear && isAgree;
+  const canRegistered =
+    !!cardNumber && !!expMonth && !!expYear && !!cvc && isAgree;
 
   const createTokenCallback = (paygentRes: {
     result: string;
@@ -210,17 +211,17 @@ export const PaymentForms = ({
             </label>
             <input
               id="csc"
-              type="number"
               autoComplete="csc"
               value={cvc}
               maxLength={4}
               onChange={(e) => {
+                const convertedString = convertHalfWidthNumber(e.target.value);
                 if (
-                  (e.target.value.match(/^[0-9]+/) &&
-                    e.target.value.length <= 4) ||
-                  e.target.value === ""
+                  (convertedString.match(/^[0-9]+/) &&
+                    convertedString.length <= 4) ||
+                  convertedString === ""
                 ) {
-                  setCvc(parseInt(e.target.value) || undefined);
+                  setCvc(convertedString);
                 }
               }}
               placeholder="000"
