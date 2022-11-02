@@ -74,7 +74,6 @@ export const RegisterConfirm = ({
     };
     mutate(params, {
       onSuccess: () => {
-        localStorage.removeItem("campaignCode");
         trackConversion(findPlanById(planId).jpName).then(() =>
           setUserId(memberId).then(() =>
             router.push({
