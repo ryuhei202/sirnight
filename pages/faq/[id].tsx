@@ -65,6 +65,7 @@ export const FaqCategoryName: NextPage<TProps> = ({
 export const getStaticPaths = async () => {
   const faqData = await uwearFaqClient.get<TCategory>({
     endpoint: "category",
+    queries: { limit: 100 },
   });
   const paths = faqData.contents.map(
     (data: TCategoryContent) => `/faq/${data.id}`

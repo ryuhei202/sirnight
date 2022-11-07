@@ -45,6 +45,7 @@ const index: NextPage<TProps> = ({ faqData }) => {
 export const getStaticProps = async () => {
   const faqData = await uwearFaqClient.get<TCategory>({
     endpoint: "category",
+    queries: { limit: 100 },
   });
   return {
     props: {
