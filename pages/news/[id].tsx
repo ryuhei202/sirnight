@@ -4,30 +4,30 @@ import { LinkButton } from "../../src/components/baseParts/LinkButton";
 import { NewsContent } from "../../src/components/news/NewsContent";
 import { Header } from "../../src/components/plan/Header";
 import { FooterMenu } from "../../src/components/top/FooterMenu";
+import { handleDate } from "../../src/lib/microCMS/handleDate";
 import {
-  client,
-  handleData,
-  TArticleContent,
-  TArticles,
-} from "../../src/lib/getArticles";
+  TNews,
+  TNewsContent,
+  uwearClient,
+} from "../../src/lib/microCMS/uwearClient";
 
 export const getStaticPaths = async () => {
-  const articlesData = await client.get<TArticles>({ endpoint: "news" });
+  const articlesData = await uwearClient.get<TNews>({ endpoint: "news" });
   const paths = articlesData.contents.map(
-    (data: TArticleContent) => `/news/${data.id}`
+    (data: TNewsContent) => `/news/${data.id}`
   );
   return { paths, fallback: "blocking" };
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const articleId = context.params?.id;
-  const article = await client.get<TArticleContent>({
+  const article = await uwearClient.get<TNewsContent>({
     endpoint: `news/${articleId}`,
   });
   return { props: article, revalidate: 60 };
 };
 
-const NewsDetail: NextPage<TArticleContent> = (article: TArticleContent) => {
+const NewsDetail: NextPage<TNewsContent> = (article: TNewsContent) => {
   return (
     <div className="h-full">
       <NextSeo
@@ -58,13 +58,13 @@ const NewsDetail: NextPage<TArticleContent> = (article: TArticleContent) => {
         <div className="px-10">
           <div className="py-12 border-b-[1px] border-[#D8D8D2]">
             <p className="text-xs">
-              {handleData({ date: article.publishedAt })}
+              {handleDate({ date: article.publishedAt })}
             </p>
             <h2 className="pt-2 text-xl font-bold">{`${article.title}`}</h2>
           </div>
           <div className="pt-12 text-sm">
             <div className="text-right pb-12">
-              <p>{handleData({ date: article.publishedAt, type: "kanji" })}</p>
+              <p>{handleDate({ date: article.publishedAt, type: "kanji" })}</p>
               <p>株式会社kiizankiizan</p>
             </div>
             <NewsContent content={article?.body} />

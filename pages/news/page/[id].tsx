@@ -4,12 +4,12 @@ import { NewsLinkList } from "../../../src/components/news/NewsLinkList";
 import { Pagination } from "../../../src/components/news/Pagination";
 import { Header } from "../../../src/components/plan/Header";
 import { FooterMenu } from "../../../src/components/top/FooterMenu";
-import { client, TArticles } from "../../../src/lib/getArticles";
+import { TNews, uwearClient } from "../../../src/lib/microCMS/uwearClient";
 
 export const PER_PAGE = 10;
 
 type TProps = {
-  articlesData: TArticles;
+  articlesData: TNews;
   pageId: number;
 };
 
@@ -34,7 +34,7 @@ const NewsPageId: NextPage<TProps> = ({ articlesData, pageId }: TProps) => {
 };
 
 export const getStaticPaths = async () => {
-  const data = await client.get<TArticles>({ endpoint: "news" });
+  const data = await uwearClient.get<TNews>({ endpoint: "news" });
 
   const range = (start: number, end: number) =>
     [...Array(end - start + 1)].map((_, i) => start + i);
@@ -49,7 +49,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (context) => {
   const pageId = Number(context.params?.id);
 
-  const data = await client.get<TArticles>({
+  const data = await uwearClient.get<TNews>({
     endpoint: "news",
     queries: {
       offset: (Number(pageId) - 1) * PER_PAGE,

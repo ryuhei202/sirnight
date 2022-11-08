@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { TArticles } from "../../lib/getArticles";
+import { TNews } from "../../lib/microCMS/uwearClient";
 import { NewsLinkList } from "../news/NewsLinkList";
 
 type TProps = {
-  data: TArticles;
+  data: TNews;
 };
 
 export const News = ({ data }: TProps) => {
