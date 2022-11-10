@@ -234,7 +234,7 @@ export const BaseForms = ({ onSubmit }: TProps) => {
                 <input
                   id="height"
                   type="number"
-                  value={height}
+                  value={height ?? ""}
                   onChange={(e) => setHeight(parseInt(e.target.value))}
                   min="160"
                   max="180"
@@ -256,7 +256,7 @@ export const BaseForms = ({ onSubmit }: TProps) => {
                 <input
                   id="weight"
                   type="number"
-                  value={weight}
+                  value={weight ?? ""}
                   onChange={(e) => setWeight(parseInt(e.target.value))}
                   min="51"
                   max="80"

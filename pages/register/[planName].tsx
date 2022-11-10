@@ -37,8 +37,9 @@ export const getStaticProps = async ({
 };
 
 const Register = ({ planId }: { planId: 11 | 12 | 13 }) => {
-  const [step, setStep] =
-    useState<"base" | "login" | "payment" | "confirm">("base");
+  const [step, setStep] = useState<"base" | "login" | "payment" | "confirm">(
+    "base"
+  );
   const [baseData, setBaseData] = useState<TBaseRegisterData>();
   const [loginData, setLoginData] = useState<TLoginRegisterData>();
   const [paymentData, setPaymentData] = useState<TPaymentRegisterData>();

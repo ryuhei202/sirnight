@@ -27,7 +27,7 @@ export const DropdownMenuAlt = ({
         onChange={onChange}
       >
         {placeholder && (
-          <option value="" disabled selected style={{ display: "none" }}>
+          <option value="" disabled style={{ display: "none" }}>
             {placeholder}
           </option>
         )}
