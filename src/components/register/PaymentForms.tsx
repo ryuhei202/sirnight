@@ -143,7 +143,7 @@ export const PaymentForms = ({
               id="cc-number"
               autoComplete="cc-number"
               type="tel"
-              value={cardNumber}
+              value={cardNumber ?? ""}
               onChange={(e) => {
                 const convertedNumber = convertHalfWidthNumber(e.target.value);
                 // 4文字ごとに区切る
@@ -165,7 +165,7 @@ export const PaymentForms = ({
                 type="number"
                 min={1}
                 max={12}
-                value={expMonth}
+                value={expMonth ?? ""}
                 onChange={(e) => {
                   if (
                     (e.target.value.match(/^[0-9]+/) &&
@@ -184,7 +184,7 @@ export const PaymentForms = ({
                 type="number"
                 min={1}
                 max={99}
-                value={expYear}
+                value={expYear ?? ""}
                 onChange={(e) => {
                   if (
                     e.target.value.match(/^[0-9]+/) ||
@@ -208,7 +208,7 @@ export const PaymentForms = ({
             <input
               id="csc"
               autoComplete="csc"
-              value={cvc}
+              value={cvc ?? ""}
               maxLength={4}
               onChange={(e) => {
                 const convertedString = convertHalfWidthNumber(e.target.value);
@@ -232,7 +232,7 @@ export const PaymentForms = ({
             <input
               id="ccName"
               autoComplete="cc-name"
-              value={cardName}
+              value={cardName ?? ""}
               onChange={(e) => {
                 const replacedHalfWidthSpace = e.target.value.replace(
                   /　/g,
@@ -249,7 +249,7 @@ export const PaymentForms = ({
             <label htmlFor="serialCode">クーポンコード</label>
             <input
               id="serialCode"
-              value={serialCode}
+              value={serialCode ?? ""}
               onChange={(e) => setSerialCode(e.target.value)}
               placeholder="お持ちの方のみ入力してください"
               step="1"

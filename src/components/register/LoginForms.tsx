@@ -103,7 +103,7 @@ export const LoginForms = ({ onSubmit, onBack }: TProps) => {
               placeholder="info@leeap.jp"
               className="p-3 my-3 w-full rounded-md border border-themeGray bg-clay resize-none"
               onChange={(e) => setEmail(e.target.value)}
-              value={email}
+              value={email ?? ""}
             ></input>
             {!EMAIL_REGAX.test(email ?? "") && (
               <FrontValidText text="正しいフォーマットで入力してください" />
@@ -153,7 +153,7 @@ export const LoginForms = ({ onSubmit, onBack }: TProps) => {
                   placeholder="半角英数字・記号、8~16文字以内"
                   autoComplete="new-password"
                   onChange={(e) => setPassword(e.target.value)}
-                  value={password}
+                  value={password ?? ""}
                   className="mb-[6px] mt-3 p-3 w-full rounded-md border border-themeGray bg-clay resize-none"
                 ></input>
                 <div
