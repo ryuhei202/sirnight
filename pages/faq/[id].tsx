@@ -78,9 +78,13 @@ export const getStaticPaths = async () => {
 
 // getStaticProps
 export const getStaticProps: GetStaticProps = async (context) => {
+  const LIMIT = 1000;
   const faqContents = await uwearFaqClient.get<TFaq>({
     endpoint: "faq",
-    queries: { filters: `category[equals]${context.params?.id}` },
+    queries: {
+      limit: LIMIT,
+      filters: `category[equals]${context.params?.id}`,
+    },
   });
   const faqCategoryName = await uwearFaqClient.get<TCategoryContent>({
     endpoint: "category",
