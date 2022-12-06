@@ -7,21 +7,21 @@
 @layer base {
   .newsContent h1 {
     font-weight: bold;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     line-height: 2.2rem;
     padding-bottom: 2rem;
   }
   .newsContent h2 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    line-height: 2rem;
-    padding: 1.7rem 0;
-  }
-  .newsContent h3 {
     font-size: 1.2rem;
     font-weight: bold;
+    line-height: 2rem;
+    padding-bottom: 1.7rem;
+  }
+  .newsContent h3 {
+    font-size: 1.1rem;
+    font-weight: bold;
     line-height: 1.6rem;
-    padding: 1rem 0;
+    padding-bottom: 1rem;
   }
   .newsContent h4 {
     font-size: 1rem;
