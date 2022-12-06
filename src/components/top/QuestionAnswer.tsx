@@ -18,7 +18,7 @@ export const QuestionAnswer = ({ question, answer }: TProps) => {
         <img
           src="/images/icons/arrow.svg"
           alt="arrow-icon"
-          className={`${isActive ? "rotate-180" : ""}`}
+          className={isActive ? "rotate-180" : ""}
         />
       </div>
       <div
