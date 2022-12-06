@@ -9,26 +9,26 @@ export const QuestionAnswer = ({ question, answer }: TProps) => {
   const [isActive, setIsActive] = useState(false);
   const handleClick = () => setIsActive((prevState) => !prevState);
   return (
-    <div
-      className="py-8 px-[10%] flex justify-between cursor-pointer border-t-2 border-solid border-[#D8D8D2]"
-      onClick={handleClick}
-    >
-      <div className="w-[90%] text-sm">
+    <div className="border-t-2 border-solid border-[#D8D8D2] text-sm">
+      <div
+        className="flex flex-row justify-between cursor-pointer py-8 px-[10%]"
+        onClick={handleClick}
+      >
         <p>{question}</p>
-        <div
-          className={isActive ? "mt-4" : "hidden"}
-          dangerouslySetInnerHTML={{
-            __html: answer,
-          }}
-        />
-      </div>
-      <div className="w-[4%] pt-1">
         <img
           src="/images/icons/arrow.svg"
           alt="arrow-icon"
-          className={isActive ? "rotate-180" : ""}
+          className={`${isActive ? "rotate-180" : ""}`}
         />
       </div>
+      <div
+        className={`pb-8 px-[10%] leading-6	font-normal ${
+          isActive ? "mt-4" : "hidden"
+        }`}
+        dangerouslySetInnerHTML={{
+          __html: answer,
+        }}
+      />
     </div>
   );
 };
