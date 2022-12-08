@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 type TProps = {
   contentId?: string;
   question: string;
@@ -9,6 +10,12 @@ type TProps = {
 export const QuestionAnswer = ({ contentId, question, answer }: TProps) => {
   const [isActive, setIsActive] = useState(false);
   const handleClick = () => setIsActive((prevState) => !prevState);
+  const router = useRouter();
+  useEffect(() => {
+    if (contentId === router.asPath.split("#")[1]) {
+      setIsActive(true);
+    }
+  }, []);
   return (
     <div
       className="border-t-2 border-solid border-[#D8D8D2] text-sm"
@@ -18,7 +25,6 @@ export const QuestionAnswer = ({ contentId, question, answer }: TProps) => {
         href={{
           hash: contentId,
         }}
-        scroll={false}
       >
         <div
           className="flex flex-row justify-between cursor-pointer py-8 px-[10%]"
