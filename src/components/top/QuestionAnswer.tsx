@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 type TProps = {
@@ -21,23 +20,17 @@ export const QuestionAnswer = ({ contentId, question, answer }: TProps) => {
       className="border-t-2 border-solid border-[#D8D8D2] text-sm"
       id={contentId}
     >
-      <Link
-        href={{
-          hash: contentId,
-        }}
+      <div
+        className="flex flex-row justify-between cursor-pointer py-8 px-[10%]"
+        onClick={handleClick}
       >
-        <div
-          className="flex flex-row justify-between cursor-pointer py-8 px-[10%]"
-          onClick={handleClick}
-        >
-          <p>{question}</p>
-          <img
-            src="/images/icons/arrow.svg"
-            alt="arrow-icon"
-            className={isActive ? "rotate-180" : ""}
-          />
-        </div>
-      </Link>
+        <p>{question}</p>
+        <img
+          src="/images/icons/arrow.svg"
+          alt="arrow-icon"
+          className={isActive ? "rotate-180" : ""}
+        />
+      </div>
 
       <div
         className={`pb-8 px-[10%] leading-6	font-normal ${
