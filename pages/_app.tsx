@@ -4,7 +4,8 @@ import Script from "next/script";
 import { QueryClient, QueryClientProvider } from "react-query";
 import "tailwindcss/tailwind.css";
 import SEO from "../next-seo.config";
-import { GA_ID, usePageView } from "../src/lib/gtag";
+import { GA_ID } from "../src/lib/gtag";
+import { GOOGLE_TAG_MANAGER_ID } from "../src/lib/gtm";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -15,8 +16,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       },
     },
   });
-
-  usePageView();
 
   return (
     <>
@@ -37,6 +36,13 @@ function MyApp({ Component, pageProps }: AppProps) {
           </Script>
         </>
       )}
+      <Script id="gtm" strategy="afterInteractive">
+        {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${GOOGLE_TAG_MANAGER_ID}');`}
+      </Script>
       <DefaultSeo {...SEO} />
       <div className="w-screen h-full bg-clay font-medium">
         <img
