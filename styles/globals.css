@@ -7,26 +7,33 @@
 @layer base {
   .newsContent h1 {
     font-weight: bold;
-    font-size: 1.6rem;
-    line-height: 1.9rem;
+    font-size: 1.3rem;
+    line-height: 2.2rem;
+    padding-bottom: 2rem;
   }
   .newsContent h2 {
-    font-size: 1.4rem;
-    font-weight: bold;
-    line-height: 1.8rem;
-  }
-  .newsContent h3 {
     font-size: 1.2rem;
     font-weight: bold;
+    line-height: 2rem;
+    padding-bottom: 1.7rem;
+  }
+  .newsContent h3 {
+    font-size: 1.1rem;
+    font-weight: bold;
     line-height: 1.6rem;
+    padding-bottom: 1rem;
+  }
+  .newsContent h4 {
+    font-size: 1rem;
+    padding: 1rem 0;
   }
   .newsContent div {
-    text-color: #475156;
     font-size: 0.8rem;
     margin-top: 20px;
   }
   .newsContent p {
     line-height: 1.6rem;
+    font-weight: 400;
   }
   .newsContent img {
     width: 100%;
