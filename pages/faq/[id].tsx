@@ -38,6 +38,7 @@ export const FaqCategoryName: NextPage<TProps> = ({
               {faqContents.contents.map((content) => {
                 return (
                   <QuestionAnswer
+                    contentId={content.id}
                     question={content.question}
                     answer={content.answer}
                     key={content.id}
