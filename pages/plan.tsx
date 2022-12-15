@@ -90,27 +90,37 @@ const Plan: NextPage = () => {
               </div>
             ))}
           </div>
-          <div className="mx-[7%] pb-4 text-[3vw] sm:text-xs">
-            <div className="flex">
-              <span className="w-[8%]">※</span>
+          <div className="flex flex-col mx-[7%] pb-36 text-[3vw] sm:text-xs">
+            <div className="flex mb-3">
+              <span>※</span>
               <p>
                 コーデのご利用シーンにジャケットorライトアウターが不要な場合、トップスを1点追加（スタンダード：4アイテム、プレミアム7アイテム）
               </p>
             </div>
-          </div>
-          <div className="mx-[7%] pb-36 text-[3vw] sm:text-xs text-[#979B9A] font-light">
-            <div className="flex">
-              <span className="w-[8%]">※</span>
-              <div>
-                <p>
-                  返却期日までにご返却いただけない場合、延滞料金が発生します。延滞金は1ヶ月を30日とした場合の日割り料金×2の料金となっております。
-                </p>
-                <Link href={"/faq/return"}>
-                  <a className="underline underline-offset-2">延滞金について</a>
+            <div className="flex justify-start mb-3">
+              <span>※</span>
+              <p>
+                コーデ交換をしない場合は、次月の月額が割引（詳しくは
+                <Link href={"/faq/payment#fc24azedyv"}>
+                  <a className="underline underline-offset-2">こちら</a>
                 </Link>
-              </div>
+                ）
+              </p>
             </div>
-            <br />
+            <div className="flex justify-start mb-3">
+              <span>※</span>
+              <p>
+                毎月の決済でポイント付与。最大10％還元（詳しくは
+                <Link href={"/faq/point#vvrhq78wzg"}>
+                  <a className="underline underline-offset-2">こちら</a>
+                </Link>
+                ）
+              </p>
+            </div>
+            <div className="flex justify-start mb-3">
+              <span>※</span>
+              <p>洋服は全て25%OFFで購入可能</p>
+            </div>
           </div>
         </div>
         <FooterMenu />
