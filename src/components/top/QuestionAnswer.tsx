@@ -9,7 +9,6 @@ export const QuestionAnswer = ({ contentId, question, answer }: TProps) => {
   const [isActive, setIsActive] = useState(false);
   const handleClick = () => setIsActive((prevState) => !prevState);
   useEffect(() => {
-    console.log(window.location.hash.split("#")[1]);
     if (contentId === window.location.hash.split("#")[1]) {
       setIsActive(true);
     }
