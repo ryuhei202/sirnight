@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 type TProps = {
   contentId?: string;
@@ -9,12 +8,13 @@ type TProps = {
 export const QuestionAnswer = ({ contentId, question, answer }: TProps) => {
   const [isActive, setIsActive] = useState(false);
   const handleClick = () => setIsActive((prevState) => !prevState);
-  const router = useRouter();
   useEffect(() => {
-    if (contentId === router.asPath.split("#")[1]) {
+    console.log(window.location.hash.split("#")[1]);
+    if (contentId === window.location.hash.split("#")[1]) {
       setIsActive(true);
     }
   }, []);
+
   return (
     <div
       className="border-t-2 border-solid border-[#D8D8D2] text-sm"
