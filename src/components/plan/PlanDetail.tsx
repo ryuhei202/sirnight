@@ -35,7 +35,7 @@ export const PlanDetail = ({ plan, disabled }: TProps) => {
           <div className="flex flex-wrap justify-center space-x-3 mb-6">
             <p className="text-[4vw] sm:text-xl text-[#979B9A]">
               {`¥${plan.price.withoutTax.toLocaleString()}（税抜） `}
-              <Link href={"/news/cro5lzty_e72/"}>
+              <Link href={"/faq/payment#fc24azedyv"}>
                 <a className="text-themeGray font-normal underline decoration-from-font underline-offset-2">
                   継続割引について
                 </a>
