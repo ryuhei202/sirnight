@@ -29,12 +29,11 @@ export const PlanDetail = ({ plan, disabled }: TProps) => {
         <div className="">
           <p className="text-center text-[5vw] sm:text-xl my-6">
             月額
-            <span className="text-[10vw] sm:text-4xl ml-2 font-lora font-bold">{`¥${plan.price.withTax.toLocaleString()}`}</span>
-            （税込）
+            <span className="text-[10vw] sm:text-4xl ml-2 font-lora font-bold">{`¥${plan.price.withoutTax.toLocaleString()}`}</span>
           </p>
           <div className="flex flex-wrap justify-center space-x-3 mb-6">
-            <p className="text-[4vw] sm:text-xl text-[#979B9A]">
-              {`¥${plan.price.withoutTax.toLocaleString()}（税抜） `}
+            <p className="text-[4vw] sm:text-xl">
+              {`(税込 ¥${plan.price.withTax.toLocaleString()}) `}
               <Link href={"/faq/payment#fc24azedyv"}>
                 <a className="text-themeGray font-normal underline decoration-from-font underline-offset-2">
                   継続割引について
