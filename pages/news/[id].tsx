@@ -12,7 +12,11 @@ import {
 } from "../../src/lib/microCMS/uwearClient";
 
 export const getStaticPaths = async () => {
-  const articlesData = await uwearClient.get<TNews>({ endpoint: "news" });
+  const LIMIT = 1000;
+  const articlesData = await uwearClient.get<TNews>({
+    endpoint: "news",
+    queries: { limit: LIMIT },
+  });
   const paths = articlesData.contents.map(
     (data: TNewsContent) => `/news/${data.id}`
   );
