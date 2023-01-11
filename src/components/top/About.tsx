@@ -26,7 +26,7 @@ export const About = ({ aboutData }: TProps) => {
         <div className="mt-12">
           <ul className="flex overflow-x-scroll snap-x snap-mandatory hidden-scrollbar">
             {aboutData.contents.map((data, index) => (
-              <Link href={`/about/${data.id}`}>
+              <Link href={`/about/${data.id}`} key={data.id}>
                 <li
                   className={`bg-clay flex-none w-[80%] snap-always snap-center py-16 px-4 rounded-md ${getMarginOfList(
                     { index }
@@ -35,6 +35,7 @@ export const About = ({ aboutData }: TProps) => {
                   <p>{data.title}</p>
                   <img
                     src={data.image.url}
+                    alt={data.title}
                     className="w-[50vw] h-[50vw] sm:h-[300px] sm:w-[300px] mt-4 mx-auto object-cover"
                   />
                   <p className="mt-4">
