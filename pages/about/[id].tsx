@@ -1,5 +1,4 @@
 import { GetStaticProps, NextPage } from "next";
-import { NextSeo } from "next-seo";
 import Link from "next/link";
 import { NewsContent } from "../../src/components/news/NewsContent";
 import { Header } from "../../src/components/plan/Header";
@@ -42,21 +41,6 @@ type TProps = {
 const AboutContent: NextPage<TProps> = ({ article, aboutData }: TProps) => {
   return (
     <div className="h-full">
-      <NextSeo
-        title={`${article.title}`}
-        openGraph={{
-          images: [
-            {
-              url: article.image
-                ? `${article.image.url}?txt=${article.title}&txt-pad=90&txt-color=475156&txt-size=48&txt-align=middle,center&txtfont=Hiragino%20Sans%20W6&txt-track=2&txt-fit=max`
-                : `https://uwear.jp/images/meta/ogp.jpg`,
-              width: 1200,
-              height: 630,
-              alt: article.title,
-            },
-          ],
-        }}
-      />
       <div
         id="container"
         className="h-full min-h-screen inset-0 text-themeGray"
@@ -77,10 +61,11 @@ const AboutContent: NextPage<TProps> = ({ article, aboutData }: TProps) => {
           </h3>
           <div className="flex w-full">
             {aboutData.contents.map((data) => (
-              <Link href={`/about/${data.id}`}>
+              <Link href={`/about/${data.id}`} key={data.id}>
                 <div className="w-[50%] p-4 border-x-[1px] border-[#D8D8D2]">
                   <img
                     src={data.image.url}
+                    alt={data.title}
                     className="w-full h-[30vw] sm:h-[150px] mx-auto object-cover"
                   />
                   <p className="text-sm mt-2">{data.title}</p>
