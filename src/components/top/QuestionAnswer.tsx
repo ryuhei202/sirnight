@@ -12,9 +12,8 @@ export const QuestionAnswer = ({ contentId, question, answer }: TProps) => {
   useEffect(() => {
     if (contentId === window.location.hash.split("#")[1]) {
       setIsActive(true);
-      console.log(window.location.hash.split("#")[1]);
     }
-  }, []);
+  }, [contentId]);
 
   return (
     <div
