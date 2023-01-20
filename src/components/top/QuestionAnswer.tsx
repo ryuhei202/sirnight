@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ImageLink } from "../baseParts/ImageLink";
+import { LinkIcon } from "../baseParts/ImageLink";
 type TProps = {
   contentId?: string;
   question: string;
@@ -22,7 +22,7 @@ export const QuestionAnswer = ({ contentId, question, answer }: TProps) => {
     >
       <div className="grid grid-cols-8 py-8 items-center">
         <span className="col-span-1 justify-self-center">
-          <ImageLink link={`#${contentId}`} />
+          <LinkIcon link={`#${contentId}`} />
         </span>
         <div className="col-span-7">
           <div

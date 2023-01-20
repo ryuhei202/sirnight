@@ -3,7 +3,7 @@ import Link from "next/link";
 type TProps = {
   link: string;
 };
-export const ImageLink = ({ link }: TProps) => {
+export const LinkIcon = ({ link }: TProps) => {
   return (
     <Link href={link}>
       <img
