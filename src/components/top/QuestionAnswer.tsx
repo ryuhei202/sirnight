@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { LinkIcon } from "../baseParts/ImageLink";
+import { LinkIcon } from "../baseParts/LinkIcon";
 type TProps = {
   contentId?: string;
   question: string;
