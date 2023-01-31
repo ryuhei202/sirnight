@@ -18,8 +18,8 @@ export const About = ({ aboutData }: TProps) => {
 
   return (
     <div className="w-full h-full bg-[#F4F3EF] text-center">
-      <div className="py-28">
-        <h3 className="text-2xl xs:text-3xl">UWearの知ってほしいこと</h3>
+      <div className="py-16">
+        <h3 className="text-2xl">UWearの知ってほしいこと</h3>
         <p className="font-medium mt-3 font-lora border-b border-themeGray border-dashed w-fit mx-auto">
           About UWear
         </p>
@@ -27,29 +27,21 @@ export const About = ({ aboutData }: TProps) => {
           <ul className="flex overflow-x-scroll snap-x snap-mandatory hidden-scrollbar">
             {aboutData.contents.map((data, index) => (
               <Link href={`/about/${data.id}`} key={data.id}>
-                <div
-                  className={`bg-clay flex-none w-[80%] snap-always snap-center py-16 px-12 rounded-md  ${getMarginOfList(
+                <li
+                  className={`bg-clay flex-none w-[80%] snap-always snap-center py-16 px-4 rounded-md ${getMarginOfList(
                     { index }
                   )}`}
                 >
-                  <li className="flex flex-col justify-between h-full">
-                    <p>{data.title}</p>
-                    <img
-                      src={data.image.url}
-                      alt={data.title}
-                      className="w-[220px] h-[220px] my-8 object-cover mx-auto rounded-md"
-                    />
-                    <p className="text-left text-[3vw] sm:text-sm">
-                      {getOmittedDescription({ desc: data.description })}
-                    </p>
-                    <img
-                      src="/images/about/arrow.svg"
-                      alt="arrow-icon"
-                      width="10%"
-                      className="mt-4 ml-auto"
-                    />
-                  </li>
-                </div>
+                  <p>{data.title}</p>
+                  <img
+                    src={data.image.url}
+                    alt={data.title}
+                    className="w-[50vw] h-[50vw] sm:h-[300px] sm:w-[300px] mt-4 mx-auto object-cover"
+                  />
+                  <p className="mt-4">
+                    {getOmittedDescription({ desc: data.description })}
+                  </p>
+                </li>
               </Link>
             ))}
           </ul>
