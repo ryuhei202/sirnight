@@ -1,6 +1,24 @@
 import { Animation } from "../baseParts/Animation";
 
 export const CatchCopy = () => {
+  // TODO: gsap導入後にスクロールをしていたら画面の一番上に遷移してしまう不具合が頻発していたのでコメントアウトする。
+
+  // useAnimate({
+  //   id: "#catchcopy",
+  //   from: { scale: 2 },
+  //   to: {
+  //     scale: 1,
+  //     scrollTrigger: {
+  //       trigger: "#catchcopy",
+  //       start: "top 80%",
+  //       end: "top 30%",
+  //       scrub: 3,
+  //       markers: false,
+  //       once: true,
+  //     },
+  //   },
+  // });
+
   return (
     <div className="w-full bg-clay text-center">
       <div className="relative z-20">
