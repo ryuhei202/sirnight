@@ -133,11 +133,7 @@ export const PlanDetail = ({ plan, disabled }: TProps) => {
             <span className="font-lora text-[7vw] sm:text-2xl mr-[1vw] sm:mr-1 ml-1">
               25
             </span>
-            ％OFFで購入可能（
-            <Link href={"/faq/payment#fc24azedyv"}>
-              <a className="underline underline-offset-2">詳細</a>
-            </Link>
-            ）
+            ％OFFで購入可能
           </p>
           <p className="mb-4">
             ・コーデ交換をしない場合、次月金額が割引（
