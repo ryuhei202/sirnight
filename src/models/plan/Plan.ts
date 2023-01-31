@@ -12,6 +12,11 @@ export const LIGHT_PLAN = {
   scenes: ["公園", "カフェ", "ショッピング"],
   coordinateNum: 1,
   itemNum: 3,
+  topsNum: 2,
+  bottomsNum: 1,
+  description: "お試しではじめてみたい方",
+  isJacketAvailable: false,
+  point: 500,
 } as const;
 
 export const STANDARD_PLAN = {
@@ -34,7 +39,12 @@ export const STANDARD_PLAN = {
   ],
   coordinateNum: 1,
   itemNum: 3,
-};
+  topsNum: 1,
+  bottomsNum: 1,
+  description: "幅広いシーンで着たい方",
+  isJacketAvailable: true,
+  point: 1000,
+} as const;
 
 export const PREMIUM_PLAN = {
   id: 13,
@@ -57,7 +67,12 @@ export const PREMIUM_PLAN = {
   ],
   coordinateNum: 2,
   itemNum: 6,
-};
+  topsNum: 3,
+  bottomsNum: 2,
+  description: "お得にたくさん着回したい方",
+  isJacketAvailable: true,
+  point: 2000,
+} as const;
 
 export type TPlan =
   | typeof LIGHT_PLAN
