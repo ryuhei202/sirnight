@@ -59,7 +59,7 @@ const NewsDetail: NextPage<TNewsContent> = (article: TNewsContent) => {
             { name: `${article.title}` },
           ]}
         />
-        <div className="px-8">
+        <div className="px-4">
           <div className="py-12 border-b-[1px] border-[#D8D8D2]">
             <p className="text-xs">
               {handleDate({ date: article.publishedAt })}

@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import { useEffect, useState } from "react";
+import { About } from "../src/components/top/About";
 import { CatchCopy } from "../src/components/top/CatchCopy";
 import { Conversion } from "../src/components/top/Conversion";
 import { CustomerReviews } from "../src/components/top/CustomerReviews";
@@ -18,12 +19,14 @@ import { ServiceDescription } from "../src/components/top/ServiceDescription";
 import { ServiceValue } from "../src/components/top/ServiceValue";
 import { Sympathy } from "../src/components/top/Sympathy";
 import { WhatToResolve } from "../src/components/top/WhatToResolve";
+import { TAbout, uwearAboutClient } from "../src/lib/microCMS/uwearAboutClient";
 import { TNews, uwearClient } from "../src/lib/microCMS/uwearClient";
 import { TFaq, uwearFaqClient } from "../src/lib/microCMS/uwearFaqClient";
 
 type TProps = {
   articlesData: TNews;
   faqData: TFaq;
+  aboutData: TAbout;
 };
 
 const forbidScroll = () => {
@@ -40,7 +43,7 @@ const preventScroll = (e: Event) => {
   e.preventDefault();
 };
 
-const Home: NextPage<TProps> = ({ articlesData, faqData }) => {
+const Home: NextPage<TProps> = ({ articlesData, faqData, aboutData }) => {
   const [isOpeningVisible, setIsOpeningVisible] = useState(true);
 
   // オープニング画面を表示判定
@@ -74,6 +77,7 @@ const Home: NextPage<TProps> = ({ articlesData, faqData }) => {
           rightImagePath="/images/conversions/1/2.webp"
         />
         <WhatToResolve />
+        <About aboutData={aboutData} />
         <HowToUse />
         <SceneCoordinates />
         <HowToStart />
@@ -112,10 +116,14 @@ export const getStaticProps = async () => {
       filters: "isDisplayTop[equals]true",
     },
   });
+  const aboutData = await uwearAboutClient.get<TAbout>({
+    endpoint: "about",
+  });
   return {
     props: {
       articlesData,
       faqData,
+      aboutData,
     },
   };
 };
