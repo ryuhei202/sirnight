@@ -38,6 +38,25 @@
   .newsContent img {
     width: 100%;
   }
+  .newsContent > ul {
+    list-style: inside;
+  }
+  .newsContent > ol {
+    padding-left: 1rem;
+  }
+  .newsContent > ol > li {
+    list-style: decima;
+  }
+  .newsContent > ol > li > ol {
+    padding-left: 1rem;
+  }
+  .newsContent > ol > li > ol > li {
+    list-style: lower-alpha;
+  }
+  .newsContent a {
+    border-bottom-width: 1px;
+    border-color: black;
+  }
 }
 
 html,
