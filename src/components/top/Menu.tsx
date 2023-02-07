@@ -24,92 +24,99 @@ export const Menu = ({ onClick, footerState }: TProps) => {
             pathname: "/",
             hash: "about",
           }}
-        >
-          <a onClick={onClick} className="my-[8vw] sm:my-10 block">
+          onClick={onClick}
+          className="my-[8vw] sm:my-10 block">
+          
             UWearとは
-          </a>
+          
         </Link>
         <Link
           href={{
             pathname: "/",
             hash: "service-value",
           }}
-        >
-          <a onClick={onClick} className="my-[8vw] sm:my-10 block">
+          onClick={onClick}
+          className="my-[8vw] sm:my-10 block">
+          
             UWearで出来ること
-          </a>
+          
         </Link>
         <Link
           href={{
             pathname: "/",
             hash: "flow",
           }}
-        >
-          <a onClick={onClick} className="my-[8vw] sm:my-10 block">
+          onClick={onClick}
+          className="my-[8vw] sm:my-10 block">
+          
             コーデの提供方法
-          </a>
+          
         </Link>
         <Link
           href={{
             pathname: "/",
             hash: "coordinates",
           }}
-        >
-          <a onClick={onClick} className="my-[8vw] sm:my-10 block">
+          onClick={onClick}
+          className="my-[8vw] sm:my-10 block">
+          
             コーデ例
-          </a>
+          
         </Link>
         <Link
           href={{
             pathname: "/",
             hash: "how-to-start",
           }}
-        >
-          <a onClick={onClick} className="my-[8vw] sm:my-10 block">
+          onClick={onClick}
+          className="my-[8vw] sm:my-10 block">
+          
             UWearのはじめ方
-          </a>
+          
         </Link>
         <Link
           href={{
             pathname: "/",
             hash: "faq",
           }}
-        >
-          <a onClick={onClick} className="my-[8vw] sm:my-10 block">
+          onClick={onClick}
+          className="my-[8vw] sm:my-10 block">
+          
             よくあるご質問
-          </a>
+          
         </Link>
         <Link
           href={{
             pathname: "/",
             hash: "news",
           }}
-        >
-          <a onClick={onClick} className="my-[8vw] sm:my-10 block">
+          onClick={onClick}
+          className="my-[8vw] sm:my-10 block">
+          
             お知らせ
-          </a>
+          
         </Link>
       </div>
       <div className="flex flex-wrap text-xs py-[5vw] sm:py-5 border-b-2 border-[#D8D8D2] border-solid">
-        <Link href="/company">
-          <a className="w-1/3 my-[3vw] sm:my-5 text-[3vw] sm:text-sm">
+        <Link href="/company" className="w-1/3 my-[3vw] sm:my-5 text-[3vw] sm:text-sm">
+          
             運営会社
-          </a>
+          
         </Link>
-        <Link href="/laws">
-          <a className="w-2/3 my-[3vw] sm:my-5 text-[3vw] sm:text-sm">
+        <Link href="/laws" className="w-2/3 my-[3vw] sm:my-5 text-[3vw] sm:text-sm">
+          
             特定商取引法に基づく表示
-          </a>
+          
         </Link>
-        <Link href="/term">
-          <a className="w-1/3 my-[3vw] sm:my-5 text-[3vw] sm:text-sm">
+        <Link href="/term" className="w-1/3 my-[3vw] sm:my-5 text-[3vw] sm:text-sm">
+          
             利用規約
-          </a>
+          
         </Link>
-        <Link href="/privacy">
-          <a className="w-2/3 my-[3vw] sm:my-5 text-[3vw] sm:text-sm">
+        <Link href="/privacy" className="w-2/3 my-[3vw] sm:my-5 text-[3vw] sm:text-sm">
+          
             プライバシーポリシー
-          </a>
+          
         </Link>
         <a
           href={`${process.env.NEXT_PUBLIC_HOST_URL}/inquiry`}

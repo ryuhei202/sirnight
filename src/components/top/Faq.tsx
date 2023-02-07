@@ -22,13 +22,11 @@ export const Faq = ({ data }: TProps) => {
         ))}
       </div>
       <div className="bg-clay text-themeGray text-right mt-10 font-medium  w-4/5 mx-auto">
-        <Link href={{ pathname: "/faq" }}>
-          <a className="relative inline-block">
-            <span className="text-xs mr-2 absolute top-[20%] -left-[20%]">
-              &#9679;
-            </span>
-            もっと見る
-          </a>
+        <Link href={{ pathname: "/faq" }} className="relative inline-block">
+
+          <span className="text-xs mr-2 absolute top-[20%] -left-[20%]">
+            &#9679;
+          </span>もっと見る
         </Link>
       </div>
     </div>

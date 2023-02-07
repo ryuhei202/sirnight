@@ -34,7 +34,7 @@ export const Header = ({ lists }: TProps) => {
             <div className="flex">
               {list.path ? (
                 <>
-                  <Link href={list.path}>{list.name}</Link>
+                  <Link href={list.path} legacyBehavior>{list.name}</Link>
                 </>
               ) : (
                 <p>{list.name}</p>

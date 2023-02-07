@@ -24,7 +24,7 @@ export const Pagination = ({ totalCount, currentPageId }: TProps) => {
         <Link
           href={`/news/page/${currentPageId - 1}`}
           className="bg-[#F4F3EF] rounded-full inline-block w-14 text-center relative"
-        >
+          legacyBehavior>
           <img
             src="/images/icons/vector.svg"
             alt="previous-page-icon"
@@ -51,7 +51,7 @@ export const Pagination = ({ totalCount, currentPageId }: TProps) => {
         <Link
           href={`/news/page/${currentPageId + 1}`}
           className="bg-[#F4F3EF] rounded-full inline-block w-14 text-center relative"
-        >
+          legacyBehavior>
           <img
             src="/images/icons/vector.svg"
             alt="next-page-icon"
