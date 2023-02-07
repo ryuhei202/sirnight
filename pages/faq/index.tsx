@@ -29,7 +29,7 @@ const index: NextPage<TProps> = ({ faqData }) => {
                   ? "border-b border-[#D8D8D2]"
                   : ""
               }`}
-            >
+              legacyBehavior>
               <Typography size="sm" className="block" component="span">
                 {content.name}
               </Typography>
