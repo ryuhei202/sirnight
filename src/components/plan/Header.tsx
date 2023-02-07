@@ -18,8 +18,8 @@ export const Header = ({ lists }: TProps) => {
           height="auto"
           className="mr-1"
         />
-        <Link href="/">
-          <a className="mr-[3vw] sm:mr-0">トップ</a>
+        <Link href="/" className="mr-[3vw] sm:mr-0">
+          トップ
         </Link>
       </div>
       {lists &&
@@ -34,9 +34,7 @@ export const Header = ({ lists }: TProps) => {
             <div className="flex">
               {list.path ? (
                 <>
-                  <Link href={list.path}>
-                    <a>{list.name}</a>
-                  </Link>
+                  <Link href={list.path}>{list.name}</Link>
                 </>
               ) : (
                 <p>{list.name}</p>

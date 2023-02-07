@@ -64,13 +64,13 @@ export const LinkButton = ({
     );
 
   return (
-    <Link href={href} passHref>
-      <a
-        onClick={onClick}
-        className={`${className ?? ""} ${classes.join(" ")}`}
-      >
-        {children}
-      </a>
+    <Link
+      href={href}
+      passHref
+      onClick={onClick}
+      className={`${className ?? ""} ${classes.join(" ")}`}
+    >
+      {children}
     </Link>
   );
 };

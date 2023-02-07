@@ -101,8 +101,11 @@ const Plan: NextPage = () => {
               <span>※</span>
               <p>
                 コーデ交換をしない場合は、次月の月額が割引（詳しくは
-                <Link href={"/faq/payment#fc24azedyv"}>
-                  <a className="underline underline-offset-2">こちら</a>
+                <Link
+                  href={"/faq/payment#fc24azedyv"}
+                  className="underline underline-offset-2"
+                >
+                  こちら
                 </Link>
                 ）
               </p>
@@ -111,8 +114,11 @@ const Plan: NextPage = () => {
               <span>※</span>
               <p>
                 毎月の決済でポイント付与。最大10％還元（詳しくは
-                <Link href={"/faq/point#vvrhq78wzg"}>
-                  <a className="underline underline-offset-2">こちら</a>
+                <Link
+                  href={"/faq/point#vvrhq78wzg"}
+                  className="underline underline-offset-2"
+                >
+                  こちら
                 </Link>
                 ）
               </p>
