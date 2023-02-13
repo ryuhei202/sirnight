@@ -54,10 +54,11 @@ export const PlanDetail = ({ plan, disabled }: TProps) => {
           <div className="flex flex-wrap justify-center space-x-3 mb-6">
             <div className="text-[4vw] sm:text-xl ">
               <span className="text-gray">{`¥${plan.price.withTax.toLocaleString()}（税込）`}</span>
-              <Link href={"/faq/payment#fc24azedyv"}>
-                <a className="text-themeGray font-normal underline decoration-from-font underline-offset-2">
-                  継続割引について
-                </a>
+              <Link
+                href={"/faq/payment#fc24azedyv"}
+                className="text-themeGray font-normal underline decoration-from-font underline-offset-2"
+              >
+                継続割引について
               </Link>
             </div>
           </div>
@@ -100,10 +101,11 @@ export const PlanDetail = ({ plan, disabled }: TProps) => {
               {plan.isJacketAvailable && (
                 <>
                   <span className="text-gray mx-1">＋</span>
-                  <div className="flex flex-col text-xs text-left">
-                    <p>ジャケット or</p>
-                    <p>ライトアウター</p>
-                  </div>
+                  <span className="flex flex-col text-xs text-left">
+                    ジャケット or
+                    <br />
+                    ライトアウター
+                  </span>
                   <span className="font-lora text-2xl mr-[1vw] sm:mr-1 ml-1">
                     1
                   </span>
@@ -137,8 +139,11 @@ export const PlanDetail = ({ plan, disabled }: TProps) => {
           </p>
           <p className="mb-4">
             ・コーデ交換をしない場合、次月金額が割引（
-            <Link href={"/faq/payment#fc24azedyv"}>
-              <a className="underline underline-offset-2">詳細</a>
+            <Link
+              href={"/faq/payment#fc24azedyv"}
+              className="underline underline-offset-2"
+            >
+              詳細
             </Link>
             ）
           </p>
