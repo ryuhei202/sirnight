@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import { NextSeo } from "next-seo";
-import Link from "next/link";
 import React, { useRef, useState } from "react";
 import { Header } from "../src/components/plan/Header";
 import { PlanDetail } from "../src/components/plan/PlanDetail";
@@ -89,44 +88,6 @@ const Plan: NextPage = () => {
                 <PlanDetail plan={plan} disabled={selectedPlanId !== plan.id} />
               </div>
             ))}
-          </div>
-          <div className="flex flex-col mx-[7%] pb-36 text-[3vw] sm:text-xs">
-            <div className="flex mb-3">
-              <span>※</span>
-              <p>
-                コーデのご利用シーンにジャケットorライトアウターが不要な場合、トップスを1点追加（スタンダード：4アイテム、プレミアム7アイテム）
-              </p>
-            </div>
-            <div className="flex justify-start mb-3">
-              <span>※</span>
-              <p>
-                コーデ交換をしない場合は、次月の月額が割引（詳しくは
-                <Link
-                  href={"/faq/payment#fc24azedyv"}
-                  className="underline underline-offset-2"
-                >
-                  こちら
-                </Link>
-                ）
-              </p>
-            </div>
-            <div className="flex justify-start mb-3">
-              <span>※</span>
-              <p>
-                毎月の決済でポイント付与。最大10％還元（詳しくは
-                <Link
-                  href={"/faq/point#vvrhq78wzg"}
-                  className="underline underline-offset-2"
-                >
-                  こちら
-                </Link>
-                ）
-              </p>
-            </div>
-            <div className="flex justify-start mb-3">
-              <span>※</span>
-              <p>洋服は全て25%OFFで購入可能</p>
-            </div>
           </div>
         </div>
         <FooterMenu />
