@@ -34,10 +34,11 @@ export const PlanDetail = ({ plan, disabled }: TProps) => {
           <div className="flex flex-wrap justify-center space-x-3 mb-6">
             <p className="text-[4vw] sm:text-xl">
               {`(税込 ¥${plan.price.withTax.toLocaleString()}) `}
-              <Link href={"/faq/payment#fc24azedyv"}>
-                <a className="text-themeGray font-normal underline decoration-from-font underline-offset-2">
-                  継続割引について
-                </a>
+              <Link
+                href={"/faq/payment#fc24azedyv"}
+                className="text-themeGray font-normal underline decoration-from-font underline-offset-2"
+              >
+                継続割引について
               </Link>
             </p>
           </div>
