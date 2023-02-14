@@ -5,7 +5,7 @@ type TProps = {
 };
 export const LinkIcon = ({ link }: TProps) => {
   return (
-    <Link href={link}>
+    <Link href={link} legacyBehavior>
       <img
         src="/images/icons/link.svg"
         alt="copy-icon"

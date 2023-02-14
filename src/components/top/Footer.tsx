@@ -46,62 +46,84 @@ export const Footer = () => {
           </a>
         </div>
         <div className="flex flex-wrap font-medium py-10 border-b-2 border-[#676F72]">
-          <Link href={{ hash: "about" }}>
-            <a className="w-1/2 my-[4vw] sm:my-5 text-[3.5vw] sm:text-base">
+          <Link
+            href={{ hash: "about" }}
+            className="w-1/2 my-[4vw] sm:my-5 text-[3.5vw] sm:text-base">
+            
               UWearとは
-            </a>
+            
           </Link>
-          <Link href={{ hash: "service-value" }}>
-            <a className="w-1/2 my-[4vw] sm:my-5 text-[3.5vw] sm:text-base">
+          <Link
+            href={{ hash: "service-value" }}
+            className="w-1/2 my-[4vw] sm:my-5 text-[3.5vw] sm:text-base">
+            
               UWearで出来ること
-            </a>
+            
           </Link>
-          <Link href={{ hash: "flow" }}>
-            <a className="w-1/2 my-[4vw] sm:my-5 text-[3.5vw] sm:text-base">
+          <Link
+            href={{ hash: "flow" }}
+            className="w-1/2 my-[4vw] sm:my-5 text-[3.5vw] sm:text-base">
+            
               コーデの提供方法
-            </a>
+            
           </Link>
-          <Link href={{ hash: "coordinates" }}>
-            <a className="w-1/2 my-[4vw] sm:my-5 text-[3.5vw] sm:text-base">
+          <Link
+            href={{ hash: "coordinates" }}
+            className="w-1/2 my-[4vw] sm:my-5 text-[3.5vw] sm:text-base">
+            
               コーデ例
-            </a>
+            
           </Link>
-          <Link href={{ hash: "how-to-start" }}>
-            <a className="w-1/2 my-[4vw] sm:my-5 text-[3.5vw] sm:text-base">
+          <Link
+            href={{ hash: "how-to-start" }}
+            className="w-1/2 my-[4vw] sm:my-5 text-[3.5vw] sm:text-base">
+            
               UWearのはじめ方
-            </a>
+            
           </Link>
-          <Link href={{ hash: "faq" }}>
-            <a className="w-1/2 my-[4vw] sm:my-5 text-[3.5vw] sm:text-base">
+          <Link
+            href={{ hash: "faq" }}
+            className="w-1/2 my-[4vw] sm:my-5 text-[3.5vw] sm:text-base">
+            
               よくあるご質問
-            </a>
+            
           </Link>
-          <Link href={{ hash: "news" }}>
-            <a className="w-1/2 my-[4vw] sm:my-5 text-[3.5vw] sm:text-base">
+          <Link
+            href={{ hash: "news" }}
+            className="w-1/2 my-[4vw] sm:my-5 text-[3.5vw] sm:text-base">
+            
               お知らせ
-            </a>
+            
           </Link>
         </div>
         <div className="flex flex-wrap text-xs pt-10">
-          <Link href={{ pathname: "/company" }}>
-            <a className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-sm">
+          <Link
+            href={{ pathname: "/company" }}
+            className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-sm">
+            
               運営会社
-            </a>
+            
           </Link>
-          <Link href={{ pathname: "/laws" }}>
-            <a className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-sm">
+          <Link
+            href={{ pathname: "/laws" }}
+            className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-sm">
+            
               特定商取引法に基づく表示
-            </a>
+            
           </Link>
-          <Link href={{ pathname: "/term" }}>
-            <a className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-sm">
+          <Link
+            href={{ pathname: "/term" }}
+            className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-sm">
+            
               利用規約
-            </a>
+            
           </Link>
-          <Link href={{ pathname: "/privacy" }}>
-            <a className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-sm">
+          <Link
+            href={{ pathname: "/privacy" }}
+            className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-sm">
+            
               プライバシーポリシー
-            </a>
+            
           </Link>
           <a
             href={`${process.env.NEXT_PUBLIC_HOST_URL}/inquiry`}

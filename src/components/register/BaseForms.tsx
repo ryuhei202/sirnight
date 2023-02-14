@@ -299,8 +299,8 @@ export const BaseForms = ({ onSubmit }: TProps) => {
             ログイン情報の入力へ
           </button>
           <div className="text-center text-xs mt-6 pb-24">
-            <Link href="/">
-              <a className="border-b-[1px] border-themeGray">サイトに戻る</a>
+            <Link href="/" className="border-b-[1px] border-themeGray">
+              サイトに戻る
             </Link>
           </div>
         </div>

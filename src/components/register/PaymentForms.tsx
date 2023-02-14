@@ -266,12 +266,12 @@ export const PaymentForms = ({
             />
             <label htmlFor="isAgree">
               <span className="text-sm ml-2">
-                <Link href="/term">
-                  <a target="_blank">
-                    <span className="border-b-[1px] border-themeGray">
-                      利用規約
-                    </span>
-                  </a>
+                <Link href="/term" target="_blank">
+
+                  <span className="border-b-[1px] border-themeGray">
+                    利用規約
+                  </span>
+
                 </Link>
                 に同意する
               </span>

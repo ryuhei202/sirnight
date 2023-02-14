@@ -9,23 +9,27 @@
     font-weight: bold;
     font-size: 1.3rem;
     line-height: 2.2rem;
-    padding-bottom: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
   }
   .newsContent h2 {
     font-size: 1.2rem;
     font-weight: bold;
     line-height: 2rem;
-    padding-bottom: 1.7rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
   }
   .newsContent h3 {
     font-size: 1.1rem;
     font-weight: bold;
     line-height: 1.6rem;
-    padding-bottom: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
   }
   .newsContent h4 {
     font-size: 1rem;
-    padding: 1rem 0;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
   }
   .newsContent div {
     font-size: 0.8rem;
@@ -37,6 +41,25 @@
   }
   .newsContent img {
     width: 100%;
+  }
+  .newsContent > ul {
+    list-style: inside;
+  }
+  .newsContent > ol {
+    padding-left: 1rem;
+  }
+  .newsContent > ol > li {
+    list-style: decima;
+  }
+  .newsContent > ol > li > ol {
+    padding-left: 1rem;
+  }
+  .newsContent > ol > li > ol > li {
+    list-style: lower-alpha;
+  }
+  .newsContent a {
+    border-bottom-width: 1px;
+    border-color: black;
   }
 }
 

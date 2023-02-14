@@ -6,13 +6,18 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: "400px",
+      },
       fontFamily: {
         lora: ["Lora"],
       },
       colors: {
         themeGray: "#475156",
+        gray: "#979B9A",
         clay: "#e8e7df",
         beige: "#E8E7DF",
+        red: "#cb5f58",
       },
       animation: {
         fadeIn: "fadeIn 0.7s ease-in-out forwards",
