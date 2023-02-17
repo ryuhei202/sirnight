@@ -28,7 +28,7 @@ export const About = ({ aboutData }: TProps) => {
             {aboutData.contents.map((data, index) => (
               <Link href={`/about/${data.id}`} key={data.id} legacyBehavior>
                 <div
-                  className={`bg-clay flex-none w-[80%] snap-always snap-center py-16 px-12 rounded-md  ${getMarginOfList(
+                  className={`bg-clay flex-none w-[80%] snap-always snap-center py-16 px-12 mb-2 rounded-md shadow-md shadow-gray active:brightness-125 ${getMarginOfList(
                     { index }
                   )}`}
                 >
@@ -45,7 +45,7 @@ export const About = ({ aboutData }: TProps) => {
                     <img
                       src="/images/about/arrow.svg"
                       alt="arrow-icon"
-                      width="10%"
+                      width="15%"
                       className="mt-4 ml-auto"
                     />
                   </li>
