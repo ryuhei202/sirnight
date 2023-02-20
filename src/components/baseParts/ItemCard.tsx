@@ -36,7 +36,7 @@ export const ItemCard = ({
                   index === 0 ? "-bottom-3" : ""
                 } bg-themeGray w-fit font-medium text-[4vw] sm:text-lg p-2`}
               >
-                <span className="text-gray-100">{title}</span>
+                <span className="text-slate-50">{title}</span>
               </p>
             ))}
           </div>
