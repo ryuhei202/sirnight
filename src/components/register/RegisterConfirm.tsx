@@ -2,13 +2,13 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useMembersCreate } from "../../api/members/useMembersCreate";
 import { setUserId, trackConversion } from "../../lib/gtag";
-import { findPlanById } from "../../models/plan/Plan";
+import { findPlanById, isTPlan } from "../../models/plan/Plan";
 import { TDiscount } from "../../models/register/TDiscount";
 import { TAX } from "../../models/shared/Tax";
 
 type TProps = {
   readonly memberId: number;
-  readonly planId: number;
+  readonly planId?: number;
   readonly firstName: string;
   readonly lastName: string;
   readonly firstNameKana: string;
@@ -101,7 +101,9 @@ export const RegisterConfirm = ({
         <div className="pt-3">
           <div>
             <p className="text-xs">料金プラン</p>
-            <p className="pl-3 font-bold">{`${plan.jpName}プラン`}</p>
+            <p className="pl-3 font-bold">{`${plan.jpName}${
+              isTPlan(plan) ? "プラン" : ""
+            }`}</p>
           </div>
           <div className="pt-2">
             <p className="text-xs">月額料金</p>
