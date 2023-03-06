@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useMembersCreate } from "../../api/members/useMembersCreate";
 import { setUserId, trackConversion } from "../../lib/gtag";
-import { findPlanById, isTPlan } from "../../models/plan/Plan";
+import { findPlanById, isTPlan, ONE_SHOT } from "../../models/plan/Plan";
 import { TDiscount } from "../../models/register/TDiscount";
 import { TAX } from "../../models/shared/Tax";
 
@@ -50,7 +50,7 @@ export const RegisterConfirm = ({
     window.scrollTo(0, 0);
   }, [error]);
 
-  const plan = findPlanById(planId);
+  const plan = planId === undefined ? ONE_SHOT : findPlanById(planId);
   const convertDateToStr = (): string => {
     const year = birthDay.getFullYear();
     const month = ("00" + birthDay.getMonth()).slice(-2);
@@ -74,7 +74,9 @@ export const RegisterConfirm = ({
     };
     mutate(params, {
       onSuccess: () => {
-        trackConversion(findPlanById(planId).jpName).then(() =>
+        const conversionName =
+          planId === undefined ? ONE_SHOT.jpName : findPlanById(planId).jpName;
+        trackConversion(conversionName).then(() =>
           setUserId(memberId).then(() =>
             router.push({
               pathname: "/register/thanks",

@@ -94,10 +94,7 @@ export const isTPlan = (value: TPlan | TOneShot): value is TPlan => {
   return value.id !== undefined;
 };
 
-export const findPlanById = (planId?: number): TPlan | TOneShot => {
-  if (planId === ONE_SHOT.id) {
-    return ONE_SHOT;
-  }
+export const findPlanById = (planId: number): TPlan => {
   if (planId === LIGHT_PLAN.id) {
     return LIGHT_PLAN;
   }
