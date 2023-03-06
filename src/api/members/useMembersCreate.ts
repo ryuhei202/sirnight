@@ -14,7 +14,7 @@ type TMemberCreate = {
 
 export type TMembersCreateParams = {
   readonly memberId: number;
-  readonly planId: number;
+  readonly planId?: number;
   readonly firstName: string;
   readonly lastName: string;
   readonly firstNameKana: string;
