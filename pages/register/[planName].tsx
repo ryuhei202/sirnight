@@ -9,6 +9,7 @@ import { getRegisterHandler } from "../../src/hooks/register/getRegisterHandler"
 import {
   findPlanByName,
   LIGHT_PLAN,
+  ONE_SHOT,
   PREMIUM_PLAN,
   STANDARD_PLAN,
 } from "../../src/models/plan/Plan";
@@ -22,6 +23,7 @@ export const getStaticPaths = async () => {
       { params: { planName: LIGHT_PLAN.enName } },
       { params: { planName: STANDARD_PLAN.enName } },
       { params: { planName: PREMIUM_PLAN.enName } },
+      { params: { planName: ONE_SHOT.enName } },
     ],
     fallback: false,
   };
@@ -30,13 +32,14 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async ({
   params,
 }: {
-  params: { planName: "light" | "standard" | "premium" };
+  params: { planName: "light" | "standard" | "premium" | "one_shot" };
 }) => {
-  const planId = findPlanByName(params.planName).id;
+  const planId =
+    params.planName === "one_shot" ? null : findPlanByName(params.planName).id;
   return { props: { planId } };
 };
 
-const Register = ({ planId }: { planId: 11 | 12 | 13 }) => {
+const Register = ({ planId }: { planId: 11 | 12 | 13 | null }) => {
   const [step, setStep] = useState<"base" | "login" | "payment" | "confirm">(
     "base"
   );
@@ -75,7 +78,7 @@ const Register = ({ planId }: { planId: 11 | 12 | 13 }) => {
       forms = (
         <PaymentForms
           memberId={loginData.memberId}
-          planId={planId}
+          planId={planId ?? undefined}
           onSubmit={handleSubmitPayment}
           onBack={handleBack}
         />
@@ -90,7 +93,7 @@ const Register = ({ planId }: { planId: 11 | 12 | 13 }) => {
       forms = (
         <RegisterConfirm
           memberId={loginData.memberId}
-          planId={planId}
+          planId={planId ?? undefined}
           firstName={baseData.firstName}
           lastName={baseData.lastName}
           firstNameKana={baseData.firstNameKana}
