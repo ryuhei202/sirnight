@@ -106,7 +106,7 @@ export const RegisterConfirm = ({
           <div className="pt-2">
             <p className="text-xs">月額料金</p>
             <p className="pl-3 font-bold">
-              税込¥{plan.price.withoutTax.toLocaleString()}(¥
+              ¥{plan.price.withoutTax.toLocaleString()}(税込¥
               {plan.price.withTax.toLocaleString()})
             </p>
           </div>
