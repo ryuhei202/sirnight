@@ -10,7 +10,7 @@ import { Stepper } from "./Stepper";
 
 type TProps = {
   memberId: number;
-  planId: number;
+  planId?: number;
   onSubmit: ({
     customerCardId,
     serialCode,
@@ -267,11 +267,9 @@ export const PaymentForms = ({
             <label htmlFor="isAgree">
               <span className="text-sm ml-2">
                 <Link href="/term" target="_blank">
-
                   <span className="border-b-[1px] border-themeGray">
                     利用規約
                   </span>
-
                 </Link>
                 に同意する
               </span>

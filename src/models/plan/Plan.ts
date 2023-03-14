@@ -74,10 +74,25 @@ export const PREMIUM_PLAN = {
   point: 2000,
 } as const;
 
+export const ONE_SHOT = {
+  id: undefined,
+  jpName: "単発利用",
+  enName: "one_shot",
+  price: {
+    withTax: 4980 + 4980 * TAX,
+    withoutTax: 4980,
+  },
+} as const;
+export type TOneShot = typeof ONE_SHOT;
+
 export type TPlan =
   | typeof LIGHT_PLAN
   | typeof STANDARD_PLAN
   | typeof PREMIUM_PLAN;
+
+export const isTPlan = (value: TPlan | TOneShot): value is TPlan => {
+  return value.id !== undefined;
+};
 
 export const findPlanById = (planId: number): TPlan => {
   if (planId === LIGHT_PLAN.id) {
