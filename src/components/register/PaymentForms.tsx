@@ -278,8 +278,8 @@ export const PaymentForms = ({
           <button
             onClick={onClick}
             disabled={!canRegistered || isLoading}
-            className={`relative inline-block p-3 text-center w-full font-medium text-base mt-12 rounded-full bg-themeGray text-slate-200 ${
-              (!canRegistered || isLoading) && "bg-[#c8c9c3]"
+            className={`relative inline-block p-3 text-center w-full font-medium text-base mt-12 rounded-full text-slate-200 ${
+              !canRegistered || isLoading ? "bg-[#c8c9c3]" : "bg-themeGray"
             }`}
           >
             確認画面へ
