@@ -183,7 +183,7 @@ export const RegisterConfirm = ({
           onClick={handleSubmit}
           disabled={isLoading}
           className={`relative inline-block p-3 text-center w-full font-medium text-base mt-12 rounded-full bg-themeGray text-slate-200 ${
-            isLoading && "bg-[#C8C9C3]"
+            isLoading && "bg-[#c8c9c3]"
           }`}
         >
           会員登録をする
