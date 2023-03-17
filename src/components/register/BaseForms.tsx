@@ -292,8 +292,8 @@ export const BaseForms = ({ onSubmit }: TProps) => {
           <button
             onClick={handleSubmit}
             disabled={!canRegistered || isLoading}
-            className={`relative inline-block p-3 text-center w-full font-medium text-base mt-12 rounded-full bg-themeGray text-slate-200 ${
-              (!canRegistered || isLoading) && "bg-[#C8C9C3]"
+            className={`relative inline-block p-3 text-center w-full font-medium text-base mt-12 rounded-full text-slate-200 ${
+              !canRegistered || isLoading ? "bg-[#c8c9c3]" : "bg-themeGray"
             }`}
           >
             ログイン情報の入力へ
