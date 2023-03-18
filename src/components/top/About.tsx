@@ -26,7 +26,7 @@ export const About = ({ aboutData }: TProps) => {
         <div className="mt-12">
           <ul className="flex overflow-x-scroll snap-x snap-mandatory hidden-scrollbar">
             {aboutData.contents.map((data, index) => (
-              <Link href={`/about/${data.id}`} key={data.id} legacyBehavior>
+              <Link href={`/about/${data.id}`} key={data.id}>
                 <div
                   className={`bg-clay flex-none w-[80%] snap-always snap-center py-16 px-12 mb-2 rounded-md shadow-md shadow-gray active:brightness-125 ${getMarginOfList(
                     { index }

@@ -61,7 +61,7 @@ const AboutContent: NextPage<TProps> = ({ article, aboutData }: TProps) => {
           </h3>
           <div className="flex w-full">
             {aboutData.contents.map((data) => (
-              <Link href={`/about/${data.id}`} key={data.id} legacyBehavior>
+              <Link href={`/about/${data.id}`} key={data.id}>
                 <div className="w-[50%] p-4 border-x-[1px] border-[#D8D8D2]">
                   <img
                     src={data.image.url}
