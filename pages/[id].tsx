@@ -31,11 +31,11 @@ const CompanyContent: NextPage<TCompanyContent> = (
   article: TCompanyContent
 ) => {
   return (
-    <div className="w-100vw">
+    <div>
       <NextSeo title={article.title} />
       <div
         id="container"
-        className="h-full min-h-screen inset-0 text-themeGray w-full"
+        className="h-full min-h-screen inset-0 text-themeGray"
       >
         <Header lists={[{ name: article.title }]} />
         <Layout title={article.title}>
