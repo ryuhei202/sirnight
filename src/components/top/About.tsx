@@ -26,30 +26,30 @@ export const About = ({ aboutData }: TProps) => {
         <div className="mt-12">
           <ul className="flex overflow-x-scroll snap-x snap-mandatory hidden-scrollbar">
             {aboutData.contents.map((data, index) => (
-              <Link href={`/about/${data.id}`} key={data.id}>
-                <div
-                  className={`bg-clay flex-none w-[80%] snap-always snap-center py-16 px-12 mb-2 rounded-md shadow-md shadow-gray active:brightness-125 ${getMarginOfList(
-                    { index }
-                  )}`}
-                >
-                  <li className="flex flex-col justify-between h-full">
-                    <p>{data.title}</p>
-                    <img
-                      src={data.image.url}
-                      alt={data.title}
-                      className="w-[220px] h-[220px] my-8 object-cover mx-auto rounded-md"
-                    />
-                    <p className="text-left text-[3vw] sm:text-sm">
-                      {getOmittedDescription({ desc: data.description })}
-                    </p>
-                    <img
-                      src="/images/about/arrow.svg"
-                      alt="arrow-icon"
-                      width="15%"
-                      className="mt-4 ml-auto"
-                    />
-                  </li>
-                </div>
+              <Link
+                href={`/about/${data.id}`}
+                key={data.id}
+                className={`bg-clay flex-none w-[80%] snap-always snap-center py-16 px-12 mb-2 rounded-md shadow-md shadow-gray active:brightness-125  ${getMarginOfList(
+                  { index }
+                )}`}
+              >
+                <li className="flex flex-col justify-between h-full">
+                  <p>{data.title}</p>
+                  <img
+                    src={data.image.url}
+                    alt={data.title}
+                    className="w-[220px] h-[220px] my-8 object-cover mx-auto rounded-md"
+                  />
+                  <p className="text-left text-[3vw] sm:text-sm">
+                    {getOmittedDescription({ desc: data.description })}
+                  </p>
+                  <img
+                    src="/images/about/arrow.svg"
+                    alt="arrow-icon"
+                    width="15%"
+                    className="mt-4 ml-auto"
+                  />
+                </li>
               </Link>
             ))}
           </ul>
