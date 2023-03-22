@@ -24,3 +24,16 @@ export type TNewsContent = {
   publishedAt: string;
   revisedAt: string;
 };
+
+export type TCompany = {
+  contents: TCompanyContent[];
+  totalCount: number;
+  offset: number;
+  limit: number;
+};
+
+export type TCompanyContent = {
+  id: string;
+  title: string;
+  content: string;
+};
