@@ -38,7 +38,8 @@ export type TCompanyContent = {
   content: string;
 };
 
-// /companyのAPIに存在するpathをアプリケーション側で管理するための定数
+// /companyのAPIに存在するpathをアプリケーション側で管理するための定数。
+// pathを追加したい場合はここに追加してください。
 export const COMPANY_PATHS = {
   TERM: "/term",
   COMPANY: "/company",
