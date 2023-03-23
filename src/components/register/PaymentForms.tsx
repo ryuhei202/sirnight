@@ -5,6 +5,7 @@ import { TValidationPaymentResponse } from "../../api/validations/TValidationPay
 import { useValidationsPayment } from "../../api/validations/useValidationsPayment";
 import { convertHalfWidthNumber } from "../../lib/convertHalfWidthNumber";
 import { analyzeEvent } from "../../lib/gtag";
+import { COMPANY_PATHS } from "../../lib/microCMS/uwearClient";
 import { TPaymentRegisterData } from "../../models/register/TPaymentRegisterData";
 import { Stepper } from "./Stepper";
 
@@ -266,7 +267,7 @@ export const PaymentForms = ({
             />
             <label htmlFor="isAgree">
               <span className="text-sm ml-2">
-                <Link href="/term" target="_blank">
+                <Link href={COMPANY_PATHS.TERM} target="_blank">
                   <span className="border-b-[1px] border-themeGray">
                     利用規約
                   </span>
