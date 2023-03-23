@@ -12,9 +12,7 @@ import {
 } from "../src/lib/microCMS/uwearClient";
 
 export const getStaticPaths = async () => {
-  const paths = Object.values(COMPANY_PATHS).map(
-    (path: TCompanyPaths) => `${path}`
-  );
+  const paths = Object.values(COMPANY_PATHS).map((path: TCompanyPaths) => path);
   return { paths, fallback: "blocking" };
 };
 
