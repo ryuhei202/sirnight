@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { COMPANY_PATHS } from "../../lib/microCMS/uwearClient";
 import { TFooterState } from "./FooterMenu";
 
 type TProps = {
@@ -92,28 +93,28 @@ export const Menu = ({ onClick, footerState }: TProps) => {
       </div>
       <div className="flex flex-wrap text-xs py-[5vw] sm:py-5 border-b-2 border-[#D8D8D2] border-solid">
         <Link
-          href="/company"
+          href={COMPANY_PATHS.COMPANY}
           onClick={onClick}
           className="w-1/3 my-[3vw] sm:my-5 text-[3vw] sm:text-sm"
         >
           運営会社
         </Link>
         <Link
-          href="/laws"
+          href={COMPANY_PATHS.LAWS}
           onClick={onClick}
           className="w-2/3 my-[3vw] sm:my-5 text-[3vw] sm:text-sm"
         >
           特定商取引法に基づく表示
         </Link>
         <Link
-          href="/term"
+          href={COMPANY_PATHS.TERM}
           onClick={onClick}
           className="w-1/3 my-[3vw] sm:my-5 text-[3vw] sm:text-sm"
         >
           利用規約
         </Link>
         <Link
-          href="/privacy"
+          href={COMPANY_PATHS.PRIVACY}
           onClick={onClick}
           className="w-2/3 my-[3vw] sm:my-5 text-[3vw] sm:text-sm"
         >

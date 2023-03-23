@@ -37,3 +37,13 @@ export type TCompanyContent = {
   title: string;
   content: string;
 };
+
+// /companyのAPIに存在するpathをアプリケーション側で管理するための定数
+export const COMPANY_PATHS = {
+  TERM: "/term",
+  COMPANY: "/company",
+  PRIVACY: "/privacy",
+  LAWS: "/laws",
+} as const;
+
+export type TCompanyPaths = typeof COMPANY_PATHS[keyof typeof COMPANY_PATHS];

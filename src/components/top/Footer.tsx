@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { COMPANY_PATHS } from "../../lib/microCMS/uwearClient";
 
 export const Footer = () => {
   return (
@@ -48,82 +49,71 @@ export const Footer = () => {
         <div className="flex flex-wrap font-medium py-10 border-b-2 border-[#676F72]">
           <Link
             href={{ hash: "about" }}
-            className="w-1/2 my-[4vw] sm:my-5 text-[3.5vw] sm:text-base">
-            
-              UWearとは
-            
+            className="w-1/2 my-[4vw] sm:my-5 text-[3.5vw] sm:text-base"
+          >
+            UWearとは
           </Link>
           <Link
             href={{ hash: "service-value" }}
-            className="w-1/2 my-[4vw] sm:my-5 text-[3.5vw] sm:text-base">
-            
-              UWearで出来ること
-            
+            className="w-1/2 my-[4vw] sm:my-5 text-[3.5vw] sm:text-base"
+          >
+            UWearで出来ること
           </Link>
           <Link
             href={{ hash: "flow" }}
-            className="w-1/2 my-[4vw] sm:my-5 text-[3.5vw] sm:text-base">
-            
-              コーデの提供方法
-            
+            className="w-1/2 my-[4vw] sm:my-5 text-[3.5vw] sm:text-base"
+          >
+            コーデの提供方法
           </Link>
           <Link
             href={{ hash: "coordinates" }}
-            className="w-1/2 my-[4vw] sm:my-5 text-[3.5vw] sm:text-base">
-            
-              コーデ例
-            
+            className="w-1/2 my-[4vw] sm:my-5 text-[3.5vw] sm:text-base"
+          >
+            コーデ例
           </Link>
           <Link
             href={{ hash: "how-to-start" }}
-            className="w-1/2 my-[4vw] sm:my-5 text-[3.5vw] sm:text-base">
-            
-              UWearのはじめ方
-            
+            className="w-1/2 my-[4vw] sm:my-5 text-[3.5vw] sm:text-base"
+          >
+            UWearのはじめ方
           </Link>
           <Link
             href={{ hash: "faq" }}
-            className="w-1/2 my-[4vw] sm:my-5 text-[3.5vw] sm:text-base">
-            
-              よくあるご質問
-            
+            className="w-1/2 my-[4vw] sm:my-5 text-[3.5vw] sm:text-base"
+          >
+            よくあるご質問
           </Link>
           <Link
             href={{ hash: "news" }}
-            className="w-1/2 my-[4vw] sm:my-5 text-[3.5vw] sm:text-base">
-            
-              お知らせ
-            
+            className="w-1/2 my-[4vw] sm:my-5 text-[3.5vw] sm:text-base"
+          >
+            お知らせ
           </Link>
         </div>
         <div className="flex flex-wrap text-xs pt-10">
           <Link
-            href={{ pathname: "/company" }}
-            className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-sm">
-            
-              運営会社
-            
+            href={{ pathname: COMPANY_PATHS.COMPANY }}
+            className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-sm"
+          >
+            運営会社
           </Link>
           <Link
-            href={{ pathname: "/laws" }}
-            className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-sm">
-            
-              特定商取引法に基づく表示
-            
+            href={{ pathname: COMPANY_PATHS.LAWS }}
+            className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-sm"
+          >
+            特定商取引法に基づく表示
           </Link>
           <Link
-            href={{ pathname: "/term" }}
-            className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-sm">
-            
-              利用規約
-            
+            href={{ pathname: COMPANY_PATHS.TERM }}
+            className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-sm"
+          >
+            利用規約
           </Link>
           <Link
-            href={{ pathname: "/privacy" }}
-            className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-sm">
-            
-              プライバシーポリシー
-            
+            href={{ pathname: COMPANY_PATHS.PRIVACY }}
+            className="w-1/2 my-[4vw] sm:my-5 text-[2.5vw] sm:text-sm"
+          >
+            プライバシーポリシー
           </Link>
           <a
             href={`${process.env.NEXT_PUBLIC_HOST_URL}/inquiry`}

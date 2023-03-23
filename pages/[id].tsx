@@ -5,17 +5,15 @@ import { NewsContent } from "../src/components/news/NewsContent";
 import { Header } from "../src/components/plan/Header";
 import { FooterMenu } from "../src/components/top/FooterMenu";
 import {
-  TCompany,
+  COMPANY_PATHS,
   TCompanyContent,
+  TCompanyPaths,
   uwearClient,
 } from "../src/lib/microCMS/uwearClient";
 
 export const getStaticPaths = async () => {
-  const articlesData = await uwearClient.get<TCompany>({
-    endpoint: "company",
-  });
-  const paths = articlesData.contents.map(
-    (data: TCompanyContent) => `/${data.id}`
+  const paths = Object.values(COMPANY_PATHS).map(
+    (path: TCompanyPaths) => `${path}`
   );
   return { paths, fallback: "blocking" };
 };
