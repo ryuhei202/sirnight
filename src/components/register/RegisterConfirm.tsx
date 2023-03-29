@@ -49,14 +49,7 @@ export const RegisterConfirm = ({
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [error]);
-
   const plan = planId === undefined ? ONE_SHOT : findPlanById(planId);
-  const convertDateToStr = (): string => {
-    const year = birthDay.getFullYear();
-    const month = ("00" + birthDay.getMonth()).slice(-2);
-    const date = ("00" + birthDay.getDate()).slice(-2);
-    return `${year}/${month}/${date}`;
-  };
   const handleSubmit = () => {
     const params = {
       memberId,
@@ -65,7 +58,7 @@ export const RegisterConfirm = ({
       lastName,
       firstNameKana,
       lastNameKana,
-      birthDay,
+      birthDay: birthDay.toLocaleDateString(),
       height,
       weight,
       prefecture,
@@ -140,7 +133,7 @@ export const RegisterConfirm = ({
           </div>
           <div className="pt-2">
             <p className="text-xs">生年月日</p>
-            <p className="pl-3 font-bold">{convertDateToStr()}</p>
+            <p className="pl-3 font-bold">{birthDay.toLocaleDateString()}</p>
           </div>
           <div className="pt-2">
             <p className="text-xs">身長</p>
