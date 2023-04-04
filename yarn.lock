@@ -674,10 +674,10 @@ axe-core@^4.4.2:
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.4.3.tgz#11c74d23d5013c0fa5d183796729bc3482bd2f6f"
   integrity sha512-32+ub6kkdhhWick/UjvEwRchgoetXqTK14INLqbGm5U2TzBkBNF3nQtLYm8ovxSkQWArjEQvftCKryjZaATu3w==
 
-axios-case-converter@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/axios-case-converter/-/axios-case-converter-1.0.1.tgz#e9c6fee32b37bad84051e080feb9711593a60a0c"
-  integrity sha512-Mk6JK13OwYd0pmWHtF2Kn3awIObRGvxdCjZwMOElrBk1DoyOjVHLdSthD6eSbNwPzxnhV4W2Fa7283iozqD1wQ==
+axios-case-converter@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/axios-case-converter/-/axios-case-converter-1.1.0.tgz#7306943cf5608769794c6072b89eacb1e289f178"
+  integrity sha512-XmeffqomjVRhYRXQdw7FaeJhFUvsqt0oXMzfPDaZE1ibBkZ8zeAdgMYBGYlMegXUjpzg48pKZ+SLkz6RH2yYkA==
   dependencies:
     camel-case "^4.1.1"
     header-case "^2.0.3"
