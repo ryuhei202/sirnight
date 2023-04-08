@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useMembersCreate } from "../../api/members/useMembersCreate";
 import { setUserId, trackConversion } from "../../lib/gtag";
-import { findPlanById, isTPlan, ONE_SHOT } from "../../models/plan/Plan";
+import { ONE_SHOT, findPlanById, isTPlan } from "../../models/plan/Plan";
 import { TDiscount } from "../../models/register/TDiscount";
 import { TAX } from "../../models/shared/Tax";
 
@@ -102,10 +102,24 @@ export const RegisterConfirm = ({
           </div>
           <div className="pt-2">
             <p className="text-xs">月額料金</p>
-            <p className="pl-3 font-bold">
-              ¥{plan.price.withoutTax.toLocaleString()}(税込¥
-              {plan.price.withTax.toLocaleString()})
-            </p>
+            {isTPlan(plan) ? (
+              <p className="pl-3 font-bold">
+                ¥{plan.price.withoutTax.toLocaleString()}(税込¥
+                {plan.price.withTax.toLocaleString()})
+              </p>
+            ) : (
+              <div className="flex justify-around">
+                <p className="pl-3 font-bold line-through">
+                  ¥{plan.price.withoutTax.toLocaleString()}(税込¥
+                  {plan.price.withTax.toLocaleString()})
+                </p>
+                <span className="font-bold">→</span>
+                <p className="pl-3 font-bold line-through">
+                  ¥{plan.discountedPrice.withoutTax.toLocaleString()}(税込¥
+                  {plan.discountedPrice.withTax.toLocaleString()})
+                </p>
+              </div>
+            )}
           </div>
           {discount && (
             <>
