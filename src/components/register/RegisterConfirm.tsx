@@ -114,7 +114,7 @@ export const RegisterConfirm = ({
                   {plan.price.withTax.toLocaleString()})
                 </p>
                 <span className="font-bold">→</span>
-                <p className="pl-3 font-bold line-through">
+                <p className="pl-3 font-bold">
                   ¥{plan.discountedPrice.withoutTax.toLocaleString()}(税込¥
                   {plan.discountedPrice.withTax.toLocaleString()})
                 </p>
