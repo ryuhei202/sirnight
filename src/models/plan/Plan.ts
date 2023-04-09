@@ -79,12 +79,12 @@ export const ONE_SHOT = {
   jpName: "単発利用",
   enName: "one_shot",
   price: {
-    withTax: 5000 + 5000 * TAX,
-    withoutTax: 5000,
+    withTax: 4980 + 4980 * TAX,
+    withoutTax: 4980,
   },
   discountedPrice: {
-    withTax: 3000 + 3000 * TAX,
-    withoutTax: 3000,
+    withTax: 2980 + 2980 * TAX,
+    withoutTax: 2980,
   },
 } as const;
 export type TOneShot = typeof ONE_SHOT;
