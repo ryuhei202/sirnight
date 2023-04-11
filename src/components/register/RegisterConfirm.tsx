@@ -173,6 +173,7 @@ export const RegisterConfirm = ({
       </div>
       <div>
         <button
+          id={`register-${plan.enName}`}
           onClick={handleSubmit}
           disabled={isLoading}
           className={`relative inline-block p-3 text-center w-full font-medium text-base mt-12 rounded-full text-slate-200 ${
