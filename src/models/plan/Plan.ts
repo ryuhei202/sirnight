@@ -82,6 +82,10 @@ export const ONE_SHOT = {
     withTax: 4980 + 4980 * TAX,
     withoutTax: 4980,
   },
+  discountedPrice: {
+    withTax: 2980 + 2980 * TAX,
+    withoutTax: 2980,
+  },
 } as const;
 export type TOneShot = typeof ONE_SHOT;
 
