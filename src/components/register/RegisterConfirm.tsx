@@ -130,8 +130,8 @@ export const RegisterConfirm = ({
               <div className="pt-2">
                 <p className="text-xs">割引価格</p>
                 <p className="pl-3 font-bold">
-                  税込¥{discount.discountPrice.toLocaleString()}(¥
-                  {Math.floor(
+                  ¥{discount.discountPrice.toLocaleString()}(税込¥
+                  {Math.ceil(
                     discount.discountPrice * (1 + TAX)
                   ).toLocaleString()}
                   )
