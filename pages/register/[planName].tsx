@@ -1,17 +1,17 @@
 import { NextSeo } from "next-seo";
 import Head from "next/head";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BaseForms } from "../../src/components/register/BaseForms";
 import { LoginForms } from "../../src/components/register/LoginForms";
 import { PaymentForms } from "../../src/components/register/PaymentForms";
 import { RegisterConfirm } from "../../src/components/register/RegisterConfirm";
 import { getRegisterHandler } from "../../src/hooks/register/getRegisterHandler";
 import {
-  findPlanByName,
   LIGHT_PLAN,
   ONE_SHOT,
   PREMIUM_PLAN,
   STANDARD_PLAN,
+  findPlanByName,
 } from "../../src/models/plan/Plan";
 import { TBaseRegisterData } from "../../src/models/register/TBaseRegisterData";
 import { TLoginRegisterData } from "../../src/models/register/TLoginRegisterData";
@@ -46,6 +46,11 @@ const Register = ({ planId }: { planId: 11 | 12 | 13 | null }) => {
   const [baseData, setBaseData] = useState<TBaseRegisterData>();
   const [loginData, setLoginData] = useState<TLoginRegisterData>();
   const [paymentData, setPaymentData] = useState<TPaymentRegisterData>();
+
+  useEffect(() => {
+    if (loginData === undefined) return;
+    gtag("set", { user_id: loginData.memberId });
+  }, [loginData]);
 
   const {
     handleSubmitBase,
