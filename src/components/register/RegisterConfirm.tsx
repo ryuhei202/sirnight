@@ -58,7 +58,7 @@ export const RegisterConfirm = ({
       lastName,
       firstNameKana,
       lastNameKana,
-      birthDay: birthDay.toLocaleDateString(),
+      birthDay: birthDay.toLocaleDateString("ja-JP"),
       height,
       weight,
       prefecture,
