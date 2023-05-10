@@ -1,8 +1,6 @@
 import { NextPage } from "next";
 import { NextSeo } from "next-seo";
-import Head from "next/head";
 import { useRouter } from "next/router";
-import Script from "next/script";
 import { useEffect, useState } from "react";
 import { LinkButton } from "../../src/components/baseParts/LinkButton";
 
@@ -22,15 +20,6 @@ const Thanks: NextPage = () => {
   return (
     <div>
       <NextSeo title="会員登録完了" />
-      <Head>
-        {/* もしもアフィリエイトコンバージョンタグ */}
-        {memberId && (
-          <Script
-            src={`https://r.moshimo.com/af/r/result.js?p_id=1063&pc_id=1537&m_v=${memberId}`}
-            id="msmaf"
-          ></Script>
-        )}
-      </Head>
       <div
         id="container"
         className="h-full min-h-screen inset-0 text-themeGray"
@@ -65,6 +54,23 @@ const Thanks: NextPage = () => {
           height="1"
           alt=""
         ></img>
+      )}
+      {/* もしもアフィリエイトコンバージョンタグ */}
+      {memberId && (
+        <>
+          <script
+            src={`https://r.moshimo.com/af/r/result.js?p_id=1063&pc_id=1537&m_v=${memberId}`}
+            id="msmaf"
+          ></script>
+          <noscript>
+            <img
+              src={`https://r.moshimo.com/af/r/result?p_id=1063&pc_id=1537&m_v=${memberId}`}
+              width="1"
+              height="1"
+              alt=""
+            />
+          </noscript>
+        </>
       )}
     </div>
   );
