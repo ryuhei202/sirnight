@@ -1,5 +1,4 @@
 import NextDocument, { Head, Html, Main, NextScript } from "next/document";
-import Script from "next/script";
 import { GOOGLE_TAG_MANAGER_ID } from "../src/lib/gtm";
 type Props = {};
 
@@ -9,8 +8,6 @@ class Document extends NextDocument<Props> {
       <Html lang="ja">
         <Head>
           <link rel="icon" href="/favicon/favicon_head.png" />
-          {/* もしもアフィリエイトトラッキングタグ */}
-          <Script src="https://r.moshimo.com/af/r/maftag.js" />
         </Head>
         <body>
           <noscript
@@ -26,6 +23,8 @@ class Document extends NextDocument<Props> {
           />
           <Main />
           <NextScript />
+          {/* もしもアフィリエイトトラッキングタグ */}
+          <script src="https://r.moshimo.com/af/r/maftag.js"></script>
         </body>
       </Html>
     );
