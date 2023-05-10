@@ -133,7 +133,7 @@ export const PlanDetail = ({ plan, disabled }: TProps) => {
           <p className="my-4">
             ・洋服は全て
             <span className="font-lora text-[7vw] sm:text-2xl mr-[1vw] sm:mr-1 ml-1">
-              25
+              30
             </span>
             ％OFFで購入可能
           </p>
