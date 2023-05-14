@@ -1,5 +1,6 @@
 import { DefaultSeo } from "next-seo";
 import type { AppProps } from "next/app";
+import { useRouter } from "next/router";
 import Script from "next/script";
 import { QueryClient, QueryClientProvider } from "react-query";
 import "tailwindcss/tailwind.css";
@@ -9,6 +10,11 @@ import { GOOGLE_TAG_MANAGER_ID } from "../src/lib/gtm";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const { rd_code } = useRouter().query;
+  if (rd_code && sessionStorage.getItem("rd_code") === null) {
+    sessionStorage.setItem("rd_code", rd_code as string);
+  }
+
   const queryClient = new QueryClient({
     defaultOptions: {
       queries: {
