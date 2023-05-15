@@ -72,6 +72,14 @@ const Thanks: NextPage = () => {
           </noscript>
         </>
       )}
+      {memberId && sessionStorage.getItem("rd_code") && (
+        <script
+          src={`https://r.moshimo.com/af/r/result.js?p_id=1063&pc_id=1537&m_v=${memberId}&rd_code=${sessionStorage.getItem(
+            "rd_code"
+          )}`}
+          id="msmaf"
+        ></script>
+      )}
     </div>
   );
 };
