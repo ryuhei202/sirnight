@@ -7,6 +7,7 @@ import { LinkButton } from "../../src/components/baseParts/LinkButton";
 const Thanks: NextPage = () => {
   const [memberId, setMemberId] = useState<number>();
   const { memberId: memberIdQuery } = useRouter().query;
+  const rdCode = sessionStorage.getItem("rd_code");
 
   // ユーザーIDをクエリパラメータから取得
   useEffect(() => {
@@ -72,13 +73,13 @@ const Thanks: NextPage = () => {
           </noscript>
         </>
       )}
-      {memberId && sessionStorage.getItem("rd_code") && (
-        <script
-          src={`https://r.moshimo.com/af/r/result.js?p_id=1063&pc_id=1537&m_v=${memberId}&rd_code=${sessionStorage.getItem(
-            "rd_code"
-          )}`}
-          id="msmaf"
-        ></script>
+      {memberId && rdCode && (
+        <img
+          src={`https://r.moshimo.com/af/r/result?p_id=1063&pc_id=1537&m_v=${memberId}&rd_code=${rdCode}`}
+          width="1"
+          height="1"
+          alt=""
+        />
       )}
     </div>
   );
