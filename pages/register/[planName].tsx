@@ -6,6 +6,7 @@ import { LoginForms } from "../../src/components/register/LoginForms";
 import { PaymentForms } from "../../src/components/register/PaymentForms";
 import { RegisterConfirm } from "../../src/components/register/RegisterConfirm";
 import { getRegisterHandler } from "../../src/hooks/register/getRegisterHandler";
+import { GA_ID } from "../../src/lib/gtag";
 import {
   LIGHT_PLAN,
   ONE_SHOT,
@@ -48,8 +49,9 @@ const Register = ({ planId }: { planId: 11 | 12 | 13 | null }) => {
   const [paymentData, setPaymentData] = useState<TPaymentRegisterData>();
 
   useEffect(() => {
-    if (loginData === undefined) return;
-    gtag("set", { user_id: loginData.memberId });
+    if (GA_ID !== "" && loginData !== undefined) {
+      gtag("set", { user_id: loginData.memberId });
+    }
   }, [loginData]);
 
   const {
