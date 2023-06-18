@@ -66,6 +66,15 @@ const Thanks: NextPage = () => {
           alt=""
         />
       )}
+      {/* モッピートラッキングタグ */}
+      {memberId && (
+        <img
+          src={`https://ad-track.jp/ad/p/cv?_buyer=22636&_article=21513&_buid=${memberId}`}
+          width="1"
+          height="1"
+          alt=""
+        />
+      )}
     </div>
   );
 };
