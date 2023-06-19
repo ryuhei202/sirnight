@@ -23,8 +23,8 @@ class Document extends NextDocument<Props> {
           />
           <Main />
           <NextScript />
-          {/* もしもアフィリエイトトラッキングタグ */}
-          <script src="https://r.moshimo.com/af/r/maftag.js"></script>
+          {/* モッピートラッキングタグ */}
+          <script src="https://ad-track.jp/ad/js/lpjs.js"></script>
         </body>
       </Html>
     );
