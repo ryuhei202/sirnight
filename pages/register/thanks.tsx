@@ -56,27 +56,20 @@ const Thanks: NextPage = () => {
         ></img>
       )}
       {/* もしもアフィリエイトコンバージョンタグ */}
-      {memberId && (
-        <>
-          <script
-            src={`https://r.moshimo.com/af/r/result.js?p_id=1063&pc_id=1537&m_v=${memberId}`}
-            id="msmaf"
-          ></script>
-          <noscript>
-            <img
-              src={`https://r.moshimo.com/af/r/result?p_id=1063&pc_id=1537&m_v=${memberId}`}
-              width="1"
-              height="1"
-              alt=""
-            />
-          </noscript>
-        </>
-      )}
       {memberId && sessionStorage.getItem("rd_code") && (
         <img
           src={`https://r.moshimo.com/af/r/result?p_id=1063&pc_id=1537&m_v=${memberId}&rd_code=${sessionStorage.getItem(
             "rd_code"
           )}`}
+          width="1"
+          height="1"
+          alt=""
+        />
+      )}
+      {/* モッピートラッキングタグ */}
+      {memberId && (
+        <img
+          src={`https://ad-track.jp/ad/p/cv?_buyer=22636&_article=21513&_buid=${memberId}`}
           width="1"
           height="1"
           alt=""
