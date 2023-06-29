@@ -24,7 +24,10 @@ class Document extends NextDocument<Props> {
           <Main />
           <NextScript />
           {/* モッピートラッキングタグ */}
-          <script src="https://ad-track.jp/ad/js/lpjs.js"></script>
+          <script
+            lang="javascript"
+            src="https://ad-track.jp/ad/js/lpjs.js"
+          ></script>
         </body>
       </Html>
     );

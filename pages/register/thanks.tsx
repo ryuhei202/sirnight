@@ -68,12 +68,23 @@ const Thanks: NextPage = () => {
       )}
       {/* モッピートラッキングタグ */}
       {memberId && (
-        <img
-          src={`https://ad-track.jp/ad/p/cv?_buyer=22636&_article=21513&_buid=${memberId}`}
-          width="1"
-          height="1"
-          alt=""
-        />
+        <>
+          <script
+            lang="javascript"
+            src="https://ad-track.jp/ad/js/cv.js"
+          ></script>
+          <script lang="javascript">
+            {`adtrack_cv.cv("adm_adtr_xuid", "https://ad-track.jp/ad", "_buyer=22636&_article=21513&_buid=${memberId}");`}
+          </script>
+          <noscript>
+            <img
+              src={`https://ad-track.jp/ad/p/cv?_buyer=22636&_article=21513&_buid=${memberId}`}
+              width="1"
+              height="1"
+              alt=""
+            />
+          </noscript>
+        </>
       )}
     </div>
   );
