@@ -20,13 +20,18 @@ import { ServiceValue } from "../src/components/top/ServiceValue";
 import { Sympathy } from "../src/components/top/Sympathy";
 import { WhatToResolve } from "../src/components/top/WhatToResolve";
 import { TAbout, uwearAboutClient } from "../src/lib/microCMS/uwearAboutClient";
-import { TNews, uwearClient } from "../src/lib/microCMS/uwearClient";
+import {
+  TCoordinate,
+  TNews,
+  uwearClient,
+} from "../src/lib/microCMS/uwearClient";
 import { TFaq, uwearFaqClient } from "../src/lib/microCMS/uwearFaqClient";
 
 type TProps = {
   articlesData: TNews;
   faqData: TFaq;
   aboutData: TAbout;
+  coordinatesData: TCoordinate;
 };
 
 const forbidScroll = () => {
@@ -43,7 +48,12 @@ const preventScroll = (e: Event) => {
   e.preventDefault();
 };
 
-const Home: NextPage<TProps> = ({ articlesData, faqData, aboutData }) => {
+const Home: NextPage<TProps> = ({
+  articlesData,
+  faqData,
+  aboutData,
+  coordinatesData,
+}) => {
   const [isOpeningVisible, setIsOpeningVisible] = useState(true);
 
   // オープニング画面を表示判定
@@ -87,7 +97,7 @@ const Home: NextPage<TProps> = ({ articlesData, faqData, aboutData }) => {
         <WhatToResolve />
         <About aboutData={aboutData} />
         <HowToUse />
-        <SceneCoordinates />
+        <SceneCoordinates coordinatesData={coordinatesData} />
         <HowToStart />
         <Conversion
           number={2}
@@ -127,11 +137,15 @@ export const getStaticProps = async () => {
   const aboutData = await uwearAboutClient.get<TAbout>({
     endpoint: "about",
   });
+  const coordinatesData = await uwearClient.get<TCoordinate>({
+    endpoint: "coordinates",
+  });
   return {
     props: {
       articlesData,
       faqData,
       aboutData,
+      coordinatesData,
     },
   };
 };

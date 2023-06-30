@@ -1,12 +1,27 @@
 import { useState } from "react";
+import { TCoordinate } from "../../lib/microCMS/uwearClient";
 import { Button } from "../baseParts/Button";
 import { CoordinateCard } from "./CoordinateCard";
-
-export const SceneCoordinates = () => {
+type TProps = {
+  coordinatesData: TCoordinate;
+};
+export const SceneCoordinates = ({ coordinatesData }: TProps) => {
   const [isOpenMore, setIsOpenMore] = useState(false);
   const handleClick = () => {
     setIsOpenMore((prevState) => !prevState);
   };
+  return coordinatesData.contents.map((content, i) => {
+    return (
+      <CoordinateCard
+        key={content.id}
+        imageFilePath={content.imageUrl.url}
+        title={content.title}
+        coordinateNumber={`コーデ#0${i + 1}`}
+        mainText={content.mainText}
+        subText={content.subText}
+      />
+    );
+  });
   return (
     <div className="h-fit" id="coordinates">
       <CoordinateCard
