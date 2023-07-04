@@ -8,7 +8,6 @@ import { Faq } from "../src/components/top/Faq";
 import { Footer } from "../src/components/top/Footer";
 import { FooterMenu } from "../src/components/top/FooterMenu";
 import { HowToStart } from "../src/components/top/HowToStart";
-import { HowToUse } from "../src/components/top/HowToUse";
 import { ItemList } from "../src/components/top/ItemList";
 import { KeyVisual } from "../src/components/top/KeyVisual";
 import { News } from "../src/components/top/News";
@@ -88,16 +87,15 @@ const Home: NextPage<TProps> = ({
           <ItemList type="bottoms" />
         </div>
         <PointDescription className="my-24" />
-        <Sympathy className="my-24" />
+        <WhatToResolve />
+        <About aboutData={aboutData} />
+        <SceneCoordinates coordinatesData={coordinatesData} />
         <Conversion
           number={1}
           leftImagePath="/images/conversions/1/1.webp"
           rightImagePath="/images/conversions/1/2.webp"
         />
-        <WhatToResolve />
-        <About aboutData={aboutData} />
-        <HowToUse />
-        <SceneCoordinates coordinatesData={coordinatesData} />
+        <Sympathy className="my-24" />
         <HowToStart />
         <Conversion
           number={2}
