@@ -7,11 +7,7 @@ export const Sympathy = ({ className }: TProps) => {
   return (
     <div className={`${className}`}>
       <p className="text-[6vw] sm:text-3xl text-center mx-auto font-bold leading-10">
-        こんな
-        <span className="border-b-2 border-dashed border-bottom border-themeGray pb-0.5">
-          選ぶ面倒
-        </span>
-        はありませんか？
+        ３つの安心ポイント
       </p>
       <div className="flex flex-col font-medium px-[30px]">
         <div className="mt-12">
