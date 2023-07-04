@@ -1,12 +1,65 @@
 import { useState } from "react";
+import { TCoordinate } from "../../lib/microCMS/uwearClient";
 import { Button } from "../baseParts/Button";
 import { CoordinateCard } from "./CoordinateCard";
-
-export const SceneCoordinates = () => {
+type TProps = {
+  coordinatesData: TCoordinate;
+};
+export const SceneCoordinates = ({ coordinatesData }: TProps) => {
   const [isOpenMore, setIsOpenMore] = useState(false);
   const handleClick = () => {
     setIsOpenMore((prevState) => !prevState);
   };
+  const contents = coordinatesData.contents.reverse();
+  return contents.map((content, i) => {
+    if (i < 4) {
+      return (
+        <CoordinateCard
+          key={content.id}
+          imageFilePath={content.imageUrl.url}
+          title={content.title}
+          coordinateNumber={`コーデ#0${i + 1}`}
+          mainText={content.mainText}
+          subText={content.subText}
+        />
+      );
+    }
+    if (isOpenMore) {
+      return (
+        <CoordinateCard
+          key={content.id}
+          imageFilePath={content.imageUrl.url}
+          title={content.title}
+          coordinateNumber={`コーデ#0${i + 1}`}
+          mainText={content.mainText}
+          subText={content.subText}
+        />
+      );
+    } else {
+      if (i > 4) return <></>;
+      return (
+        <div className="relative" key={content.id}>
+          <CoordinateCard
+            imageFilePath={content.imageUrl.url}
+            title={content.title}
+            coordinateNumber={`コーデ#0${i + 1}`}
+            mainText={content.mainText}
+            subText={content.subText}
+            isBlur
+          />
+          <div className="absolute bottom-0 left-1/2 w-2/3 sm:w-1/2 translate-x-[-50%] translate-y-[50%]">
+            <Button
+              onClick={handleClick}
+              weight="medium"
+              className="text-[3.5vw] sm:text-sm sm:px-5 py-5"
+            >
+              コーデをもっと見る
+            </Button>
+          </div>
+        </div>
+      );
+    }
+  });
   return (
     <div className="h-fit" id="coordinates">
       <CoordinateCard
