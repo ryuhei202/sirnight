@@ -12,7 +12,7 @@ export const SceneCoordinates = ({ coordinatesData }: TProps) => {
   };
   const contents = coordinatesData.contents;
   return contents.map((content, i) => {
-    if (i < 4) {
+    if (i < 3) {
       return (
         <CoordinateCard
           key={content.id}
@@ -36,7 +36,7 @@ export const SceneCoordinates = ({ coordinatesData }: TProps) => {
         />
       );
     } else {
-      if (i > 4) return <></>;
+      if (i > 3) return <></>;
       return (
         <div className="relative" key={content.id}>
           <CoordinateCard
