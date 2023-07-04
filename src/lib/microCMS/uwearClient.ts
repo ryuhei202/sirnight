@@ -38,6 +38,20 @@ export type TCompanyContent = {
   content: string;
 };
 
+export type TCoordinate = {
+  contents: TCoordinateContent[];
+};
+
+export type TCoordinateContent = {
+  id: string;
+  imageUrl: {
+    url: string;
+  };
+  title: string;
+  mainText: string;
+  subText: string;
+};
+
 // /companyのAPIに存在するpathをアプリケーション側で管理するための定数。
 // pathを追加したい場合はここに追加してください。
 export const COMPANY_PATHS = {
@@ -47,4 +61,4 @@ export const COMPANY_PATHS = {
   LAWS: "/laws",
 } as const;
 
-export type TCompanyPaths = typeof COMPANY_PATHS[keyof typeof COMPANY_PATHS];
+export type TCompanyPaths = (typeof COMPANY_PATHS)[keyof typeof COMPANY_PATHS];
