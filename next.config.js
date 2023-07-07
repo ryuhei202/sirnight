@@ -6,7 +6,9 @@ const nextConfig = {
   swcMinify: true,
   trailingSlash: false,
   sentry: {
-    hideSourceMaps: true
+    hideSourceMaps: true,
+    disableServerWebpackPlugin: process.env.NEXT_PUBLIC_ENV === "development",
+    disableClientWebpackPlugin: process.env.NEXT_PUBLIC_ENV === "development",
   }
 };
 
