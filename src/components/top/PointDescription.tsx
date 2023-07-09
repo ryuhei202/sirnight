@@ -45,6 +45,18 @@ export const PointDescription = ({ className }: TProps) => {
           </>
         }
       />
+
+      <ServicePoint
+        illustPosition="left"
+        imagePath="/images/points/4.webp"
+        content={
+          <>
+            コンビニから
+            <br />
+            伝票なしで返却できます
+          </>
+        }
+      />
     </div>
   );
 };
