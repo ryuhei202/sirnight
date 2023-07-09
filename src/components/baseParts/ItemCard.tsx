@@ -28,7 +28,12 @@ export const ItemCard = ({
       >
         <div className="relative">
           <div className="relative">
-            <img src={imageFileName} alt="service-value" />
+            <img
+              src={imageFileName}
+              alt="service-value"
+              width="550"
+              height="366"
+            />
             {titleSplit.map((title, index) => (
               <p
                 key={index}
