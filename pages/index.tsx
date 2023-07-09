@@ -88,7 +88,6 @@ const Home: NextPage<TProps> = ({
         </div>
         <PointDescription className="my-24" />
         <WhatToResolve />
-        <About aboutData={aboutData} />
         <SceneCoordinates coordinatesData={coordinatesData} />
         <Conversion
           number={1}
@@ -111,6 +110,7 @@ const Home: NextPage<TProps> = ({
           rightImagePath="/images/conversions/3/2.webp"
         />
         <News data={articlesData} />
+        <About aboutData={aboutData} />
         <Footer />
         <FooterMenu />
       </div>
