@@ -5,13 +5,12 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   trailingSlash: false,
-};
-
-if (process.env.NEXT_PUBLIC_ENV === undefined) {
-  nextConfig.sentry = {
+  sentry: {
     hideSourceMaps: true,
-  };
-}
+    disableServerWebpackPlugin: process.env.NEXT_PUBLIC_ENV === "development",
+    disableClientWebpackPlugin: process.env.NEXT_PUBLIC_ENV === "development",
+  }
+};
 
 const sentryWebpackPluginOptions = {
   silent: false,
@@ -21,6 +20,4 @@ const sentryWebpackPluginOptions = {
 };
 
 module.exports =
-  process.env.NEXT_PUBLIC_ENV === undefined
-    ? nextConfig
-    : withSentryConfig(nextConfig, sentryWebpackPluginOptions);
+    withSentryConfig(nextConfig, sentryWebpackPluginOptions);
