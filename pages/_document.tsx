@@ -24,10 +24,12 @@ class Document extends NextDocument<Props> {
           <Main />
           <NextScript />
           {/* モッピートラッキングタグ */}
-          <script
-            lang="javascript"
-            src="https://ad-track.jp/ad/js/lpjs.js"
-          ></script>
+          <div
+            dangerouslySetInnerHTML={{
+              __html:
+                "<script language='javascript' src='https://ad-track.jp/ad/js/lpjs.js'></script>",
+            }}
+          />
         </body>
       </Html>
     );
