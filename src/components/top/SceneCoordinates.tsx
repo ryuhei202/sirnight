@@ -12,7 +12,7 @@ export const SceneCoordinates = ({ coordinatesData }: TProps) => {
   };
   const contents = coordinatesData.contents;
   return contents.map((content, i) => {
-    if (i < 4) {
+    if (i < 3) {
       return (
         <CoordinateCard
           key={content.id}
@@ -36,7 +36,7 @@ export const SceneCoordinates = ({ coordinatesData }: TProps) => {
         />
       );
     } else {
-      if (i > 4) return <></>;
+      if (i > 3) return <></>;
       return (
         <div className="relative" key={content.id}>
           <CoordinateCard
@@ -47,7 +47,7 @@ export const SceneCoordinates = ({ coordinatesData }: TProps) => {
             subText={content.subText}
             isBlur
           />
-          <div className="absolute bottom-0 left-1/2 w-2/3 sm:w-1/2 translate-x-[-50%] translate-y-[50%]">
+          <div className="absolute bottom-1/2 left-1/2 w-2/3 sm:w-1/2 translate-x-[-50%] translate-y-[50%]">
             <Button
               onClick={handleClick}
               weight="medium"

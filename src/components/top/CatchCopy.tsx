@@ -6,9 +6,9 @@ export const CatchCopy = () => {
       <div className="relative z-20">
         <Animation options={{ threshold: 1, triggerOnce: true }}>
           <h2 className="text-[10vw] sm:text-5xl !leading-[1.5em] tracking-widest font-bold mt-[100px] [writing-mode:vertical-rl] text-left inline-block mx-auto">
-            服選びの面倒から
+            好印象なコーデを
             <br />
-            解放されます。
+            お届けします。
           </h2>
         </Animation>
       </div>

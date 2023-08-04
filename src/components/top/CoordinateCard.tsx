@@ -23,7 +23,7 @@ export const CoordinateCard = ({
             <img
               src={imageFilePath}
               alt="coordinate"
-              className="object-cover object-top w-full h-[50vw] sm:h-[250px]"
+              className="object-cover object-top w-full h-[50vw] sm:h-[250px] blur"
             />
           </figure>
           <div className="absolute -bottom-1 h-[40vw] sm:h-[200px] w-full bg-gradient-to-b from-transparent to-clay"></div>
