@@ -31,8 +31,9 @@ export const ItemCard = ({
             <img
               src={imageFileName}
               alt="service-value"
-              width="550"
-              height="366"
+              className="rounded-[6px]"
+              width="1608"
+              height="1070"
             />
             {titleSplit.map((title, index) => (
               <p
