@@ -1,6 +1,6 @@
 import { GetStaticProps, NextPage } from "next";
 import { NextSeo } from "next-seo";
-import { NewsContentWrapper } from "../../src/components/about/NewsContentWrapper";
+import { NewsContentWrapper } from "../../src/components/news/NewsContentWrapper";
 import {
   TNews,
   TNewsContent,
