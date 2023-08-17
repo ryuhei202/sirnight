@@ -22,7 +22,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     endpoint: `news/${articleId}`,
     queries: { draftKey },
   });
-  console.log({ article });
   // 下書きの場合、publishedAtとrevisedAtが存在しないため公開日を現在時刻にする
   const draftDate = {
     publishedAt: article.publishedAt
