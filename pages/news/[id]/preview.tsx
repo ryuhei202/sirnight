@@ -1,6 +1,6 @@
 import { GetServerSideProps, NextPage } from "next";
 import { NextSeo } from "next-seo";
-import { NewsContentWrapper } from "../../../src/components/news/NewsContentWrapper";
+import { NewsContentWrapper } from "../../../src/components/about/NewsContentWrapper";
 import {
   TNewsContent,
   uwearClient,
@@ -22,6 +22,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     endpoint: `news/${articleId}`,
     queries: { draftKey },
   });
+  console.log({ article });
   // 下書きの場合、publishedAtとrevisedAtが存在しないため公開日を現在時刻にする
   const draftDate = {
     publishedAt: article.publishedAt
