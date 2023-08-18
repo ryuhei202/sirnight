@@ -23,19 +23,23 @@ export const AboutContentWrapper = ({ article, aboutData }: TProps) => {
         </div>
       </div>
       <div className="pb-24">
-        <h3 className="border-b-[1px] border-[#D8D8D2] mx-4 text-2xl">
+        <h3 className="border-b-[1px] border-[#D8D8D2] mx-4 py-4 text-3xl text-center">
           関連記事
         </h3>
-        <div className="flex w-full">
-          {aboutData.contents.map((data) => (
+        <div className="w-full">
+          {aboutData.contents.map((data, i) => (
             <Link href={`/about/${data.id}`} key={data.id}>
-              <div className="w-[50%] p-4 border-x-[1px] border-[#D8D8D2]">
+              <div
+                className={`mx-4 p-8 border-[#D8D8D2] ${
+                  aboutData.contents.length - 1 !== i ? "border-b-[2px]" : ""
+                }`}
+              >
                 <img
                   src={data.image.url}
                   alt={data.title}
-                  className="w-full h-[30vw] sm:h-[150px] mx-auto object-cover"
+                  className="w-[70%] mx-auto object-cover"
                 />
-                <p className="text-sm mt-2">{data.title}</p>
+                <p className="text-2xl mt-2 text-center">{data.title}</p>
               </div>
             </Link>
           ))}
