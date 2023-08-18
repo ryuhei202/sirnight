@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3001",
-    "build": "next build && next-sitemap",
+    "build": "next build && find ./out -name *.map -delete && next-sitemap",
     "start": "next start -p 3001",
     "lint": "next lint",
     "prepare": "mkdir -p .git/hooks && cp git-hooks/* .git/hooks/ && chmod +x .git/hooks/*"
