@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { TAbout } from "../../lib/microCMS/uwearAboutClient";
 type TProps = {
@@ -35,10 +36,12 @@ export const About = ({ aboutData }: TProps) => {
               >
                 <li className="flex flex-col justify-between h-full">
                   <p>{data.title}</p>
-                  <img
+                  <Image
                     src={data.image.url}
                     alt={data.title}
-                    className="w-[220px] h-[220px] my-8 object-cover mx-auto rounded-md"
+                    className="my-8 object-cover mx-auto rounded-md"
+                    width={220}
+                    height={220}
                   />
                   <p className="text-left text-[3vw] sm:text-sm">
                     {getOmittedDescription({ desc: data.description })}

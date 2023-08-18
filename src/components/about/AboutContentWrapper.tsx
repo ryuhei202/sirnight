@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { TAbout, TAboutContent } from "../../lib/microCMS/uwearAboutClient";
 import { NewsContent } from "../news/NewsContent";
@@ -13,7 +14,7 @@ export const AboutContentWrapper = ({ article, aboutData }: TProps) => {
   return (
     <div id="container" className="h-full min-h-screen inset-0 text-themeGray">
       <Header lists={[{ name: `${article.title}` }]} />
-      <img src={article.image.url} alt={article.title} className="w-full" />
+      <Image src={article.image.url} alt={article.title} className="w-full" />
       <div className="px-4">
         <div className="w-full py-12 border-b-[1px] border-[#D8D8D2]">
           <h2 className="pt-2 text-xl font-bold">{`${article.title}`}</h2>
@@ -34,7 +35,7 @@ export const AboutContentWrapper = ({ article, aboutData }: TProps) => {
                   aboutData.contents.length - 1 !== i ? "border-b-[2px]" : ""
                 }`}
               >
-                <img
+                <Image
                   src={data.image.url}
                   alt={data.title}
                   className="w-[70%] mx-auto object-cover"
