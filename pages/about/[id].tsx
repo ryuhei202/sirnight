@@ -1,4 +1,5 @@
 import { GetStaticProps, NextPage } from "next";
+import { NextSeo } from "next-seo";
 import Link from "next/link";
 import { NewsContent } from "../../src/components/news/NewsContent";
 import { Header } from "../../src/components/plan/Header";
@@ -41,6 +42,21 @@ type TProps = {
 const AboutContent: NextPage<TProps> = ({ article, aboutData }: TProps) => {
   return (
     <div className="h-full">
+      <NextSeo
+        title={`${article.title}`}
+        openGraph={{
+          images: [
+            {
+              url: article.image
+                ? article.image.url
+                : `https://uwear.jp/images/meta/ogp.jpg`,
+              width: 1200,
+              height: 630,
+              alt: article.title,
+            },
+          ],
+        }}
+      />
       <div
         id="container"
         className="h-full min-h-screen inset-0 text-themeGray"
