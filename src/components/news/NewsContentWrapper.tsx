@@ -1,7 +1,7 @@
 import { handleDate } from "../../lib/microCMS/handleDate";
 import { TNewsContent } from "../../lib/microCMS/uwearClient";
 import { LinkButton } from "../baseParts/LinkButton";
-import { Header } from "../plan/Header";
+import { Breadcrumb } from "../plan/Breadcrumb";
 import { FooterMenu } from "../top/FooterMenu";
 import { NewsContent } from "./NewsContent";
 
@@ -12,7 +12,7 @@ type TProps = {
 export const NewsContentWrapper = ({ article }: TProps) => {
   return (
     <div id="container" className="h-full min-h-screen inset-0 text-themeGray">
-      <Header
+      <Breadcrumb
         lists={[
           { name: "お知らせ", path: `/news/page/${1}` },
           { name: `${article.title}` },
