@@ -45,7 +45,7 @@ const AboutContent: NextPage<TProps> = ({ article, aboutData }: TProps) => {
           images: [
             {
               url: article.image
-                ? `${article.image.url}?txt=${article.title}&txt-pad=90&txt-color=475156&txt-size=48&txt-align=middle,center&txtfont=Hiragino%20Sans%20W6&txt-track=2&txt-fit=max`
+                ? article.image.url
                 : `https://uwear.jp/images/meta/ogp.jpg`,
               width: 1200,
               height: 630,
