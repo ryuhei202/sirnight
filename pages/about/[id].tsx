@@ -1,4 +1,5 @@
 import { GetStaticProps, NextPage } from "next";
+import { NextSeo } from "next-seo";
 import { AboutContentWrapper } from "../../src/components/about/AboutContentWrapper";
 import {
   TAbout,
@@ -38,6 +39,21 @@ type TProps = {
 const AboutContent: NextPage<TProps> = ({ article, aboutData }: TProps) => {
   return (
     <div className="h-full">
+      <NextSeo
+        title={`${article.title}`}
+        openGraph={{
+          images: [
+            {
+              url: article.image
+                ? article.image.url
+                : `https://uwear.jp/images/meta/ogp.jpg`,
+              width: 1200,
+              height: 630,
+              alt: article.title,
+            },
+          ],
+        }}
+      />
       <AboutContentWrapper article={article} aboutData={aboutData} />
     </div>
   );
