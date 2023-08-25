@@ -71,7 +71,7 @@ const AboutContentPreview: NextPageWithLayout<TProps> = ({
           ],
         }}
       />
-      <div className="bg-red text-center py-12 sm:my-[64px] text-2xl">
+      <div className="bg-red text-center py-12 sm:mt-[64px] text-2xl">
         プレビュー画面
       </div>
       <AboutContentWrapper article={draftArticle} aboutData={aboutData} />
