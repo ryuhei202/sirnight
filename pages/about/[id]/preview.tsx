@@ -1,11 +1,14 @@
-import { GetServerSideProps, NextPage } from "next";
+import { GetServerSideProps } from "next";
 import { NextSeo } from "next-seo";
+import { ReactElement } from "react";
 import { AboutContentWrapper } from "../../../src/components/about/AboutContentWrapper";
+import { ArticleLayout } from "../../../src/components/article/ArticleLayout";
 import {
   TAbout,
   TAboutContent,
   uwearAboutClient,
 } from "../../../src/lib/microCMS/uwearAboutClient";
+import { NextPageWithLayout } from "../../_app";
 
 // publishedAtとrevisedAtをoptionalにする
 export type TDraftAboutContent = Omit<
@@ -47,7 +50,7 @@ type TProps = {
   aboutData: TAbout;
 };
 
-const AboutContentPreview: NextPage<TProps> = ({
+const AboutContentPreview: NextPageWithLayout<TProps> = ({
   draftArticle,
   aboutData,
 }: TProps) => {
@@ -68,10 +71,16 @@ const AboutContentPreview: NextPage<TProps> = ({
           ],
         }}
       />
-      <div className="bg-red text-center py-6 text-2xl">プレビュー画面</div>
+      <div className="bg-red text-center py-12 sm:my-[64px] text-2xl">
+        プレビュー画面
+      </div>
       <AboutContentWrapper article={draftArticle} aboutData={aboutData} />
     </div>
   );
+};
+
+AboutContentPreview.getLayout = function getLayout(page: ReactElement) {
+  return <ArticleLayout>{page}</ArticleLayout>;
 };
 
 export default AboutContentPreview;
