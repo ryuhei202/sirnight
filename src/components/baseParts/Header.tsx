@@ -13,7 +13,7 @@ export const Header = () => {
   };
 
   return (
-    <div className="fixed top-0 left-0 w-screen h-[64px] bg-clay border-b-[#D8D8D2] border-b-[1px]">
+    <div className="fixed top-0 left-0 w-screen h-[64px] bg-clay border-b-[#D8D8D2] border-b-[1px] z-20">
       <div className="flex justify-between items-center mx-[24px]">
         <Link
           href={{ pathname: "/" }}
