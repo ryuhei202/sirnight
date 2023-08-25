@@ -36,7 +36,7 @@ const NewsDetail: NextPageWithLayout<TNewsContent> = (
   return (
     <div className="h-full">
       <NextSeo
-        title={`${article.title}`}
+        title={article.title}
         openGraph={{
           images: [
             {
