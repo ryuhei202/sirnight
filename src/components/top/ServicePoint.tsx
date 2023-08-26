@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ReactNode } from "react";
 import { Animation } from "../baseParts/Animation";
 
@@ -29,18 +30,22 @@ export const ServicePoint = ({
                 {content}
               </h4>
             </div>
-            <img
+            <Image
               src={imagePath}
               alt="points-illust"
               className="w-[55%] object-contain"
+              width={320}
+              height={300}
             />
           </>
         ) : (
           <>
-            <img
+            <Image
               src={imagePath}
               alt="points-illust"
               className="w-[55%] object-contain"
+              width={320}
+              height={300}
             />
             <div className="w-2/5">
               <p className="font-lora text-primary text-[3vw] sm:text-sm w-fit mx-auto border-b border-dashed border-themeGray">
