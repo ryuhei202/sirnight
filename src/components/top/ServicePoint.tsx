@@ -33,7 +33,7 @@ export const ServicePoint = ({
             <Image
               src={imagePath}
               alt="points-illust"
-              className="w-[55%] object-contain"
+              className="w-[55%] object-cover"
               width={320}
               height={300}
             />
@@ -43,7 +43,7 @@ export const ServicePoint = ({
             <Image
               src={imagePath}
               alt="points-illust"
-              className="w-[55%] object-contain"
+              className="w-[55%] object-cover"
               width={320}
               height={300}
             />
