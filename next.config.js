@@ -9,7 +9,7 @@ const nextConfig = {
     hideSourceMaps: true,
     disableServerWebpackPlugin: process.env.NEXT_PUBLIC_ENV === "development",
     disableClientWebpackPlugin: process.env.NEXT_PUBLIC_ENV === "development",
-  }
+  },
 };
 
 const sentryWebpackPluginOptions = {
@@ -19,5 +19,16 @@ const sentryWebpackPluginOptions = {
   project: process.env.NEXT_PUBLIC_SENTRY_PROJECT,
 };
 
-module.exports =
-    withSentryConfig(nextConfig, sentryWebpackPluginOptions);
+module.exports = {
+  ...withSentryConfig(nextConfig, sentryWebpackPluginOptions),
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.microcms-assets.io",
+        port: "",
+        pathname: "/assets/**",
+      },
+    ],
+  },
+};

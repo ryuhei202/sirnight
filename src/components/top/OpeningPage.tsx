@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useEffect } from "react";
 import { Typography } from "../baseParts/Typography";
 
@@ -30,11 +31,14 @@ export const OpeningPage = ({ className }: TProps) => {
       className={`fixed inset-0 bg-clay h-screen ${className ?? ""}`}
     >
       <div className="absolute top-[41%] w-full left-1/2 translate-x-[-50%] text-center">
-        <img
+        <Image
           id="logo"
           src="/images/logos/gray.svg"
           alt="logo-gray"
+          width={300}
+          height={65}
           className="w-[60vw] sm:w-[300px] animate-slideInOpLogo mx-auto"
+          priority
         />
         <Typography
           id="text"

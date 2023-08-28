@@ -7,69 +7,42 @@ export const Sympathy = ({ className }: TProps) => {
   return (
     <div className={`${className}`}>
       <p className="text-[6vw] sm:text-3xl text-center mx-auto font-bold leading-10">
-        こんな
-        <span className="border-b-2 border-dashed border-bottom border-themeGray pb-0.5">
-          選ぶ面倒
-        </span>
-        はありませんか？
+        UWearの安心ポイント
       </p>
       <div className="flex flex-col font-medium px-[30px]">
         <div className="mt-12">
+          <Worry type="left" content={<>手元にコーデがない期間ゼロ！</>} />
           <Worry
             type="right"
             content={
               <>
-                イタリアンデートで、 どんなアイテムを
-                組み合わせれば良いのか分からない。
-              </>
-            }
-          />
-          <Worry
-            type="left"
-            content={
-              <>
-                スタイリストがイタリアンデートにあわせて、
-                あなたが魅力的に見えるコーデをお届けします。
+                コーデを返却する前に次のコーデが届く仕組みを導入しました。これによって、手元にコーデがない期間がありません。
+                <br />
+                <br />
+                常に新しいコーデを楽しむことができます。
               </>
             }
           />
         </div>
         <div className="mt-12">
           <Worry
-            type="right"
-            content={
-              <>
-                店員さんに勧められて買ったシャツが、
-                自分のイメージと合ってない気がする。
-              </>
-            }
-          />
-          <Worry
             type="left"
             content={
               <>
-                届いたコーデのレビューをすることで、
-                あなたがイメージするコーデに近づきます。
+                洋服を汚しても安心！
+                <br />
+                免責つき！
               </>
             }
           />
-        </div>
-        <div className="mt-12">
           <Worry
             type="right"
             content={
               <>
-                同じようなアイテムを着てしまい、
-                いつも同じ感じの組み合わせになる。
-              </>
-            }
-          />
-          <Worry
-            type="left"
-            content={
-              <>
-                自分の服との着こなし方をスタイリストに相談でき、
-                組み合わせの幅が広がります。
+                レンタルでは、汚すのが不安という声を受けて、年に2回までは汚しても大丈夫な免責（保険）制度を作りました。
+                <br />
+                <br />
+                汚す不安がないお出かけをお楽しみください。
               </>
             }
           />

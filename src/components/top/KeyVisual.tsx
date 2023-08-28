@@ -34,6 +34,8 @@ export const KeyVisual = () => {
               imageNames={{ left: "1-1", right: "1-2" }}
               leftAnimateClass="animate-sixthFadeOutPanel"
               rightAnimateClass="animate-firstFadeOutPanel"
+              isLeftSquare={false}
+              isLargestContentfulPaint
             />
           </li>
           <li>
@@ -41,6 +43,8 @@ export const KeyVisual = () => {
               imageNames={{ left: "2-1", right: "2-2" }}
               leftAnimateClass="animate-secondFadeOutPanel"
               rightAnimateClass="animate-fifthFadeOutPanel"
+              isLeftSquare={true}
+              isLargestContentfulPaint
             />
           </li>
           <li>
@@ -48,6 +52,8 @@ export const KeyVisual = () => {
               imageNames={{ left: "3-2", right: "3-1" }}
               leftAnimateClass="animate-seventhFadeOutPanel"
               rightAnimateClass="animate-thirdFadeOutPanel"
+              isLeftSquare={false}
+              isLargestContentfulPaint
             />
           </li>
           <li>
@@ -55,45 +61,83 @@ export const KeyVisual = () => {
               imageNames={{ left: "4-2", right: "4-1" }}
               leftAnimateClass="animate-fourthFadeOutPanel"
               rightAnimateClass="animate-eighthFadeOutPanel"
+              isLeftSquare={true}
+              isLargestContentfulPaint
             />
           </li>
           <li>
-            <KeyVisualColumn imageNames={{ left: "5-1", right: "5-2" }} />
+            <KeyVisualColumn
+              imageNames={{ left: "5-1", right: "5-2" }}
+              isLeftSquare={false}
+            />
           </li>
           <li>
-            <KeyVisualColumn imageNames={{ left: "6-1", right: "6-2" }} />
+            <KeyVisualColumn
+              imageNames={{ left: "6-1", right: "6-2" }}
+              isLeftSquare={true}
+            />
           </li>
           <li>
-            <KeyVisualColumn imageNames={{ left: "7-2", right: "7-1" }} />
+            <KeyVisualColumn
+              imageNames={{ left: "7-2", right: "7-1" }}
+              isLeftSquare={false}
+            />
           </li>
           <li>
-            <KeyVisualColumn imageNames={{ left: "8-2", right: "8-1" }} />
+            <KeyVisualColumn
+              imageNames={{ left: "8-2", right: "8-1" }}
+              isLeftSquare={true}
+            />
           </li>
         </ul>
         <ul>
           <li>
-            <KeyVisualColumn imageNames={{ left: "1-1", right: "1-2" }} />
+            <KeyVisualColumn
+              imageNames={{ left: "1-1", right: "1-2" }}
+              isLeftSquare={false}
+            />
           </li>
           <li>
-            <KeyVisualColumn imageNames={{ left: "2-1", right: "2-2" }} />
+            <KeyVisualColumn
+              imageNames={{ left: "2-1", right: "2-2" }}
+              isLeftSquare={true}
+            />
           </li>
           <li>
-            <KeyVisualColumn imageNames={{ left: "3-2", right: "3-1" }} />
+            <KeyVisualColumn
+              imageNames={{ left: "3-2", right: "3-1" }}
+              isLeftSquare={false}
+            />
           </li>
           <li>
-            <KeyVisualColumn imageNames={{ left: "4-2", right: "4-1" }} />
+            <KeyVisualColumn
+              imageNames={{ left: "4-2", right: "4-1" }}
+              isLeftSquare={true}
+            />
           </li>
           <li>
-            <KeyVisualColumn imageNames={{ left: "5-1", right: "5-2" }} />
+            <KeyVisualColumn
+              imageNames={{ left: "5-1", right: "5-2" }}
+              isLeftSquare={false}
+            />
           </li>
           <li>
-            <KeyVisualColumn imageNames={{ left: "6-1", right: "6-2" }} />
+            <KeyVisualColumn
+              imageNames={{ left: "6-1", right: "6-2" }}
+              isLeftSquare={true}
+            />
           </li>
           <li>
-            <KeyVisualColumn imageNames={{ left: "7-2", right: "7-1" }} />
+            <KeyVisualColumn
+              imageNames={{ left: "7-2", right: "7-1" }}
+              isLeftSquare={false}
+            />
           </li>
           <li>
-            <KeyVisualColumn imageNames={{ left: "8-2", right: "8-1" }} />
+            <KeyVisualColumn
+              imageNames={{ left: "8-2", right: "8-1" }}
+              isLeftSquare={true}
+            />
           </li>
         </ul>
       </div>

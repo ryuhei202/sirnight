@@ -11,9 +11,11 @@ export const PointDescription = ({ className }: TProps) => {
         imagePath="/images/points/1.webp"
         content={
           <>
-            着るシーンにあわせた
+            スタイリストが
             <br />
-            最適な服が届きます
+            洋服を着るシーンを
+            <br />
+            聞きます
           </>
         }
       />
@@ -23,11 +25,11 @@ export const PointDescription = ({ className }: TProps) => {
         imagePath="/images/points/2.webp"
         content={
           <>
-            スタイリストに
+            スタイリストが
             <br />
-            コーデの悩みを
+            考えたコーデを
             <br />
-            いつでも相談できます
+            お届けします
           </>
         }
       />
@@ -37,11 +39,21 @@ export const PointDescription = ({ className }: TProps) => {
         imagePath="/images/points/3.webp"
         content={
           <>
-            動きやすさや快適さを
+            お届けしたコーデを
             <br />
-            シーンごとに最適化した
+            自由に着用してください
+          </>
+        }
+      />
+
+      <ServicePoint
+        illustPosition="left"
+        imagePath="/images/points/4.webp"
+        content={
+          <>
+            コンビニから
             <br />
-            オリジナルブランド
+            伝票なしで返却できます
           </>
         }
       />

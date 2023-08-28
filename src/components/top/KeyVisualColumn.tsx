@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type TProps = {
   imageNames: {
     left: string;
@@ -5,12 +7,16 @@ type TProps = {
   };
   rightAnimateClass?: string;
   leftAnimateClass?: string;
+  isLeftSquare: boolean;
+  isLargestContentfulPaint?: boolean;
 };
 
 export const KeyVisualColumn = ({
   imageNames,
   rightAnimateClass,
   leftAnimateClass,
+  isLeftSquare,
+  isLargestContentfulPaint = false,
 }: TProps) => {
   return (
     <div className="flex">
@@ -22,9 +28,12 @@ export const KeyVisualColumn = ({
         ) : (
           <></>
         )}
-        <img
+        <Image
           src={`/images/keyVisuals/main/${imageNames.left}.webp`}
           alt={`key-visual-${imageNames.left}`}
+          width={isLeftSquare ? 425 : 212}
+          height={425}
+          priority={isLargestContentfulPaint}
         />
       </div>
       <div className="relative">
@@ -35,9 +44,12 @@ export const KeyVisualColumn = ({
         ) : (
           <></>
         )}
-        <img
+        <Image
           src={`/images/keyVisuals/main/${imageNames.right}.webp`}
           alt={`key-visual-${imageNames.right}`}
+          width={isLeftSquare ? 212 : 425}
+          height={425}
+          priority={isLargestContentfulPaint}
         />
       </div>
     </div>
