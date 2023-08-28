@@ -11,12 +11,12 @@ export const Sympathy = ({ className }: TProps) => {
       </p>
       <div className="flex flex-col font-medium px-[30px]">
         <div className="mt-12">
-          <Worry type="left" content={<>手元にコーデを置いておける</>} />
+          <Worry type="left" content={<>手元にコーデがない期間ゼロ！</>} />
           <Worry
             type="right"
             content={
               <>
-                コーデを返却する前に次のコーデが届く仕組みを導入しました。これによって、手元にコーデがない期間がなくなります。
+                コーデを返却する前に次のコーデが届く仕組みを導入しました。これによって、手元にコーデがない期間がありません。
                 <br />
                 <br />
                 常に新しいコーデを楽しむことができます。
@@ -25,7 +25,16 @@ export const Sympathy = ({ className }: TProps) => {
           />
         </div>
         <div className="mt-12">
-          <Worry type="left" content={<>洋服を汚しても安心！免責つき！</>} />
+          <Worry
+            type="left"
+            content={
+              <>
+                洋服を汚しても安心！
+                <br />
+                免責つき！
+              </>
+            }
+          />
           <Worry
             type="right"
             content={

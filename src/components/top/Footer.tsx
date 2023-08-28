@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { COMPANY_PATHS } from "../../lib/microCMS/uwearClient";
 
@@ -5,7 +6,12 @@ export const Footer = () => {
   return (
     <div className="py-28 bg-themeGray">
       <div className="mx-[13%] text-beige">
-        <img src="/images/logos/beige.svg" alt="logo" />
+        <Image
+          src="/images/logos/beige.svg"
+          alt="logo"
+          width={472}
+          height={101}
+        />
         <p className="text-sm text-center mt-8 mb-16">
           服選びの面倒から解放する
           <br />

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Animation } from "../baseParts/Animation";
 
 export const ServiceValue = () => {
@@ -14,7 +15,12 @@ export const ServiceValue = () => {
         <p className="text-right mt-5 sm:mt-10">もっと良くなるように</p>
       </div>
       <div className="w-full my-14">
-        <img src="/images/serviceValue/1.webp" alt="service-value" />
+        <Image
+          src="/images/serviceValue/1.webp"
+          alt="service-value"
+          width={640}
+          height={590}
+        />
       </div>
       <div className="w-[73%] mx-auto font-medium text-[max(3vw,0.85em)] text-primary leading-6 sm:text-base sm:leading-loose">
         <Animation>
