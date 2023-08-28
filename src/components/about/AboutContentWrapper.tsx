@@ -14,7 +14,13 @@ export const AboutContentWrapper = ({ article, aboutData }: TProps) => {
   return (
     <div id="container" className="h-full min-h-screen inset-0 text-themeGray">
       <Header lists={[{ name: `${article.title}` }]} />
-      <Image src={article.image.url} alt={article.title} className="w-full" />
+      <Image
+        src={article.image.url}
+        alt={article.title}
+        className="w-full"
+        width={638}
+        height={638}
+      />
       <div className="px-4">
         <div className="w-full py-12 border-b-[1px] border-[#D8D8D2]">
           <h2 className="pt-2 text-xl font-bold">{`${article.title}`}</h2>
@@ -39,6 +45,8 @@ export const AboutContentWrapper = ({ article, aboutData }: TProps) => {
                   src={data.image.url}
                   alt={data.title}
                   className="w-[70%] mx-auto object-cover"
+                  width={380}
+                  height={380}
                 />
                 <p className="text-2xl mt-2 text-center">{data.title}</p>
               </div>
