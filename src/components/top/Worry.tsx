@@ -15,12 +15,12 @@ export const Worry = ({ content, type }: TProps) => {
       animationClassName={animationClassName}
       options={{ threshold: 1, triggerOnce: true }}
     >
-      <div className="my-2">
+      <div className="w-full">
         <p
-          className={`rounded-[16px] p-5 min-w-[50%] max-w-[85%] w-fit [font-feature-settings:'palt'on] ${
+          className={`rounded-[16px] p-5 min-w-[50%] [font-feature-settings:'palt'on] ${
             type === "right"
-              ? "ml-auto bg-[#F4F3EF]"
-              : "mr-auto bg-themeGray text-beige"
+              ? "bg-[#F4F3EF] w-full"
+              : "mr-auto bg-themeGray text-beige w-fit text-lg font-bold"
           }`}
         >
           {content}

@@ -1,11 +1,14 @@
-import { GetStaticProps, NextPage } from "next";
+import { GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
+import { ReactElement } from "react";
+import { ArticleLayout } from "../../src/components/article/ArticleLayout";
 import { NewsContentWrapper } from "../../src/components/news/NewsContentWrapper";
 import {
   TNews,
   TNewsContent,
   uwearClient,
 } from "../../src/lib/microCMS/uwearClient";
+import { NextPageWithLayout } from "../_app";
 
 export const getStaticPaths = async () => {
   const LIMIT = 1000;
@@ -27,11 +30,13 @@ export const getStaticProps: GetStaticProps = async (context) => {
   return { props: article, revalidate: 60 };
 };
 
-const NewsDetail: NextPage<TNewsContent> = (article: TNewsContent) => {
+const NewsDetail: NextPageWithLayout<TNewsContent> = (
+  article: TNewsContent
+) => {
   return (
     <div className="h-full">
       <NextSeo
-        title={`${article.title}`}
+        title={article.title}
         openGraph={{
           images: [
             {
@@ -49,4 +54,9 @@ const NewsDetail: NextPage<TNewsContent> = (article: TNewsContent) => {
     </div>
   );
 };
+
+NewsDetail.getLayout = function getLayout(page: ReactElement) {
+  return <ArticleLayout>{page}</ArticleLayout>;
+};
+
 export default NewsDetail;

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { TCoordinate } from "../../lib/microCMS/uwearClient";
 import { Button } from "../baseParts/Button";
 import { CoordinateCard } from "./CoordinateCard";
@@ -36,7 +36,7 @@ export const SceneCoordinates = ({ coordinatesData }: TProps) => {
         />
       );
     } else {
-      if (i > 3) return <></>;
+      if (i > 3) return <Fragment key={content.id}></Fragment>;
       return (
         <div className="relative" key={content.id}>
           <CoordinateCard

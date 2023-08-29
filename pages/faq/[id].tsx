@@ -1,7 +1,7 @@
 import { GetStaticProps, NextPage } from "next";
 import { NextSeo } from "next-seo";
 import { LinkButton } from "../../src/components/baseParts/LinkButton";
-import { Header } from "../../src/components/plan/Header";
+import { Breadcrumb } from "../../src/components/plan/Breadcrumb";
 import { FooterMenu } from "../../src/components/top/FooterMenu";
 import { QuestionAnswer } from "../../src/components/top/QuestionAnswer";
 import {
@@ -25,7 +25,7 @@ export const FaqCategoryName: NextPage<TProps> = ({
         id="container"
         className="h-full min-h-screen inset-0 text-themeGray"
       >
-        <Header
+        <Breadcrumb
           lists={[
             { name: "FAQ", path: "/faq" },
             { name: `${faqCategoryName.name}` },

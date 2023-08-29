@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Animation } from "./Animation";
 
 type TProps = {
@@ -28,12 +29,12 @@ export const ItemCard = ({
       >
         <div className="relative">
           <div className="relative">
-            <img
+            <Image
               src={imageFileName}
               alt="service-value"
               className="rounded-[6px]"
-              width="1608"
-              height="1070"
+              width={640}
+              height={426}
             />
             {titleSplit.map((title, index) => (
               <p

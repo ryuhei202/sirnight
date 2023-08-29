@@ -94,7 +94,7 @@ const Home: NextPage<TProps> = ({
           leftImagePath="/images/conversions/1/1.webp"
           rightImagePath="/images/conversions/1/2.webp"
         />
-        <Sympathy className="my-24" />
+        <Sympathy className="mt-24" />
         <HowToStart />
         <Conversion
           number={2}

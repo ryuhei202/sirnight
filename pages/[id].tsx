@@ -2,7 +2,7 @@ import { GetStaticProps, NextPage } from "next";
 import { NextSeo } from "next-seo";
 import { Layout } from "../src/components/baseParts/Layout";
 import { NewsContent } from "../src/components/news/NewsContent";
-import { Header } from "../src/components/plan/Header";
+import { Breadcrumb } from "../src/components/plan/Breadcrumb";
 import { FooterMenu } from "../src/components/top/FooterMenu";
 import {
   COMPANY_PATHS,
@@ -33,7 +33,7 @@ const CompanyContent: NextPage<TCompanyContent> = (
         id="container"
         className="h-full min-h-screen inset-0 text-themeGray"
       >
-        <Header lists={[{ name: article.title }]} />
+        <Breadcrumb lists={[{ name: article.title }]} />
         <Layout title={article.title}>
           <NewsContent content={article.content} />
         </Layout>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Animation } from "../baseParts/Animation";
 
 export const CatchCopy = () => {
@@ -13,11 +14,13 @@ export const CatchCopy = () => {
         </Animation>
       </div>
       <div className="relative z-10 w-full overflow-hidden -mt-[28vw] sm:-mt-32">
-        <img
+        <Image
           id="catchcopy"
           src="/images/keyVisuals/sub/1.webp"
           alt="catchcopy-1"
           className="origin-top"
+          width={640}
+          height={960}
         />
       </div>
     </div>
