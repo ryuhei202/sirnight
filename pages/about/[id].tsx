@@ -1,11 +1,14 @@
-import { GetStaticProps, NextPage } from "next";
+import { GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
+import { ReactElement } from "react";
 import { AboutContentWrapper } from "../../src/components/about/AboutContentWrapper";
+import { ArticleLayout } from "../../src/components/article/ArticleLayout";
 import {
   TAbout,
   TAboutContent,
   uwearAboutClient,
 } from "../../src/lib/microCMS/uwearAboutClient";
+import { NextPageWithLayout } from "../_app";
 
 export const getStaticPaths = async () => {
   const LIMIT = 1000;
@@ -36,7 +39,10 @@ type TProps = {
   aboutData: TAbout;
 };
 
-const AboutContent: NextPage<TProps> = ({ article, aboutData }: TProps) => {
+const AboutContent: NextPageWithLayout<TProps> = ({
+  article,
+  aboutData,
+}: TProps) => {
   return (
     <div className="h-full">
       <NextSeo
@@ -57,6 +63,10 @@ const AboutContent: NextPage<TProps> = ({ article, aboutData }: TProps) => {
       <AboutContentWrapper article={article} aboutData={aboutData} />
     </div>
   );
+};
+
+AboutContent.getLayout = function getLayout(page: ReactElement) {
+  return <ArticleLayout>{page}</ArticleLayout>;
 };
 
 export default AboutContent;

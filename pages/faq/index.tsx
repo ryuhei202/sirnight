@@ -2,7 +2,7 @@ import { NextPage } from "next";
 import { NextSeo } from "next-seo";
 import Link from "next/link";
 import { Typography } from "../../src/components/baseParts/Typography";
-import { Header } from "../../src/components/plan/Header";
+import { Breadcrumb } from "../../src/components/plan/Breadcrumb";
 import { FooterMenu } from "../../src/components/top/FooterMenu";
 import {
   TCategory,
@@ -17,7 +17,7 @@ const index: NextPage<TProps> = ({ faqData }) => {
     <div>
       <NextSeo title="FAQ" />
       <div className="h-full min-h-screen text-themeGray">
-        <Header lists={[{ name: "FAQ" }]} />
+        <Breadcrumb lists={[{ name: "FAQ" }]} />
         <div className="w-4/5 pt-14 mx-auto pb-40">
           <p className="text-3xl text-center font-extrabold mb-14">FAQ</p>
           {faqData.contents.map((content, index) => (

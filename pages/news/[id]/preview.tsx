@@ -1,10 +1,13 @@
-import { GetServerSideProps, NextPage } from "next";
+import { GetServerSideProps } from "next";
 import { NextSeo } from "next-seo";
+import { ReactElement } from "react";
+import { ArticleLayout } from "../../../src/components/article/ArticleLayout";
 import { NewsContentWrapper } from "../../../src/components/news/NewsContentWrapper";
 import {
   TNewsContent,
   uwearClient,
 } from "../../../src/lib/microCMS/uwearClient";
+import { NextPageWithLayout } from "../../_app";
 
 // publishedAtとrevisedAtをoptionalにする
 export type TDraftNewsContent = Omit<
@@ -35,7 +38,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   };
 };
 
-const AboutContentPreview: NextPage<TNewsContent> = (article: TNewsContent) => {
+const NewsContentPreview: NextPageWithLayout<TNewsContent> = (
+  article: TNewsContent
+) => {
   return (
     <div className="h-full">
       <NextSeo
@@ -53,10 +58,16 @@ const AboutContentPreview: NextPage<TNewsContent> = (article: TNewsContent) => {
           ],
         }}
       />
-      <div className="bg-red text-center py-6 text-2xl">プレビュー画面</div>
+      <div className="bg-red text-center py-12 sm:mt-[64px] text-2xl">
+        プレビュー画面
+      </div>
       <NewsContentWrapper article={article} />
     </div>
   );
 };
 
-export default AboutContentPreview;
+NewsContentPreview.getLayout = function getLayout(page: ReactElement) {
+  return <ArticleLayout>{page}</ArticleLayout>;
+};
+
+export default NewsContentPreview;
