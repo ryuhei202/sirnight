@@ -73,7 +73,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             alt="logo"
             className="fixed w-[95%] left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%]"
           />
-          <div className="h-full relative bg-clay sm:w-[500px] mx-auto z-40 sm:border-x border-themeGray">
+          <div className="h-full relative bg-clay sm:w-[640px] mx-auto z-40 sm:border-x border-themeGray">
             <QueryClientProvider client={queryClient}>
               <Component {...pageProps} />
             </QueryClientProvider>

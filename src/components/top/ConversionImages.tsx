@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type TProps = {
   number: number;
   leftImagePath: string;
@@ -9,55 +11,25 @@ export const ConversionImages = ({
   leftImagePath,
   rightImagePath,
 }: TProps) => {
-  // TODO: gsap導入後にスクロールをしていたら画面の一番上に遷移してしまう不具合が頻発していたのでコメントアウトする。
-
-  // useAnimate({
-  //   id: `#conversion-left-${number}`,
-  //   from: { opacity: 0, transform: "rotate(-6deg)" },
-  //   to: {
-  //     opacity: 1,
-  //     transform: "rotate(0deg)",
-  //     scrollTrigger: {
-  //       trigger: `#conversion-left-${number}`,
-  //       start: "top 80%",
-  //       end: "top 40%",
-  //       scrub: 3,
-  //       markers: false,
-  //       once: true,
-  //     },
-  //   },
-  // });
-  // useAnimate({
-  //   id: `#conversion-right-${number}`,
-  //   from: { opacity: 0, transform: "rotate(6deg)" },
-  //   to: {
-  //     opacity: 1,
-  //     transform: "rotate(0deg)",
-  //     scrollTrigger: {
-  //       trigger: `#conversion-right-${number}`,
-  //       start: "top 50%",
-  //       end: "top 10%",
-  //       scrub: 3,
-  //       markers: false,
-  //       once: true,
-  //     },
-  //   },
-  // });
   return (
     <div className="w-full h-auto relative z-0">
       <div id={`conversion-left-${number}`} className="origin-[50%_300%]">
-        <img
+        <Image
           src={leftImagePath}
           alt="conversion"
           className="w-4/5 mx-auto rotate-6 relative -z-10"
+          width={420}
+          height={582}
         />
       </div>
       <div className="absolute inset-0">
         <div id={`conversion-right-${number}`} className="origin-[50%_300%]">
-          <img
+          <Image
             src={rightImagePath}
             alt="conversion"
             className="w-4/5 mx-auto -rotate-6 relative z-0 transition"
+            width={420}
+            height={582}
           />
         </div>
       </div>

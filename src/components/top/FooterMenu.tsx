@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
@@ -27,12 +28,18 @@ export const FooterMenu = () => {
   return (
     <>
       <Menu onClick={onClickIcon} footerState={footerState} />
-      <div className="fixed bottom-0 h-[70px] sm:w-[498px] bg-clay flex z-40 border-t border-solid border-[#475156]">
+      <div className="fixed bottom-0 h-[70px] sm:w-[638px] bg-clay flex z-40 border-t border-solid border-[#475156]">
         <Link
           href={{ pathname: "/" }}
           className="h-full w-1/4 border-r border-solid border-[#475156] flex justify-center items-center"
         >
-          <img src="/images/logos/gray.svg" alt="logo" className="w-[77%]" />
+          <Image
+            src="/images/logos/gray.svg"
+            alt="logo"
+            className="w-[77%]"
+            width={122}
+            height={26}
+          />
         </Link>
         <div
           className="h-full w-1/2 flex justify-center items-center cursor-pointer"

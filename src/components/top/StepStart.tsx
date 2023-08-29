@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ReactNode } from "react";
 
 type TProps = {
@@ -10,10 +11,12 @@ type TProps = {
 export const StepStart = ({ number, title, subTitle, className }: TProps) => {
   return (
     <li className={`flex-none w-fit snap-always snap-center p-2 ${className}`}>
-      <img
+      <Image
         src={`/images/howToStart/${number}.webp`}
         alt={`howToStart-${number}`}
         className="w-[75vw]"
+        width={574}
+        height={574}
       />
       <div className="mt-9">
         <p className="font-lora text-[4vw] sm:text-base font-medium">

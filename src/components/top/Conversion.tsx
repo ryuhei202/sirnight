@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useRouter } from "next/router";
 import { analyzeEvent } from "../../lib/gtag";
 import { LinkButton } from "../baseParts/LinkButton";
@@ -25,7 +26,12 @@ export const Conversion = ({
   return (
     <div className="bg-themeGray overflow-hidden pt-5">
       <div className="w-[62%] mx-auto pt-[98px] mb-10">
-        <img src="/images/logos/white.svg" alt="logo-white" />
+        <Image
+          src="/images/logos/white.svg"
+          alt="logo-white"
+          width={396}
+          height={85}
+        />
       </div>
       <div className="w-full flex">
         <div className="w-[20%] relative z-10">

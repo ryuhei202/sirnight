@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type TProps = {
   readonly imageFilePath: string;
   readonly coordinateNumber: string;
@@ -20,10 +22,12 @@ export const CoordinateCard = ({
       {isBlur ? (
         <div className="relative">
           <figure>
-            <img
+            <Image
               src={imageFilePath}
               alt="coordinate"
               className="object-cover object-top w-full h-[50vw] sm:h-[250px] blur"
+              width={640}
+              height={1062}
             />
           </figure>
           <div className="absolute -bottom-1 h-[40vw] sm:h-[200px] w-full bg-gradient-to-b from-transparent to-clay"></div>
@@ -31,10 +35,12 @@ export const CoordinateCard = ({
       ) : (
         <div className="grid grid-rows-[var(--firstViewHeight)_1fr] w-full">
           <figure className="h-[calc(100vh-70px)] sticky top-0 left-0 z-10">
-            <img
+            <Image
               src={imageFilePath}
               alt="coordinate"
               className="object-cover object-top h-[calc(100vh-70px)] w-full"
+              width={640}
+              height={1062}
             />
           </figure>
           <div className="h-fit z-30 mt-[25vh] -mb-1 [transform:translate3d(0,0,0)]">
