@@ -35,7 +35,7 @@ export const AboutContentWrapper = ({ article, aboutData }: TProps) => {
             <h2 className="pt-2 text-xl md:text-3xl font-bold">{`${article.title}`}</h2>
           </div>
           <div className="text-sm">
-            <NewsContent content={article?.content} />
+            <NewsContent body={article.body} />
           </div>
         </div>
       </div>

@@ -12,6 +12,21 @@ export type TAbout = {
   limit: number;
 };
 
+export type TTalkText = {
+  fieldId: "talkText";
+  name: string;
+  image: {
+    url: string;
+  };
+  text: string;
+  isLeft: boolean;
+};
+
+export type TNormalText = {
+  fieldId: "normalText";
+  text: string;
+};
+
 export type TAboutContent = {
   id: string;
   title: string;
@@ -20,6 +35,7 @@ export type TAboutContent = {
   image: {
     url: string;
   };
+  body: (TNormalText | TTalkText)[];
   createdAt: string;
   updatedAt: string;
   publishedAt: string;

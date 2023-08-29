@@ -1,14 +1,30 @@
+import { TNormalText, TTalkText } from "../../lib/microCMS/uwearAboutClient";
+import { SpeechBalloon } from "../baseParts/SpeechBalloon";
+
 type TProps = {
-  readonly content: string;
+  readonly body: (TNormalText | TTalkText)[];
 };
 
-export const NewsContent = ({ content }: TProps) => {
+export const NewsContent = ({ body }: TProps) => {
   return (
-    <div
-      className="newsContent pb-12 border-b-[1px] border-[#D8D8D2]"
-      dangerouslySetInnerHTML={{
-        __html: content,
-      }}
-    />
+    <>
+      {body.map((content, i) => {
+        return content.fieldId === "talkText" ? (
+          <SpeechBalloon
+            text={content.text}
+            name={content.name}
+            image={content.image.url}
+            isLeft={content.isLeft}
+          />
+        ) : (
+          <div
+            className="newsContent pb-12 border-b-[1px] border-[#D8D8D2]"
+            dangerouslySetInnerHTML={{
+              __html: content.text,
+            }}
+          />
+        );
+      })}
+    </>
   );
 };
