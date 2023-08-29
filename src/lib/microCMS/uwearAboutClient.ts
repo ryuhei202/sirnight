@@ -31,7 +31,6 @@ export type TAboutContent = {
   id: string;
   title: string;
   description: string;
-  content: string;
   image: {
     url: string;
   };
