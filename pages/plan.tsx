@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { NextSeo } from "next-seo";
 import React, { useRef, useState } from "react";
-import { Header } from "../src/components/plan/Header";
+import { Breadcrumb } from "../src/components/plan/Breadcrumb";
 import { PlanDetail } from "../src/components/plan/PlanDetail";
 import { FooterMenu } from "../src/components/top/FooterMenu";
 import {
@@ -45,7 +45,7 @@ const Plan: NextPage = () => {
         id="container"
         className="h-full min-h-screen inset-0 text-themeGray"
       >
-        <Header lists={[{ name: "料金プラン" }]} />
+        <Breadcrumb lists={[{ name: "料金プラン" }]} />
         <h2 className="text-[10vw] sm:text-4xl my-[12vw] sm:my-20 text-center font-bold">
           料金プラン
         </h2>

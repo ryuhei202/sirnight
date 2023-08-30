@@ -20,7 +20,6 @@ export const Button = ({
     "py-3",
     "mx-3",
     "text-center",
-    "w-[calc(100%_-_24px)]",
     "relative",
     "rounded-full",
     "bg-themeGray",

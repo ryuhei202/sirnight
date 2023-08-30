@@ -6,10 +6,15 @@ type TProps = {
     name: string;
     path?: string;
   }[];
+  readonly className?: string;
 };
-export const Header = ({ lists }: TProps) => {
+export const Breadcrumb = ({ lists, className }: TProps) => {
   return (
-    <div className="w-full whitespace-nowrap truncate p-3 h-10 text-[#979B9A] text-xs flex border-b border-[#D8D8D2] space-x-3">
+    <div
+      className={`w-full whitespace-nowrap truncate p-3 h-10 text-[#979B9A] text-xs flex border-b border-[#D8D8D2] space-x-3 ${
+        className ?? ""
+      }`}
+    >
       <div className="flex">
         <img
           src="/images/icons/home.svg"
