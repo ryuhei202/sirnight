@@ -51,7 +51,7 @@ export const SceneCoordinates = ({ coordinatesData }: TProps) => {
             <Button
               onClick={handleClick}
               weight="medium"
-              className="text-[3.5vw] sm:text-sm sm:px-5 py-5"
+              className="text-[3.5vw] sm:text-sm mx-0 py-5 w-full"
             >
               コーデをもっと見る
             </Button>
