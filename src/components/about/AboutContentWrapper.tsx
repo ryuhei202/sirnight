@@ -2,9 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { TAbout, TAboutContent } from "../../lib/microCMS/uwearAboutClient";
 import { Header } from "../baseParts/Header";
-import { NewsContent } from "../news/NewsContent";
 import { Breadcrumb } from "../plan/Breadcrumb";
 import { FooterMenu } from "../top/FooterMenu";
+import { AboutContent } from "./AboutContent";
 
 type TProps = {
   article: TAboutContent;
@@ -35,7 +35,7 @@ export const AboutContentWrapper = ({ article, aboutData }: TProps) => {
             <h2 className="pt-2 text-xl md:text-3xl font-bold">{`${article.title}`}</h2>
           </div>
           <div className="text-sm">
-            <NewsContent body={article.body} />
+            <AboutContent body={article.body} />
           </div>
         </div>
       </div>
