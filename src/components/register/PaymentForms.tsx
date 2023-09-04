@@ -52,13 +52,6 @@ export const PaymentForms = ({
   }) => {
     const SUCCESS = "0000";
     if (paygentRes.result !== SUCCESS) {
-      /* eslint-disable no-console */
-      console.error(paygentRes.result);
-      console.error(
-        process.env.NEXT_PUBLIC_TOKEN_KEY !== undefined &&
-          process.env.NEXT_PUBLIC_TOKEN_KEY !== ""
-      );
-      /* eslint-enable no-console */
       setErrors(["クレジットカードに誤りがあります"]);
       return;
     }
