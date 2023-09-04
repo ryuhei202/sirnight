@@ -1,5 +1,6 @@
 import { NextSeo } from "next-seo";
 import Head from "next/head";
+import Script from "next/script";
 import { useEffect, useState } from "react";
 import { BaseForms } from "../../src/components/register/BaseForms";
 import { LoginForms } from "../../src/components/register/LoginForms";
@@ -125,13 +126,11 @@ const Register = ({ planId }: { planId: 11 | 12 | 13 | null }) => {
     <div>
       <NextSeo title="会員登録" />
       <Head>
-        <script
-          type="text/javascript"
-          src={`${process.env.NEXT_PUBLIC_PAYGENT_URL}/js/PaygentToken.js`}
-          async
-        />
         <link rel="icon" href="/favicon/favicon_head.png" />
       </Head>
+      <Script
+        src={`${process.env.NEXT_PUBLIC_PAYGENT_URL}/js/PaygentToken.js`}
+      />
       <div
         id="container"
         className="h-full min-h-screen inset-0 text-themeGray"
