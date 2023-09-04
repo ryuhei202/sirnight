@@ -52,7 +52,9 @@ export const PaymentForms = ({
   }) => {
     const SUCCESS = "0000";
     if (paygentRes.result !== SUCCESS) {
+      /* eslint-disable */
       console.error(paygentRes.result);
+      /* eslint-enable */
       setErrors(["クレジットカードに誤りがあります"]);
       return;
     }
