@@ -145,6 +145,7 @@ export const getStaticProps = async () => {
       aboutData,
       coordinatesData,
     },
+    revalidate: 60,
   };
 };
 
