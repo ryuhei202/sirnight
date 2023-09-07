@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { About } from "../src/components/top/About";
 import { CatchCopy } from "../src/components/top/CatchCopy";
@@ -54,6 +55,7 @@ const Home: NextPage<TProps> = ({
   coordinatesData,
 }) => {
   const [isOpeningVisible, setIsOpeningVisible] = useState(true);
+  const params = useRouter().query;
 
   // オープニング画面を表示判定
   useEffect(() => {
@@ -66,6 +68,12 @@ const Home: NextPage<TProps> = ({
       allowScroll();
     }, 3000);
   }, []);
+
+  useEffect(() => {
+    if (params.referral_code && typeof params.referral_code === "string") {
+      sessionStorage.setItem("referral_code", params.referral_code);
+    }
+  }, [params.referral_code]);
 
   return (
     <>

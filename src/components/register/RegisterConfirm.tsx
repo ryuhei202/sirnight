@@ -45,10 +45,17 @@ export const RegisterConfirm = ({
 }: TProps) => {
   const router = useRouter();
   const [error, setError] = useState<string>();
+  const [referralCode, setReferralCode] = useState<string>();
   const { mutate, isLoading } = useMembersCreate();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [error]);
+  useEffect(() => {
+    const code = sessionStorage.getItem("referral_code");
+    if (referralCode === undefined && code && typeof code === "string") {
+      setReferralCode(code);
+    }
+  }, [referralCode]);
   const plan = planId === undefined ? ONE_SHOT : findPlanById(planId);
   const handleSubmit = () => {
     const params = {
@@ -64,6 +71,7 @@ export const RegisterConfirm = ({
       prefecture,
       customerCardId,
       serialCode,
+      referralCode,
     };
     mutate(params, {
       onSuccess: () => {

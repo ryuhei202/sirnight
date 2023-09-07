@@ -25,6 +25,7 @@ export type TMembersCreateParams = {
   readonly prefecture: string;
   readonly customerCardId: number;
   readonly serialCode?: string;
+  readonly referralCode?: string;
 };
 
 export const useMembersCreate = (): TMemberCreate => {
