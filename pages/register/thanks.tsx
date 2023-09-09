@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 import { NextSeo } from "next-seo";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import Script from "next/script";
 import { useEffect, useState } from "react";
@@ -68,9 +69,11 @@ const Thanks: NextPage = () => {
         />
       )}
       {/* モッピートラッキングタグ */}
+      <Head>
+        <script src="https://ad-track.jp/ad/js/cv.js" />
+      </Head>
       {memberId && (
         <>
-          <Script src="https://ad-track.jp/ad/js/cv.js" />
           <Script
             id="adtrack"
             dangerouslySetInnerHTML={{

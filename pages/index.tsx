@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
+import Head from "next/head";
 import { useRouter } from "next/router";
-import Script from "next/script";
 import { useEffect, useState } from "react";
 import { About } from "../src/components/top/About";
 import { CatchCopy } from "../src/components/top/CatchCopy";
@@ -124,7 +124,9 @@ const Home: NextPage<TProps> = ({
         <FooterMenu />
       </div>
       {/* モッピートラッキングタグ */}
-      <Script src="https://ad-track.jp/ad/js/lpjs.js" />
+      <Head>
+        <script src="https://ad-track.jp/ad/js/lpjs.js" />
+      </Head>
     </>
   );
 };
