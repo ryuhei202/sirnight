@@ -1,6 +1,5 @@
 import { NextPage } from "next";
 import { NextSeo } from "next-seo";
-import Head from "next/head";
 import { useRouter } from "next/router";
 import Script from "next/script";
 import { useEffect, useState } from "react";
@@ -69,17 +68,19 @@ const Thanks: NextPage = () => {
         />
       )}
       {/* モッピートラッキングタグ */}
-      <Head>
-        <script src="https://ad-track.jp/ad/js/cv.js" />
-      </Head>
       {memberId && (
         <>
           <Script
-            id="adtrack"
-            dangerouslySetInnerHTML={{
-              __html: `adtrack_cv.cv('adm_adtr_xuid', 'https://ad-track.jp/ad', '_buyer=22636&_article=21513&_price=&_buid=${memberId}&key1=');`,
+            src="https://ad-track.jp/ad/js/cv.js"
+            onLoad={() => {
+              // @ts-ignore
+              adtrack_cv.cv(
+                "adm_adtr_xuid",
+                "https://ad-track.jp/ad",
+                `_buyer=22636&_article=21513&_price=&_buid=${memberId}&key1=`
+              );
             }}
-          ></Script>
+          />
           <noscript
             dangerouslySetInnerHTML={{
               __html: `<img src="https://ad-track.jp/ad/p/cv?_buyer=22636&_article=21513&_price=&_buid=${memberId}&key1=" width="1" height="1">`,
