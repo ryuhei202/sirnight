@@ -16,13 +16,13 @@ export const DropdownMenuAlt = ({
 }: TProps) => {
   return (
     <div
-      className={`relative after:absolute after:right-[10px] after:top-[23px] after:border-x-[5px] after:border-t-[5px] after:border-themeGray after:border-x-transparent ${
+      className={`relative after:absolute after:border-x-[5px] after:border-t-[5px] after:border-x-transparent after:border-themeGray after:right-[10px] after:top-[23px] ${
         className ?? ""
       }`}
     >
       <select
         id={id ?? ""}
-        className={`w-full appearance-none rounded border-[1px] border-solid border-themeGray bg-clay p-3 `}
+        className={`p-3 w-full rounded appearance-none form-select bg-clay border-solid border-[1px] border-themeGray `}
         value={value}
         onChange={onChange}
       >

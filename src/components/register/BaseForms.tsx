@@ -115,14 +115,14 @@ export const BaseForms = ({ onSubmit }: TProps) => {
       <div className="px-6">
         <Stepper step="base" />
       </div>
-      <div className="mt-12 px-12">
+      <div className="px-12 mt-12">
         <div className="text-sm text-[#CB5F58]">
           <p>*の項目は入力必須です</p>
           <p>同じLINEアカウントでは複数登録できません</p>
         </div>
         <div className="mt-12">
           {errors.map((error) => (
-            <p key={error} className="my-1 bg-[#CB5F58] p-3 text-sm text-clay">
+            <p key={error} className="bg-[#CB5F58] text-sm text-clay p-3 my-1">
               {error}
             </p>
           ))}
@@ -190,7 +190,7 @@ export const BaseForms = ({ onSubmit }: TProps) => {
             <label>
               生年月日 <span className="text-[#CB5F58]">*</span>
             </label>
-            <div className="mt-3 flex">
+            <div className="flex mt-3">
               <DropdownMenuAlt
                 value={birthYear?.toString() ?? ""}
                 onChange={(e) => setBirthYear(parseInt(e.target.value))}
@@ -226,7 +226,7 @@ export const BaseForms = ({ onSubmit }: TProps) => {
             </div>
           </div>
           <div className="flex pt-8">
-            <div className="w-1/2 pr-2">
+            <div className="pr-2 w-1/2">
               <label htmlFor="height">
                 身長 <span className="text-[#CB5F58]">*</span>
               </label>
@@ -240,15 +240,15 @@ export const BaseForms = ({ onSubmit }: TProps) => {
                   max="180"
                   placeholder="身長"
                   step="1"
-                  className="mt-3 w-[75%] resize-none rounded-md border border-themeGray bg-clay p-3"
+                  className="p-3 mt-3 w-[75%] rounded-md border border-themeGray bg-clay resize-none"
                 />
-                <span className="ml-1 align-bottom">cm</span>
+                <span className="align-bottom ml-1">cm</span>
               </div>
               {(!height || 160 > height || 180 < height) && (
                 <FrontValidText text="160~180cmで入力" className="mt-1" />
               )}
             </div>
-            <div className="w-1/2 pl-2">
+            <div className="pl-2 w-1/2">
               <label htmlFor="weight">
                 体重 <span className="text-[#CB5F58]">*</span>
               </label>
@@ -262,9 +262,9 @@ export const BaseForms = ({ onSubmit }: TProps) => {
                   max="80"
                   placeholder="体重"
                   step="1"
-                  className="mt-3 w-[80%] resize-none rounded-md border border-themeGray bg-clay p-3"
+                  className="p-3 mt-3 w-[80%] rounded-md border border-themeGray bg-clay resize-none"
                 />
-                <span className="ml-1 align-bottom">kg</span>
+                <span className="align-bottom ml-1">kg</span>
               </div>
               {(!weight || 51 > weight || 80 < weight) && (
                 <FrontValidText text="51~80kgで入力" className="mt-1" />
@@ -292,13 +292,13 @@ export const BaseForms = ({ onSubmit }: TProps) => {
           <button
             onClick={handleSubmit}
             disabled={!canRegistered || isLoading}
-            className={`relative mt-12 inline-block w-full rounded-full p-3 text-center text-base font-medium text-slate-200 ${
+            className={`relative inline-block p-3 text-center w-full font-medium text-base mt-12 rounded-full text-slate-200 ${
               !canRegistered || isLoading ? "bg-[#c8c9c3]" : "bg-themeGray"
             }`}
           >
             ログイン情報の入力へ
           </button>
-          <div className="mt-6 pb-24 text-center text-xs">
+          <div className="text-center text-xs mt-6 pb-24">
             <Link href="/" className="border-b-[1px] border-themeGray">
               サイトに戻る
             </Link>

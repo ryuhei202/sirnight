@@ -12,12 +12,12 @@ export const ConversionImages = ({
   rightImagePath,
 }: TProps) => {
   return (
-    <div className="relative z-0 h-auto w-full">
+    <div className="w-full h-auto relative z-0">
       <div id={`conversion-left-${number}`} className="origin-[50%_300%]">
         <Image
           src={leftImagePath}
           alt="conversion"
-          className="relative -z-10 mx-auto w-4/5 rotate-6"
+          className="w-4/5 mx-auto rotate-6 relative -z-10"
           width={420}
           height={582}
         />
@@ -27,7 +27,7 @@ export const ConversionImages = ({
           <Image
             src={rightImagePath}
             alt="conversion"
-            className="relative z-0 mx-auto w-4/5 -rotate-6 transition"
+            className="w-4/5 mx-auto -rotate-6 relative z-0 transition"
             width={420}
             height={582}
           />

@@ -77,7 +77,7 @@ export const Typography = ({
       return (
         <span
           id={id ?? ""}
-          className={`${className ?? ""} ${classes.join(" ")}`}
+          className={`font-body ${className ?? ""} ${classes.join(" ")}`}
         >
           {children}
         </span>
@@ -85,7 +85,10 @@ export const Typography = ({
   }
 
   return (
-    <p id={id ?? ""} className={`${className ?? ""} ${classes.join(" ")}`}>
+    <p
+      id={id ?? ""}
+      className={`font-body ${className ?? ""} ${classes.join(" ")}`}
+    >
       {children}
     </p>
   );

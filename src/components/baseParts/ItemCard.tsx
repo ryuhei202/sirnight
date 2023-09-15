@@ -23,7 +23,7 @@ export const ItemCard = ({
   return (
     <Animation options={{ threshold: 0.5, triggerOnce: true }}>
       <div
-        className={`relative rounded-[6px] border border-themeGray ${
+        className={`relative border rounded-[6px] border-themeGray ${
           className ?? ""
         }`}
       >
@@ -41,7 +41,7 @@ export const ItemCard = ({
                 key={index}
                 className={`absolute ${
                   index === 0 ? "-bottom-3" : ""
-                } w-fit bg-themeGray p-2 text-[4vw] font-medium sm:text-lg`}
+                } bg-themeGray w-fit font-medium text-[4vw] sm:text-lg p-2`}
               >
                 <span className="text-slate-50">{title}</span>
               </p>

@@ -10,23 +10,23 @@ type TProps = {
 export const PlanDetail = ({ plan, disabled }: TProps) => {
   return (
     <div
-      className={`font-medium duration-1000 ${disabled ? "opacity-20" : ""}`}
+      className={`duration-1000 font-medium ${disabled ? "opacity-20" : ""}`}
     >
-      <p className="mb-12 text-center">{plan.description}</p>
+      <p className="text-center mb-12">{plan.description}</p>
       <div className="relative">
-        <div className="absolute bottom-0 right-0 top-[-2.5rem] h-20 w-20 rounded-full bg-themeGray">
+        <div className="absolute bg-themeGray rounded-full w-20 h-20 right-0 bottom-0 top-[-2.5rem]">
           <div className="relative mt-1">
             <img
               src="/images/icons/cloths/4.svg"
               alt="cloth-icon"
-              className="relative m-auto w-1/2"
+              className="relative w-1/2 m-auto"
             />
             {!plan.isJacketAvailable && (
-              <p className="absolute right-1/2 top-0 translate-x-1/2 text-[3rem] leading-none text-red">
+              <p className="absolute text-red leading-none text-[3rem] top-0 right-1/2 transform translate-x-1/2">
                 ×
               </p>
             )}
-            <p className="text-center text-xs text-clay">
+            <p className="text-xs text-clay text-center">
               {plan.isJacketAvailable ? (
                 <>
                   ジャケット
@@ -44,24 +44,24 @@ export const PlanDetail = ({ plan, disabled }: TProps) => {
           </div>
         </div>
       </div>
-      <div className="mx-3 rounded-md border border-solid border-themeGray">
+      <div className="border-solid border border-themeGray rounded-md mx-3">
         <div>
           {new Date() < new Date(2023, 9, 1) &&
           new Date() >= new Date(2023, 5, 26) ? (
             <>
               {/* 夏の初月半額キャンペーン */}
               {/* TODO: キャンペーン期間が過ぎたら削除 */}
-              <div className="w-full bg-red py-1 text-center font-lora text-clay">
+              <div className="text-center bg-red font-lora w-full text-clay py-1">
                 9/30まで初月半額キャンペーン中！！
               </div>
-              <p className="mb-2 mt-6 text-center font-lora leading-none line-through">
+              <p className="text-center mt-6 mb-2 leading-none line-through font-lora">
                 月額{`¥${plan.price.withoutTax.toLocaleString()}`}（税別）
                 <br />
                 <span className="line-through">{`¥${plan.price.withTax.toLocaleString()}（税込）`}</span>
               </p>
-              <p className="mb-6 text-center leading-none text-red">
+              <p className="text-center mb-6 leading-none text-red">
                 月額
-                <span className="ml-2 font-lora text-[10vw] font-bold sm:text-4xl">{`¥${(
+                <span className="text-[10vw] sm:text-4xl ml-2 font-lora font-bold">{`¥${(
                   plan.price.withoutTax / 2
                 ).toLocaleString()}`}</span>
                 （税別）
@@ -71,12 +71,12 @@ export const PlanDetail = ({ plan, disabled }: TProps) => {
             </>
           ) : (
             <>
-              <p className="mb-2 mt-6 text-center leading-none">
+              <p className="text-center mt-6 mb-2 leading-none">
                 月額
-                <span className="ml-2 font-lora text-[10vw] font-bold sm:text-4xl">{`¥${plan.price.withoutTax.toLocaleString()}`}</span>
+                <span className="text-[10vw] sm:text-4xl ml-2 font-lora font-bold">{`¥${plan.price.withoutTax.toLocaleString()}`}</span>
                 （税別）
               </p>
-              <div className="mb-6 flex flex-wrap justify-center space-x-3">
+              <div className="flex flex-wrap justify-center space-x-3 mb-6">
                 <div className="text-[4vw] sm:text-xl ">
                   <span>{`¥${plan.price.withTax.toLocaleString()}（税込）`}</span>
                 </div>
@@ -84,25 +84,25 @@ export const PlanDetail = ({ plan, disabled }: TProps) => {
             </>
           )}
         </div>
-        <div className="bg-themeGray py-1 text-center text-[4vw] text-clay sm:text-xl">
+        <div className="bg-themeGray text-clay text-center text-[4vw] sm:text-xl py-1">
           コーデ数
         </div>
-        <div className="flex h-full flex-col justify-evenly font-medium">
+        <div className="h-full font-medium flex flex-col justify-evenly">
           {new Date() < new Date(2023, 9, 1) &&
           new Date() >= new Date(2023, 5, 26) &&
           (plan.enName === "premium" || plan.enName === "standard") ? (
             <>
               {/* 夏のスタンダード・プレミアムアイテム１点追加キャンペーン */}
               {/* TODO: キャンペーン期間が過ぎたら削除 */}
-              <div className="w-full bg-red py-1 text-center font-lora text-clay">
+              <div className="text-center bg-red font-lora w-full text-clay py-1">
                 9/30までトップス１点追加キャンペーン中！！
               </div>
               <div className="mx-auto py-4">
-                <p className="mb-2 text-center font-lora text-xs leading-none line-through sm:text-sm">
+                <p className="text-center mb-2 leading-none line-through font-lora text-xs sm:text-sm">
                   {plan.coordinateNum}コーデ / {plan.itemNum}アイテム
                 </p>
                 <p className="flex items-center text-center text-xs">
-                  <span className="mr-[1vw] font-lora text-[7vw] sm:mr-1 sm:text-3xl">
+                  <span className="font-lora text-[7vw] sm:text-3xl mr-[1vw] sm:mr-1">
                     {plan.coordinateNum}
                   </span>
                   コーデ
@@ -113,7 +113,7 @@ export const PlanDetail = ({ plan, disabled }: TProps) => {
                       width="18vw"
                     />
                   </span>
-                  <span className="mr-[1vw] font-lora text-[7vw] text-red sm:mr-1 sm:text-3xl">
+                  <span className="font-lora text-[7vw] sm:text-3xl mr-[1vw] sm:mr-1 text-red">
                     {plan.itemNum + 1}
                   </span>
                   アイテム
@@ -121,28 +121,28 @@ export const PlanDetail = ({ plan, disabled }: TProps) => {
               </div>
               <hr className="border border-dashed border-[#C8C9C3]" />
               <div className="mx-auto py-4">
-                <p className="mb-2 text-center font-lora text-xs leading-none line-through sm:text-sm">
+                <p className="text-center mb-2 leading-none line-through font-lora text-xs sm:text-sm">
                   トップス{plan.topsNum}+ボトムス{plan.bottomsNum}+ジャケット1
                 </p>
-                <p className="flex h-full items-center text-center text-xs sm:text-sm">
+                <p className="h-full flex items-center text-center text-xs sm:text-sm">
                   トップス
-                  <span className="ml-1 mr-[1vw] font-lora text-2xl text-red sm:mr-1">
+                  <span className="font-lora text-2xl mr-[1vw] sm:mr-1 ml-1 text-red">
                     {plan.topsNum + 1}
                   </span>
-                  <span className="mx-1 text-gray">＋</span>
+                  <span className="text-gray mx-1">＋</span>
                   ボトムス
-                  <span className="ml-1 mr-[1vw] font-lora text-2xl sm:mr-1">
+                  <span className="font-lora text-2xl mr-[1vw] sm:mr-1 ml-1">
                     {plan.bottomsNum}
                   </span>
                   {plan.isJacketAvailable && (
                     <>
-                      <span className="mx-1 text-gray">＋</span>
-                      <span className="flex flex-col text-left text-xs">
+                      <span className="text-gray mx-1">＋</span>
+                      <span className="flex flex-col text-xs text-left">
                         ジャケット or
                         <br />
                         ライトアウター
                       </span>
-                      <span className="ml-1 mr-[1vw] font-lora text-2xl sm:mr-1">
+                      <span className="font-lora text-2xl mr-[1vw] sm:mr-1 ml-1">
                         1
                       </span>
                     </>
@@ -153,8 +153,8 @@ export const PlanDetail = ({ plan, disabled }: TProps) => {
           ) : (
             <>
               <div className="mx-auto py-4">
-                <p className="flex h-full items-center text-center text-xs">
-                  <span className="mr-[1vw] font-lora text-[7vw] sm:mr-1 sm:text-3xl">
+                <p className="h-full flex items-center text-center text-xs">
+                  <span className="font-lora text-[7vw] sm:text-3xl mr-[1vw] sm:mr-1">
                     {plan.coordinateNum}
                   </span>
                   コーデ
@@ -165,7 +165,7 @@ export const PlanDetail = ({ plan, disabled }: TProps) => {
                       width="18vw"
                     />
                   </span>
-                  <span className="mr-[1vw] font-lora text-[7vw] sm:mr-1 sm:text-3xl">
+                  <span className="font-lora text-[7vw] sm:text-3xl mr-[1vw] sm:mr-1">
                     {plan.itemNum}
                   </span>
                   アイテム
@@ -173,25 +173,25 @@ export const PlanDetail = ({ plan, disabled }: TProps) => {
               </div>
               <hr className="border border-dashed border-[#C8C9C3]" />
               <div className="mx-auto py-4">
-                <p className="flex h-full items-center text-center text-xs sm:text-sm">
+                <p className="h-full flex items-center text-center text-xs sm:text-sm">
                   トップス
-                  <span className="ml-1 mr-[1vw] font-lora text-2xl sm:mr-1">
+                  <span className="font-lora text-2xl mr-[1vw] sm:mr-1 ml-1">
                     {plan.topsNum}
                   </span>
-                  <span className="mx-1 text-gray">＋</span>
+                  <span className="text-gray mx-1">＋</span>
                   ボトムス
-                  <span className="ml-1 mr-[1vw] font-lora text-2xl sm:mr-1">
+                  <span className="font-lora text-2xl mr-[1vw] sm:mr-1 ml-1">
                     {plan.bottomsNum}
                   </span>
                   {plan.isJacketAvailable && (
                     <>
-                      <span className="mx-1 text-gray">＋</span>
-                      <span className="flex flex-col text-left text-xs">
+                      <span className="text-gray mx-1">＋</span>
+                      <span className="flex flex-col text-xs text-left">
                         ジャケット or
                         <br />
                         ライトアウター
                       </span>
-                      <span className="ml-1 mr-[1vw] font-lora text-2xl sm:mr-1">
+                      <span className="font-lora text-2xl mr-[1vw] sm:mr-1 ml-1">
                         1
                       </span>
                     </>
@@ -201,25 +201,25 @@ export const PlanDetail = ({ plan, disabled }: TProps) => {
             </>
           )}
         </div>
-        <div className="bg-themeGray py-1 text-center text-[4vw] text-clay sm:text-xl">
+        <div className="bg-themeGray text-clay text-center text-[4vw] sm:text-xl py-1">
           ポイント
         </div>
-        <div className="flex h-[5rem] items-center text-center">
+        <div className="flex items-center text-center h-[5rem]">
           <p className="mx-auto text-sm">
             毎月決済時に
-            <span className="ml-1 mr-[1vw] font-lora text-[7vw] sm:mr-1 sm:text-2xl">
+            <span className="font-lora text-[7vw] sm:text-2xl mr-[1vw] sm:mr-1 ml-1">
               {plan.point}
             </span>
             ポイント付与
           </p>
         </div>
-        <div className="bg-themeGray py-1 text-center text-[4vw] text-clay sm:text-xl">
+        <div className="bg-themeGray text-clay text-center text-[4vw] sm:text-xl py-1">
           割引機能
         </div>
-        <div className="ml-2 flex flex-col text-xs">
+        <div className="flex flex-col text-xs ml-2">
           <p className="my-4">
             ・洋服は全て
-            <span className="ml-1 mr-[1vw] font-lora text-[7vw] sm:mr-1 sm:text-2xl">
+            <span className="font-lora text-[7vw] sm:text-2xl mr-[1vw] sm:mr-1 ml-1">
               30
             </span>
             ％OFFで購入可能
@@ -238,7 +238,7 @@ export const PlanDetail = ({ plan, disabled }: TProps) => {
       </div>
       <LinkButton
         href={`/register/${plan.enName}`}
-        className="mb-32 mt-6 py-[4vw] text-[4vw] font-medium sm:py-5 sm:text-xl"
+        className="text-[4vw] sm:text-xl font-medium mt-6 mb-32 py-[4vw] sm:py-5"
         disabled={disabled}
       >
         このプランではじめる
