@@ -79,19 +79,19 @@ const Home: NextPage<TProps> = ({
   return (
     <>
       {isOpeningVisible && <OpeningPage className="z-50" />}
-      <div id="container" className="relative text-themeGray z-40">
+      <div id="container" className="relative z-40 text-themeGray">
         {/* 夏の初月半額キャンペーン */}
         {/* TODO: キャンペーン期間が過ぎたら削除 */}
         {new Date() < new Date(2023, 9, 1) &&
           new Date() >= new Date(2023, 5, 26) && (
-            <div className="sticky top-0 z-50 text-center bg-red font-lora w-full text-clay py-1">
+            <div className="sticky top-0 z-50 w-full bg-red py-1 text-center font-lora text-clay">
               9/30まで初月半額キャンペーン中！！
             </div>
           )}
         <KeyVisual />
         <CatchCopy />
         <ServiceDescription />
-        <div className="overflow-hidden z-10">
+        <div className="z-10 overflow-hidden">
           <ItemList type="tops" />
           <ItemList type="bottoms" />
         </div>
