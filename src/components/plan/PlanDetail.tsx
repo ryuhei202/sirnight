@@ -107,6 +107,12 @@ export const PlanDetail = ({ plan, disabled }: TProps) => {
               )}
             </p>
           </div>
+          {plan.isJacketAvailable && (
+            <span className="text-xs text-center h-full mb-2 mx-2 text-red">
+              ジャケットorライトアウターを使わない場合、
+              トップスに変えてお届けします。
+            </span>
+          )}
         </div>
         <div className="bg-themeGray text-clay text-center text-[4vw] sm:text-xl py-1">
           ポイント
