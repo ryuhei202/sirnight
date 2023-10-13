@@ -30,7 +30,7 @@ export const getStaticProps = async () => {
   });
   const itemData = await uwearAboutClient.get<TAbout>({
     endpoint: "about",
-    queries: { filters: `category[contains]${CATEGORIES.COORDINATE}` },
+    queries: { filters: `category[contains]${CATEGORIES.ITEM}` },
   });
 
   const channelData = await getYouTubeChannel();
@@ -54,7 +54,7 @@ const Magazine: NextPage<TProps> = ({
 }) => {
   return (
     <div className="min-h-screen py-4 text-themeGray">
-      {aboutData && (
+      {aboutData && aboutData.contents.length > 0 && (
         <>
           <div className="my-12 px-6">
             <h2 className="mb-12 text-3xl">最新の記事</h2>
@@ -108,7 +108,7 @@ const Magazine: NextPage<TProps> = ({
           </div>
         </>
       )}
-      {itemData && (
+      {itemData && itemData.contents.length > 0 && (
         <>
           <div className="mb-12 mt-36 px-6">
             <h2 className="mb-12 text-3xl">新作のアイテム</h2>
@@ -183,8 +183,8 @@ const Magazine: NextPage<TProps> = ({
           </Link>
         </div>
       </div>
-      <div className="h-[200px] sm:h-[300px] w-full bg-themeGray" />
-      <ul className="hidden-scrollbar mt-[-150px] sm:mt-[-250px] flex snap-x snap-mandatory gap-x-6 overflow-x-scroll px-12">
+      <div className="h-[200px] w-full bg-themeGray sm:h-[300px]" />
+      <ul className="hidden-scrollbar mt-[-150px] flex snap-x snap-mandatory gap-x-6 overflow-x-scroll px-12 sm:mt-[-250px]">
         {channelData.items
           .filter((_, i) => i !== 0)
           .map((item) => (
@@ -197,7 +197,7 @@ const Magazine: NextPage<TProps> = ({
               <li className="flex h-full flex-col justify-between">
                 <img
                   src={item.snippet.thumbnails.high.url}
-                  className="h-[210px] w-[280px] rounded-md sm:w-[360px] sm:h-[270px]"
+                  className="h-[210px] w-[280px] rounded-md sm:h-[270px] sm:w-[360px]"
                   width={500}
                   height={200}
                   alt={item.snippet.title}
