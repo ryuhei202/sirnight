@@ -96,6 +96,11 @@ const Magazine: NextPage<TProps> = ({
                         height={300}
                         className="rounded-md object-cover"
                       />
+                      <div className="h-[75px] w-[300px]">
+                        <p className="overflow-hidden text-ellipsis">
+                          {content.title}
+                        </p>
+                      </div>
                     </li>
                   </Link>
                 ))}
@@ -145,6 +150,11 @@ const Magazine: NextPage<TProps> = ({
                         height={300}
                         className="rounded-md object-cover"
                       />
+                      <div className="h-[75px] w-[300px]">
+                        <p className="overflow-hidden text-ellipsis">
+                          {content.title}
+                        </p>
+                      </div>
                     </li>
                   </Link>
                 ))}
@@ -173,8 +183,8 @@ const Magazine: NextPage<TProps> = ({
           </Link>
         </div>
       </div>
-      <div className="h-[300px] w-full bg-themeGray" />
-      <ul className="hidden-scrollbar mt-[-250px] flex snap-x snap-mandatory gap-x-6 overflow-x-scroll px-12">
+      <div className="h-[200px] sm:h-[300px] w-full bg-themeGray" />
+      <ul className="hidden-scrollbar mt-[-150px] sm:mt-[-250px] flex snap-x snap-mandatory gap-x-6 overflow-x-scroll px-12">
         {channelData.items
           .filter((_, i) => i !== 0)
           .map((item) => (
@@ -187,11 +197,16 @@ const Magazine: NextPage<TProps> = ({
               <li className="flex h-full flex-col justify-between">
                 <img
                   src={item.snippet.thumbnails.high.url}
-                  className="h-[210px] w-[280px] rounded-md "
+                  className="h-[210px] w-[280px] rounded-md sm:w-[360px] sm:h-[270px]"
                   width={500}
                   height={200}
                   alt={item.snippet.title}
                 />
+                <div className="h-[75px] w-[280px] sm:w-[360px]">
+                  <p className="overflow-hidden text-ellipsis">
+                    {item.snippet.title}
+                  </p>
+                </div>
               </li>
             </Link>
           ))}
@@ -209,7 +224,7 @@ const Magazine: NextPage<TProps> = ({
               <li className="flex h-full flex-col justify-between">
                 <img
                   src={post.media_url}
-                  className="w-[200px] rounded-md "
+                  className="w-[250px] rounded-md "
                   width={500}
                   height={500}
                   alt="uwearjp"
@@ -219,6 +234,7 @@ const Magazine: NextPage<TProps> = ({
           ))}
         </ul>
       </div>
+      <footer className="text-center">UWear</footer>
     </div>
   );
 };
