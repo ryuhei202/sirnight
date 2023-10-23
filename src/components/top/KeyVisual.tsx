@@ -95,56 +95,56 @@ export const KeyVisual = () => {
         <ul>
           <li>
             <KeyVisualColumn
-              imageNames={{ left: "1-1", right: "1-2" }}
-              isLeftSquare={false}
-            />
-          </li>
-          <li>
-            <KeyVisualColumn
-              imageNames={{ left: "2-1", right: "2-2" }}
+              imageNames={{ left: "1-2", right: "1-1" }}
               isLeftSquare={true}
             />
           </li>
           <li>
             <KeyVisualColumn
-              imageNames={{ left: "3-1", right: "3-2" }}
+              imageNames={{ left: "2-2", right: "2-1" }}
               isLeftSquare={false}
             />
           </li>
           <li>
             <KeyVisualColumn
-              imageNames={{ left: "4-1", right: "4-2" }}
+              imageNames={{ left: "3-2", right: "3-1" }}
               isLeftSquare={true}
             />
           </li>
           <li>
             <KeyVisualColumn
-              imageNames={{ left: "5-1", right: "5-2" }}
+              imageNames={{ left: "4-2", right: "4-1" }}
               isLeftSquare={false}
             />
           </li>
           <li>
             <KeyVisualColumn
-              imageNames={{ left: "6-1", right: "6-2" }}
+              imageNames={{ left: "5-2", right: "5-1" }}
               isLeftSquare={true}
             />
           </li>
           <li>
             <KeyVisualColumn
-              imageNames={{ left: "7-1", right: "7-2" }}
+              imageNames={{ left: "6-2", right: "6-1" }}
               isLeftSquare={false}
             />
           </li>
           <li>
             <KeyVisualColumn
-              imageNames={{ left: "8-1", right: "8-2" }}
+              imageNames={{ left: "7-2", right: "7-1" }}
               isLeftSquare={true}
             />
           </li>
           <li>
             <KeyVisualColumn
-              imageNames={{ left: "9-1", right: "9-2" }}
+              imageNames={{ left: "8-2", right: "8-1" }}
               isLeftSquare={false}
+            />
+          </li>
+          <li>
+            <KeyVisualColumn
+              imageNames={{ left: "9-2", right: "9-1" }}
+              isLeftSquare={true}
             />
           </li>
         </ul>
