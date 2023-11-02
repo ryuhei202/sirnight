@@ -19,7 +19,7 @@
     "axios-case-converter": "^1.1.0",
     "env-cmd": "^10.1.0",
     "eslint": "^8.52.0",
-    "microcms-js-sdk": "^2.6.1",
+    "microcms-js-sdk": "^2.7.0",
     "next": "^13.4.19",
     "next-seo": "^6.4.0",
     "next-sitemap": "^4.2.3",
