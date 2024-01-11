@@ -37,12 +37,7 @@ const Thanks: NextPage = () => {
       );
     }
     if (rtsp) {
-      fetch(
-        `https://www.rentracks.jp/secure/es.html?sid=1847&pid=12433&price=0&quantity=1&reward=-1&cname=&ctel=&cemail=&cinfo=${memberId}&rtsp=${rtsp}`,
-      ).then((data) => {
-        console.log("単発Rentracks"); // eslint-disable-line no-console
-        console.log(data); // eslint-disable-line no-console
-      });
+      fetch(`/api/affiliate/rentracks-one?rtsp=${rtsp}&memberId=${memberId}`);
     }
   }, [memberId]);
 
