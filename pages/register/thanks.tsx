@@ -29,18 +29,12 @@ const Thanks: NextPage = () => {
     if (rdCode) {
       fetch(
         `https://r.moshimo.com/af/r/result?p_id=1063&pc_id=1537&m_v=${memberId}&rd_code=${rdCode}`,
-      ).then((data) => {
-        console.log("月額もしも"); // eslint-disable-line no-console
-        console.log(data); // eslint-disable-line no-console
-      });
+      );
     }
     if (oneShotRdCode) {
       fetch(
         `https://r.moshimo.com/af/r/result?p_id=5688&pc_id=15710&m_v=${memberId}&rd_code=${oneShotRdCode}`,
-      ).then((data) => {
-        console.log("単発もしも"); // eslint-disable-line no-console
-        console.log(data); // eslint-disable-line no-console
-      });
+      );
     }
     if (rtsp) {
       fetch(
