@@ -11,7 +11,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
 
     const result = await fetch(
-      `https://www.rentracks.jp/secure/es.html?sid=1847&pid=12433&price=0&quantity=1&reward=-1&cname=&ctel=&cemail=&cinfo=${memberId}&rtsp=${rtsp}`,
+      `https://www.rentracks.jp/secure/es.html?sid=1847&pid=12443&price=0&quantity=1&reward=-1&cname=&ctel=&cemail=&cinfo=${memberId}&rtsp=${rtsp}`,
     );
     console.log(result); // eslint-disable-line no-console
     res.status(200).send({ result });
