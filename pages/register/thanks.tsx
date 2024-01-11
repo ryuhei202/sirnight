@@ -18,6 +18,40 @@ const Thanks: NextPage = () => {
     }
   }, [memberIdQuery]);
 
+  // アフィリエイト成果計測キックバック
+  useEffect(() => {
+    if (!memberId) return;
+
+    const rdCode = sessionStorage.getItem("rd_code"); // もしもアフィリエイト(月額)
+    const oneShotRdCode = sessionStorage.getItem("one_shot_rd_code"); // もしもアフィリエイト(単発)
+    const rtsp = sessionStorage.getItem("rtsp"); // Rentracksアフィリエイト(単発)
+
+    if (rdCode) {
+      fetch(
+        `https://r.moshimo.com/af/r/result?p_id=1063&pc_id=1537&m_v=${memberId}&rd_code=${rdCode}`,
+      ).then((data) => {
+        console.log("月額もしも"); // eslint-disable-line no-console
+        console.log(data); // eslint-disable-line no-console
+      });
+    }
+    if (oneShotRdCode) {
+      fetch(
+        `https://r.moshimo.com/af/r/result?p_id=5688&pc_id=15710&m_v=${memberId}&rd_code=${oneShotRdCode}`,
+      ).then((data) => {
+        console.log("単発もしも"); // eslint-disable-line no-console
+        console.log(data); // eslint-disable-line no-console
+      });
+    }
+    if (rtsp) {
+      fetch(
+        `https://www.rentracks.jp/secure/es.html?sid=1847&pid=12433&price=0&quantity=1&reward=-1&cname=&ctel=&cemail=&cinfo=${memberId}&rtsp=${rtsp}`,
+      ).then((data) => {
+        console.log("単発Rentracks"); // eslint-disable-line no-console
+        console.log(data); // eslint-disable-line no-console
+      });
+    }
+  }, [memberId]);
+
   return (
     <div>
       <NextSeo title="会員登録完了" />
@@ -82,39 +116,6 @@ const Thanks: NextPage = () => {
        });
        }(function(){}))`}
           </Script>
-          {/* 単発Rentracksアフィリエイトコンバージョンタグ */}
-          {sessionStorage.getItem("rtsp") && (
-            <img
-              src={`https://www.rentracks.jp/secure/es.html?sid=1847&pid=12433&price=0&quantity=1&reward=-1&cname=&ctel=&cemail=&cinfo=${memberId}&rtsp=${sessionStorage.getItem(
-                "rtsp",
-              )}`}
-              width="1"
-              height="1"
-              alt=""
-            />
-          )}
-          {/* もしもアフィリエイトコンバージョンタグ */}
-          {sessionStorage.getItem("rd_code") && (
-            <img
-              src={`https://r.moshimo.com/af/r/result?p_id=1063&pc_id=1537&m_v=${memberId}&rd_code=${sessionStorage.getItem(
-                "rd_code",
-              )}`}
-              width="1"
-              height="1"
-              alt=""
-            />
-          )}
-          {/* 単発もしもアフィリエイトコンバージョンタグ */}
-          {sessionStorage.getItem("one_shot_rd_code") && (
-            <img
-              src={`https://r.moshimo.com/af/r/result?p_id=5688&pc_id=15710&m_v=${memberId}&rd_code=${sessionStorage.getItem(
-                "one_shot_rd_code",
-              )}`}
-              width="1"
-              height="1"
-              alt=""
-            />
-          )}
           {/* モッピートラッキングタグ */}
           <Script
             src="https://ad-track.jp/ad/js/cv.js"
